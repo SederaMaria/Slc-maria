@@ -1,0 +1,123 @@
+{
+  "name": "speed-leasing",
+  "scripts": {
+    "postdeploy": "bundle exec rake db:drop; bundle exec rake db:create; rails db:migrate; bundle exec rake db:schema:load"
+  },
+  "env": {
+    "AWS_ACCESS_KEY_ID": {
+      "required": true
+    },
+    "AWS_REGION": {
+      "required": true
+    },
+    "AWS_SECRET_ACCESS_KEY": {
+      "required": true
+    },
+    "BUCKETEER_AWS_ACCESS_KEY_ID": {
+      "required": true
+    },
+    "BUCKETEER_AWS_REGION": {
+      "required": true
+    },
+    "BUCKETEER_AWS_SECRET_ACCESS_KEY": {
+      "required": true
+    },
+    "BUCKETEER_BUCKET_NAME": {
+      "required": true
+    },
+    "S3_BUCKET_NAME": {
+      "required": true
+    },
+    "CREDCO_SERVICE_URL": {
+      "required": true
+    },
+    "CREDCO_LOGIN_ID": {
+      "required": true
+    },
+    "CREDCO_PASSWORD": {
+      "required": true
+    },
+    "KICKBOX_API_KEY": {
+      "required": true
+    },
+    "RACK_ENV": {
+      "required": true
+    },
+    "RAILS_ENV": {
+      "required": true
+    },
+    "RAILS_LOG_TO_STDOUT": {
+      "required": true
+    },
+    "RAILS_SERVE_STATIC_FILES": {
+      "required": true
+    },
+    "REDIS_PROVIDER": {
+      "value": "REDIS_URL"
+    },
+    "SECRET_KEY_BASE": {
+      "generator": "secret"
+    },
+    "SMARTY_AUTH_ID": {
+      "required": true
+    },
+    "SMARTY_AUTH_TOKEN": {
+      "required": true
+    },
+    "SSN_ENCRYPTION_KEY": {
+      "value": "93df1a84d4a5a47f761a2f397bd2bbbe"
+    },
+    "SSN_ENCRYPTION_SALT": {
+      "value": "sodiumchloridesodiumchloride1234"
+    },
+    "SUPPORT_EMAIL": {
+      "required": true
+    },
+    "SALES_EMAIL": {
+      "required": true
+    },
+    "TWILIO_ACCOUNT_SID": {
+      "required": true
+    },
+    "TWILIO_AUTH_TOKEN": {
+      "required": true
+    },
+    "HEROKU_APP_NAME": {
+      "required": true
+    },
+    "HEROKU_PARENT_APP_NAME": {
+      "required": true
+    },
+    "DISABLE_DATABASE_ENVIRONMENT_CHECK": {
+      "description": "Ensure Rake commands run in this 'production' environment.",
+      "value": "1"
+    },
+    "SENDGRID_PASSWORD": {
+      "required": true
+    },
+    "SENDGRID_USERNAME": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "hobby"
+    },
+    "worker": {
+      "quantity": 1,
+      "size": "hobby"
+    }
+  },
+  "addons": [
+    "heroku-postgresql",
+    "heroku-redis:hobby-dev",
+    "scheduler",
+    "bucketeer:hobbyist"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}

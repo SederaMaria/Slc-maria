@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <p><%= "We are writing to notify you that Lease Number #{ @application.application_identifier } #{ @application.lessee.name.titleize } is in a status of Funding Delayed for the following reason#{(@reasons.count > 1) ? 's' : ''}:" %></p>
+  <% @reasons.each do |reason| %> 
+    <% if reason.status == 'Required' %> 
+    <ul>
+    <li style="<%= !reason&.notes&.empty? ? 'margin-bottom:0em;' : '' %>"><%= "#{reason.funding_delay_reason.reason}" %></li><br>
+        <% if !reason&.notes&.empty?  %>
+        <p style='margin:0em 2em 0.5em 4.3em;'> Note: <%= reason&.notes %> </p>
+        <% end %>
+    </ul>
+    <% end %>
+  <% end %>
+
+  <p>
+  <img src="<%= attachments["funding_delay.jpg"].url %>" height="130px" width="248px">
+  </p>
+  
+  <p style='margin-bottom:2em;'>Thank you,</p>    
+
+  <p><b><span style='font-size:16.0pt;font-variant:small-caps'>Lease Verification Department</span></b></p>
+
+  <p>Speed Leasing Company LLC / SLC Trust</p>
+
+  <p style='margin-top:0em;margin-bottom:2em;'><span style='color:#34ECA6'>o:</span> 844.390.0717 | <span style='color:#34ECA6'>f:</span> 954.773.9818 </p>
+
+  <p><span style='font-size:8.0pt'>The information contained in this message (including attachments, if any) is confidential. It is intended exclusively for the individual or entity to which it is addressed. This communication may contain information that is proprietary, privileged or confidential. If you are not the named addressee, you are not authorized to read, print, retain, copy, or disseminate this message or any part of it. If you have received this message in error, please notify the sender immediately by e-mail and delete all copies of this message.</span></p>
+</body>
+</html>

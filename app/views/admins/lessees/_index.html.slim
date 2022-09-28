@@ -1,0 +1,19 @@
+table
+  thead
+    tr
+      th Name
+      th Mobile Phone
+      th Home Phone
+      th Date of Birth
+      th Last Updated At
+  tbody
+    -Lessee.all.each do |lessee|
+      tr
+        td =lessee.name
+        td =lessee.mobile_phone_number
+        td =lessee.home_phone_number
+        td =lessee.date_of_birth
+        td =lessee.updated_at
+
+
+  

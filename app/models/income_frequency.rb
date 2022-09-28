@@ -1,0 +1,2 @@
+class IncomeFrequency < ApplicationRecord
+end

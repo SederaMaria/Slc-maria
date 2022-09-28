@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    meta[content="text/html; charset=UTF-8" http-equiv="Content-Type"]
+  body
+    h3 Datax REJECT response received for lease application identifier - #{@lease_application.application_identifier}
+
+    h3 Datax call leadrouter response Id - #{@datax.leadrouter_lead_id}
+    
+    h3 Decision - #{@datax.leadrouter_response.dig("decision")}
+
+    h3 Adverse Reason Codes -
+
+    - @datax.leadrouter_response["adverseReasonCodes"].each do |reason|
+      h3 Code - #{reason['code']}
+      h3 Message - #{reason['description']}
+
+    h3 Error Details -
+    
+    h3 Code - #{@datax.leadrouter_response.dig("errorDetails", "code").to_s}
+    h3 Message - #{@datax.leadrouter_response.dig("errorDetails", "message").to_s}
+
+    h3 Generated at #{Time.now}

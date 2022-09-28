@@ -1,0 +1,11 @@
+= semantic_form_for [:admins, funding_delay], method: :put, remote: true do |f|
+  li.radio.input.required
+    fieldset.choices
+      ol.choices-group
+        - FundingDelay::VALID_STATUSES.each do |status|
+          li.choice
+            - id = "funding_delay_#{funding_delay.id}_#{status}"
+            label for=id
+              = radio_button_tag 'funding_delay[status]', status, funding_delay.status.eql?(status), id: id, class: 'funding_delay_status'
+              = status
+

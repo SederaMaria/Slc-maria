@@ -1,0 +1,110 @@
+.row.flex-row
+  .col-sm-4
+    fieldset.inputs
+      ol
+        li
+          h4 Monthly Payments
+        li
+          label Pre-Tax Payment
+          span.calculator-value = calculator&.base_monthly_payment
+        li
+          label Plus Sales Taxes
+          span.calculator-value = calculator&.monthly_sales_tax
+        li
+          label Total Monthly Payment
+          span.calculator-value = calculator&.total_monthly_payment
+        li
+          h4 Funding Basis
+        li
+          label NADA Retail Value
+          span.calculator-value#lease_calculator_nada_retail_value = calculator&.nada_retail_value
+        li
+          label Residual Value (Purchase Option)
+          span.calculator-value = calculator&.customer_purchase_option
+        li
+          label Adj. Capitalized Cost
+          span.calculator-value = calculator&.adjusted_capitalized_cost
+        li
+          label Sum of Pre Tax Payments
+          span.calculator-value = calculator&.pre_tax_payments_sum
+        li
+          h4 Speed Leasing Advance Rates
+        li
+          label Front End Max Advance
+          span.calculator-value = calculator&.frontend_max_advance
+        li
+          label Back End Max Advance
+          span.calculator-value = calculator&.backend_max_advance
+  .col-sm-4
+    fieldset.inputs
+      ol
+        li
+          h4 Customer Invoice
+        li
+          label Bike Sale Price
+          span.calculator-value = calculator&.dealer_sales_price
+        li
+          label Documentation Fee
+          span.calculator-value = calculator&.dealer_documentation_fee
+        li
+          label Title, Reg, Lien
+          span.calculator-value = calculator&.title_license_and_lien_fee
+        li
+          label Upfront Sales Tax
+          span.calculator-value = calculator&.upfront_tax
+        li
+          label GAP Insurance
+          span.calculator-value = calculator&.guaranteed_auto_protection_cost
+        li
+          label Prepaid Maintenance
+          span.calculator-value = calculator&.prepaid_maintenance_cost
+        li
+          label Extended Service Contract
+          span.calculator-value = calculator&.extended_service_contract_cost
+        li
+          label Tire & Wheel Warranty
+          span.calculator-value = calculator&.tire_and_wheel_contract_cost
+        li
+          label GPS
+          span.calculator-value = calculator&.gps_cost
+        li
+          label Total Sale Amount
+          span.calculator-value = calculator&.total_sales_price
+  .col-sm-4
+    fieldset.inputs
+      ol
+        li
+          h4 Dealer Proceeds
+        li
+          label Total Sales Price
+          span.calculator-value = calculator&.total_sales_price
+        - unless @setting&.deactivate_dealer_participation?
+          li
+            label Plus Dealer Participation
+            span.calculator-value = calculator&.dealer_reserve
+        li
+          label Less Net Trade In
+          span.calculator-value = calculator&.net_trade_in_allowance
+        li
+          label Less Cash at Signing
+          span.calculator-value = calculator&.total_cash_at_signing
+        li
+          label Fund to Dealer
+          span.calculator-value = calculator&.remit_to_dealer
+        li
+          h4 Fees and Deposits Included
+        li
+          label Acquisition Fee
+          span.calculator-value = calculator&.acquisition_fee
+        - servicing_fee_class = calculator&.servicing_fee&.try(:zero?) ? 'row-servicing-fee hidden' : 'row-servicing-fee'
+        li class=(servicing_fee_class)
+          label Servicing Fee
+          span.calculator-value = calculator&.servicing_fee
+        - refundable_security_deposit_class = calculator&.refundable_security_deposit&.try(:zero?) ? 'row-refundable-security-deposit hidden' : 'row-refundable-security-deposit'
+        li class=(refundable_security_deposit_class)
+          label Security Deposit
+          span.calculator-value = calculator&.refundable_security_deposit
+        li
+          label First Payment
+          span.calculator-value = calculator&.total_monthly_payment
+

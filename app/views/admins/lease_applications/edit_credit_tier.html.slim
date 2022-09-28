@@ -1,0 +1,69 @@
+.lease-application.verification
+
+  .panel
+    form
+      fieldset.inputs
+        legend
+          span Information
+        .row.information
+          .col-sm-6
+            ol
+              li.string.input.optional.stringish
+                label.label Lessee Name: #{@lessee.name}
+              li.string.input.optional.stringish
+                label.label Co-lessee Name: #{@colessee.name}
+              li.string.input.optional.stringish
+                label.label Address: #{@lessee&.home_address&.full_name}
+              li.string.input.optional.stringish
+                label.label Co-address: #{@colessee&.home_address&.full_name}
+              li.string.input.optional.stringish
+                label.label Phone: #{@lessee.home_phone_number}
+              li.string.input.optional.stringish
+                label.label Co-phone: #{@colessee.home_phone_number}
+              li.string.input.optional.stringish
+                label.label Dealership: #{resource.dealership.name}
+              li.string.input.optional.stringish
+                label.label Credit Status: #{resource.credit_status}
+
+          .col-sm-6
+            ol
+              li.string.input.optional.stringish
+                label.label Tier: #{@calculator.credit_tier_v2&.description}
+              // li.string.input.optional.stringish
+                // label.label Score: #{resource.lessee.highest_fico_score || ''}
+              // li.string.input.optional.stringish
+                // label.label Co-Score: #{resource.colessee.highest_fico_score || ''}
+              li.string.input.optional.stringish
+                label.label Make: #{@last_document_request&.asset_make}
+              li.string.input.optional.stringish
+                label.label Model: #{@last_document_request&.asset_model}
+              li.string.input.optional.stringish
+                label.label Year: #{@last_document_request&.asset_year}
+              li.string.input.optional.stringish
+                label.label VIN: #{@last_document_request&.asset_vin}
+              li.string.input.optional.stringish
+                label.label Color: #{@last_document_request&.asset_color&.titleize}
+              li.string.input.optional.stringish
+                label.label Odometer: #{number_with_delimiter(@last_document_request&.exact_odometer_mileage)}
+              li.string.input.optional.stringish
+                label.label Doc Date: #{resource.documents_issued_date}
+  = render partial: 'credit_report_panel'
+  = render partial: 'datax_panel'
+
+  = semantic_form_for [:admins, @lease_calculator], url: :edit_credit_tier_admins_lease_application, method: 'post', builder: ActiveAdmin::FormBuilder do |f|
+    = f.semantic_errors(*f.object.errors.keys)
+    = f.inputs do
+      li.col-sm-12
+        -if @tier_level.present?             
+          h3 class='lessee_credit_score_text_red' Suggested credit tier: #{@tier_level} (must meet all other underwriting guidelines)
+      li.col-sm-1   Credit Tier:
+      li.col-sm-11
+        ol
+          = f.input :credit_tier_id, as: :select, collection: @credit_tiers, include_blank: false, label: false
+      li.col-sm-1   Notes:
+      li.col-sm-11
+        ol
+          = f.input :notes, as: :text, label: 'Notes', input_html: { rows: 1}, label: false
+
+    = f.actions do
+      = f.submit 'Save Credit Tier'

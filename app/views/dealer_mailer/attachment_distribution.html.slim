@@ -1,0 +1,7 @@
+h1 Attachment received for #{@application.application_identifier}
+h3 = @attachment.description rescue ''
+hr
+h3 = link_to 'Click Here to View', @attachment.upload.url
+p For security reasons, this link will expire in three (3) days. Please let us know if you require a new link. 
+p Thank you,
+p Speed Leasing Company

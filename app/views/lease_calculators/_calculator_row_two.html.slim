@@ -1,0 +1,147 @@
+.row.flex-row
+  .col-sm-4
+    = form.inputs do
+      li
+        h4 Monthly Payment
+      = form.input :base_monthly_payment,
+        label: 'Pre-Tax Payment',
+        as: :string,
+        input_html: { readonly: !override_mode }
+      = form.input :monthly_sales_tax,
+        label: 'plus Sales Taxes',
+        as: :string,
+        input_html: { readonly: !override_mode }
+      = form.input :total_monthly_payment,
+        label: 'Total Payment',
+        as: :string,
+        input_html: { readonly: !override_mode }
+      li
+        h4 Funding Basis
+      = form.input :nada_retail_value,
+        label: 'NADA Retail Value',
+        as: :string,
+        input_html: { readonly: !override_mode }
+      = form.input :nada_rough_value,
+        label: 'NADA Rough Value',
+        as: :string,
+        input_html: {readonly: true},
+        wrapper_html: {:style => namespace.eql?(:admins) ?  '' : 'display:none;'}
+      = form.input :customer_purchase_option,
+        label: 'Residual Value (Purchase Option)',
+        as: :string,
+        input_html: { readonly: true }
+      = form.input :adjusted_capitalized_cost,
+        label: 'Adj. Capitalized Cost',
+        as: :string,
+        input_html: { readonly: !override_mode }
+      = form.input :pre_tax_payments_sum,
+        label: 'Sum of All Pre Tax Payments',
+        as: :string,
+        input_html: { readonly: !override_mode },
+        wrapper_html: { :style => 'display:none;', :id => 'pre_tax_payments_sum' }
+      li
+        h4 Speed Leasing Advance Rates
+      = form.input :frontend_max_advance,
+        label: 'Front End Max Advance',
+        as: :string,
+        input_html: { readonly: !override_mode }
+      = form.input :backend_max_advance,
+        label: 'Back End Max Advance',
+        as: :string,
+        input_html: { readonly: !override_mode }
+  .col-sm-4
+    = form.inputs do
+      li
+        h4 Customer Invoice
+      = form.input :dealer_sales_price,
+        label: 'Bike Sale Price',
+        as: :string,
+        input_html: { :readonly => !override_mode }
+      = form.input :dealer_freight_and_setup,
+        label: 'Freight / Prep Fee',
+        as: :string,
+        input_html: { :readonly => !override_mode }
+      = form.input :dealer_documentation_fee,
+        label: 'Documentation Fee',
+        as: :string,
+        input_html: { :readonly => !override_mode }
+      = form.input :title_license_and_lien_fee,
+        label: 'Title, Reg, Lien',
+        as: :string,
+        input_html: { :readonly => !override_mode }
+      = form.input :upfront_tax,
+        label: 'Up-front Sales Tax',
+        as: :string,
+        input_html: { readonly: !override_mode }
+      = form.input :guaranteed_auto_protection_cost,
+        label: 'GAP Insurance',
+        as: :string,
+        input_html: { readonly: !override_mode }
+      = form.input :prepaid_maintenance_cost,
+        label: 'Prepaid Maintenance',
+        as: :string,
+        input_html: { readonly: !override_mode }
+      = form.input :extended_service_contract_cost,
+        label: 'Extended Service Contract',
+        as: :string,
+        input_html: { readonly: !override_mode }
+      = form.input :tire_and_wheel_contract_cost,
+        label: 'Tire & Wheel Warranty',
+        as: :string,
+        input_html: { readonly: !override_mode }
+      = form.input :gps_cost,
+        label: 'GPS',
+        as: :string,
+        input_html: { readonly: !override_mode }
+      = form.input :total_sales_price,
+        label: 'Total Sale Amount',
+        as: :string,
+        input_html: { readonly: !override_mode }
+  .col-sm-4
+    = form.inputs do
+      li.dealer-info
+        h4 Dealer Proceeds
+      = form.input :total_sales_price,
+        as: :string,
+        input_html: { readonly: !override_mode },
+        wrapper_html: { class: 'dealer-info' }
+      - unless @setting&.deactivate_dealer_participation?
+        = form.input :dealer_reserve,
+          label: 'plus Dealer Participation',
+          as: :string,
+          input_html: { readonly: !override_mode },
+          wrapper_html: { class: 'dealer-info' }
+      = form.input :net_trade_in_allowance,
+        label: 'less Net Trade In',
+        as: :string,
+        input_html: { readonly: !override_mode },
+        wrapper_html: { class: 'dealer-info' }
+      = form.input :total_cash_at_signing,
+        label: 'less Cash at Signing',
+        as: :string,
+        input_html: { readonly: !override_mode, class: "cash_at_sign" },
+        wrapper_html: { class: 'dealer-info' }
+      = form.input :remit_to_dealer,
+        label: 'Fund to Dealer',
+        as: :string,
+        input_html: { readonly: !override_mode },
+        wrapper_html: { class: 'dealer-info' }
+      li
+        h4 Fees and Deposits Included
+      = form.input :acquisition_fee,
+        as: :string,
+        input_html: { readonly: !override_mode }
+      = form.input :servicing_fee,
+        as: :string,
+        input_html: { readonly: !override_mode },
+        wrapper_html: { class: 'thizr-servicing-fee' }
+      = form.input :refundable_security_deposit,
+        label: 'Security Deposit',
+        as: :string,
+        input_html: { readonly: !override_mode },
+        wrapper_html: { class: 'thizr-refundable-security-deposit' }
+      = form.input :total_monthly_payment,
+        label: 'First Payment',
+        as: :string,
+        input_html: { readonly: !override_mode }
+

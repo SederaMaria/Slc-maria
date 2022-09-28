@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+	<p><%= "This is notification that Lease Number #{ @application.application_identifier } #{ @application.lessee.name.titleize } has been funded on #{ @application.funded_on } in the amount of #{number_to_currency(@application.lease_calculator&.remit_to_dealer&.to_f - @application.this_deal_dealership_clawback_amount.to_f) }#{@application.lease_calculator&.remit_to_dealer_less_shortfund > 0 ? " (#{number_to_currency(@application.lease_calculator&.remit_to_dealer&.to_f)} minus a shortfund amount of #{number_to_currency(@application.this_deal_dealership_clawback_amount.to_f)})" : ""}!" %></p>
+
+	<p>
+		<%= image_tag(attachments["funded_notification.png"].url) %>     
+	</p>
+
+ 	<p><%= "Thanks for the deal, and we look forward to receiving more!" %></p>
+  
+	<p style='margin-bottom:2em;'><%= "Thank you," %></p>    
+
+	<p><b><span style='font-size:16.0pt;font-variant:small-caps'><%= "Lease Verification Department" %></span></b></p>
+
+	<p><%= "Speed Leasing Company LLC / SLC Trust" %></p>
+
+	<p style='margin-top:0em;margin-bottom:2em;'><span style=' font-weight: bold; color:#34ECA6'>o:</span> <%= "844.390.0717 |"  %> <span style='font-weight: bold; color:#34ECA6'>f:</span><%= "954.773.9818" %></p>
+
+	<p><span style='font-size:8.0pt'><%= "The information contained in this message (including attachments, if any) is confidential. It is intended exclusively for the individual or entity to which it is addressed. This communication may contain information that is proprietary, privileged or confidential. If you are not the named addressee, you are not authorized to read, print, retain, copy, or disseminate this message or any part of it. If you have received this message in error, please notify the sender immediately by e-mail and delete all copies of this message." %></span></p>
+</body>
+</html>

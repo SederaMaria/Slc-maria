@@ -1,0 +1,8 @@
+h1 New reference added for #{@application.application_identifier}
+h3
+  = link_to 'Click Here to View Application', admins_lease_application_url(@application)
+hr
+p Name: #{@reference.full_name rescue ''}
+p Phone: #{@reference.phone_number rescue ''}
+p City: #{@reference.city rescue ''}
+p State: #{@reference.state rescue ''}

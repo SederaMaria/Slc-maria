@@ -1,0 +1,17 @@
+<div id="login">
+  <h2><%= render_or_call_method_or_proc_on(self, active_admin_application.site_title) %> <%= title t('active_admin.devise.password_expired.title') %></h2>
+
+  <%= devise_error_messages! %>
+  <%= active_admin_form_for(resource, as: resource_name, url: [resource_name, :password_expired], html: { method: :put, class: 'password-expired-form' }) do |f|
+    f.inputs do
+      f.input :current_password, label: 'Current Password'
+      f.input :password, label: 'New Password'
+      f.input :password_confirmation, label: 'Confirm New Password'
+    end
+    f.actions do
+      f.action :submit, label: t('active_admin.devise.password_expired.submit'), button_html: { value: t('active_admin.devise.password_expired.submit') }
+    end
+  end %>
+
+  <%= render partial: "active_admin/devise/shared/links" %>
+</div>

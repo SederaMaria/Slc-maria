@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1><%= @application.application_identifier %> is awaiting a credit decision</h1>
+    <h3><%= link_to 'Click Here', [:admins, @application] %> to View This Application</h3>
+    <p>
+      Bike Details:
+    </p>
+    <ol>
+      <li>Model: <%= @lease_details&.asset_model&.upcase %></li>
+      <li>Year: <%= @lease_details&.asset_year %></li>
+      <li>Dealer Sales Price: <%= @lease_details&.dealer_sales_price %></li>
+    </ol>
+    <%if @dealer.present?%>
+      <p>
+        Dealer User Details:
+      </p>
+      <ol>
+        <li>Name: <%= @dealer&.first_name&.upcase %></li>
+        <li>Last Name: <%= @dealer&.last_name&.upcase %></li>
+        <li>Email: <%= @dealer&.email&.upcase %></li>
+      </ol>
+    <%end%>
+    <p>
+      Applicant Details:
+    </p>
+    <ol>
+      <li>Name: <%= @lessee&.name&.upcase %></li>
+      <li>Date of Birth: <%= @lessee&.date_of_birth %></li>
+      <li>Mobile Phone Number: <%= @lessee&.mobile_phone_number %></li>
+      <li>Home Phone Number: <%= @lessee&.home_phone_number %></li>
+      <li>Drivers License ID Number: <%= @lessee&.drivers_license_id_number&.upcase %></li>
+      <li>Drivers License State: <%= @lessee&.drivers_license_state&.upcase %></li>
+      <li>Email Address: <%= @lessee&.email_address&.upcase %></li>
+      <li>Employment Details: <%= @lessee&.employment_details&.upcase %></li>
+      <li>Home Address: <%=  @lessee&.home_address&.full_name&.upcase %></li>
+      <li>Mailing Address: <%=  @lessee&.mailing_address&.full_name&.upcase %></li>
+      <li>Employment Address: <%=  @lessee&.employment_address&.full_name&.upcase %></li>
+    </ol>
+    <% if @colessee.present? %>
+      <p>
+        Coapplicant Details:
+      </p>
+      <ol>
+        <li>Name: <%= @colessee&.name&.upcase %></li>
+        <li>Date of Birth: <%= @colessee&.date_of_birth %></li>
+        <li>Mobile Phone Number: <%= @colessee&.mobile_phone_number %></li>
+        <li>Home Phone Number: <%= @colessee&.home_phone_number %></li>
+        <li>Drivers License ID Number: <%= @colessee&.drivers_license_id_number&.upcase %></li>
+        <li>Drivers Kicense State: <%= @colessee&.drivers_license_state&.upcase %></li>
+        <li>Email Address: <%= @colessee&.email_address&.upcase %></li>
+        <li>Employment Details: <%= @colessee&.employment_details&.upcase %></li>
+        <li>Home Address: <%=  @colessee&.home_address&.full_name&.upcase %></li>
+        <li>Mailing Address: <%=  @colessee&.mailing_address&.full_name&.upcase %></li>
+        <li>Employment Address: <%=  @colessee&.employment_address&.full_name&.upcase %></li>
+      </ol>
+    <% end %>
+
+    <p>Thank you,</p>
+    <p>Speed Leasing Company</p>
+  </body>
+</html>

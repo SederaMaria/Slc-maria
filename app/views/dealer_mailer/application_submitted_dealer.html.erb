@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1><%= @application.application_identifier %> has been submitted</h1>
+    <h3><%= link_to 'Click Here', dealers_lease_application_url(id: @application.id, subdomain: 'dealer') %> to View This Application</h3>
+    <p>
+      Bike Details:
+    </p>
+    <ol>
+      <li>Model: <%= @lease_details&.asset_model&.upcase %></li>
+      <li>Year: <%= @lease_details&.asset_year %></li>
+      <li>Dealer Sales Price: <%= @lease_details&.dealer_sales_price %></li>
+    </ol>
+    <p>
+      Applicant Details:
+    </p>
+    <ol>
+      <li>Name: <%= @lessee&.name&.upcase %></li>
+      <% if @lessee&.mobile_phone_number.present? %>
+        <li>Mobile Phone Number: <%= @lessee&.mobile_phone_number %></li>
+      <% end %>
+      <% if @lessee&.home_phone_number.present? %>
+        <li>Home Phone Number: <%= @lessee&.home_phone_number %></li>
+      <% end %>      
+      <li>Email Address: <%= @lessee&.email_address&.upcase %></li>
+    </ol>
+    <% if @colessee.present? %>
+      <p>
+        Coapplicant Details:
+      </p>
+      <ol>
+        <li>Name: <%= @colessee&.name&.upcase %></li>
+        <li>Mobile Phone Number: <%= @colessee&.mobile_phone_number %></li>
+        <li>Home Phone Number: <%= @colessee&.home_phone_number %></li>
+        <li>Email Address: <%= @colessee&.email_address&.upcase %></li>
+      </ol>
+    <% end %>
+
+    <p>Thank you,</p>
+    <p>Speed Leasing Company</p>
+  </body>
+</html>

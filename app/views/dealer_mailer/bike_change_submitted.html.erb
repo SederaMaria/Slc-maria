@@ -1,0 +1,12 @@
+<h1><%= @application.application_identifier %> Bike Change Submitted.</h1>
+<h3><%= link_to 'Click Here', [:admins, @application] %> to View This Application</h3>
+<p>Dealership Name: <%=@application.dealership.name %></p>
+<p>App ID: <%=@application.application_identifier%></p>
+<p>Applicant Name: <%=@lessee.name %></p>
+<p>Coapplicant Name: <% if @colessee.present? %><%= @colessee.name %><%else%>N/A<%end%></p>
+<p>Original Motorcycle: <%= @original_bike %></p>
+<p>Original Motorcycle NADA Retail: <%= @original_bike_nada_retail%></p>
+<p>Changed to Motorcycle: <%=@lease_details.display_name %></p>
+<p>Changed to Motorcycle NADA Retail: <%=@lease_details.nada_retail_value&.to_s%></p>
+<p>Thank you,</p>
+<p>Speed Leasing Company</p>

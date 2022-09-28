@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://us-street.api.smartystreets.com/street-address?auth-id=9659c733-71f5-eb2c-c1e2-7dd437beec97&auth-token=eQ7GolvBrXz4fv6JMbxx
+    body:
+      encoding: UTF-8
+      string: '[{"street":"some 1","street2":null,"secondary":null,"city":"invalid
+        1","state":"address 1","zipcode":"30303","lastline":null,"addressee":null,"urbanization":null,"match":null,"candidates":1},{"street":"some
+        2","street2":null,"secondary":null,"city":"invalid 2","state":"address 2","zipcode":"30303","lastline":null,"addressee":null,"urbanization":null,"match":null,"candidates":1},{"street":"some
+        3","street2":null,"secondary":null,"city":"invalid 3","state":"address 3","zipcode":"30305","lastline":null,"addressee":null,"urbanization":null,"match":null,"candidates":1}]'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - smartystreets (sdk:ruby@3.0.0)
+      Host:
+      - us-street.api.smartystreets.com
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 14 Jul 2017 17:05:23 GMT
+      Content-Length:
+      - '3'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: "[]\n"
+    http_version: 
+  recorded_at: Fri, 14 Jul 2017 17:05:24 GMT
+recorded_with: VCR 3.0.3

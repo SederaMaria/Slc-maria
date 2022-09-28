@@ -1,0 +1,29 @@
+panel("Welcome Call History") do
+      table_for(lease_application.lease_application_welcome_calls.order("created_at DESC")) do
+        column 'Status' do |calls|
+          calls&.welcome_call_status&.description
+        end
+        
+        column 'Type' do |calls|
+          calls&.welcome_call_type&.description
+        end
+        
+        column 'Result' do |calls|
+          calls&.welcome_call_result&.description
+        end
+
+        column 'Representative' do |calls|
+          "#{calls&.admin_user&.first_name} #{calls&.admin_user&.last_name}"
+        end
+
+
+        column 'Date and Time' do |calls|
+          calls.created_at.strftime('%e %b %Y %H:%M:%S%p')
+        end
+        
+        column 'Action' do |calls|
+          link_to 'View', admins_lease_application_welcome_call_path(calls.id)
+        end
+        
+      end
+    end

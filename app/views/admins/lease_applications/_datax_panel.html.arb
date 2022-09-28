@@ -1,0 +1,24 @@
+panel("Blackbox") do
+      table_for(lease_application.lease_application_blackbox_requests.order(created_at: :desc)) do
+        column 'Decision' do |datax|
+          "#{datax.leadrouter_response["decision"]} #{datax&.lessee&.first_name} #{datax&.lessee&.last_name}"
+        end
+        
+        column 'Credit Score' do |datax|
+          datax.leadrouter_credit_score if !datax&.leadrouter_credit_score.nil?
+        end
+        column 'SUGGESTED CORRECTIONS' do |datax|
+          datax.leadrouter_suggested_corrections if !datax&.leadrouter_suggested_corrections.empty? rescue ''
+        end
+
+        column 'Recommended Credit Tier' do |datax|
+          datax&.recommended_credit_tier&.credit_tier&.description
+        end
+
+        column 'Type' do |datax|
+          datax&.blackbox_endpoint&.sub!("-"," ")&.titleize
+        end    
+
+        column :created_at
+      end
+    end

@@ -1,0 +1,93 @@
+- years = Make.all.map{|a| [a.name, a.application_setting&.model_year_range_descending&.to_a || [] ]}
+- make = Make.where(name: form.object&.asset_make).first || Make.where(id: form.object&.asset_make).first
+- model_years = ModelYear.all.pluck(:year).uniq
+- #filter modelyears with no motorbikes
+- invalid_years = make&.application_setting&.model_year_range_descending.to_a.difference(model_years)
+- valid_years = (model_years - invalid_years).sort.reverse
+li
+  h4 Motorcycle
+  = form.input :new_used,
+    as: :select,
+    label: 'New/Used',
+    collection: ["New", "Used"],
+    "required": true,
+    input_html: {value: form.object.new_used, disabled: (preview_mode || override_mode), "data-calculator-input": "new_used", "data-calculation-prerequisite": true, class: "select2-input select2-hidden-accessible update_calculator"}
+
+  = form.input :asset_make,
+    as: :select,
+    label: 'Make',
+    include_blank: true,
+    collection: Make.active.pluck(:name, :name), selected: make&.name,
+    input_html: { disabled: (preview_mode || override_mode), "data-calculator-input": "asset_make", "data-calculation-prerequisite": true, class: "select2-input select2-hidden-accessible update_calculator" }
+  = form.input :asset_year,
+    as: :select,
+    collection: valid_years || [],
+    selected: form.object.asset_year,
+    label: 'Year',
+    input_html: { disabled: (preview_mode || override_mode), "data-calculator-input": "asset_year", "data-calculation-prerequisite": true, class: "select2-input select2-hidden-accessible update_calculator" }
+  = form.input :asset_model,
+    label: 'Model',
+    as: :select,
+    collection: model_years_for_make_and_year_for_select(asset_make: form.object.asset_make, asset_year: form.object.asset_year) || [],
+    selected: form.object.asset_model,
+    input_html: { disabled: (preview_mode || override_mode), "data-calculator-input": "asset_model", "data-calculation-prerequisite": true, class: "select2-input select2-hidden-accessible update_calculator" }
+  = form.input :mileage_tier,
+    as: :select,
+    label: 'Mileage Range',
+    collection: mileage_tier_collection(with_tier: form.object.mileage_tier),
+    input_html: { disabled: (preview_mode || override_mode), "data-calculator-input": "mileage_tier", "data-calculation-prerequisite": true, class: "select2-input select2-hidden-accessible update_calculator" }
+
+li
+  h4 Credit Tier
+  - if @bike_change == true
+    li.select.input.optional
+      = form.label :credit_tier, class: :label
+      p= form.object.credit_tier_v2&.description
+    = form.input :credit_tier_id,
+            as: :select,
+            include_blank: true,
+            collection: CreditTier.where(make_id: make&.id, model_group_id: @lease_calculator.model_group_record&.id).order(:position).pluck(:description, :id),
+            input_html: { "data-saved-credit-tier-level": @credit_tier, "data-calculator-input": "credit_tier_id", "data-calculation-prerequisite": true, class: 'update_calculator'},
+            wrapper_html: { class: "hidden" }
+  - else
+    - la = form.object.lease_application
+    - preview_mode = (la.submitted_at.present? ? true : preview_mode)
+    = form.input :credit_tier_id,
+            as: :select,
+            include_blank: true,
+            collection: CreditTier.where(make_id: make&.id, model_group_id: @lease_calculator.model_group_record&.id).order(:position).pluck(:description, :id),
+            input_html: {"data-saved-credit-tier-level": @credit_tier, "data-calculator-input": "credit_tier_id", "data-calculation-prerequisite": true, class: "select2-input select2-hidden-accessible update_calculator"},
+            wrapper_html: {class: 'credit_tier_select'}
+            
+javascript:
+  $(function(){
+    var make = $('#lease_calculator_asset_make')
+    make.on('change', function(){
+      preload_year()
+    })
+
+    var asset_year = $('#lease_calculator_asset_year')
+    
+    function preload_year(){
+      var make_id = make.val()
+      
+      if(!make_id)
+        return;
+
+      $("#lease_calculator_asset_year option").remove()
+      var years = #{raw years}
+      var model_years = #{raw model_years}
+
+
+      var make_years =  years.filter(a => a[0] == make_id.toString())[0][1]
+      $('#lease_calculator_asset_year').append($("<option></option>").text("Select Year"));
+      $.each(make_years, function(key, value) {   
+       if(model_years.includes(value))
+        $('#lease_calculator_asset_year')
+            .append($("<option></option>")
+                        .attr("value",value)
+                        .text(value)); 
+      });
+    }
+  })
+  

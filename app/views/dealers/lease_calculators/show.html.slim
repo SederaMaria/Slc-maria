@@ -1,0 +1,4 @@
+- @lease_calculator ||= lease_calculator
+form.formtastic.lease_calculator
+  = render partial: 'lease_calculators/calculator_data_one', locals: { calculator: @lease_calculator }
+  = render partial: 'lease_calculators/calculator_data_two', locals: { calculator: @lease_calculator }

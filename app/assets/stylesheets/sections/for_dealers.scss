@@ -1,0 +1,27 @@
+#for-dealers {
+  .description {
+    font-size: 1.4rem;
+    font-weight: 200;
+    opacity: 0.6;
+  }
+
+  .testimonials {
+    margin-top: 25px;
+    font-size: 1.4rem;
+    font-weight: 200;
+    opacity: 0.6;
+  }
+
+}
+
+
+@media screen and (min-width: 992px) {
+  #hand-image {
+    min-height: 600px;
+    padding-top: 40%;
+    background-image: url(asset-path('hand.png'));
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}

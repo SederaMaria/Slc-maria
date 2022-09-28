@@ -1,0 +1,44 @@
+{
+    "nadaGroup": [
+        {
+            "modelName": "XG500 Street",
+            "modelGroup": "Cruisers",
+            "year": 2019,
+            "msrp": 7399.0,
+            "averageRetail": 6420.0,
+            "roughTradeIn": 4395.0,
+            "cleanTradeIn": 5150.0,
+            "effectiveStartDate": "2020-07-01",
+            "effectiveEndDate": "2020-08-31",
+            "nadaModelID": "4024931",
+            "nadaVersionID": 160
+        },        
+        {
+            "modelName": "XG500 Street",
+            "modelGroup": "Cruisers",
+            "year": 2020,
+            "msrp": 7399.0,
+            "averageRetail": 6420.0,
+            "roughTradeIn": 4395.0,
+            "cleanTradeIn": 5150.0,
+            "effectiveStartDate": "2020-07-01",
+            "effectiveEndDate": "2020-08-31",
+            "nadaModelID": "4024931",
+            "nadaVersionID": 160
+        },
+        {
+            "modelName": "FLTRXSE CVO Road Glide",
+            "modelGroup": "Touring",
+            "year": 2020,
+            "msrp": 41199.0,
+            "averageRetail": 40785.0,
+            "roughTradeIn": 28550.0,
+            "cleanTradeIn": 33035.0,
+            "effectiveStartDate": "2020-07-01",
+            "effectiveEndDate": "2020-08-31",
+            "nadaModelID": "4028034",
+            "nadaVersionID": 160
+        }
+    ],
+    "errorDetails": null
+}

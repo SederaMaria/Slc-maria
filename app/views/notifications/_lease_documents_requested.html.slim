@@ -1,0 +1,2 @@
+= render 'notifications/notification_wrapper', notification: notification do
+  span.content Lease Documents Requested for Application #{notification.notifiable&.decorate&.application_identifier} by #{notification.notifiable&.dealership&.name}

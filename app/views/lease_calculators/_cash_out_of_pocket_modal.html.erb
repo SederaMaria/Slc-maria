@@ -1,0 +1,10 @@
+<li class="string input optional stringish">
+  <span class="action_item">
+	<% if params[:controller] == "admins/lease_calculators" %>
+		<%=link_to 'Cash Out of Pocket Helper', cash_out_of_pocket_helper_admins_lease_calculators_path, class: 'fancybox cash_out_of_pocket ', data: { 'fancybox-type' => 'ajax' }%>
+	<% else %>
+		<%=link_to 'Cash Out of Pocket Helper', cash_out_of_pocket_helper_dealers_lease_calculators_path, class: 'fancybox cash_out_of_pocket ', data: { 'fancybox-type' => 'ajax' }%>
+	<% end %>
+ </button>
+  </span>
+</li>

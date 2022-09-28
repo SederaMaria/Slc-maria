@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<RESPONSE_GROUP MISMOVersionID="2.3.1" _ID="RGRept000001">
+    <RESPONDING_PARTY _Name="CoreLogic Credco" _StreetAddress="P.O. BOX 509124" _StreetAddress2="" _City="SAN DIEGO" _State="CA" _PostalCode="92150">
+        <CONTACT_DETAIL>
+            <CONTACT_POINT _Type="Phone" _Value="800 986 4343"/>
+            <CONTACT_POINT _Type="Fax" _Value="800 237 6526"/>
+        </CONTACT_DETAIL>
+    </RESPONDING_PARTY>
+    <RESPOND_TO_PARTY _Name="F3EA SERVICING LLC - TEST ACCT" _StreetAddress="10277 SCRIPPS RANCH BLVD" _City="SAN DIEGO" _State="CA" _PostalCode="92117">
+        <CONTACT_DETAIL _Name="BRIAN CRAMER">
+            <CONTACT_POINT _Type="Phone" _Value="4043764434" _PreferenceIndicator="Y"/>
+            <CONTACT_POINT _Type="Fax" _Value="0000000000" _PreferenceIndicator="Y"/>
+            <CONTACT_POINT _Type="Email" _Value="BRIANC@SPEEDLEASING.CO" _PreferenceIndicator="Y"/>
+        </CONTACT_DETAIL>
+    </RESPOND_TO_PARTY>
+    <RESPONSE _ID="REQRept000001" ResponseDateTime="2017-08-09T12:08:47.035-07:00" InternalAccountIdentifier="4480464">
+        <RESPONSE_DATA>
+            <CREDIT_RESPONSE MISMOVersionID="2.3.1" CreditReportMergeType="Blend" CreditRatingCodeType="Other" CreditRatingCodeTypeOtherDescription="CREDCO" CreditResponseID="CRRept2147483591001" CreditReportType="Merge" CreditReportIdentifier="112159128410000" CreditReportTransactionIdentifier="11215912841" CreditReportFirstIssuedDate="2017-08-09T12:08:47.099-07:00" CreditReportLastUpdatedDate="2017-08-09T12:08:47.035-07:00">
+                <CREDIT_BUREAU _Name="CoreLogic Credco" _StreetAddress="P.O. BOX 509124" _StreetAddress2="" _City="SAN DIEGO" _State="CA" _PostalCode="92150">
+                    <CONTACT_DETAIL>
+                        <CONTACT_POINT _Type="Phone" _RoleType="Work" _PreferenceIndicator="Y" _Value="800 986 4343"/>
+                        <CONTACT_POINT _Type="Fax" _RoleType="Work" _PreferenceIndicator="N" _Value="800 237 6526"/>
+                    </CONTACT_DETAIL>
+                </CREDIT_BUREAU>
+                <CREDIT_REPORT_PRICE _Type="Other" _TypeOtherDescription="Not Available"/>
+                <CREDIT_REPOSITORY_INCLUDED _EquifaxIndicator="N" _ExperianIndicator="Y" _TransUnionIndicator="Y" _OtherRepositoryName="Credco"/>
+                <REQUESTING_PARTY InternalAccountIdentifier="4480464"/>
+                <CREDIT_REQUEST_DATA BorrowerID="Borrower" CreditReportIdentifier="" CreditReportRequestActionType="Submit" CreditRequestType="Individual">
+                    <CREDIT_REPOSITORY_INCLUDED _EquifaxIndicator="N" _ExperianIndicator="Y" _TransUnionIndicator="Y"/>
+                </CREDIT_REQUEST_DATA>
+                <CREDIT_ERROR_MESSAGE _Code="E999">
+                    <_Text>Other Error</_Text>
+                    <_Text>Data unavailable for Product IDIndex for Borrower</_Text>
+                </CREDIT_ERROR_MESSAGE>
+                <BORROWER BorrowerID="Borrower" _PrintPositionType="Borrower" _FirstName="TODD" _LastName="TESTCO" _SSN="000-61-XXXX">
+                    <_RESIDENCE _StreetAddress="11 PRINCETON AV" _City="TRENTON" _State="NJ" _PostalCode="08848" BorrowerResidencyType="Current">
+                        <PARSED_STREET_ADDRESS _StreetName="11 PRINCETON AV"/>
+                    </_RESIDENCE>
+                </BORROWER>
+                <CREDIT_LIABILITY CreditLiabilityID="CRLiab021019" BorrowerID="Borrower" CreditFileID="CRFilXPN000001" _AccountOpenedDate="2016-01-15" _AccountOwnershipType="Individual" _AccountReportedDate="2017-06-15" _AccountBalanceDate="2017-06-15" _AccountStatusDate="2016-01-15" _AccountStatusType="Open" _AccountType="Mortgage" _CollateralDescription="FRD038962101" _ConsumerDisputeIndicator="N" _DerogatoryDataIndicator="N" _HighBalanceAmount="64000" _LastActivityDate="2017-06-15" _MonthlyPaymentAmount="918" _MonthsRemainingCount="343" _MonthsReviewedCount="18" _PastDueAmount="0" _TermsDescription="Monthly" _TermsMonthsCount="360" _TermsSourceType="Provided" _UnpaidBalanceAmount="63215" CreditBusinessType="Finance" CreditCounselingIndicator="N" CreditLoanType="ConventionalRealEstateMortgage">
+                    <_CREDITOR _Name="WELLS FARGO HOME MORTG"/>
+                    <_CURRENT_RATING _Code="1" _Type="AsAgreed"/>
+                    <_LATE_COUNT _30Days="00" _60Days="00" _90Days="00"/>
+                    <_PAYMENT_PATTERN _Data="CCCCCXCCCCCCCCCCCC" _StartDate="2017-06-15"/>
+                    <CREDIT_REPOSITORY _SourceType="Experian" _SubscriberCode="FM2990858"/>
+                    <CREDIT_REPOSITORY _SourceType="TransUnion" _SubscriberCode="B082TE002"/>
+                </CREDIT_LIABILITY>
+                <CREDIT_LIABILITY CreditLiabilityID="CRLiab021027" BorrowerID="Borrower" CreditFileID="CRFilXPN000001" _AccountOpenedDate="2012-06-15" _AccountOwnershipType="Individual" _AccountReportedDate="2017-04-15" _AccountBalanceDate="2017-04-15" _AccountStatusDate="2012-06-15" _AccountStatusType="Open" _AccountType="Revolving" _ConsumerDisputeIndicator="N" _CreditLimitAmount="10000" _DerogatoryDataIndicator="N" _HighCreditAmount="4842" _LastActivityDate="2017-04-15" _MonthlyPaymentAmount="74" _MonthsReviewedCount="47" _PastDueAmount="0" _TermsDescription="Monthly" _TermsMonthsCount="0" _TermsSourceType="Provided" _UnpaidBalanceAmount="4441" CreditBusinessType="Banking" CreditCounselingIndicator="N" CreditLoanType="CreditCard">
+                    <_CREDITOR _Name="HHLD BANK"/>
+                    <_CURRENT_RATING _Code="1" _Type="AsAgreed"/>
+                    <_LATE_COUNT _30Days="00" _60Days="00" _90Days="00"/>
+                    <_PAYMENT_PATTERN _Data="CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCXXXX" _StartDate="2017-04-15"/>
+                    <CREDIT_REPOSITORY _SourceType="Experian" _SubscriberCode="BC3200714"/>
+                    <CREDIT_REPOSITORY _SourceType="TransUnion" _SubscriberCode="B07991189"/>
+                </CREDIT_LIABILITY>
+                <CREDIT_LIABILITY CreditLiabilityID="CRLiab021022" BorrowerID="Borrower" CreditFileID="CRFilXPN000001" _AccountOpenedDate="2016-11-15" _AccountOwnershipType="Individual" _AccountReportedDate="2017-06-15" _AccountBalanceDate="2017-06-15" _AccountStatusDate="2016-11-15" _AccountStatusType="Open" _AccountType="Revolving" _ConsumerDisputeIndicator="N" _CreditLimitAmount="2000" _DerogatoryDataIndicator="N" _HighCreditAmount="2000" _LastActivityDate="2017-05-15" _MonthlyPaymentAmount="36" _MonthsReviewedCount="8" _PastDueAmount="0" _TermsDescription="Monthly" _TermsMonthsCount="0" _TermsSourceType="Provided" _UnpaidBalanceAmount="1230" CreditBusinessType="Banking" CreditCounselingIndicator="N" CreditLoanType="ChargeAccount">
+                    <_CREDITOR _Name="GECCCC/JEWELRY ACCENTS"/>
+                    <_CURRENT_RATING _Code="1" _Type="AsAgreed"/>
+                    <_LATE_COUNT _30Days="00" _60Days="00" _90Days="00"/>
+                    <_PAYMENT_PATTERN _Data="CCCCCCCX" _StartDate="2017-06-15"/>
+                    <CREDIT_REPOSITORY _SourceType="Experian" _SubscriberCode="BC1226230"/>
+                    <CREDIT_REPOSITORY _SourceType="TransUnion" _SubscriberCode="J09992199"/>
+                </CREDIT_LIABILITY>
+                <CREDIT_LIABILITY CreditLiabilityID="CRLiab021020" BorrowerID="Borrower" CreditFileID="CRFilXPN000001" _AccountOpenedDate="2012-01-15" _AccountOwnershipType="AuthorizedUser" _AccountReportedDate="2017-06-15" _AccountBalanceDate="2017-06-15" _AccountStatusDate="2012-01-15" _AccountStatusType="Open" _AccountType="Revolving" _ConsumerDisputeIndicator="N" _CreditLimitAmount="16500" _DerogatoryDataIndicator="N" _HighCreditAmount="12500" _LastActivityDate="2017-05-15" _MonthlyPaymentAmount="10" _MonthsReviewedCount="25" _TermsDescription="Monthly" _TermsMonthsCount="0" _TermsSourceType="Provided" _UnpaidBalanceAmount="228" CreditBusinessType="Banking" CreditCounselingIndicator="N" CreditLoanType="CreditCard">
+                    <_CREDITOR _Name="FIRST USA BANK N A"/>
+                    <_CURRENT_RATING _Code="1" _Type="AsAgreed"/>
+                    <_LATE_COUNT _30Days="00" _60Days="00" _90Days="00"/>
+                    <_PAYMENT_PATTERN _Data="CCCCCCCCCCCCCCCCCCCCCCCCC" _StartDate="2017-06-15"/>
+                    <CREDIT_COMMENT _Code="410" _SourceType="CreditBureau" _Type="BureauRemarks">
+                        <_Text>AUTHORIZED USER ACCOUNT</_Text>
+                    </CREDIT_COMMENT>
+                    <CREDIT_REPOSITORY _SourceType="Experian" _SubscriberCode="BC1260958"/>
+                </CREDIT_LIABILITY>
+                <CREDIT_LIABILITY CreditLiabilityID="CRLiab031005" BorrowerID="Borrower" CreditFileID="CRFilTUC000002" _AccountOpenedDate="2007-02-15" _AccountOwnershipType="Individual" _AccountReportedDate="2017-06-15" _AccountBalanceDate="2017-06-15" _AccountStatusDate="2007-02-15" _AccountStatusType="Open" _AccountType="Revolving" _ConsumerDisputeIndicator="N" _CreditLimitAmount="2000" _DerogatoryDataIndicator="N" _HighCreditAmount="219" _LastActivityDate="2017-05-15" _MonthlyPaymentAmount="10" _MonthsReviewedCount="15" _PastDueAmount="0" _TermsDescription="Monthly" _TermsSourceType="Provided" _UnpaidBalanceAmount="37" CreditBusinessType="Banking" CreditCounselingIndicator="N" CreditLoanType="CreditCard">
+                    <_CREDITOR _Name="CITI-TEXACO"/>
+                    <_CURRENT_RATING _Code="1" _Type="AsAgreed"/>
+                    <_LATE_COUNT _30Days="00" _60Days="00" _90Days="00"/>
+                    <_PAYMENT_PATTERN _Data="CCCCCCCCCCCCCCC" _StartDate="2017-06-15"/>
+                    <CREDIT_REPOSITORY _SourceType="TransUnion" _SubscriberCode="B0282E024"/>
+                </CREDIT_LIABILITY>
+                <CREDIT_LIABILITY CreditLiabilityID="CRLiab031006" BorrowerID="Borrower" CreditFileID="CRFilTUC000002" _AccountOpenedDate="2012-02-15" _AccountOwnershipType="Individual" _AccountReportedDate="2017-06-15" _AccountBalanceDate="2017-06-15" _AccountStatusDate="2012-02-15" _AccountStatusType="Open" _AccountType="Revolving" _ConsumerDisputeIndicator="N" _CreditLimitAmount="1500" _DerogatoryDataIndicator="N" _HighCreditAmount="17" _LastActivityDate="2017-05-15" _MonthlyPaymentAmount="10" _MonthsReviewedCount="14" _PastDueAmount="0" _TermsDescription="Monthly" _TermsSourceType="Provided" _UnpaidBalanceAmount="17" CreditBusinessType="Banking" CreditCounselingIndicator="N" CreditLoanType="CreditCard">
+                    <_CREDITOR _Name="CITI-BP OIL"/>
+                    <_CURRENT_RATING _Code="1" _Type="AsAgreed"/>
+                    <_LATE_COUNT _30Days="00" _60Days="00" _90Days="00"/>
+                    <_PAYMENT_PATTERN _Data="CCCCCCCCCCCCCC" _StartDate="2017-06-15"/>
+                    <CREDIT_REPOSITORY _SourceType="TransUnion" _SubscriberCode="B0282E025"/>
+                </CREDIT_LIABILITY>
+                <CREDIT_LIABILITY CreditLiabilityID="CRLiab021024" BorrowerID="Borrower" CreditFileID="CRFilXPN000001" _AccountOpenedDate="2016-09-15" _AccountOwnershipType="Individual" _AccountPaidDate="2017-01-15" _AccountReportedDate="2017-05-15" _AccountBalanceDate="2017-05-15" _AccountStatusDate="2017-01-15" _AccountStatusType="Paid" _AccountType="Revolving" _ConsumerDisputeIndicator="N" _CreditLimitAmount="102" _DerogatoryDataIndicator="N" _HighCreditAmount="102" _LastActivityDate="2017-01-15" _MonthlyPaymentAmount="0" _MonthsReviewedCount="9" _PastDueAmount="0" _TermsDescription="Unspecified" _TermsMonthsCount="0" _UnpaidBalanceAmount="0" CreditBusinessType="MiscellaneousAndPublicRecord" CreditCounselingIndicator="N" CreditLoanType="ChargeAccount">
+                    <_CREDITOR _Name="BOSCOVS DEPT STORE"/>
+                    <_CURRENT_RATING _Code="1" _Type="AsAgreed"/>
+                    <_LATE_COUNT _30Days="00" _60Days="00" _90Days="00"/>
+                    <_PAYMENT_PATTERN _Data="CCCCCCCCC" _StartDate="2017-05-15"/>
+                    <CREDIT_REPOSITORY _SourceType="Experian" _SubscriberCode="ZR1362760"/>
+                    <CREDIT_REPOSITORY _SourceType="TransUnion" _SubscriberCode="D0160Q001"/>
+                </CREDIT_LIABILITY>
+                <CREDIT_LIABILITY CreditLiabilityID="CRLiab021021" BorrowerID="Borrower" CreditFileID="CRFilXPN000001" _AccountOpenedDate="2011-01-15" _AccountOwnershipType="Individual" _AccountPaidDate="2015-03-15" _AccountReportedDate="2017-06-15" _AccountBalanceDate="2017-06-15" _AccountStatusDate="2015-03-15" _AccountStatusType="Paid" _AccountType="CreditLine" _ConsumerDisputeIndicator="N" _CreditLimitAmount="4500" _DerogatoryDataIndicator="N" _HighCreditAmount="1038" _LastActivityDate="2015-03-15" _MonthlyPaymentAmount="0" _MonthsReviewedCount="61" _PastDueAmount="0" _TermsDescription="Unspecified" _TermsMonthsCount="0" _UnpaidBalanceAmount="0" CreditBusinessType="Banking" CreditCounselingIndicator="N" CreditLoanType="CheckCreditOrLineOfCredit">
+                    <_CREDITOR _Name="FLEET BANK NATIONAL AS"/>
+                    <_CURRENT_RATING _Code="1" _Type="AsAgreed"/>
+                    <_LATE_COUNT _30Days="00" _60Days="00" _90Days="00"/>
+                    <_PAYMENT_PATTERN _Data="CCXCCCCCCCCCCCCCCCCCCCCCCXCCCXXXXCXCCCXCCCCCCCCCCCCCCCCCCCCCC" _StartDate="2017-06-15"/>
+                    <CREDIT_REPOSITORY _SourceType="Experian" _SubscriberCode="BB1103100"/>
+                    <CREDIT_REPOSITORY _SourceType="TransUnion" _SubscriberCode="B03805115"/>
+                </CREDIT_LIABILITY>
+                <CREDIT_LIABILITY CreditLiabilityID="CRLiab031025" BorrowerID="Borrower" CreditFileID="CRFilTUC000002" _AccountOpenedDate="2009-09-15" _AccountOwnershipType="Individual" _AccountPaidDate="2010-07-15" _AccountReportedDate="2010-07-15" _AccountBalanceDate="2010-07-15" _AccountStatusDate="2010-07-15" _AccountStatusType="Paid" _AccountType="Revolving" _ConsumerDisputeIndicator="N" _DerogatoryDataIndicator="N" _HighCreditAmount="5000" _MonthlyPaymentAmount="0" _MonthsReviewedCount="1" _PastDueAmount="0" _TermsDescription="Unspecified" _TermsMonthsCount="0" _UnpaidBalanceAmount="0" CreditCounselingIndicator="N" CreditLoanType="UnknownLoanType">
+                    <_CREDITOR _Name="IRCO FCU"/>
+                    <_CURRENT_RATING _Code="1" _Type="AsAgreed"/>
+                    <_LATE_COUNT _30Days="00" _60Days="00" _90Days="00"/>
+                    <_PAYMENT_PATTERN _Data="C" _StartDate="2010-07-15"/>
+                    <CREDIT_REPOSITORY _SourceType="TransUnion" _SubscriberCode="Q06732001"/>
+                </CREDIT_LIABILITY>
+                <CREDIT_LIABILITY CreditLiabilityID="CRLiab031017" BorrowerID="Borrower" CreditFileID="CRFilTUC000002" _AccountOpenedDate="2011-11-15" _AccountOwnershipType="Individual" _AccountPaidDate="2012-02-15" _AccountReportedDate="2016-11-15" _AccountBalanceDate="2016-11-15" _AccountStatusDate="2012-02-15" _AccountStatusType="Paid" _AccountType="Revolving" _ConsumerDisputeIndicator="N" _CreditLimitAmount="0" _DerogatoryDataIndicator="N" _HighCreditAmount="438" _LastActivityDate="2012-02-15" _MonthlyPaymentAmount="0" _MonthsReviewedCount="5" _PastDueAmount="0" _TermsDescription="Unspecified" _TermsMonthsCount="0" _UnpaidBalanceAmount="0" CreditBusinessType="DepartmentAndMailOrder" CreditCounselingIndicator="N" CreditLoanType="ChargeAccount">
+                    <_CREDITOR _Name="MACYS/STERN"/>
+                    <_CURRENT_RATING _Code="1" _Type="AsAgreed"/>
+                    <_LATE_COUNT _30Days="00" _60Days="00" _90Days="00"/>
+                    <_PAYMENT_PATTERN _Data="CCCCC" _StartDate="2016-11-15"/>
+                    <CREDIT_REPOSITORY _SourceType="TransUnion" _SubscriberCode="D0912Q001"/>
+                </CREDIT_LIABILITY>
+                <CREDIT_LIABILITY CreditLiabilityID="CRLiab021023" BorrowerID="Borrower" CreditFileID="CRFilXPN000001" _AccountOpenedDate="2016-11-15" _AccountOwnershipType="Individual" _AccountReportedDate="2017-06-15" _AccountBalanceDate="2017-06-15" _AccountStatusDate="2016-11-15" _AccountStatusType="Open" _AccountType="Revolving" _ConsumerDisputeIndicator="N" _CreditLimitAmount="7500" _DerogatoryDataIndicator="N" _HighCreditAmount="0" _MonthlyPaymentAmount="0" _MonthsReviewedCount="8" _PastDueAmount="0" _TermsDescription="Unspecified" _TermsMonthsCount="0" _UnpaidBalanceAmount="0" CreditBusinessType="DepartmentAndMailOrder" CreditCounselingIndicator="N" CreditLoanType="ChargeAccount">
+                    <_CREDITOR _Name="MBGA/JC PENNEY"/>
+                    <_CURRENT_RATING _Code="1" _Type="AsAgreed"/>
+                    <_LATE_COUNT _30Days="00" _60Days="00" _90Days="00"/>
+                    <_PAYMENT_PATTERN _Data="CCCCCCCX" _StartDate="2017-06-15"/>
+                    <CREDIT_REPOSITORY _SourceType="Experian" _SubscriberCode="DC3321860"/>
+                    <CREDIT_REPOSITORY _SourceType="TransUnion" _SubscriberCode="D01972188"/>
+                </CREDIT_LIABILITY>
+                <CREDIT_LIABILITY CreditLiabilityID="CRLiab021025" BorrowerID="Borrower" CreditFileID="CRFilXPN000001" _AccountOpenedDate="2007-11-15" _AccountOwnershipType="Individual" _AccountReportedDate="2017-05-15" _AccountBalanceDate="2017-05-15" _AccountStatusDate="2007-11-15" _AccountStatusType="Open" _AccountType="Revolving" _ConsumerDisputeIndicator="N" _CreditLimitAmount="600" _DerogatoryDataIndicator="N" _HighCreditAmount="213" _LastActivityDate="2013-10-15" _MonthlyPaymentAmount="0" _MonthsReviewedCount="49" _PastDueAmount="0" _TermsDescription="Unspecified" _TermsMonthsCount="0" _UnpaidBalanceAmount="0" CreditBusinessType="DepartmentAndMailOrder" CreditCounselingIndicator="N" CreditLoanType="ChargeAccount">
+                    <_CREDITOR _Name="MBGA/JC PENNEY"/>
+                    <_CURRENT_RATING _Code="1" _Type="AsAgreed"/>
+                    <_LATE_COUNT _30Days="00" _60Days="00" _90Days="00"/>
+                    <_PAYMENT_PATTERN _Data="CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCXXXXXXXXCCXXX" _StartDate="2017-05-15"/>
+                    <CREDIT_REPOSITORY _SourceType="Experian" _SubscriberCode="DC3321860"/>
+                    <CREDIT_REPOSITORY _SourceType="TransUnion" _SubscriberCode="D01972157"/>
+                </CREDIT_LIABILITY>
+                <CREDIT_LIABILITY CreditLiabilityID="CRLiab021028" BorrowerID="Borrower" CreditFileID="CRFilXPN000001" _AccountOpenedDate="2011-11-15" _AccountOwnershipType="Individual" _AccountPaidDate="2012-02-15" _AccountReportedDate="2017-04-15" _AccountBalanceDate="2017-04-15" _AccountStatusDate="2012-02-15" _AccountStatusType="Paid" _AccountType="Revolving" _ConsumerDisputeIndicator="N" _CreditLimitAmount="600" _DerogatoryDataIndicator="N" _HighCreditAmount="438" _LastActivityDate="2012-02-15" _MonthlyPaymentAmount="0" _MonthsReviewedCount="30" _PastDueAmount="0" _TermsDescription="Unspecified" _TermsMonthsCount="0" _UnpaidBalanceAmount="0" CreditBusinessType="DepartmentAndMailOrder" CreditCounselingIndicator="N" CreditLoanType="ChargeAccount">
+                    <_CREDITOR _Name="STERNS/MACYS/FDSB"/>
+                    <_CURRENT_RATING _Code="1" _Type="AsAgreed"/>
+                    <_LATE_COUNT _30Days="00" _60Days="00" _90Days="00"/>
+                    <_PAYMENT_PATTERN _Data="CCCCCCCCCCCCCCCCCCCCCCCCCCCCCC" _StartDate="2017-04-15"/>
+                    <CREDIT_REPOSITORY _SourceType="TransUnion" _SubscriberCode="D0912Q001"/>
+                    <CREDIT_REPOSITORY _SourceType="Experian" _SubscriberCode="ZR1390036"/>
+                </CREDIT_LIABILITY>
+                <CREDIT_LIABILITY CreditLiabilityID="CRLiab021026" BorrowerID="Borrower" CreditFileID="CRFilXPN000001" _AccountOpenedDate="2013-11-15" _AccountOwnershipType="Individual" _AccountPaidDate="2013-11-15" _AccountReportedDate="2017-05-15" _AccountBalanceDate="2017-05-15" _AccountStatusDate="2013-11-15" _AccountStatusType="Paid" _AccountType="Revolving" _ConsumerDisputeIndicator="N" _CreditLimitAmount="1000" _DerogatoryDataIndicator="N" _HighCreditAmount="10" _LastActivityDate="2013-11-15" _MonthlyPaymentAmount="0" _MonthsReviewedCount="25" _PastDueAmount="0" _TermsDescription="Unspecified" _TermsMonthsCount="0" _UnpaidBalanceAmount="0" CreditBusinessType="MiscellaneousAndPublicRecord" CreditCounselingIndicator="N" CreditLoanType="ChargeAccount">
+                    <_CREDITOR _Name="THE BON TON"/>
+                    <_CURRENT_RATING _Code="1" _Type="AsAgreed"/>
+                    <_LATE_COUNT _30Days="00" _60Days="00" _90Days="00"/>
+                    <_PAYMENT_PATTERN _Data="CCCCCCCCCCCCCCCCCCCCCCCCC" _StartDate="2017-05-15"/>
+                    <CREDIT_REPOSITORY _SourceType="Experian" _SubscriberCode="ZR1389998"/>
+                    <CREDIT_REPOSITORY _SourceType="TransUnion" _SubscriberCode="D0587C002"/>
+                </CREDIT_LIABILITY>
+                <CREDIT_LIABILITY CreditLiabilityID="CRLiab031022" BorrowerID="Borrower" CreditFileID="CRFilTUC000002" _AccountOpenedDate="2012-06-15" _AccountOwnershipType="Individual" _AccountReportedDate="2015-03-15" _AccountBalanceDate="2015-03-15" _AccountStatusDate="2012-06-15" _AccountStatusType="Open" _AccountType="Revolving" _ConsumerDisputeIndicator="N" _CreditLimitAmount="8000" _DerogatoryDataIndicator="N" _HighCreditAmount="1798" _LastActivityDate="2015-02-15" _MonthlyPaymentAmount="0" _MonthsReviewedCount="34" _PastDueAmount="0" _TermsDescription="Monthly" CreditBusinessType="Banking" CreditCounselingIndicator="N" CreditLoanType="CreditCard">
+                    <_CREDITOR _Name="HH BANK"/>
+                    <_CURRENT_RATING _Code="1" _Type="AsAgreed"/>
+                    <_LATE_COUNT _30Days="00" _60Days="00" _90Days="00"/>
+                    <_PAYMENT_PATTERN _Data="CCCCCCCCCCCCCCCCCCCCCCCCXCXXXXXXXX" _StartDate="2015-03-15"/>
+                    <CREDIT_REPOSITORY _SourceType="TransUnion" _SubscriberCode="B07991190"/>
+                </CREDIT_LIABILITY>
+                <CREDIT_LIABILITY CreditLiabilityID="CRLiab021010" BorrowerID="Borrower" CreditFileID="CRFilXPN000001" _AccountClosedDate="2017-03-15" _AccountOpenedDate="2015-12-15" _AccountOwnershipType="Individual" _AccountReportedDate="2017-03-15" _AccountBalanceDate="2017-03-15" _AccountStatusDate="2017-03-15" _AccountStatusType="Closed" _AccountType="Revolving" _ConsumerDisputeIndicator="N" _DerogatoryDataIndicator="N" _HighCreditAmount="0" _MonthlyPaymentAmount="0" _MonthsReviewedCount="16" _PastDueAmount="0" _TermsDescription="Unspecified" _TermsMonthsCount="0" _UnpaidBalanceAmount="0" CreditBusinessType="MiscellaneousAndPublicRecord" CreditCounselingIndicator="N" CreditLoanType="ChargeAccount">
+                    <_CREDITOR _Name="BOSCOVS DEPT STORE"/>
+                    <_CURRENT_RATING _Code="1" _Type="AsAgreed"/>
+                    <_LATE_COUNT _30Days="00" _60Days="00" _90Days="00"/>
+                    <_PAYMENT_PATTERN _Data="CCCCCCCCXXCCCCCC" _StartDate="2017-03-15"/>
+                    <CREDIT_COMMENT _Code="67" _SourceType="CreditBureau" _Type="BureauRemarks">
+                        <_Text>CLOSED BY CREDITOR</_Text>
+                    </CREDIT_COMMENT>
+                    <CREDIT_COMMENT _Code="52" _SourceType="CreditBureau" _Type="BureauRemarks">
+                        <_Text>CLOSED</_Text>
+                    </CREDIT_COMMENT>
+                    <CREDIT_REPOSITORY _SourceType="Experian" _SubscriberCode="ZR1362760"/>
+                    <CREDIT_REPOSITORY _SourceType="TransUnion" _SubscriberCode="D0160Q001"/>
+                </CREDIT_LIABILITY>
+                <CREDIT_LIABILITY CreditLiabilityID="CRLiab021012" BorrowerID="Borrower" CreditFileID="CRFilXPN000001" _AccountClosedDate="2011-09-15" _AccountOpenedDate="2009-07-15" _AccountOwnershipType="Individual" _AccountPaidDate="2011-09-15" _AccountReportedDate="2013-09-15" _AccountBalanceDate="2013-09-15" _AccountStatusDate="2011-09-15" _AccountStatusType="Closed" _AccountType="Revolving" _ConsumerDisputeIndicator="N" _DerogatoryDataIndicator="N" _LastActivityDate="2011-09-15" _MonthlyPaymentAmount="0" _MonthsReviewedCount="26" _PastDueAmount="0" _TermsDescription="Unspecified" _TermsMonthsCount="0" _UnpaidBalanceAmount="0" CreditCounselingIndicator="N" CreditLoanType="CreditCard">
+                    <_CREDITOR _Name="CITI"/>
+                    <_CURRENT_RATING _Code="U" _Type="NoDataAvailable"/>
+                    <_LATE_COUNT _30Days="00" _60Days="00" _90Days="00"/>
+                    <_PAYMENT_PATTERN _Data="XCCXXXXXXXXXXCCCCCXXXXCCCC" _StartDate="2013-09-15"/>
+                    <CREDIT_COMMENT _Code="228" _SourceType="CreditBureau" _Type="BureauRemarks">
+                        <_Text>CLOSED BY CONSUMER</_Text>
+                    </CREDIT_COMMENT>
+                    <CREDIT_COMMENT _Code="52" _SourceType="CreditBureau" _Type="BureauRemarks">
+                        <_Text>CLOSED</_Text>
+                    </CREDIT_COMMENT>
+                    <CREDIT_REPOSITORY _SourceType="Experian" _SubscriberCode="NZ1439507"/>
+                    <CREDIT_REPOSITORY _SourceType="TransUnion" _SubscriberCode="B01679002"/>
+                </CREDIT_LIABILITY>
+                <CREDIT_LIABILITY CreditLiabilityID="CRLiab021014" BorrowerID="Borrower" CreditFileID="CRFilXPN000001" _AccountClosedDate="2016-03-15" _AccountOpenedDate="2013-04-15" _AccountOwnershipType="Individual" _AccountReportedDate="2016-06-15" _AccountBalanceDate="2016-06-15" _AccountStatusDate="2016-03-15" _AccountStatusType="Closed" _AccountType="Installment" _CollateralDescription="98 SUBARU FORESTER" _ConsumerDisputeIndicator="N" _DerogatoryDataIndicator="N" _HighBalanceAmount="6019" _LastActivityDate="2016-03-15" _MonthlyPaymentAmount="0" _MonthsReviewedCount="37" _PastDueAmount="0" _TermsDescription="Unspecified" _TermsMonthsCount="0" _UnpaidBalanceAmount="0" CreditBusinessType="Banking" CreditCounselingIndicator="N" CreditLoanType="Automobile">
+                    <_CREDITOR _Name="FIRST UNION"/>
+                    <_CURRENT_RATING _Code="1" _Type="AsAgreed"/>
+                    <_LATE_COUNT _30Days="00" _60Days="00" _90Days="00"/>
+                    <_PAYMENT_PATTERN _Data="CXCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC" _StartDate="2016-06-15"/>
+                    <CREDIT_COMMENT _Code="125" _SourceType="CreditBureau" _Type="BureauRemarks">
+                        <_Text>PAID</_Text>
+                    </CREDIT_COMMENT>
+                    <CREDIT_COMMENT _Code="52" _SourceType="CreditBureau" _Type="BureauRemarks">
+                        <_Text>CLOSED</_Text>
+                    </CREDIT_COMMENT>
+                    <CREDIT_REPOSITORY _SourceType="TransUnion" _SubscriberCode="B0362N421"/>
+                    <CREDIT_REPOSITORY _SourceType="Experian" _SubscriberCode="BB1124313"/>
+                </CREDIT_LIABILITY>
+                <CREDIT_LIABILITY CreditLiabilityID="CRLiab021013" BorrowerID="Borrower" CreditFileID="CRFilXPN000001" _AccountClosedDate="2016-09-15" _AccountOpenedDate="2011-08-15" _AccountOwnershipType="Individual" _AccountReportedDate="2016-12-15" _AccountBalanceDate="2016-12-15" _AccountStatusDate="2016-09-15" _AccountStatusType="Closed" _AccountType="Revolving" _ConsumerDisputeIndicator="N" _CreditLimitAmount="9000" _DerogatoryDataIndicator="N" _HighCreditAmount="9000" _LastActivityDate="2014-09-15" _MonthlyPaymentAmount="0" _MonthsReviewedCount="49" _PastDueAmount="0" _TermsDescription="Unspecified" _TermsMonthsCount="0" _UnpaidBalanceAmount="0" CreditBusinessType="Banking" CreditCounselingIndicator="N" CreditLoanType="CreditCard">
+                    <_CREDITOR _Name="FIRST USA BANK"/>
+                    <_CURRENT_RATING _Code="1" _Type="AsAgreed"/>
+                    <_LATE_COUNT _30Days="00" _60Days="00" _90Days="00"/>
+                    <_PAYMENT_PATTERN _Data="CCCCCCCCCCCCCCCCCCCCCCCCCXCCCCCCCCCCCCCCCCCCCCCCC" _StartDate="2016-12-15"/>
+                    <CREDIT_COMMENT _Code="228" _SourceType="CreditBureau" _Type="BureauRemarks">
+                        <_Text>CLOSED BY CONSUMER</_Text>
+                    </CREDIT_COMMENT>
+                    <CREDIT_COMMENT _Code="125" _SourceType="CreditBureau" _Type="BureauRemarks">
+                        <_Text>PAID</_Text>
+                    </CREDIT_COMMENT>
+                    <CREDIT_REPOSITORY _SourceType="Experian" _SubscriberCode="BC1233910"/>
+                    <CREDIT_REPOSITORY _SourceType="TransUnion" _SubscriberCode="B07519141"/>
+                </CREDIT_LIABILITY>
+                <CREDIT_LIABILITY CreditLiabilityID="CRLiab021015" BorrowerID="Borrower" CreditFileID="CRFilXPN000001" _AccountClosedDate="2015-08-15" _AccountOpenedDate="2012-01-15" _AccountOwnershipType="AuthorizedUser" _AccountReportedDate="2015-08-15" _AccountBalanceDate="2015-08-15" _AccountStatusDate="2015-08-15" _AccountStatusType="Closed" _AccountType="Revolving" _ConsumerDisputeIndicator="N" _CreditLimitAmount="10000" _DerogatoryDataIndicator="N" _HighCreditAmount="10000" _LastActivityDate="2013-03-15" _MonthlyPaymentAmount="0" _MonthsReviewedCount="44" _PastDueAmount="0" _TermsDescription="Unspecified" _TermsMonthsCount="0" _UnpaidBalanceAmount="0" CreditBusinessType="Banking" CreditCounselingIndicator="N" CreditLoanType="CreditCard">
+                    <_CREDITOR _Name="FIRST USA BANK N A"/>
+                    <_CURRENT_RATING _Code="1" _Type="AsAgreed"/>
+                    <_LATE_COUNT _30Days="00" _60Days="00" _90Days="00"/>
+                    <_PAYMENT_PATTERN _Data="CXXXXXXXXXCXXXXXXXXXXXXXXXCCXCCCCCCXXXCCCCCC" _StartDate="2015-08-15"/>
+                    <CREDIT_COMMENT _Code="410" _SourceType="CreditBureau" _Type="BureauRemarks">
+                        <_Text>AUTHORIZED USER ACCOUNT</_Text>
+                    </CREDIT_COMMENT>
+                    <CREDIT_COMMENT _Code="228" _SourceType="CreditBureau" _Type="BureauRemarks">
+                        <_Text>CLOSED BY CONSUMER</_Text>
+                    </CREDIT_COMMENT>
+                    <CREDIT_COMMENT _Code="125" _SourceType="CreditBureau" _Type="BureauRemarks">
+                        <_Text>PAID</_Text>
+                    </CREDIT_COMMENT>
+                    <CREDIT_REPOSITORY _SourceType="TransUnion" _SubscriberCode="B07519044"/>
+                    <CREDIT_REPOSITORY _SourceType="Experian" _SubscriberCode="BC1260958"/>
+                </CREDIT_LIABILITY>
+                <CREDIT_LIABILITY CreditLiabilityID="CRLiab021011" BorrowerID="Borrower" CreditFileID="CRFilXPN000001" _AccountClosedDate="2015-03-15" _AccountOpenedDate="2010-09-15" _AccountOwnershipType="Individual" _AccountReportedDate="2015-10-15" _AccountBalanceDate="2015-10-15" _AccountStatusDate="2015-03-15" _AccountStatusType="Closed" _AccountType="Revolving" _ConsumerDisputeIndicator="N" _CreditLimitAmount="4000" _DerogatoryDataIndicator="N" _HighCreditAmount="296" _LastActivityDate="2011-09-15" _MonthlyPaymentAmount="0" _MonthsReviewedCount="49" _PastDueAmount="0" _TermsDescription="Unspecified" _TermsMonthsCount="0" _UnpaidBalanceAmount="0" CreditBusinessType="Banking" CreditCounselingIndicator="N" CreditLoanType="CreditCard">
+                    <_CREDITOR _Name="HBSBNA MG"/>
+                    <_CURRENT_RATING _Code="1" _Type="AsAgreed"/>
+                    <_LATE_COUNT _30Days="00" _60Days="00" _90Days="00"/>
+                    <_PAYMENT_PATTERN _Data="CCCCCCCCCCCCCCCCCCCCCCCCXXXXXXXXXXXXXXXXXXXCCCCCC" _StartDate="2015-10-15"/>
+                    <CREDIT_COMMENT _Code="67" _SourceType="CreditBureau" _Type="BureauRemarks">
+                        <_Text>CLOSED BY CREDITOR</_Text>
+                    </CREDIT_COMMENT>
+                    <CREDIT_COMMENT _Code="52" _SourceType="CreditBureau" _Type="BureauRemarks">
+                        <_Text>CLOSED</_Text>
+                    </CREDIT_COMMENT>
+                    <CREDIT_REPOSITORY _SourceType="Experian" _SubscriberCode="BC3279025"/>
+                    <CREDIT_REPOSITORY _SourceType="TransUnion" _SubscriberCode="B092WL001"/>
+                </CREDIT_LIABILITY>
+                <CREDIT_LIABILITY CreditLiabilityID="CRLiab031026" BorrowerID="Borrower" CreditFileID="CRFilTUC000002" _AccountClosedDate="2011-08-15" _AccountOpenedDate="2010-09-15" _AccountOwnershipType="Individual" _AccountReportedDate="2012-09-15" _AccountBalanceDate="2012-09-15" _AccountStatusDate="2011-08-15" _AccountStatusType="Closed" _AccountType="Revolving" _ConsumerDisputeIndicator="N" _CreditLimitAmount="4000" _DerogatoryDataIndicator="N" _HighCreditAmount="0" _LastActivityDate="2011-08-15" _MonthlyPaymentAmount="0" _MonthsReviewedCount="25" _PastDueAmount="0" _TermsDescription="Unspecified" _TermsMonthsCount="0" _UnpaidBalanceAmount="0" CreditBusinessType="Banking" CreditCounselingIndicator="N" CreditLoanType="CreditCard">
+                    <_CREDITOR _Name="HHLD BANK"/>
+                    <_CURRENT_RATING _Code="U" _Type="NoDataAvailable"/>
+                    <_LATE_COUNT _30Days="00" _60Days="00" _90Days="00"/>
+                    <_PAYMENT_PATTERN _Data="XCCCCCCCCCCCCCCCCCCCCCCCC" _StartDate="2012-09-15"/>
+                    <CREDIT_COMMENT _Code="110" _SourceType="CreditBureau" _Type="BureauRemarks">
+                        <_Text>LOST OR STOLEN CARD</_Text>
+                    </CREDIT_COMMENT>
+                    <CREDIT_REPOSITORY _SourceType="TransUnion" _SubscriberCode="B092WL001"/>
+                </CREDIT_LIABILITY>
+                <CREDIT_LIABILITY CreditLiabilityID="CRLiab021017" BorrowerID="Borrower" CreditFileID="CRFilXPN000001" _AccountClosedDate="2010-07-15" _AccountOpenedDate="2009-04-15" _AccountOwnershipType="Individual" _AccountPaidDate="2010-07-15" _AccountReportedDate="2010-07-15" _AccountBalanceDate="2010-07-15" _AccountStatusDate="2010-07-15" _AccountStatusType="Closed" _AccountType="Installment" _ConsumerDisputeIndicator="N" _DerogatoryDataIndicator="N" _HighBalanceAmount="3000" _MonthlyPaymentAmount="0" _MonthsReviewedCount="16" _PastDueAmount="0" _TermsDescription="Unspecified" _TermsMonthsCount="0" _UnpaidBalanceAmount="0" CreditBusinessType="Finance" CreditCounselingIndicator="N" CreditLoanType="Automobile">
+                    <_CREDITOR _Name="IRCO COMMUNITY FED CR"/>
+                    <_CURRENT_RATING _Code="1" _Type="AsAgreed"/>
+                    <_LATE_COUNT _30Days="00" _60Days="00" _90Days="00"/>
+                    <_PAYMENT_PATTERN _Data="CCCCCCCCCCCCCCCC" _StartDate="2010-07-15"/>
+                    <CREDIT_COMMENT _Code="125" _SourceType="CreditBureau" _Type="BureauRemarks">
+                        <_Text>PAID</_Text>
+                    </CREDIT_COMMENT>
+                    <CREDIT_REPOSITORY _SourceType="Experian" _SubscriberCode="FC6730060"/>
+                </CREDIT_LIABILITY>
+                <CREDIT_LIABILITY CreditLiabilityID="CRLiab021018" BorrowerID="Borrower" CreditFileID="CRFilXPN000001" _AccountClosedDate="2010-07-15" _AccountOpenedDate="2009-09-15" _AccountOwnershipType="Individual" _AccountPaidDate="2010-07-15" _AccountReportedDate="2010-07-15" _AccountBalanceDate="2010-07-15" _AccountStatusDate="2010-07-15" _AccountStatusType="Closed" _AccountType="Installment" _ConsumerDisputeIndicator="N" _DerogatoryDataIndicator="N" _HighBalanceAmount="5000" _MonthlyPaymentAmount="0" _MonthsReviewedCount="10" _PastDueAmount="0" _TermsDescription="Unspecified" _TermsMonthsCount="0" _UnpaidBalanceAmount="0" CreditBusinessType="Finance" CreditCounselingIndicator="N" CreditLoanType="Unsecured">
+                    <_CREDITOR _Name="IRCO COMMUNITY FED CR"/>
+                    <_CURRENT_RATING _Code="1" _Type="AsAgreed"/>
+                    <_LATE_COUNT _30Days="00" _60Days="00" _90Days="00"/>
+                    <_PAYMENT_PATTERN _Data="CCCCCCCCCC" _StartDate="2010-07-15"/>
+                    <CREDIT_COMMENT _Code="125" _SourceType="CreditBureau" _Type="BureauRemarks">
+                        <_Text>PAID</_Text>
+                    </CREDIT_COMMENT>
+                    <CREDIT_REPOSITORY _SourceType="Experian" _SubscriberCode="FC6730060"/>
+                </CREDIT_LIABILITY>
+                <CREDIT_LIABILITY CreditLiabilityID="CRLiab021016" BorrowerID="Borrower" CreditFileID="CRFilXPN000001" _AccountClosedDate="2013-03-15" _AccountOpenedDate="2010-09-15" _AccountOwnershipType="Individual" _AccountReportedDate="2013-03-15" _AccountBalanceDate="2013-03-15" _AccountStatusDate="2013-03-15" _AccountStatusType="Closed" _AccountType="Installment" _ConsumerDisputeIndicator="N" _DerogatoryDataIndicator="N" _HighBalanceAmount="8206" _LastActivityDate="2013-03-15" _MonthlyPaymentAmount="0" _MonthsReviewedCount="31" _PastDueAmount="0" _TermsDescription="Unspecified" _TermsMonthsCount="0" _UnpaidBalanceAmount="0" CreditBusinessType="Banking" CreditCounselingIndicator="N" CreditLoanType="Automobile">
+                    <_CREDITOR _Name="PNC BANK"/>
+                    <_CURRENT_RATING _Code="1" _Type="AsAgreed"/>
+                    <_LATE_COUNT _30Days="00" _60Days="00" _90Days="00"/>
+                    <_PAYMENT_PATTERN _Data="CCCCCCCCCCCCCCCCCCCCCCCCCCXCCCC" _StartDate="2013-03-15"/>
+                    <CREDIT_COMMENT _Code="125" _SourceType="CreditBureau" _Type="BureauRemarks">
+                        <_Text>PAID</_Text>
+                    </CREDIT_COMMENT>
+                    <CREDIT_COMMENT _Code="52" _SourceType="CreditBureau" _Type="BureauRemarks">
+                        <_Text>CLOSED</_Text>
+                    </CREDIT_COMMENT>
+                    <CREDIT_REPOSITORY _SourceType="Experian" _SubscriberCode="BB6140105"/>
+                    <CREDIT_REPOSITORY _SourceType="TransUnion" _SubscriberCode="B06613006"/>
+                </CREDIT_LIABILITY>
+                <CREDIT_INQUIRY CreditInquiryID="CRInquTUC031027" BorrowerID="Borrower" CreditFileID="CRFilTUC000002" _Name="RELS REPORTI" _Date="2017-07-15" CreditBusinessType="MiscellaneousAndPublicRecord" CreditLoanType="UnknownLoanType">
+                    <CREDIT_REPOSITORY _SourceType="TransUnion" _SubscriberCode="Z08256928"/>
+                </CREDIT_INQUIRY>
+                <CREDIT_FILE CreditFileID="CRFilXPN000001" BorrowerID="Borrower" CreditScoreID="CRScoXPN021002" CreditRepositorySourceType="Experian" _ResultStatusType="FileReturned">
+                    <_ALERT_MESSAGE _AdverseIndicator="Y" _CategoryType="FACTAAddressDiscrepancy">
+                        <_Text>FACTA: Address Discrepancy - Substantial difference between the address submitted in the credit request and the address(es) in the credit file. VERIFY IDENTITY OF CONSUMER BEFORE GRANTING CREDIT.</_Text>
+                    </_ALERT_MESSAGE>
+                    <_BORROWER _BirthDate="1971" _FirstName="TODD" _LastName="TESTCO" _MiddleName="A" _SSN="00061XXXX">
+                        <_RESIDENCE _StreetAddress="11 PRINCETON  AV" _City="TRENTON" _State="NJ" _PostalCode="08848" BorrowerResidencyType="Prior">
+                            <PARSED_STREET_ADDRESS _HouseNumber="11" _StreetName="PRINCETON" _StreetSuffix="AV"/>
+                        </_RESIDENCE>
+                        <_RESIDENCE _StreetAddress="89 SILLAS  RD" _City="TRENTON" _State="NJ" _PostalCode="08848" BorrowerResidencyType="Prior">
+                            <PARSED_STREET_ADDRESS _HouseNumber="89" _StreetName="SILLAS" _StreetSuffix="RD"/>
+                        </_RESIDENCE>
+                        <_RESIDENCE _StreetAddress="109 TRENTON  BL" _City="MILFORD" _State="NJ" _PostalCode="088482725" BorrowerResidencyType="Current">
+                            <PARSED_STREET_ADDRESS _HouseNumber="109" _StreetName="TRENTON" _StreetSuffix="BL"/>
+                            <CONTACT_DETAIL>
+                                <CONTACT_POINT _Type="Other" _Value="5552413"/>
+                            </CONTACT_DETAIL>
+                        </_RESIDENCE>
+                        <EMPLOYER _Name="HUNTERDON DEV" _City="CLINTON" _State="NJ" EmploymentCurrentIndicator="N" EmploymentReportedDate="2016-11-15"/>
+                        <EMPLOYER _Name="STATE OF NEW JE" EmploymentCurrentIndicator="N" EmploymentReportedDate="2013-05-15"/>
+                    </_BORROWER>
+                    <CREDIT_COMMENT _SourceType="Experian" _Type="Other" _TypeOtherDescription="SSNMessage">
+                        <_Text>SSN Matches</_Text>
+                    </CREDIT_COMMENT>
+                </CREDIT_FILE>
+                <CREDIT_FILE CreditFileID="CRFilTUC000002" BorrowerID="Borrower" CreditScoreID="CRScoTUC031033" CreditRepositorySourceType="TransUnion" _InfileDate="2007-08-15" _ResultStatusType="FileReturned">
+                    <_BORROWER _BirthDate="1987-05-15" _FirstName="TODD" _LastName="TESTCO" _MiddleName="A" _SSN="00061XXXX"/>
+                    <CREDIT_COMMENT _SourceType="TransUnion" _Type="Other" _TypeOtherDescription="SSNMessage">
+                        <_Text>SSN Matches</_Text>
+                    </CREDIT_COMMENT>
+                </CREDIT_FILE>
+                <CREDIT_SCORE CreditScoreID="CRScoXPN021002" CreditReportIdentifier="112159128410000" BorrowerID="Borrower" CreditFileID="CRFilXPN000001" CreditRepositorySourceType="Experian" _Date="2017-08-09" _FACTAInquiriesIndicator="N" _ModelNameType="ExperianFairIsaac" _Value="+756">
+                    <_FACTOR _Code="10" _Text="RATIO OF BALANCE TO LIMIT ON BANK REVOLVING OR OTHER REV ACCTS TOO HIGH"/>
+                    <_FACTOR _Code="14" _Text="LENGTH OF TIME ACCOUNTS HAVE BEEN ESTABLISHED"/>
+                    <_FACTOR _Code="08" _Text="TOO MANY INQUIRIES LAST 12 MONTHS"/>
+                    <_FACTOR _Code="09" _Text="TOO MANY ACCOUNTS RECENTLY OPENED"/>
+                </CREDIT_SCORE>
+                <CREDIT_SCORE CreditScoreID="CRScoTUC031033" CreditReportIdentifier="112159128410000" BorrowerID="Borrower" CreditFileID="CRFilTUC000002" CreditRepositorySourceType="TransUnion" _Date="2017-08-09" _FACTAInquiriesIndicator="N" _ModelNameType="FICORiskScoreClassic04" _Value="+732">
+                    <_FACTOR _Code="010" _Text="PROPORTION OF BALANCES TO CREDIT LIMITS IS TOO HIGH ON BANK REVOLVING OR OTHER REVOLVING ACCOUNTS"/>
+                    <_FACTOR _Code="005" _Text="TOO MANY ACCOUNTS WITH BALANCES"/>
+                    <_FACTOR _Code="028" _Text="NUMBER OF ESTABLISHED ACCOUNTS"/>
+                    <_FACTOR _Code="012" _Text="LENGTH OF TIME REVOLVING ACCOUNTS HAVE BEEN ESTABLISHED"/>
+                </CREDIT_SCORE>
+                <CREDIT_CONSUMER_REFERRAL _Name="EXPERIAN" _StreetAddress="P.O. BOX 2002" _City="ALLEN" _State="TX" _PostalCode="75013">
+                    <CONTACT_DETAIL>
+                        <CONTACT_POINT _Type="Phone" _Value="(888) 397-3742"/>
+                    </CONTACT_DETAIL>
+                </CREDIT_CONSUMER_REFERRAL>
+                <CREDIT_CONSUMER_REFERRAL _Name="TRANS UNION" _StreetAddress="P.O. BOX 1000" _City="CHESTER" _State="PA" _PostalCode="19022">
+                    <CONTACT_DETAIL>
+                        <CONTACT_POINT _Type="Phone" _Value="(800) 888-4213"/>
+                    </CONTACT_DETAIL>
+                </CREDIT_CONSUMER_REFERRAL>
+                <CREDIT_SUMMARY BorrowerID="Borrower" _Name="CREDCO_SUMMARY">
+                    <_DATA_SET _Name="_IdentityOnFileDate" _Value="2007-08-15"/>
+                    <_DATA_SET _Name="_Term" _Value="LIFE_OF_LOAN"/>
+                    <_DATA_SET _Name="_AnyPublicRecordsInLast2Years" _Value="N"/>
+                    <_DATA_SET _Name="_TotalPRCount" _Value="0"/>
+                    <_DATA_SET _Name="_InquiryAgeDays" _Value="Days_180"/>
+                    <_DATA_SET _Name="_TotalInquiriesCount" _Value="1"/>
+                    <_DATA_SET _Name="_ElimSameDayInqCount" _Value="0"/>
+                    <_DATA_SET _Name="_InquiryAdjustedTotal" _Value="1"/>
+                    <_DATA_SET _Name="_NewTradesIn6Months" _Value="0"/>
+                    <_DATA_SET _Name="_OldestTradeDate" _Value="2007-02-15"/>
+                    <_DATA_SET _Name="_PaidAsAgreed" _Value="10"/>
+                    <_DATA_SET _Name="_NowDelinquent" _Value="0"/>
+                    <_DATA_SET _Name="_AllDelinquent" _Value="0"/>
+                    <_DATA_SET _Name="_HighestHighCredit" _Value="64000"/>
+                    <_DATA_SET _Name="_LowestHighCredit" _Value="10"/>
+                    <_DATA_SET _Name="_TotalCollections" _Value="0"/>
+                    <_DATA_SET _Name="_HistoricalDelinquenciesCount" _Value="0"/>
+                    <_DATA_SET _Name="_RevAndOtherAccountsCount" _Value="20"/>
+                    <_DATA_SET _Name="_BalanceOnRevolvingAndOther" _Value="5953"/>
+                    <_DATA_SET _Name="_PaymentsOnRevolvingAndOther" _Value="140"/>
+                    <_DATA_SET _Name="_RevAndOtherCreditAvailable" _Value="53787"/>
+                    <_DATA_SET _Name="_RevAndOtherCreditPercent" _Value="90"/>
+                    <_DATA_SET _Name="_TotalTradelinesCount" _Value="25"/>
+                    <_DATA_SET _Name="_TotalTrlBalanceAmount" _Value="69168"/>
+                    <_DATA_SET _Name="_TotalTrlMonthlyPaymentAmount" _Value="1058"/>
+                    <_DATA_SET _Name="_TotalCurrentTradelinesCount" _Value="15"/>
+                    <_DATA_SET _Name="_TotalClosedTradelinesCount" _Value="10"/>
+                    <_DATA_SET _Name="_TotalUnratedTradelinesCount" _Value="0"/>
+                    <_DATA_SET _Name="_TotalLate30DaysCurrentDelinquencies" _Value="0"/>
+                    <_DATA_SET _Name="_TotalLate60DaysCurrentDelinquencies" _Value="0"/>
+                    <_DATA_SET _Name="_TotalLate90PlusDaysCurrentDelinquencies" _Value="0"/>
+                    <_DATA_SET _Name="_TotalLate30DaysHistoricalDelinquencies" _Value="0"/>
+                    <_DATA_SET _Name="_TotalLate60DaysHistoricalDelinquencies" _Value="0"/>
+                    <_DATA_SET _Name="_TotalLate90PlusDaysHistoricalDelinquencies" _Value="0"/>
+                    <_DATA_SET _Name="_RealEstate_TradelinesCount" _Value="1"/>
+                    <_DATA_SET _Name="_RealEstateTrl_BalanceAmount" _Value="63215"/>
+                    <_DATA_SET _Name="_RealEstateTrl_MonthlyPaymentAmount" _Value="918"/>
+                    <_DATA_SET _Name="_RealEstate_CurrentTradelinesCount" _Value="1"/>
+                    <_DATA_SET _Name="_RealEstate_ClosedTradelinesCount" _Value="0"/>
+                    <_DATA_SET _Name="_RealEstate_UnratedTradelinesCount" _Value="0"/>
+                    <_DATA_SET _Name="_RealEstate_Late30DaysCurrentDelinquencies" _Value="0"/>
+                    <_DATA_SET _Name="_RealEstate_Late60DaysCurrentDelinquencies" _Value="0"/>
+                    <_DATA_SET _Name="_RealEstate_Late90PlusDaysCurrentDelinquencies" _Value="0"/>
+                    <_DATA_SET _Name="_RealEstate_Late30DaysHistoricalDelinquencies" _Value="0"/>
+                    <_DATA_SET _Name="_RealEstate_Late60DaysHistoricalDelinquencies" _Value="0"/>
+                    <_DATA_SET _Name="_RealEstate_Late90PlusDaysHistoricalDelinquencies" _Value="0"/>
+                    <_DATA_SET _Name="_Installment_TradelinesCount" _Value="4"/>
+                    <_DATA_SET _Name="_InstallmentTrl_BalanceAmount" _Value="0"/>
+                    <_DATA_SET _Name="_InstallmentTrl_MonthlyPaymentAmount" _Value="0"/>
+                    <_DATA_SET _Name="_Installment_CurrentTradelinesCount" _Value="0"/>
+                    <_DATA_SET _Name="_Installment_ClosedTradelinesCount" _Value="4"/>
+                    <_DATA_SET _Name="_Installment_UnratedTradelinesCount" _Value="0"/>
+                    <_DATA_SET _Name="_Installment_Late30DaysCurrentDelinquencies" _Value="0"/>
+                    <_DATA_SET _Name="_Installment_Late60DaysCurrentDelinquencies" _Value="0"/>
+                    <_DATA_SET _Name="_Installment_Late90PlusDaysCurrentDelinquencies" _Value="0"/>
+                    <_DATA_SET _Name="_Installment_Late30DaysHistoricalDelinquencies" _Value="0"/>
+                    <_DATA_SET _Name="_Installment_Late60DaysHistoricalDelinquencies" _Value="0"/>
+                    <_DATA_SET _Name="_Installment_Late90PlusDaysHistoricalDelinquencies" _Value="0"/>
+                    <_DATA_SET _Name="_RevolvingCreditAvailable" _Value="53787"/>
+                    <_DATA_SET _Name="_RevolvingCreditTotal" _Value="59740"/>
+                    <_DATA_SET _Name="_PrcntRevolvingCreditAvailable" _Value="90"/>
+                    <_DATA_SET _Name="_Revolving_TradelinesCount" _Value="20"/>
+                    <_DATA_SET _Name="_RevolvingTrl_BalanceAmount" _Value="5953"/>
+                    <_DATA_SET _Name="_RevolvingTrl_MonthlyPaymentAmount" _Value="140"/>
+                    <_DATA_SET _Name="_Revolving_CurrentTradelinesCount" _Value="14"/>
+                    <_DATA_SET _Name="_Revolving_ClosedTradelinesCount" _Value="6"/>
+                    <_DATA_SET _Name="_Revolving_UnratedTradelinesCount" _Value="0"/>
+                    <_DATA_SET _Name="_Revolving_Late30DaysCurrentDelinquencies" _Value="0"/>
+                    <_DATA_SET _Name="_Revolving_Late60DaysCurrentDelinquencies" _Value="0"/>
+                    <_DATA_SET _Name="_Revolving_Late90PlusDaysCurrentDelinquencies" _Value="0"/>
+                    <_DATA_SET _Name="_Revolving_Late30DaysHistoricalDelinquencies" _Value="0"/>
+                    <_DATA_SET _Name="_Revolving_Late60DaysHistoricalDelinquencies" _Value="0"/>
+                    <_DATA_SET _Name="_Revolving_Late90PlusDaysHistoricalDelinquencies" _Value="0"/>
+                    <_DATA_SET _Name="_OtherCreditAvailable" _Value="0"/>
+                    <_DATA_SET _Name="_OtherCreditTotal" _Value="0"/>
+                    <_DATA_SET _Name="_Other_TradelinesCount" _Value="0"/>
+                    <_DATA_SET _Name="_OtherTrl_BalanceAmount" _Value="0"/>
+                    <_DATA_SET _Name="_OtherTrl_MonthlyPaymentAmount" _Value="0"/>
+                    <_DATA_SET _Name="_Other_CurrentTradelinesCount" _Value="0"/>
+                    <_DATA_SET _Name="_Other_ClosedTradelinesCount" _Value="0"/>
+                    <_DATA_SET _Name="_Other_UnratedTradelinesCount" _Value="0"/>
+                    <_DATA_SET _Name="_Other_Late30DaysCurrentDelinquencies" _Value="0"/>
+                    <_DATA_SET _Name="_Other_Late60DaysCurrentDelinquencies" _Value="0"/>
+                    <_DATA_SET _Name="_Other_Late90PlusDaysCurrentDelinquencies" _Value="0"/>
+                    <_DATA_SET _Name="_Other_Late30DaysHistoricalDelinquencies" _Value="0"/>
+                    <_DATA_SET _Name="_Other_Late60DaysHistoricalDelinquencies" _Value="0"/>
+                    <_DATA_SET _Name="_Other_Late90PlusDaysHistoricalDelinquencies" _Value="0"/>
+                    <_Text>Credco Summary</_Text>
+                </CREDIT_SUMMARY>
+                <CREDIT_SUMMARY _Name="CREDCO_EXECUTIVE_SUMMARY" BorrowerID="Borrower">
+                    <_DATA_SET _Name="Military Lending Act Search Result" _Value="XPN DATA UNAVAILABLE"/>
+                    <_DATA_SET _Name="Bureau Score Information : ExperianFairIsaac" _Value="756"/>
+                    <_DATA_SET _Name="Bureau Score Information : FICORiskScoreClassic04" _Value="732"/>
+                    <_DATA_SET _Name="Auto Loan Information: _CountOfOpenAccounts" _Value="0"/>
+                    <_DATA_SET _Name="Auto Loan Information: _TotalBalanceOfOpenAccounts" _Value="0"/>
+                    <_DATA_SET _Name="Auto Loan Information: _TotalMonthlyPaymentOfOpenAccounts" _Value="0"/>
+                    <_DATA_SET _Name="Auto Loan Information: _LastDelinquentDateOfOpenAccounts" _Value="0"/>
+                    <_DATA_SET _Name="Auto Loan Information: _Total30DaysDelqOpenAccounts" _Value="0"/>
+                    <_DATA_SET _Name="Auto Loan Information: _Total60DaysDelqOpenAccounts" _Value="0"/>
+                    <_DATA_SET _Name="Auto Loan Information: _Total90DaysDelqOpenAccounts" _Value="0"/>
+                    <_DATA_SET _Name="Auto Loan Information: _CountOfClosedAccounts" _Value="0"/>
+                    <_DATA_SET _Name="Auto Loan Information: _PastRepossessionsOfClosedAccounts" _Value="0"/>
+                    <_DATA_SET _Name="Auto Loan Information: _LastDelinquentDateOfClosedAccounts" _Value="0"/>
+                    <_DATA_SET _Name="Auto Loan Information: _Total30DaysDelqClosedAccounts" _Value="0"/>
+                    <_DATA_SET _Name="Auto Loan Information: _Total60DaysDelqClosedAccounts" _Value="0"/>
+                    <_DATA_SET _Name="Auto Loan Information: _Total90DaysDelqClosedAccounts" _Value="0"/>
+                    <_DATA_SET _Name="Real Estate Loan Information: _CountOfOpenAccounts" _Value="0"/>
+                    <_DATA_SET _Name="Real Estate Loan Information: _TotalBalanceOfOpenAccounts" _Value="63215"/>
+                    <_DATA_SET _Name="Real Estate Loan Information: _TotalMonthlyPaymentOfOpenAccounts" _Value="0"/>
+                    <_DATA_SET _Name="Real Estate Loan Information: _LastDelinquentDateOfOpenAccounts" _Value="0"/>
+                    <_DATA_SET _Name="Real Estate Loan Information: _Total30DaysDelqOpenAccounts" _Value="0"/>
+                    <_DATA_SET _Name="Real Estate Loan Information: _Total60DaysDelqOpenAccounts" _Value="0"/>
+                    <_DATA_SET _Name="Real Estate Loan Information: _Total90DaysDelqOpenAccounts" _Value="0"/>
+                    <_DATA_SET _Name="Real Estate Loan Information: _OpenLoanSummaryDetailItemNumber" _Value="1"/>
+                    <_DATA_SET _Name="Real Estate Loan Information: _BeginningBalance" _Value="64000"/>
+                    <_DATA_SET _Name="Real Estate Loan Information: _MonthlyPayment" _Value="918"/>
+                    <_DATA_SET _Name="Real Estate Loan Information: _Term" _Value="360"/>
+                    <_DATA_SET _Name="Real Estate Loan Information: _NumberOfMonthsRemaining" _Value="343"/>
+                    <_DATA_SET _Name="Real Estate Loan Information: _Status" _Value="CUR"/>
+                    <_DATA_SET _Name="Real Estate Loan Information: _LastDelinquentDate" _Value="0"/>
+                    <_DATA_SET _Name="Revolving Loan Information: _RevolvingCreditAvailablePercentage" _Value="90"/>
+                    <_DATA_SET _Name="Revolving Loan Information: _RevolvingCreditAvailable" _Value="53787"/>
+                    <_DATA_SET _Name="Red Flag Information : Identity Data Input Variation - Message Code RF10144" _Value="Variation between input address and onfile address"/>
+                    <_DATA_SET _Name="Red Flag Information : OFAC Information - Message Code RF10161" _Value="No OFAC match found."/>
+                    <_DATA_SET _Name="Red Flag Information : Other Information - Message Code RF10208" _Value="Onfile date more recent than the oldest trade"/>
+                    <_DATA_SET _Name="Red Flag Information : Other Information - Message Code RF10202" _Value="1 Creditor-closed account(s) / 180 days"/>
+                    <_Text>Possible incomplete data. See Credit Report.</_Text>
+                    <_Text>Credit Advantage not activated. Call 1-800-694-1414 for more information.</_Text>
+                    <_Text>Possible incomplete data. See Credit,BuyerId Index Report.</_Text>
+                    <_Text>Warning : Possible Red Flags detected. Further verification recommended.</_Text>
+                    <_Text>Borrower Executive Summary</_Text>
+                    <_Text>The Executive Summary is not a credit report, but rather a summary of certain information contained in the various products delivered to you by CoreLogic Credco.</_Text>
+                </CREDIT_SUMMARY>
+                <REGULATORY_PRODUCT BorrowerID="Borrower" CreditRepositorySourceType="Other" CreditRepositorySourceTypeOtherDescription="CoreLogic Credco" _SourceType="OFAC" _ProviderDescription="ProScan" _ResultText="OFAC CHECK CLEAR" _ResultStatusType="Clear"/>
+                <EMBEDDED_FILE _Type="PDF"   _Name="PDF"  _EncodingType="base64"   >
+                    <DOCUMENT><![CDATA[JVBERi0xLjAKMiAwIG9iago8PCAvTGVuZ3RoIDMgMCBSID4+CnN0cmVhbQpCVAovRjAgMTAgVGYKMzAgNzYyIFRkCjEwIFRMCigpJwooKScKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSknCihSRUY6MS0xMjE1OS0xMjg0MS0wMDAwIDA4LzA5LzIwMTcgICAgICAgIFRJRDoxLTEyMTU5LTEyODQxIDA4LzA5LzIwMTcgMTI6MDg6NDcpJwooQ3JlZGNvIEV4ZWN1dGl2ZSBTdW1tYXJ5ICAgICAgICAgICAgICAgICAgICAgICAgIEFjY3Q6IDQ0ODA0NjQpJwooUHJlcGFyZWQgZm9yOiBGM0VBIFNFUlZJQ0lORyBMTEMgLSBURVNUIEFDQ1QgICAgTm90ZXM6IElNLCBPRkFDLCBCSUQgSW5kZXgpJwooLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKEFwcDogVEVTVENPLCBUT0REICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgU3NuOiAwMDAtNjEtWFhYWCknCihDdXJyIEFkZHI6IDExIFBSSU5DRVRPTiBBViwgVFJFTlRPTiwgTkogMDg4NDgpJwooLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKCknCihCVVJFQVUgU0NPUkUgSU5GT1JNQVRJT04pJwooLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKFBvc3NpYmxlIGluY29tcGxldGUgZGF0YS4gU2VlIENyZWRpdCBSZXBvcnQuKScKKEVYUEVSSUFOIEZJQ08tSUkgICAgICAgICAgICAgICAgICAgICA9IDc1NiknCihUUkFOU1VOSU9OIEZJQ08gQ2xhc3NpYyAwNCAgICAgICAgICAgPSA3MzIpJwooKScKKEFVVE8gJiBSRUFMIEVTVEFURSBMT0FOIElORk9STUFUSU9OOiknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwooUG9zc2libGUgaW5jb21wbGV0ZSBkYXRhLiBTZWUgQ3JlZGl0IFJlcG9ydC4pJwooT1BFTiBBVVRPOiAwIFRvdGFsIEJhbDogJDAgVG90YWwgTW50aGx5IFBheTogJDApJwooIExhc3REbHE6IE4vQSBQYXN0IER1ZSBDb3VudHM6IDB4MzAsIDB4NjAsIDB4OTArKScKKENMT1NFRCBBVVRPOiAzICAgICBQYXN0IFJlcG9zc2Vzc2lvbnM6IDApJwooIExhc3REbHE6IE4vQSBQYXN0IER1ZSBDb3VudHM6IDB4MzAsIDB4NjAsIDB4OTArKScKKCApJwooT1BFTiBSRUFMIEVTVEFURTogMSBUb3RhbCBCYWw6ICQ2MywyMTUgVG90YWwgTW50aGx5IFBheTogJDkxOCknCiggTGFzdERscTogTi9BIFBhc3QgRHVlIENvdW50czogMHgzMCwgMHg2MCwgMHg5MCspJwooIDEuIEJlZ0JhbC0gICAkNjQsMDAwIE1udGhseVBheS0gICAkOTE4IFRlcm0tMzYwIFJlbS0zNDMgbXRoIENVUiBMYXN0RGxxLU4vQSknCiggKScKKFRPVEFMIEFWQUlMQUJMRSBDUkVESVQ6IFJldm9sdmluZy05MCUgIEJhbGFuY2UtJDUzLDc4NyknCigpJwooQ1JFRElUIEFEVkFOVEFHRTopJwooLS0tLS0tLS0tLS0tLS0tLS0pJwooQ3JlZGl0IEFkdmFudGFnZSBub3QgYWN0aXZhdGVkLiBDYWxsIDEtODAwLTY5NC0xNDE0IGZvciBtb3JlIGluZm9ybWF0aW9uLiknCigpJwooUkVEIEZMQUcgQ09NUExJQU5DRSBJTkZPUk1BVElPTjopJwooLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwooUG9zc2libGUgaW5jb21wbGV0ZSBkYXRhLiBTZWUgQ3JlZGl0LEJ1eWVySWQgSW5kZXggUmVwb3J0LiknCihXYXJuaW5nIDogUG9zc2libGUgUmVkIEZsYWdzIGRldGVjdGVkLiBGdXJ0aGVyIHZlcmlmaWNhdGlvbiByZWNvbW1lbmRlZC4pJwooICknCihJREVOVElUWSBEQVRBIElOUFVUIFZBUklBVElPTjogU2VlIENyZWRpdCBSZXBvcnQpJwooMS4gVmFyaWF0aW9uIGJldHdlZW4gaW5wdXQgYWRkcmVzcyBhbmQgb25maWxlIGFkZHJlc3MpJwooICknCihPRkFDIElORk9STUFUSU9OOiBTZWUgT0ZBQyBSZXBvcnQpJwooMS4gTm8gT0ZBQyBtYXRjaCBmb3VuZC4pJwooICknCihPVEhFUiBJTkZPUk1BVElPTjogU2VlIENyZWRpdCBSZXBvcnQpJwooMS4gT25maWxlIGRhdGUgbW9yZSByZWNlbnQgdGhhbiB0aGUgb2xkZXN0IHRyYWRlKScKKDIuIDEgQ3JlZGl0b3ItY2xvc2VkIGFjY291bnRcKHNcKSAvIDE4MCBkYXlzKScKKCknCihQcmVwYXJlZCBCeTogQ29yZUxvZ2ljIENyZWRjbyknCiggICAgICAgICAgICAgUC5PLiBCT1ggNTA5MTI0KScKKCAgICAgICAgICAgICBTQU4gRElFR08sIENBIDkyMTUwKScKKCAgICAgICAgICAgICBDb250YWN0OiBcKDgwMFwpOTg2LTQzNDMgIEZheDogODAwIDIzNyA2NTI2KScKKCknCihUaGUgRXhlY3V0aXZlIFN1bW1hcnkgaXMgbm90IGEgY3JlZGl0IHJlcG9ydCwgYnV0IHJhdGhlciBhIHN1bW1hcnkgb2YgY2VydGFpbiknCihpbmZvcm1hdGlvbiBjb250YWluZWQgaW4gdGhlIHZhcmlvdXMgcHJvZHVjdHMgZGVsaXZlcmVkIHRvIHlvdSBieSBDb3JlTG9naWMpJwooQ3JlZGNvLiknCigpJwooICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgUGFnZSAxIG9mIDIpJwpFVAplbmRzdHJlYW0KZW5kb2JqCjMgMCBvYmoKMjQ5NgplbmRvYmoKNCAwIG9iago8PC9UeXBlL1BhZ2UvUGFyZW50IDEgMCBSL0NvbnRlbnRzIDIgMCBSPj4KZW5kb2JqCjUgMCBvYmoKPDwgL0xlbmd0aCA2IDAgUiA+PgpzdHJlYW0KQlQKL0YwIDEwIFRmCjMwIDc2MiBUZAoxMCBUTAooLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKFJFRjoxLTEyMTU5LTEyODQxLTAwMDAgMDgvMDkvMjAxNyAgICAgICAgVElEOjEtMTIxNTktMTI4NDEgMDgvMDkvMjAxNyAxMjowODo0NyknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwooKScKKCAgICAgICAgICAgICAgICAgKioqRW5kIG9mIENSRURDTyBFeGVjdXRpdmUgU3VtbWFyeSBSZXBvcnQqKiopJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCiggICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBQYWdlIDIgb2YgMiknCkVUCmVuZHN0cmVhbQplbmRvYmoKNiAwIG9iago2MDcKZW5kb2JqCjcgMCBvYmoKPDwvVHlwZS9QYWdlL1BhcmVudCAxIDAgUi9Db250ZW50cyA1IDAgUj4+CmVuZG9iago4IDAgb2JqCjw8IC9MZW5ndGggOSAwIFIgPj4Kc3RyZWFtCkJUCi9GMCAxMCBUZgozMCA3NjIgVGQKMTAgVEwKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSknCihSRUY6MS0xMjE1OS0xMjg0MS0wMDAwIDA4LzA5LzIwMTcgICAgICAgIFRJRDoxLTEyMTU5LTEyODQxIDA4LzA5LzIwMTcgMTI6MDg6NDcpJwooQ3JlZGNvIEluc3RhbnQgTWVyZ2UgQ3JlZGl0IFJlcG9ydCAgICAgICAgICAgICAgICAgIEFjY3Q6IDQ0ODA0NjQpJwooUHJlcGFyZWQgZm9yOiBGM0VBIFNFUlZJQ0lORyBMTEMgLSBURVNUIEFDQ1QgICAgICAgTm90ZXM6KScKKFJlcXVlc3RlZDogWFBOLCBUVUMgLSBJICAgICAgICAgICAgICAgICAgICAgICAgRGVsaXZlcmVkOiBYUE4sIFRVQyknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwooQXBwOiBURVNUQ08sIFRPREQgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBTc246IDAwMC02MS1YWFhYKScKKEN1cnIgQWRkcjogMTEgUFJJTkNFVE9OIEFWLCBUUkVOVE9OLCBOSiAwODg0OCknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwooKScKKFdBUk5JTkc6IFBvc3NpYmxlIEluY29tcGxldGUgRGF0YS4pJwooKScKKCAgICAgICAgICAgICAgICAgICAgICAgICAgICBJTlNUQU5UIE1FUkdFIFNVTU1BUlkpJwooICAgICAgICAgICAgICAgICAgICAgICAgICAgIC0tLS0tLS0tLS0tLS0tLS0tLS0tLSknCihBQ0NPVU5UIERJU1RSSUJVVElPTiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBDVVJSRU5UIFNUQVRVU1wodHJhZGVsaW5lc1wpKScKKEFjY291bnQgVHlwZSAgICAgIENvdW50ICAgICAgIEJhbGFuY2UgICAgICBQYXltZW50cyBDdXJyIENsc2QgVW5ydCAzMCAgNjAgIDkwKyknCiggIFJlYWwgRXN0YXRlICAgICAgICAxICAgICAgICAkNjMsMjE1ICAgICAgICAgICQ5MTggIDEgICAgLSAgICAgLSAgIC0gICAtICAgLSknCiggIEluc3RhbGxtZW50ICAgICAgICA0ICAgICAgICAgICAgICQwICAgICAgICAgICAgJDAgIC0gICAgNCAgICAgLSAgIC0gICAtICAgLSknCiggIFJldm9sdmluZyAgICAgICAgIDIwICAgICAgICAgJDUsOTUzICAgICAgICAgICQxNDAgMTQgICAgNiAgICAgLSAgIC0gICAtICAgLSknCiggIE90aGVyICAgICAgICAgICAgICAwICAgICAgICAgICAgICQwICAgICAgICAgICAgJDAgIC0gICAgLSAgICAgLSAgIC0gICAtICAgLSknCiggIFRvdGFsICAgICAgICAgICAgIDI1ICAgICAgICAkNjksMTY4ICAgICAgICAkMSwwNTggMTUgICAxMCAgICAgLSAgIC0gICAtICAgLSknCiggKScKKElOUVVJUklFUyAgICAgICAgICAgICAgICAgIFBVQkxJQyBSRUNPUkRTICAgSElTVE9SSUNBTCBERUxJTlFVRU5DSUVTXChjb3VudFwpKScKKCAgNiBNb250aCBUb3RhbCAgICAgIDEgICAgICAgIEVGWCAgICAgTi9BICAgQWNjb3VudCBUeXBlICBMYXN0RGxxICAzMCAgNjAgIDkwKyknCiggIEVsaW0uIHNhbWUgZGF5ICAtICAwICAgICAgICBYUE4gICAgIE4vQSAgICAgUmVhbCBFc3RhdGUgICAgICAgICAgIC0gICAtICAgLSknCiggIEFkanVzdGVkIFRvdGFsICAgICAxICAgICAgICBUVUMgICAgIE4vQSAgICAgSW5zdGFsbG1lbnQgICAgICAgICAgIC0gICAtICAgLSknCiggIE5ldyBUcmFkZXNcKDYgbW9uXCkgIDAgICAgICAgIExhc3QgMnlycyBOICAgICBSZXZvbHZpbmcgICAgICAgICAgICAgLSAgIC0gICAtKScKKCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBPdGhlciAgICAgICAgICAgICAgICAgLSAgIC0gICAtKScKKCAgT2xkZXN0IFRyZDogMDIvMDcgICAgICAgIE9uIEZpbGU6IDA4LzA3ICAgICBUb3RhbCAgICAgICAgICAgICAgICAgLSAgIC0gICAtKScKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSknCihPbmx5IEFwcGxpY2FudC9Dby1hcHBsaWNhbnQgaW5mb3JtYXRpb24gaW5jbHVkZWQgaW4gdGhlIFN1bW1hcnkuKScKKCknCiggICAgICAgICAgICAgICAgICAgICAgICAgICBCVVJFQVUgU0NPUkUgSU5GT1JNQVRJT04pJwooICAgICAgICAgICAgICAgICAgICAgICAgICAgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKFhQTiBGSUNPLUlJICAgICAgICAgICAgICAgICAgICBcKEFQUFwpPSAgIDc1NiBGYWN0b3I6ICAgIDEwLCAgICAxNCwgICAgMDgsICAgIDA5KScKKCAgMTAgUkFUSU8gT0YgQkFMQU5DRSBUTyBMSU1JVCBPTiBCQU5LIFJFVk9MVklORyBPUiBPVEhFUiBSRVYgQUNDVFMgVE9PIEhJR0gpJwooICAxNCBMRU5HVEggT0YgVElNRSBBQ0NPVU5UUyBIQVZFIEJFRU4gRVNUQUJMSVNIRUQpJwooICAwOCBUT08gTUFOWSBJTlFVSVJJRVMgTEFTVCAxMiBNT05USFMpJwooICAwOSBUT08gTUFOWSBBQ0NPVU5UUyBSRUNFTlRMWSBPUEVORUQpJwooKScKKFhQTiBGSUNPIENsYXNzaWMgMDggQXV0byAgICAgICBcKEFQUFwpPSBOb3QgUHJvdmlkZWQgQnkgVGhlIFJlcG9zaXRvcnkpJwooKScKKFRVQyBGSUNPIENsYXNzaWMgMDQgICAgICAgICAgICBcKEFQUFwpPSAgIDczMiBGYWN0b3I6ICAgMDEwLCAgIDAwNSwgICAwMjgsICAgMDEyKScKKCAgMDEwIFBST1BPUlRJT04gT0YgQkFMQU5DRVMgVE8gQ1JFRElUIExJTUlUUyBJUyBUT08gSElHSCBPTiBCQU5LIFJFVk9MVklORyBPUiknCiggICAgICBPVEhFUiBSRVZPTFZJTkcgQUNDT1VOVFMpJwooICAwMDUgVE9PIE1BTlkgQUNDT1VOVFMgV0lUSCBCQUxBTkNFUyknCiggIDAyOCBOVU1CRVIgT0YgRVNUQUJMSVNIRUQgQUNDT1VOVFMpJwooICAwMTIgTEVOR1RIIE9GIFRJTUUgUkVWT0xWSU5HIEFDQ09VTlRTIEhBVkUgQkVFTiBFU1RBQkxJU0hFRCknCigpJwooVFVDIEZJQ08gQ2xhc3NpYyBBVSAwOCAgICAgICAgIFwoQVBQXCk9IE5vdCBQcm92aWRlZCBCeSBUaGUgUmVwb3NpdG9yeSknCigpJwooICAgICAgICAgICAgICAgICAgICAgICAgKioqKioqIERFUk9HQVRPUlkgSVRFTVMgKioqKioqKScKKCknCihQdWJsaWMgUmVjb3JkIEluZm9ybWF0aW9uOiknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSknCihObyBQdWJsaWMgUmVjb3JkIEluZm9ybWF0aW9uIGZvdW5kKScKKCknCigpJwooICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgUGFnZSAxIG9mIDYpJwpFVAplbmRzdHJlYW0KZW5kb2JqCjkgMCBvYmoKMzI4MAplbmRvYmoKMTAgMCBvYmoKPDwvVHlwZS9QYWdlL1BhcmVudCAxIDAgUi9Db250ZW50cyA4IDAgUj4+CmVuZG9iagoxMSAwIG9iago8PCAvTGVuZ3RoIDEyIDAgUiA+PgpzdHJlYW0KQlQKL0YwIDEwIFRmCjMwIDc2MiBUZAoxMCBUTAooLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKFJFRjoxLTEyMTU5LTEyODQxLTAwMDAgMDgvMDkvMjAxNyAgICAgICAgVElEOjEtMTIxNTktMTI4NDEgMDgvMDkvMjAxNyAxMjowODo0NyknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwooKScKKCAgICAgICAgICAgICAgICAgICAgKioqKioqIEVORCBPRiBERVJPR0FUT1JZIElURU1TICoqKioqKiknCigpJwooQWNjb3VudCBOYW1lL051bWJlciBcKFNvdXJjZXNcKSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFBhc3QgZHVlICAgICAgTGFzdCknCiggICAgIE9wZW4gICAgICAgSGlnaCAgIFBheW1lbnQgICBCYWxhbmNlIE1PUCAgU3RhdHVzICBScHRkICAzMCA2MCA5MCsgTVIgRGxxKScKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSknCihBY2NvdW50cyB1bmRlciBBcHBsaWNhbnQ6KScKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwooICAxLiBXRUxMUyBGQVJHTyBIT01FIE1PUlRHIFwoWFBOLUZNMjk5MDg1OCxUVUNcKSknCiggICBJIDAxLTE2ICAgICA2NDAwMCAgICAgICA5MTggICAgIDYzMjE1IE0tMSBDVVJSRU5UICAwNi0xNyAwMCAwMCAwMCAgMTgpJwooICAgICBIaXN0OiAgMDYtMTcgMTExMTEtMTExMTExMTExMTExICAgICAgICAgICAgUFlNVCAgMDYtMTcgQVBQKScKKCAgICAgQ3RneTogIFJFQUwgRVNUQVRFL0NPTlZFTlRJT05BTCBMT0FOICAgICAgICAgVGVybTogMzYwIE1PTiknCigpJwooICAyLiBISExEIEJBTksgXChYUE4tQkMzMjAwNzE0LFRVQ1wpKScKKCAgIEkgMDYtMTIgICAgICA0ODQyICAgICAgICA3NCAgICAgIDQ0NDEgUi0xIENVUlJFTlQgIDA0LTE3IDAwIDAwIDAwICA0NyknCiggICAgIEhpc3Q6ICAwNC0xNyAxMTExMTExMTExMTExMTExMTExMTExMTEgICAgICBQWU1UICAwNC0xNyBBUFApJwooICAgICBDdGd5OiAgQ1JFRElUIENBUkQgICAgICAgICAgICAgICAgICAgICAgICAgICBUZXJtOiBSRVYgICAgIExtdDogMTAwMDApJwooKScKKCAgMy4gR0VDQ0NDL0pFV0VMUlkgQUNDRU5UUyBcKFhQTi1CQzEyMjYyMzAsVFVDXCkpJwooICAgSSAxMS0xNiAgICAgIDIwMDAgICAgICAgIDM2ICAgICAgMTIzMCBSLTEgQ1VSUkVOVCAgMDYtMTcgMDAgMDAgMDAgICA4KScKKCAgICAgSGlzdDogIDA2LTE3IDExMTExMTEtICAgICAgICAgICAgICAgICAgICAgIFBZTVQgIDA1LTE3IEFQUCknCiggICAgIEN0Z3k6ICBDSEFSR0UgQUNDT1VOVCAgICAgICAgICAgICAgICAgICAgICAgIFRlcm06IFJFViAgICAgTG10OiAyMDAwKScKKCknCiggIDQuIEZJUlNUIFVTQSBCQU5LIE4gQSBcKFhQTi1CQzEyNjA5NThcKSknCiggICBBIDAxLTEyICAgICAxMjUwMCAgICAgICAgMTAgICAgICAgMjI4IFItMSBDVVJSRU5UICAwNi0xNyAwMCAwMCAwMCAgMjUpJwooICAgICBIaXN0OiAgMDYtMTcgMTExMTExMTExMTExMTExMTExMTExMTExICAgICAgUFlNVCAgMDUtMTcgQVBQKScKKCAgICAgQ3RneTogIENSRURJVCBDQVJEICAgICAgICAgICAgICAgICAgICAgICAgICAgVGVybTogUkVWICAgICBMbXQ6IDE2NTAwKScKKCAgICAgQVVUSE9SSVpFRCBVU0VSIEFDQ09VTlRcKEFQUFwpKScKKCknCiggIDUuIENJVEktVEVYQUNPIFwoVFVDLUIwMjgyRTAyNFwpKScKKCAgIEkgMDItMDcgICAgICAgMjE5ICAgICAgICAxMCAgICAgICAgMzcgUi0xIENVUlJFTlQgIDA2LTE3IDAwIDAwIDAwICAxNSknCiggICAgIEhpc3Q6ICAwNi0xNyAxMTExMTExMTExMTExMTEgICAgICAgICAgICAgICBQWU1UICAwNS0xNyBBUFApJwooICAgICBDdGd5OiAgQ1JFRElUIENBUkQgICAgICAgICAgICAgICAgICAgICAgICAgICBUZXJtOiBSRVYgICAgIExtdDogMjAwMCknCigpJwooICA2LiBDSVRJLUJQIE9JTCBcKFRVQy1CMDI4MkUwMjVcKSknCiggICBJIDAyLTEyICAgICAgICAxNyAgICAgICAgMTAgICAgICAgIDE3IFItMSBDVVJSRU5UICAwNi0xNyAwMCAwMCAwMCAgMTQpJwooICAgICBIaXN0OiAgMDYtMTcgMTExMTExMTExMTExMTEgICAgICAgICAgICAgICAgUFlNVCAgMDUtMTcgQVBQKScKKCAgICAgQ3RneTogIENSRURJVCBDQVJEICAgICAgICAgICAgICAgICAgICAgICAgICAgVGVybTogUkVWICAgICBMbXQ6IDE1MDApJwooKScKKCAgNy4gQk9TQ09WUyBERVBUIFNUT1JFIFwoWFBOLVpSMTM2Mjc2MCxUVUNcKSknCiggICBJIDA5LTE2ICAgICAgIDEwMiAgICAgICAgIDAgICAgIC0wLSAgIFItMSBDVVJSRU5UICAwNS0xNyAwMCAwMCAwMCAgIDkpJwooICAgICBIaXN0OiAgMDUtMTcgMTExMTExMTExICAgICAgICAgICAgICAgICAgICAgUFlNVCAgMDEtMTcgQVBQKScKKCAgICAgQ3RneTogIENIQVJHRSBBQ0NPVU5UICAgICAgICAgICAgICAgICAgICAgICAgVGVybTogUkVWICAgICBMbXQ6IDEwMiknCigpJwooICA4LiBGTEVFVCBCQU5LIE5BVElPTkFMIEFTIFwoWFBOLUJCMTEwMzEwMCxUVUNcKSknCiggICBJIDAxLTExICAgICAgMTAzOCAgICAgICAgIDAgICAgIC0wLSAgIEMtMSBDVVJSRU5UICAwNi0xNyAwMCAwMCAwMCAgNjEpJwooICAgICBIaXN0OiAgMDYtMTcgMTEtMTExMTExMTExMTExMTExMTExMTExICAgICAgUFlNVCAgMDMtMTUgQVBQKScKKCAgICAgQ3RneTogIExJTkUgT0YgQ1JFRElUICAgICAgICAgICAgICAgICAgICAgICAgVGVybTogUkVWICAgICBMbXQ6IDQ1MDApJwooKScKKCAgOS4gSVJDTyBGQ1UgXChUVUMtUTA2NzMyMDAxXCkpJwooICAgSSAwOS0wOSAgICAgIDUwMDAgICAgICAgICAwICAgICAtMC0gICBSLTEgQ1VSUkVOVCAgMDctMTAgMDAgMDAgMDAgICAxKScKKCAgICAgSGlzdDogIDA3LTEwIDEgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFBZTVQgIDA3LTEwIEFQUCknCiggICAgIEN0Z3k6ICBVTktOT1dOICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFRlcm06IFJFViknCigpJwooKScKKCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFBhZ2UgMiBvZiA2KScKRVQKZW5kc3RyZWFtCmVuZG9iagoxMiAwIG9iagozMTM4CmVuZG9iagoxMyAwIG9iago8PC9UeXBlL1BhZ2UvUGFyZW50IDEgMCBSL0NvbnRlbnRzIDExIDAgUj4+CmVuZG9iagoxNCAwIG9iago8PCAvTGVuZ3RoIDE1IDAgUiA+PgpzdHJlYW0KQlQKL0YwIDEwIFRmCjMwIDc2MiBUZAoxMCBUTAooLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKFJFRjoxLTEyMTU5LTEyODQxLTAwMDAgMDgvMDkvMjAxNyAgICAgICAgVElEOjEtMTIxNTktMTI4NDEgMDgvMDkvMjAxNyAxMjowODo0NyknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwooQWNjb3VudCBOYW1lL051bWJlciBcKFNvdXJjZXNcKSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFBhc3QgZHVlICAgICAgTGFzdCknCiggICAgIE9wZW4gICAgICAgSGlnaCAgIFBheW1lbnQgICBCYWxhbmNlIE1PUCAgU3RhdHVzICBScHRkICAzMCA2MCA5MCsgTVIgRGxxKScKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSknCigpJwooQWNjb3VudHMgdW5kZXIgQXBwbGljYW50IFwoY29udGludWVkXCk6KScKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwooIDEwLiBNQUNZUy9TVEVSTiBcKFRVQy1EMDkxMlEwMDFcKSknCiggICBJIDExLTExICAgICAgIDQzOCAgICAgICAgIDAgICAgIC0wLSAgIFItMSBDVVJSRU5UICAxMS0xNiAwMCAwMCAwMCAgIDUpJwooICAgICBIaXN0OiAgMTEtMTYgMTExMTEgICAgICAgICAgICAgICAgICAgICAgICAgUFlNVCAgMDItMTIgQVBQKScKKCAgICAgQ3RneTogIENIQVJHRSBBQ0NPVU5UICAgICAgICAgICAgICAgICAgICAgICAgVGVybTogUkVWKScKKCknCiggMTEuIE1CR0EvSkMgUEVOTkVZIFwoWFBOLURDMzMyMTg2MCxUVUNcKSknCiggICBJIDExLTE2ICAgICAgLTAtICAgICAgICAgIDAgICAgIC0wLSAgIFItMSBDVVJSRU5UICAwNi0xNyAwMCAwMCAwMCAgIDgpJwooICAgICBIaXN0OiAgMDYtMTcgMTExMTExMS0gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgQVBQKScKKCAgICAgQ3RneTogIENIQVJHRSBBQ0NPVU5UICAgICAgICAgICAgICAgICAgICAgICAgVGVybTogUkVWICAgICBMbXQ6IDc1MDApJwooKScKKCAxMi4gTUJHQS9KQyBQRU5ORVkgXChYUE4tREMzMzIxODYwLFRVQ1wpKScKKCAgIEkgMTEtMDcgICAgICAgMjEzICAgICAgICAgMCAgICAgLTAtICAgUi0xIENVUlJFTlQgIDA1LTE3IDAwIDAwIDAwICA0OSknCiggICAgIEhpc3Q6ICAwNS0xNyAxMTExMTExMTExMTExMTExMTExMTExMTEgICAgICBQWU1UICAxMC0xMyBBUFApJwooICAgICBDdGd5OiAgQ0hBUkdFIEFDQ09VTlQgICAgICAgICAgICAgICAgICAgICAgICBUZXJtOiBSRVYgICAgIExtdDogNjAwKScKKCknCiggMTMuIFNURVJOUy9NQUNZUy9GRFNCIFwoWFBOLFRVQy1EMDkxMlEwMDFcKSknCiggICBJIDExLTExICAgICAgIDQzOCAgICAgICAgIDAgICAgIC0wLSAgIFItMSBDVVJSRU5UICAwNC0xNyAwMCAwMCAwMCAgMzApJwooICAgICBIaXN0OiAgMDQtMTcgMTExMTExMTExMTExMTExMTExMTExMTExICAgICAgUFlNVCAgMDItMTIgQVBQKScKKCAgICAgQ3RneTogIENIQVJHRSBBQ0NPVU5UICAgICAgICAgICAgICAgICAgICAgICAgVGVybTogUkVWICAgICBMbXQ6IDYwMCknCigpJwooIDE0LiBUSEUgQk9OIFRPTiBcKFhQTi1aUjEzODk5OTgsVFVDXCkpJwooICAgSSAxMS0xMyAgICAgICAgMTAgICAgICAgICAwICAgICAtMC0gICBSLTEgQ1VSUkVOVCAgMDUtMTcgMDAgMDAgMDAgIDI1KScKKCAgICAgSGlzdDogIDA1LTE3IDExMTExMTExMTExMTExMTExMTExMTExMSAgICAgIFBZTVQgIDExLTEzIEFQUCknCiggICAgIEN0Z3k6ICBDSEFSR0UgQUNDT1VOVCAgICAgICAgICAgICAgICAgICAgICAgIFRlcm06IFJFViAgICAgTG10OiAxMDAwKScKKCknCiggMTUuIEhIIEJBTksgXChUVUMtQjA3OTkxMTkwXCkpJwooICAgSSAwNi0xMiAgICAgIDE3OTggICAgICAgICAwICAgICBOL0EgICBSLTEgQ1VSUkVOVCAgMDMtMTUgMDAgMDAgMDAgIDM0KScKKCAgICAgSGlzdDogIDAzLTE1IDExMTExMTExMTExMTExMTExMTExMTExMSAgICAgIFBZTVQgIDAyLTE1IEFQUCknCiggICAgIEN0Z3k6ICBDUkVESVQgQ0FSRCAgICAgICAgICAgICAgICAgICAgICAgICAgIFRlcm06IFJFViAgICAgTG10OiA4MDAwKScKKCknCiggMTYuIEJPU0NPVlMgREVQVCBTVE9SRSBcKFhQTi1aUjEzNjI3NjAsVFVDXCkpJwooICAgSSAxMi0xNSAgICAgIC0wLSAgICAgICAgICAwICAgIENMT1NFRCBSLTEgQ1VSUkVOVCAgMDMtMTcgMDAgMDAgMDAgIDE2KScKKCAgICAgSGlzdDogIDAzLTE3IDExMTExMTExLS0xMTExMTEgICAgICAgICAgICAgIENMU0QgIDAzLTE3IEFQUCknCiggICAgIEN0Z3k6ICBDSEFSR0UgQUNDT1VOVCAgICAgICAgICAgICAgICAgICAgICAgIFRlcm06IFJFViknCiggICAgIENMT1NFRCBCWSBDUkVESVRPUiknCiggICAgIENMT1NFRCknCigpJwooIDE3LiBDSVRJIFwoWFBOLU5aMTQzOTUwNyxUVUNcKSknCiggICBJIDA3LTA5ICAgICAgTi9BICAgICAgICAgIDAgICAgQ0xPU0VEIFItVSBVTlJBVEVEICAwOS0xMyAwMCAwMCAwMCAgMjYpJwooICAgICBIaXN0OiAgMDktMTMgLTExLS0tLS0tLS0tLTExMTExLS0tLTExICAgICAgQ0xTRCAgMDktMTEgQVBQKScKKCAgICAgQ3RneTogIENSRURJVCBDQVJEICAgICAgICAgICAgICAgICAgICAgICAgICAgVGVybTogUkVWKScKKCAgICAgQ0xPU0VEIEJZIENPTlNVTUVSKScKKCAgICAgQ0xPU0VEKScKKCknCigpJwooKScKKCknCigpJwooKScKKCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFBhZ2UgMyBvZiA2KScKRVQKZW5kc3RyZWFtCmVuZG9iagoxNSAwIG9iagoyODQ3CmVuZG9iagoxNiAwIG9iago8PC9UeXBlL1BhZ2UvUGFyZW50IDEgMCBSL0NvbnRlbnRzIDE0IDAgUj4+CmVuZG9iagoxNyAwIG9iago8PCAvTGVuZ3RoIDE4IDAgUiA+PgpzdHJlYW0KQlQKL0YwIDEwIFRmCjMwIDc2MiBUZAoxMCBUTAooLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKFJFRjoxLTEyMTU5LTEyODQxLTAwMDAgMDgvMDkvMjAxNyAgICAgICAgVElEOjEtMTIxNTktMTI4NDEgMDgvMDkvMjAxNyAxMjowODo0NyknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwooQWNjb3VudCBOYW1lL051bWJlciBcKFNvdXJjZXNcKSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFBhc3QgZHVlICAgICAgTGFzdCknCiggICAgIE9wZW4gICAgICAgSGlnaCAgIFBheW1lbnQgICBCYWxhbmNlIE1PUCAgU3RhdHVzICBScHRkICAzMCA2MCA5MCsgTVIgRGxxKScKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSknCigpJwooQWNjb3VudHMgdW5kZXIgQXBwbGljYW50IFwoY29udGludWVkXCk6KScKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwooIDE4LiBGSVJTVCBVTklPTiBcKFhQTixUVUMtQjAzNjJONDIxXCkpJwooICAgSSAwNC0xMyAgICAgIDYwMTkgICAgICAgICAwICAgIENMT1NFRCBJLTEgQ1VSUkVOVCAgMDYtMTYgMDAgMDAgMDAgIDM3KScKKCAgICAgSGlzdDogIDA2LTE2IDEtMTExMTExMTExMTExMTExMTExMTExMSAgICAgIENMU0QgIDAzLTE2IEFQUCknCiggICAgIEN0Z3k6ICBBVVRPKScKKCAgICAgUEFJRCknCiggICAgIENMT1NFRCknCigpJwooIDE5LiBGSVJTVCBVU0EgQkFOSyBcKFhQTi1CQzEyMzM5MTAsVFVDXCkpJwooICAgSSAwOC0xMSAgICAgIDkwMDAgICAgICAgICAwICAgIENMT1NFRCBSLTEgQ1VSUkVOVCAgMTItMTYgMDAgMDAgMDAgIDQ5KScKKCAgICAgSGlzdDogIDEyLTE2IDExMTExMTExMTExMTExMTExMTExMTExMSAgICAgIENMU0QgIDA5LTE2IEFQUCknCiggICAgIEN0Z3k6ICBDUkVESVQgQ0FSRCAgICAgICAgICAgICAgICAgICAgICAgICAgIFRlcm06IFJFViAgICAgTG10OiA5MDAwKScKKCAgICAgQ0xPU0VEIEJZIENPTlNVTUVSKScKKCAgICAgUEFJRCknCigpJwooIDIwLiBGSVJTVCBVU0EgQkFOSyBOIEEgXChYUE4sVFVDLUIwNzUxOTA0NFwpKScKKCAgIEEgMDEtMTIgICAgIDEwMDAwICAgICAgICAgMCAgICBDTE9TRUQgUi0xIENVUlJFTlQgIDA4LTE1IDAwIDAwIDAwICA0NCknCiggICAgIEhpc3Q6ICAwOC0xNSAxLS0tLS0tLS0tMS0tLS0tLS0tLS0tLS0gICAgICBDTFNEICAwOC0xNSBBUFApJwooICAgICBDdGd5OiAgQ1JFRElUIENBUkQgICAgICAgICAgICAgICAgICAgICAgICAgICBUZXJtOiBSRVYgICAgIExtdDogMTAwMDApJwooICAgICBBVVRIT1JJWkVEIFVTRVIgQUNDT1VOVFwoQVBQXCkpJwooICAgICBDTE9TRUQgQlkgQ09OU1VNRVIpJwooICAgICBQQUlEKScKKCknCiggMjEuIEhCU0JOQSBNRyBcKFhQTi1CQzMyNzkwMjUsVFVDXCkpJwooICAgSSAwOS0xMCAgICAgICAyOTYgICAgICAgICAwICAgIENMT1NFRCBSLTEgQ1VSUkVOVCAgMTAtMTUgMDAgMDAgMDAgIDQ5KScKKCAgICAgSGlzdDogIDEwLTE1IDExMTExMTExMTExMTExMTExMTExMTExMSAgICAgIENMU0QgIDAzLTE1IEFQUCknCiggICAgIEN0Z3k6ICBDUkVESVQgQ0FSRCAgICAgICAgICAgICAgICAgICAgICAgICAgIFRlcm06IFJFViAgICAgTG10OiA0MDAwKScKKCAgICAgQ0xPU0VEIEJZIENSRURJVE9SKScKKCAgICAgQ0xPU0VEKScKKCknCiggMjIuIEhITEQgQkFOSyBcKFRVQy1CMDkyV0wwMDFcKSknCiggICBJIDA5LTEwICAgICAgLTAtICAgICAgICAgIDAgICAgQ0xPU0VEIFItVSBVTlJBVEVEICAwOS0xMiAwMCAwMCAwMCAgMjUpJwooICAgICBIaXN0OiAgMDktMTIgLTExMTExMTExMTExMTExMTExMTExMTExICAgICAgQ0xTRCAgMDgtMTEgQVBQKScKKCAgICAgQ3RneTogIENSRURJVCBDQVJEICAgICAgICAgICAgICAgICAgICAgICAgICAgVGVybTogUkVWICAgICBMbXQ6IDQwMDApJwooICAgICBMT1NUIE9SIFNUT0xFTiBDQVJEKScKKCknCiggMjMuIElSQ08gQ09NTVVOSVRZIEZFRCBDUiBcKFhQTi1GQzY3MzAwNjBcKSknCiggICBJIDA0LTA5ICAgICAgMzAwMCAgICAgICAgIDAgICAgQ0xPU0VEIEktMSBDVVJSRU5UICAwNy0xMCAwMCAwMCAwMCAgMTYpJwooICAgICBIaXN0OiAgMDctMTAgMTExMTExMTExMTExMTExMSAgICAgICAgICAgICAgQ0xTRCAgMDctMTAgQVBQKScKKCAgICAgQ3RneTogIEFVVE8gTE9BTiknCiggICAgIFBBSUQpJwooKScKKCAyNC4gSVJDTyBDT01NVU5JVFkgRkVEIENSIFwoWFBOLUZDNjczMDA2MFwpKScKKCAgIEkgMDktMDkgICAgICA1MDAwICAgICAgICAgMCAgICBDTE9TRUQgSS0xIENVUlJFTlQgIDA3LTEwIDAwIDAwIDAwICAxMCknCiggICAgIEhpc3Q6ICAwNy0xMCAxMTExMTExMTExICAgICAgICAgICAgICAgICAgICBDTFNEICAwNy0xMCBBUFApJwooICAgICBDdGd5OiAgVU5TRUNVUkVEKScKKCAgICAgUEFJRCknCigpJwooKScKKCknCiggICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBQYWdlIDQgb2YgNiknCkVUCmVuZHN0cmVhbQplbmRvYmoKMTggMCBvYmoKMjYyNgplbmRvYmoKMTkgMCBvYmoKPDwvVHlwZS9QYWdlL1BhcmVudCAxIDAgUi9Db250ZW50cyAxNyAwIFI+PgplbmRvYmoKMjAgMCBvYmoKPDwgL0xlbmd0aCAyMSAwIFIgPj4Kc3RyZWFtCkJUCi9GMCAxMCBUZgozMCA3NjIgVGQKMTAgVEwKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSknCihSRUY6MS0xMjE1OS0xMjg0MS0wMDAwIDA4LzA5LzIwMTcgICAgICAgIFRJRDoxLTEyMTU5LTEyODQxIDA4LzA5LzIwMTcgMTI6MDg6NDcpJwooLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKEFjY291bnQgTmFtZS9OdW1iZXIgXChTb3VyY2VzXCkgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBQYXN0IGR1ZSAgICAgIExhc3QpJwooICAgICBPcGVuICAgICAgIEhpZ2ggICBQYXltZW50ICAgQmFsYW5jZSBNT1AgIFN0YXR1cyAgUnB0ZCAgMzAgNjAgOTArIE1SIERscSknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwooKScKKEFjY291bnRzIHVuZGVyIEFwcGxpY2FudCBcKGNvbnRpbnVlZFwpOiknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKCAyNS4gUE5DIEJBTksgXChYUE4tQkI2MTQwMTA1LFRVQ1wpKScKKCAgIEkgMDktMTAgICAgICA4MjA2ICAgICAgICAgMCAgICBDTE9TRUQgSS0xIENVUlJFTlQgIDAzLTEzIDAwIDAwIDAwICAzMSknCiggICAgIEhpc3Q6ICAwMy0xMyAxMTExMTExMTExMTExMTExMTExMTExMTEgICAgICBDTFNEICAwMy0xMyBBUFApJwooICAgICBDdGd5OiAgQVVUTyBMT0FOKScKKCAgICAgUEFJRCknCiggICAgIENMT1NFRCknCigpJwooSWRlbnRpZmljYXRpb24gSW5mb3JtYXRpb246KScKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSknCiggIDEuIFRFU1RDTywgVE9ERCBBICBTc246IDAwMC02MS1YWFhYICBcKFhQTlwpKScKKCAgICAgU1NOIE1BVENIRVMuKScKKCAgMi4gVEVTVENPLCBUT0REIEEgIFNzbjogMDAwLTYxLVhYWFggRG9iOiAwNS0xNS04NyBcKFRVQ1wpKScKKCAgICAgU1NOIE1BVENIRVMuKScKKCknCihJbnF1aXJpZXMgbWFkZSBpbiB0aGUgbGFzdCAxODAgZGF5czopJwooLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKCAgMS4gMDctMTUtMTcgUkVMUyBSRVBPUlRJICBcKFRVQy1aMDgyNTY5MjhcKSBcKEFQUFwpKScKKCknCihBZGRyZXNzIEluZm9ybWF0aW9uOiknCigtLS0tLS0tLS0tLS0tLS0tLS0tLSknCiggIDEuIDExIFBSSU5DRVRPTiBBViknCiggICAgIFRSRU5UT04sIE5KIDA4ODQ4IFNpbmNlIDAzLTA5IFJwdGQgMDgtMTUgIFwoWFBOXCkgXChBUFBcKSknCiggIDIuIDg5IFNJTExBUyBSRCknCiggICAgIFRSRU5UT04sIE5KIDA4ODQ4IFNpbmNlIDEyLTE1IFJwdGQgMDEtMTYgIFwoWFBOLFRVQ1wpIFwoQVBQXCkpJwooICAzLiAxMDkgVFJFTlRPTiBCTCknCiggICAgIE1JTEZPUkQsIE5KIDA4ODQ4MjcyNSBTaW5jZSAwMy0xNiBScHRkIDA2LTE3ICBcKFhQTixUVUNcKSBcKEFQUFwpKScKKCknCihFbXBsb3ltZW50IEluZm9ybWF0aW9uOiknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSknCiggIDEuIEhVTlRFUkRPTiBERVYgIENMSU5UT04sIE5KKScKKCAgICAgT0NDVVBBVElPTiBVTktOT1dOIFJwdGQgMTEtMTYgIFwoWFBOXCkgXChBUFBcKSknCiggIDIuIFNUQVRFIE9GIE5FVyBKRSknCiggICAgIE9DQ1VQQVRJT04gVU5LTk9XTiBScHRkIDA1LTEzICBcKFhQTlwpIFwoQVBQXCkpJwooKScKKE1pc2NlbGxhbmVvdXMgSW5mb3JtYXRpb246KScKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKCAgMS4gVmFyaWF0aW9uIGJldHdlZW4gSW5xdWlyeSBhbmQgT25maWxlIGFkZHJlc3MgIFwoWFBOXCkgXChBUFBcKSknCigpJwooQ29uc3VtZXIgUmVmZXJyYWwgSW5mb3JtYXRpb246KScKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSknCihYUE4gLSBFWFBFUklBTiwgUEhPTkU6IFwoODg4XCkgMzk3LTM3NDIpJwooICAgICAgUC5PLiBCT1ggMjAwMiwgQUxMRU4sIFRYIDc1MDEzKScKKFRVQyAtIFRSQU5TIFVOSU9OLCBQSE9ORTogXCg4MDBcKSA4ODgtNDIxMyknCiggICAgICBQLk8uIEJPWCAxMDAwLCBDSEVTVEVSLCBQQSAxOTAyMiknCigpJwooKScKKCknCigpJwooKScKKCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFBhZ2UgNSBvZiA2KScKRVQKZW5kc3RyZWFtCmVuZG9iagoyMSAwIG9iagoyMjEwCmVuZG9iagoyMiAwIG9iago8PC9UeXBlL1BhZ2UvUGFyZW50IDEgMCBSL0NvbnRlbnRzIDIwIDAgUj4+CmVuZG9iagoyMyAwIG9iago8PCAvTGVuZ3RoIDI0IDAgUiA+PgpzdHJlYW0KQlQKL0YwIDEwIFRmCjMwIDc2MiBUZAoxMCBUTAooLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKFJFRjoxLTEyMTU5LTEyODQxLTAwMDAgMDgvMDkvMjAxNyAgICAgICAgVElEOjEtMTIxNTktMTI4NDEgMDgvMDkvMjAxNyAxMjowODo0NyknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwooKScKKFByZXBhcmVkIEJ5OiBDb3JlTG9naWMgQ3JlZGNvKScKKCAgICAgICAgICAgICBQLk8uIEJPWCA1MDkxMjQpJwooICAgICAgICAgICAgIFNBTiBESUVHTywgQ0EgOTIxNTApJwooICAgICAgICAgICAgIENvbnRhY3Q6IFwoODAwXCk5ODYtNDM0MyAgRmF4OiA4MDAgMjM3IDY1MjYpJwooKScKKCAgICAgICAgICAgICAgICAgICoqKioqKiBFTkQgT0YgSU5TVEFOVCBNRVJHRSBSRVBPUlQgKioqKioqKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgRW5kIG9mIENyZWRpdCBSZXBvcnQpJwpFVAplbmRzdHJlYW0KZW5kb2JqCjI0IDAgb2JqCjc1NQplbmRvYmoKMjUgMCBvYmoKPDwvVHlwZS9QYWdlL1BhcmVudCAxIDAgUi9Db250ZW50cyAyMyAwIFI+PgplbmRvYmoKMjYgMCBvYmoKPDwgL0xlbmd0aCAyNyAwIFIgPj4Kc3RyZWFtCkJUCi9GMCAxMCBUZgozMCA3NjIgVGQKMTAgVEwKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSknCihSRUY6MS0xMjE1OS0xMjg0MS0wMDAwIDA4LzA5LzIwMTcgICAgICAgIFRJRDoxLTEyMTU5LTEyODQxIDA4LzA5LzIwMTcgMTI6MDg6NDcpJwooUHJvU2NhbiBPRkFDIFJlcG9ydCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEFjY3Q6IDQ0ODA0NjQpJwooUHJlcGFyZWQgZm9yOiBGM0VBIFNFUlZJQ0lORyBMTEMgLSBURVNUIEFDQ1QgICAgICAgTm90ZXM6KScKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSknCihBcHA6IFRFU1RDTywgVE9ERCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFNzbjogMDAwLTYxLVhYWFgpJwooQ3VyciBBZGRyOiAxMSBQUklOQ0VUT04gQVYsIFRSRU5UT04sIE5KIDA4ODQ4KScKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSknCigpJwooU3VtbWFyeTopJwooLS0tLS0tLS0pJwooT0ZBQyBDSEVDSyBDTEVBUiknCigpJwooQXBwbGljYW50IFNlYXJjaCBSZXN1bHRzOiknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKCBTZWFyY2ggQ3JpdGVyaWE6IE5hbWUgJiBBZGRyZXNzKScKKCBObyBNYXRjaCBGb3VuZCknCigpJwooUHJlcGFyZWQgQnk6IENvcmVMb2dpYyBDcmVkY28pJwooICAgICAgICAgICAgIFAuTy4gQk9YIDUwOTEyNCknCiggICAgICAgICAgICAgU0FOIERJRUdPLCBDQSA5MjE1MCknCiggICAgICAgICAgICAgQ29udGFjdDogXCg4MDBcKTk4Ni00MzQzICBGYXg6IDgwMCAyMzcgNjUyNiknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCiggICAgICAgICAgICAgICAgICAgICAgICAgIEVuZCBvZiBQcm9TY2FuIE9GQUMgUmVwb3J0KScKRVQKZW5kc3RyZWFtCmVuZG9iagoyNyAwIG9iagoxMTUxCmVuZG9iagoyOCAwIG9iago8PC9UeXBlL1BhZ2UvUGFyZW50IDEgMCBSL0NvbnRlbnRzIDI2IDAgUj4+CmVuZG9iagoyOSAwIG9iago8PCAvTGVuZ3RoIDMwIDAgUiA+PgpzdHJlYW0KQlQKL0YwIDEwIFRmCjMwIDc2MiBUZAoxMCBUTAooKScKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSknCihSRUY6MS0xMjE1OS0xMjg0MS0wMDAwIDA4LzA5LzIwMTcgICAgICAgIFRJRDoxLTEyMTU5LTEyODQxIDA4LzA5LzIwMTcgMTI6MDg6NDcpJwooQ3JlZGl0IFNjb3JlIERpc2Nsb3N1cmUpJwooUHJlcGFyZWQgZm9yOiBGM0VBIFNFUlZJQ0lORyBMTEMgLSBURVNUIEFDQ1QpJwooQWRkcmVzcyAgICAgOiAxMDI3NyBTQ1JJUFBTIFJBTkNIIEJMVkQsIFNBTiBESUVHTywgQ0EgOTIxMTcpJwooLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKEFwcGxpY2FudDogVE9ERCwgVEVTVENPKScKKEN1cnJlbnQgQWRkcjogMTEgUFJJTkNFVE9OIEFWLCBUUkVOVE9OLCBOSiAwODg0OCknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwooICAgICAgICAgICAgICBZT1VSIENSRURJVCBTQ09SRSBBTkQgVEhFIFBSSUNFIFlPVSBQQVkgRk9SIENSRURJVCknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwoofCBZb3VyIENyZWRpdCBTY29yZSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8KScKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSknCih8IFlvdXIgQ3JlZGl0IFNjb3JlIHwgNzU2IFNvdXJjZSA6IFhQTiBGSUNPLUlJICAgICAgICAgICAgICBEYXRlOiAwOC8wOS8yMDE3IHwpJwoofCAgICAgICAgICAgICAgICAgICB8IDczMiBTb3VyY2UgOiBUVUMgRklDTyBDbGFzc2ljIDA0ICAgICAgRGF0ZTogMDgvMDkvMjAxNyB8KScKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwoofCBVbmRlcnN0YW5kaW5nIFlvdXIgQ3JlZGl0IFNjb3JlICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8KScKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSknCih8IFdoYXQgeW91IHNob3VsZCAgIHwgWW91ciBjcmVkaXQgc2NvcmUgaXMgYSBudW1iZXIgdGhhdCByZWZsZWN0cyB0aGUgICAgICAgIHwpJwoofCBrbm93IGFib3V0ICAgICAgICB8IGluZm9ybWF0aW9uIGluIHlvdXIgY3JlZGl0IHJlcG9ydC4gICAgICAgICAgICAgICAgICAgICB8KScKKHwgY3JlZGl0IHNjb3JlcyAgICAgfCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCknCih8ICAgICAgICAgICAgICAgICAgIHwgWW91ciBjcmVkaXQgcmVwb3J0IGlzIGEgcmVjb3JkIG9mIHlvdXIgY3JlZGl0ICAgICAgICAgIHwpJwoofCAgICAgICAgICAgICAgICAgICB8IGhpc3RvcnkuIEl0IGluY2x1ZGVzIGluZm9ybWF0aW9uIGFib3V0IHdoZXRoZXIgeW91ICAgICB8KScKKHwgICAgICAgICAgICAgICAgICAgfCBwYXkgeW91ciBiaWxscyBvbiB0aW1lIGFuZCBob3cgbXVjaCB5b3Ugb3dlIHRvICAgICAgICAgfCknCih8ICAgICAgICAgICAgICAgICAgIHwgY3JlZGl0b3JzLiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwpJwoofCAgICAgICAgICAgICAgICAgICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8KScKKHwgICAgICAgICAgICAgICAgICAgfCBZb3VyIGNyZWRpdCBzY29yZSBjYW4gY2hhbmdlLCBkZXBlbmRpbmcgb24gaG93IHlvdXIgICAgfCknCih8ICAgICAgICAgICAgICAgICAgIHwgY3JlZGl0IGhpc3RvcnkgY2hhbmdlcy4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwpJwooLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKHwgSG93IHdlIHVzZSB5b3VyICAgfCBZb3VyIGNyZWRpdCBzY29yZSBjYW4gYWZmZWN0IHdoZXRoZXIgeW91IGNhbiBnZXQgYSAgICAgfCknCih8IGNyZWRpdCBzY29yZSAgICAgIHwgbG9hbiBhbmQgaG93IG11Y2ggeW91IGhhdmUgdG8gcGF5IGZvciB0aGF0IGxvYW4uICAgICAgIHwpJwooLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKHwgVGhlIHJhbmdlIG9mICAgICAgfCBYUE4gRklDTy1JSTogU2NvcmVzIHJhbmdlIGZyb20gYSBsb3cgb2YgMzIwIHRvIGEgaGlnaCAgfCknCih8IHNjb3JlcyAgICAgICAgICAgIHwgb2YgODQ0LiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwpJwoofCAgICAgICAgICAgICAgICAgICB8IFRVQyBGSUNPIENsYXNzaWMgMDQ6IFNjb3JlcyByYW5nZSBmcm9tIGEgbG93IG9mIDMwOSAgICB8KScKKHwgICAgICAgICAgICAgICAgICAgfCB0byBhIGhpZ2ggb2YgODM5LiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCknCih8ICAgICAgICAgICAgICAgICAgIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwpJwoofCAgICAgICAgICAgICAgICAgICB8IEdlbmVyYWxseSwgdGhlIGhpZ2hlciB5b3VyIHNjb3JlLCB0aGUgbW9yZSBsaWtlbHkgICAgICB8KScKKHwgICAgICAgICAgICAgICAgICAgfCB5b3UgYXJlIHRvIGJlIG9mZmVyZWQgYmV0dGVyIGNyZWRpdCB0ZXJtcy4gICAgICAgICAgICAgfCknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwoofCBIb3cgeW91ciBzY29yZSAgICB8IFhQTiBGSUNPLUlJOiBZb3VyIGNyZWRpdCBzY29yZSByYW5rcyBoaWdoZXIgdGhhbiA1OSAgICB8KScKKHwgY29tcGFyZXMgdG8gdGhlICAgfCBwZXJjZW50IG9mIFUuUy4gY29uc3VtZXJzLiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCknCih8IHNjb3JlcyBvZiBvdGhlciAgIHwgVFVDIEZJQ08gQ2xhc3NpYyAwNDogWW91ciBjcmVkaXQgc2NvcmUgcmFua3MgaGlnaGVyICAgIHwpJwoofCBjb25zdW1lcnMgICAgICAgICB8IHRoYW4gNTMgcGVyY2VudCBvZiBVLlMuIGNvbnN1bWVycy4gICAgICAgICAgICAgICAgICAgICB8KScKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwoofCBDaGVja2luZyBZb3VyIENyZWRpdCBSZXBvcnQgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8KScKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSknCih8IFdoYXQgaWYgdGhlcmUgYXJlIHwgWW91IGhhdmUgYSByaWdodCB0byBkaXNwdXRlIGFueSBpbmFjY3VyYXRlICAgICAgICAgICAgIHwpJwoofCBtaXN0YWtlcyBpbiB5b3VyICB8IGluZm9ybWF0aW9uIGluIHlvdXIgY3JlZGl0IHJlcG9ydC4gSWYgeW91IGZpbmQgICAgICAgICB8KScKKHwgY3JlZGl0IHJlcG9ydD8gICAgfCBtaXN0YWtlcyBvbiB5b3VyIGNyZWRpdCByZXBvcnQsIGNvbnRhY3QgdGhlIGNvbnN1bWVyICAgfCknCih8ICAgICAgICAgICAgICAgICAgIHwgcmVwb3J0aW5nIGFnZW5jeS4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwpJwoofCAgICAgICAgICAgICAgICAgICB8IEl0IGlzIGEgZ29vZCBpZGVhIHRvIGNoZWNrIHlvdXIgY3JlZGl0IHJlcG9ydCB0byAgICAgICB8KScKKHwgICAgICAgICAgICAgICAgICAgfCBtYWtlIHN1cmUgdGhlIGluZm9ybWF0aW9uIGl0IGNvbnRhaW5zIGlzIGFjY3VyYXRlLiAgICAgfCknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwooKScKKCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFBhZ2UgMSBvZiAyKScKRVQKZW5kc3RyZWFtCmVuZG9iagozMCAwIG9iago0NDczCmVuZG9iagozMSAwIG9iago8PC9UeXBlL1BhZ2UvUGFyZW50IDEgMCBSL0NvbnRlbnRzIDI5IDAgUj4+CmVuZG9iagozMiAwIG9iago8PCAvTGVuZ3RoIDMzIDAgUiA+PgpzdHJlYW0KQlQKL0YwIDEwIFRmCjMwIDc2MiBUZAoxMCBUTAooLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKFJFRjoxLTEyMTU5LTEyODQxLTAwMDAgMDgvMDkvMjAxNyAgICAgICAgVElEOjEtMTIxNTktMTI4NDEgMDgvMDkvMjAxNyAxMjowODo0NyknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwooKScKKHwgSG93IGNhbiB5b3Ugb2J0YWlufCBVbmRlciBmZWRlcmFsIGxhdywgeW91IGhhdmUgdGhlIHJpZ2h0IHRvIG9idGFpbiBhICAgICAgfCknCih8IGEgY29weSBvZiB5b3VyICAgIHwgZnJlZSBjb3B5IG9mIHlvdXIgY3JlZGl0IHJlcG9ydCBmcm9tIGVhY2ggb2YgdGhlICAgICAgIHwpJwoofCBjcmVkaXQgcmVwb3J0PyAgICB8IG5hdGlvbndpZGUgY29uc3VtZXIgcmVwb3J0aW5nIGFnZW5jaWVzIG9uY2UgYSB5ZWFyLiAgICB8KScKKHwgICAgICAgICAgICAgICAgICAgfCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCknCih8ICAgICAgICAgICAgICAgICAgIHwgVG8gb3JkZXIgeW91ciBmcmVlIGFubnVhbCBjcmVkaXQgcmVwb3J0LSAgICAgICAgICAgICAgIHwpJwoofCAgICAgICAgICAgICAgICAgICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8KScKKHwgICAgICAgICAgICAgICAgICAgfCBCeSB0ZWxlcGhvbmU6IENhbGwgdG9sbC1mcmVlOiAxLTg3Ny0zMjItODIyOCAgICAgICAgICAgfCknCih8ICAgICAgICAgICAgICAgICAgIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwpJwoofCAgICAgICAgICAgICAgICAgICB8IE9uIHRoZSB3ZWI6IFZpc2l0IHd3dy5hbm51YWxjcmVkaXRyZXBvcnQuY29tICAgICAgICAgICB8KScKKHwgICAgICAgICAgICAgICAgICAgfCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCknCih8ICAgICAgICAgICAgICAgICAgIHwgQnkgbWFpbDogTWFpbCB5b3VyIGNvbXBsZXRlZCBBbm51YWwgQ3JlZGl0IFJlcG9ydCAgICAgIHwpJwoofCAgICAgICAgICAgICAgICAgICB8IFJlcXVlc3QgRm9ybSBcKHdoaWNoIHlvdSBjYW4gb2J0YWluIGZyb20gdGhlICAgICAgICAgICAgfCknCih8ICAgICAgICAgICAgICAgICAgIHwgRmVkZXJhbCBUcmFkZSBDb21taXNzaW9uJ3Mgd2Vic2l0ZSBhdCBodHRwOi8vd3d3LiAgICAgIHwpJwoofCAgICAgICAgICAgICAgICAgICB8IGZ0Yy5nb3YvYmNwL2NvbmxpbmUvaW5jbHVkZS9yZXF1ZXN0Zm9ybWZpbmFsLnBkZlwpdG86ICAgfCknCih8ICAgICAgICAgICAgICAgICAgIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwpJwoofCAgICAgICAgICAgICAgICAgICB8IEFubnVhbCBDcmVkaXQgUmVwb3J0IFJlcXVlc3QgU2VydmljZSAgICAgICAgICAgICAgICAgICB8KScKKHwgICAgICAgICAgICAgICAgICAgfCBQLk8uIEJveCAxMDUyODEgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCknCih8ICAgICAgICAgICAgICAgICAgIHwgQXRsYW50YSwgR0EgMzAzNDgtNTI4MSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwpJwooLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKHwgSG93IGNhbiB5b3UgZ2V0ICAgfCBGb3IgbW9yZSBpbmZvcm1hdGlvbiBhYm91dCBjcmVkaXQgcmVwb3J0cyBhbmQgeW91ciAgICAgfCknCih8IG1vcmUgaW5mb3JtYXRpb24/IHwgcmlnaHRzIHVuZGVyIGZlZGVyYWwgbGF3LCB2aXNpdCB0aGUgRmVkZXJhbCBSZXNlcnZlICAgIHwpJwoofCAgICAgICAgICAgICAgICAgICB8IEJvYXJkJ3Mgd2ViIHNpdGUgYXQgd3d3LmZlZGVyYWxyZXNlcnZlLmdvdiwgb3IgdGhlICAgICB8KScKKHwgICAgICAgICAgICAgICAgICAgfCBGZWRlcmFsIFRyYWRlIENvbW1pc3Npb24ncyB3ZWIgc2l0ZSBhdCB3d3cuZnRjLmdvdi4gICAgfCknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwooIENvcmVMb2dpYyBDcmVkY28gaXMgYSByZXNlbGxlciBvZiBjcmVkaXQgc2NvcmVzIHByb3ZpZGVkIGJ5IHRoZSB0aHJlZSknCiggbmF0aW9uYWwgcmVwb3NpdG9yaWVzLCBFcXVpZmF4IFwoRUZYXCksIEV4cGVyaWFuIFwoWFBOXCkgYW5kIFRyYW5zVW5pb24gXChUVUNcKS4pJwooIFRoZSBuYW1lLCBhZGRyZXNzLCBhbmQgd2Vic2l0ZSBmb3IgY29udGFjdGluZyB0aGUgcGVyc29uIG9yIGVudGl0eSB3aG8pJwooIGRldmVsb3BlZCB0aGUgc2NvcmUgXChzXCkgb3IgZGV2ZWxvcGVkIHRoZSBtZXRob2RvbG9neSBvZiB0aGUgc2NvcmUgXChzXCkgYXJlKScKKCBhcyBmb2xsb3dzOiknCiggKScKKEZvciBFeHBlcmlhbjopJwooCUV4cGVyaWFuKScKKAlQLk8uIEJveCAyMDAyKScKKAlBTExFTiwgVFggNzUwMTMpJwooCVwoODg4XCkgMzk3LTM3NDIpJwooCSB3d3cuZXhwZXJpYW4uY29tKScKKCApJwooICknCihGb3IgVHJhbnNVbmlvbjopJwooCVRyYW5zIFVuaW9uKScKKAlQLk8uIEJveCAxMDAwKScKKAlDSEVTVEVSLCBQQSAxOTAyMiknCigJXCg4NjZcKSA4ODctMjY3MyknCigJd3d3LnRyYW5zdW5pb24uY29tKScKKCApJwooUHJlcGFyZWQgYnk6KScKKCBDb3JlTG9naWMgQ3JlZGNvKScKKCBQLk8uIEJPWCA1MDkxMjQsIFNBTiBESUVHTywgQ0EgOTIxNTApJwooIDgwMCA5ODYgNDM0MyknCiggd3d3LmNyZWRjb2NyZWRpdC5jb20pJwooKScKKCknCigpJwooKScKKCAgICAgICAgICAgICAgICAgICAgRW5kIG9mIENyZWRpdCBTY29yZSBEaXNjbG9zdXJlIFJlcG9ydCknCkVUCmVuZHN0cmVhbQplbmRvYmoKMzMgMCBvYmoKMzAzMQplbmRvYmoKMzQgMCBvYmoKPDwvVHlwZS9QYWdlL1BhcmVudCAxIDAgUi9Db250ZW50cyAzMiAwIFI+PgplbmRvYmoKMzUgMCBvYmoKPDwgL0xlbmd0aCAzNiAwIFIgPj4Kc3RyZWFtCkJUCi9GMCAxMCBUZgozMCA3NjIgVGQKMTAgVEwKKCknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwooUkVGOjEtMTIxNTktMTI4NDEtMDAwMCAwOC8wOS8yMDE3ICAgICAgICBUSUQ6MS0xMjE1OS0xMjg0MSAwOC8wOS8yMDE3IDEyOjA4OjQ3KScKKEJ1eWVySUQgSW5kZXggUmVwb3J0ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBBY2N0OiA0NDgwNDY0KScKKFByZXBhcmVkIGZvcjogRjNFQSBTRVJWSUNJTkcgTExDIC0gVEVTVCBBQ0NUICAgICAgIE5vdGVzOiknCihSZXF1ZXN0ZWQ6IElEQSAtIEkgICAgICAgICAgICAgICAgICAgICAgICAgICAgIERlbGl2ZXJlZDopJwooLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKEFwcDogVEVTVENPLCBUT0REICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgU3NuOiAwMDAtNjEtWFhYWCknCihDdXJyIEFkZHI6IDExIFBSSU5DRVRPTiBBViwgVFJFTlRPTiwgTkogMDg4NDgpJwooLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKCknCihBcHBsaWNhbnQgRXJyb3IgSW5mb3JtYXRpb24pJwooLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKCAgMS4gREFUQSBVTkFWQUlMQUJMRS4pJwooKScKKFByZXBhcmVkIEJ5OiBDb3JlTG9naWMgQ3JlZGNvKScKKCAgICAgICAgICAgICBQLk8uIEJPWCA1MDkxMjQpJwooICAgICAgICAgICAgIFNBTiBESUVHTywgQ0EgOTIxNTApJwooICAgICAgICAgICAgIENvbnRhY3Q6IFwoODAwXCk5ODYtNDM0MyAgRmF4OiA4MDAgMjM3IDY1MjYpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooICAgICAgICAgICAgICAgICAgICoqKioqIEVORCBPRiBCVVlFUklEIElOREVYIFJFUE9SVCAqKioqKiknCkVUCmVuZHN0cmVhbQplbmRvYmoKMzYgMCBvYmoKMTE2MQplbmRvYmoKMzcgMCBvYmoKPDwvVHlwZS9QYWdlL1BhcmVudCAxIDAgUi9Db250ZW50cyAzNSAwIFI+PgplbmRvYmoKMzggMCBvYmoKPDwvVHlwZS9Gb250L1N1YnR5cGUvVHlwZTEvQmFzZUZvbnQvQ291cmllci9FbmNvZGluZy9XaW5BbnNpRW5jb2Rpbmc+PgplbmRvYmoKMzkgMCBvYmoKPDwvVHlwZS9Gb250L1N1YnR5cGUvVHlwZTEvQmFzZUZvbnQvQ291cmllci1Cb2xkL0VuY29kaW5nL1dpbkFuc2lFbmNvZGluZz4+CmVuZG9iagoxIDAgb2JqCjw8L1R5cGUgL1BhZ2VzIC9Db3VudCAxMgovS2lkc1sKNCAwIFIKNyAwIFIKMTAgMCBSCjEzIDAgUgoxNiAwIFIKMTkgMCBSCjIyIDAgUgoyNSAwIFIKMjggMCBSCjMxIDAgUgozNCAwIFIKMzcgMCBSCl0KL1Jlc291cmNlczw8L1Byb2NTZXRbL1BERi9UZXh0XS9Gb250PDwvRjAgMzggMCBSIC9GMSAzOSAwIFI+PiA+PgovTWVkaWFCb3ggWyAwIDAgNTk0IDc5MiBdCj4+CmVuZG9iago0MCAwIG9iago8PC9UeXBlL0NhdGFsb2cvUGFnZXMgMSAwIFI+PgplbmRvYmoKeHJlZgowIDQxCjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAyOTU2NyAwMDAwMCBuIAowMDAwMDAwMDA5IDAwMDAwIG4gCjAwMDAwMDI1NTcgMDAwMDAgbiAKMDAwMDAwMjU3NyAwMDAwMCBuIAowMDAwMDAyNjM1IDAwMDAwIG4gCjAwMDAwMDMyOTQgMDAwMDAgbiAKMDAwMDAwMzMxMyAwMDAwMCBuIAowMDAwMDAzMzcxIDAwMDAwIG4gCjAwMDAwMDY3MDMgMDAwMDAgbiAKMDAwMDAwNjcyMyAwMDAwMCBuIAowMDAwMDA2NzgyIDAwMDAwIG4gCjAwMDAwMDk5NzQgMDAwMDAgbiAKMDAwMDAwOTk5NSAwMDAwMCBuIAowMDAwMDEwMDU1IDAwMDAwIG4gCjAwMDAwMTI5NTYgMDAwMDAgbiAKMDAwMDAxMjk3NyAwMDAwMCBuIAowMDAwMDEzMDM3IDAwMDAwIG4gCjAwMDAwMTU3MTcgMDAwMDAgbiAKMDAwMDAxNTczOCAwMDAwMCBuIAowMDAwMDE1Nzk4IDAwMDAwIG4gCjAwMDAwMTgwNjIgMDAwMDAgbiAKMDAwMDAxODA4MyAwMDAwMCBuIAowMDAwMDE4MTQzIDAwMDAwIG4gCjAwMDAwMTg5NTIgMDAwMDAgbiAKMDAwMDAxODk3MiAwMDAwMCBuIAowMDAwMDE5MDMyIDAwMDAwIG4gCjAwMDAwMjAyMzcgMDAwMDAgbiAKMDAwMDAyMDI1OCAwMDAwMCBuIAowMDAwMDIwMzE4IDAwMDAwIG4gCjAwMDAwMjQ4NDUgMDAwMDAgbiAKMDAwMDAyNDg2NiAwMDAwMCBuIAowMDAwMDI0OTI2IDAwMDAwIG4gCjAwMDAwMjgwMTEgMDAwMDAgbiAKMDAwMDAyODAzMiAwMDAwMCBuIAowMDAwMDI4MDkyIDAwMDAwIG4gCjAwMDAwMjkzMDcgMDAwMDAgbiAKMDAwMDAyOTMyOCAwMDAwMCBuIAowMDAwMDI5Mzg4IDAwMDAwIG4gCjAwMDAwMjk0NzUgMDAwMDAgbiAKMDAwMDAyOTc5MiAwMDAwMCBuIAp0cmFpbGVyCjw8Ci9TaXplIDQxCi9Sb290IDQwIDAgUgo+PgpzdGFydHhyZWYKMjk4MzgKJSVFT0YK]]></DOCUMENT>
+                </EMBEDDED_FILE>
+            </CREDIT_RESPONSE>
+        </RESPONSE_DATA>
+        <STATUS _Code="403" _Description="DATA UNAVAILABLE" _Condition="Data Unavailable for Product IDIndex for Borrower"/>
+    </RESPONSE>
+</RESPONSE_GROUP>
+

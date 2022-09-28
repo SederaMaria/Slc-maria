@@ -1,0 +1,52 @@
+id,name,abbreviation,sum_of_payments_state,active_on_calculator,tax_jurisdiction_label,created_at,updated_at
+1,ALABAMA,AL,f,t,Customer's Zip Code,32:33.9,40:00.1
+2,ALASKA,AK,f,f,Customer's County/Town,33:29.1,40:00.1
+3,ARIZONA,AZ,f,t,Dealership's Zip Code,33:48.7,40:00.1
+4,IDAHO,ID,f,f,Customer's County/Town,33:55.6,40:00.3
+5,ARKANSAS,AR,f,f,Customer's County/Town,34:18.7,40:00.1
+6,CALIFORNIA,CA,f,t,Dealership's County/Town,35:14.8,40:00.2
+7,COLORADO,CO,f,f,Customer's County/Town,37:28.7,40:00.2
+8,CONNECTICUT,CT,f,f,Customer's County/Town,38:26.4,40:00.2
+9,DELAWARE,DE,f,f,Customer's County/Town,38:42.1,40:00.2
+10,DISTRICT OF COLUMBIA,DC,f,f,Customer's County/Town,38:49.6,40:00.2
+11,IOWA,IA,f,f,Customer's County/Town,38:53.3,40:00.3
+12,FLORIDA,FL,f,t,Customer's County/Town,38:53.4,40:00.2
+13,GEORGIA,GA,f,t,Customer's County/Town,40:10.1,40:00.2
+14,HAWAII,HI,f,f,Customer's County/Town,41:12.5,40:00.3
+15,ILLINOIS,IL,f,t,Customer's Zip Code,41:37.5,40:00.3
+16,INDIANA,IN,f,t,Customer's County/Town,43:46.4,40:00.3
+17,KANSAS,KS,f,f,Customer's County/Town,46:28.1,40:00.3
+18,KENTUCKY,KY,f,f,Customer's County/Town,47:30.0,40:00.3
+19,MAINE,ME,f,f,Customer's County/Town,47:30.7,40:00.4
+20,OHIO,OH,t,t,Customer's Zip Code,47:41.8,40:00.6
+21,LOUISIANA,LA,f,t,Customer's Zip Code,48:45.3,40:00.3
+22,MARYLAND,MD,f,t,Customer's County/Town,49:53.2,40:00.4
+23,MASSACHUSETTS,MA,f,f,Customer's County/Town,50:29.0,40:00.4
+24,MICHIGAN,MI,f,t,Customer's County/Town,51:15.5,40:00.4
+25,MINNESOTA,MN,f,f,Customer's County/Town,52:27.3,40:00.4
+26,TEXAS,TX,f,t,Customer's County/Town,52:48.6,40:00.7
+27,MISSISSIPPI,MS,f,t,Customer's County/Town,54:00.0,40:00.4
+28,MISSOURI,MO,f,t,Customer's Zip Code,54:44.3,40:00.4
+29,MONTANA,MT,f,f,Customer's County/Town,56:43.7,40:00.5
+30,NEBRASKA,NE,f,f,Customer's County/Town,57:13.2,40:00.5
+31,NEVADA,NV,f,t,Customer's Zip Code,58:07.4,40:00.5
+32,NEW HAMPSHIRE,NH,f,f,Customer's County/Town,58:21.4,40:00.5
+33,NEW JERSEY,NJ,f,f,Customer's County/Town,58:46.7,40:00.5
+34,NEW MEXICO,NM,f,t,Dealership's Zip Code,59:50.0,40:00.5
+35,UTAH,UT,f,f,Customer's County/Town,00:04.1,40:00.7
+36,NEW YORK,NY,f,f,Customer's County/Town,00:23.5,40:00.5
+37,NORTH CAROLINA,NC,f,t,Customer's County/Town,03:24.4,40:00.6
+38,NORTH DAKOTA,ND,f,f,Customer's County/Town,55:27.3,40:00.6
+39,OKLAHOMA,OK,f,t,Customer's County/Town,58:18.1,40:00.6
+40,OREGON,OR,f,f,Customer's County/Town,59:18.6,40:00.6
+41,PENNSYLVANIA,PA,f,t,Customer's County/Town,59:51.4,40:00.6
+42,RHODE ISLAND,RI,f,f,Customer's County/Town,02:51.2,40:00.6
+43,SOUTH CAROLINA,SC,f,t,Customer's County/Town,03:13.2,40:00.7
+44,SOUTH DAKOTA,SD,f,f,Customer's County/Town,03:39.2,40:00.7
+45,TENNESSEE,TN,f,t,Customer's Zip Code,04:02.1,40:00.7
+46,VERMONT,VT,f,f,Customer's County/Town,08:33.5,40:00.7
+47,VIRGINIA,VA,f,t,Customer's County/Town,08:51.9,40:00.7
+48,WASHINGTON,WA,f,f,Customer's County/Town,09:55.3,40:00.8
+49,WEST VIRGINIA,WV,f,f,Customer's County/Town,10:34.9,40:00.8
+50,WISCONSIN,WI,f,f,Customer's County/Town,40:00.8,40:00.8
+51,WYOMING,WY,f,f,Customer's County/Town,40:00.8,40:00.8

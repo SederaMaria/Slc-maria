@@ -1,0 +1,39 @@
+<%= semantic_form_for [:admins, @admin_user], builder: ActiveAdmin::FormBuilder do |f| %>
+	<%= f.semantic_errors :state %>
+	<%= f.inputs "User Info" do %>
+		<div class='col-sm-6' style= " margin-top: 12px; margin-bottom: 20px">
+			<div class='col-sm-2' style= "padding-left : 0 ">
+				<%= f.label :User_Id, style:"color: #5E6469; font-weight: bold" %>
+			</div>
+			<div class='col-sm-10'>
+				<%= f.label :id, f.object.id, style: "margin-left:9px" %>
+			</div>
+		</div>
+		<div class='col-sm-6' style= " margin-top: 12px; margin-bottom: 20px">
+			<div class='col-sm-2' style= "padding-left : 0 ">
+				<%= f.label :Last_Login, style:"color: #5E6469; font-weight: bold" %>
+			</div>
+			<% if f.object.last_sign_in_at? %>
+				<div class='col-sm-10'>
+					<%= f.label :last_sign_in_at, f.object.last_sign_in_at.try(:strftime, '%a, %d %b %Y %H:%M:%S'), style: "margin-left:9px" %>
+					</div>
+			<% end %>
+		</div>
+		<%= f.input :first_name, required: true, wrapper_html: {class: 'col-sm-6'} %>
+		<%= f.input :last_name, required: true, wrapper_html: {class: 'col-sm-6'} %>
+		<%= f.input :email, wrapper_html: {class: 'col-sm-6'}, input_html: { "autocomplete" => "false" } %>
+		<%= f.input :job_title, wrapper_html: {class: 'col-sm-6'} %>
+	<% end %>
+	<%= f.inputs "User Security" do %>
+		<div class="is_act_usr">
+			<%= f.check_box :is_active, wrapper_html: {class: 'usr_actv'} %>
+			<%= f.label :User_is_active, style:"color: #5E6469; font-weight: bold" %>
+		</div>
+		<%# f.input :security_role, as: :select, collection: ['Administrator', 'Business Intelligence User', 'Executive', 'Sales Manager', 'Sales User', 'Servicing Manager', 'Servicing User', 'Underwriting Manager', 'Underwriting User', 'Verification Manager', 'Verification User'], include_blank: false, label: 'Security Role', wrapper_html: {class: 'col-sm-6'} %>
+		<%= f.input :security_roles, as: :select, collection: SecurityRole.all.pluck(:description, :id), include_blank: false, label: 'Security Role', wrapper_html: {class: 'col-sm-6'} %>
+	
+	<% end %>
+	<%= link_to("Reset Password", reset_password_admins_admin_user_path(@admin_user), class: "btn_reset") %><br><br>
+	<%= button_tag t('buttons.save'), type: "submit", name: "Save", value: true, class: "btn_save btn-edit" %>
+	<%= button_tag t('buttons.cancel'), type: "submit", name: "Cancel", value: true, class: "btn_cancel btn-edit" %>
+<% end %>

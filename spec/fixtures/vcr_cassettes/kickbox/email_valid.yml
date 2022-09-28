@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.kickbox.io/v2/verify?email=deliverable%40example.com&timeout=6000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - kickbox-ruby/2.0.0 (https://github.com/kickboxio/kickbox-ruby)
+      Authorization:
+      - token test_379499d4d950aa90f34244b4d3b1607168ffe48cb9bd95321ca75cd7a07c77c4
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - nginx/1.4.6 (Ubuntu)
+      date:
+      - Fri, 14 Jul 2017 16:51:56 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '348'
+      connection:
+      - close
+      vary:
+      - Accept-Encoding
+      x-kickbox-message:
+      - You are using the Kickbox testing API. Results returned will not be correct.
+      x-kickbox-balance:
+      - '100'
+      x-kickbox-response-time:
+      - '4'
+    body:
+      encoding: UTF-8
+      string: '{"result":"deliverable","reason":"accepted_email","role":false,"free":false,"disposable":false,"accept_all":false,"did_you_mean":null,"sendex":1,"email":"deliverable@example.com","user":"deliverable","domain":"example.com","success":true,"message":"You
+        are using Kickbox''s sandbox API, which is used to test your integration against
+        mock results."}'
+    http_version: 
+  recorded_at: Fri, 14 Jul 2017 16:51:57 GMT
+recorded_with: VCR 3.0.3

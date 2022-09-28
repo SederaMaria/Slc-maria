@@ -1,0 +1,8 @@
+- @lease_calculator ||= lease_calculator
+- if action_name == "bike_change"
+	- url = {action: "bike_change",controller: "lease_applications"}
+- else
+	- url = ""
+= semantic_form_for [namespace, @lease_calculator],url: url, builder: ActiveAdmin::FormBuilder do |f|
+  = f.semantic_errors(*f.object.errors.keys)
+  = render partial: 'lease_calculators/columns', locals: {form: f, namespace: namespace, override_mode: @override_mode}

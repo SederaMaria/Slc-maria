@@ -1,0 +1,28 @@
+.lease-application
+  = render partial: 'preview_lessee_form', locals: { resource_type: 'Lessee', lessee: @lease_application.lessee }
+  = render partial: 'preview_lessee_form', locals: { resource_type: 'Colessee', lessee: @lease_application.colessee }
+  = render partial: 'possession_panel_preview', locals: { form: @lease_application }
+  form.formtastic.lease-application
+    fieldset.inputs
+      legend
+        span References
+      ol
+        - @lease_application.references.each do |r|
+          li.col-sm-2.input.string.stringish
+            label.label First Name
+            input value=r.first_name type="text" disabled=true
+          li.col-sm-2.input.string.stringish
+            label.label Last Name
+            input value=r.last_name type="text" disabled=true
+          li.col-sm-2.input.string.stringish
+            label.label Phone Number
+            input value=r.phone_number type="text" disabled=true data-mask='(999) 999-9999'
+          li.col-sm-2.input.string.stringish
+            label.label City
+            input value=r.city type="text" disabled=true
+          li.col-sm-4.input.string.stringish
+            label.label State
+            input value=r.state type="text" disabled=true
+    .row
+      .col-sm-12
+        h4 You can email documents satisfying these stipulations to #{@lease_application.application_identifier}#{ENV['ATTACHMENT_EMAIL_DOMAIN']}

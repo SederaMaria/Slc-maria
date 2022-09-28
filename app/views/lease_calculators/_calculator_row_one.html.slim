@@ -1,0 +1,92 @@
+.row.flex-row
+  .col-sm-4
+    = form.inputs do
+      - @credit_tier = form.object&.credit_tier_v2&.description&.split(' ')&.second
+      - if form.object.submitted? && namespace == :dealers && @bike_change
+        = render partial: 'lease_calculators/edit_customer_details', locals: { form: form, preview_mode: @preview_mode, override_mode: override_mode}
+        = render partial: 'lease_calculators/edit_motorcycle_details', locals: { form: form, preview_mode: @preview_mode, override_mode: override_mode }
+      - else
+        = render partial: 'lease_calculators/edit_customer_details', locals: { form: form, preview_mode: @preview_mode, override_mode: override_mode }
+        = render partial: 'lease_calculators/edit_motorcycle_details', locals: { form: form, preview_mode: @preview_mode, override_mode: override_mode }
+      = render partial: 'lease_calculators/edit_term', locals: { form: form, preview_mode: @preview_mode, override_mode: override_mode}
+  .col-sm-4
+    = form.inputs do
+      li
+        h4 Front End Components
+      = form.input :dealer_sales_price,
+        label: 'Bike Sale Price',
+        input_html: { 'data-calculator-input' => 'dealer_sales_price', :class => "update_calculator", readonly: (override_mode || @preview_mode)}
+      = form.input :dealer_freight_and_setup,
+        label: 'Freight / Prep Fee',
+        input_html: { 'data-calculator-input' => 'dealer_freight_and_setup', :class => "update_calculator", readonly: (override_mode || @preview_mode) }
+      = form.input :dealer_documentation_fee,
+        label: 'Documentation Fee',
+        input_html: { 'data-calculator-input' => true, :class => "update_calculator", readonly: (override_mode || @preview_mode) }
+      = form.input :title_license_and_lien_fee,
+        label: 'Title, Reg, Lien',
+        input_html: { 'data-calculator-input' => true, :class => "update_calculator", readonly: (override_mode || @preview_mode) }
+      = form.input :upfront_tax,
+        label: 'Up-front Sales Tax',
+        input_html: { 'data-calculator-input' => true, :class => "update_calculator", readonly: true }
+      li
+        h4.backend_components Back End Components
+      = form.input :guaranteed_auto_protection_cost,
+        label: 'GAP',
+        input_html: { 'data-calculator-input' => true, :class => "update_calculator backend_components", readonly: (override_mode || @preview_mode) }
+      = form.input :prepaid_maintenance_cost,
+        label: 'Prepaid Maintenance',
+        input_html: { 'data-calculator-input' => true, :class => "update_calculator backend_components", readonly: (override_mode || @preview_mode) }
+      = form.input :extended_service_contract_cost,
+        label: 'Extended Service Contract',
+        input_html: { 'data-calculator-input' => true, :class => "update_calculator backend_components", readonly: (override_mode || @preview_mode) }
+      = form.input :tire_and_wheel_contract_cost,
+        label: 'Tire & Wheel',
+        input_html: { 'data-calculator-input' => true, :class => "update_calculator backend_components", readonly: (override_mode || @preview_mode) }
+      = form.input :gps_cost,
+        label: 'GPS',
+        input_html: { 'data-calculator-input' => true, :class => "update_calculator backend_components", readonly: (override_mode || @preview_mode) }
+      - if display_stipulations?(form.object)
+        li
+          h4 = form.object.lease_application.credit_status.humanize
+          ol
+            - form.object.lease_application_stipulations.required.each do |stip|
+              li
+                = stip.decorate.with_notes
+
+  .col-sm-4
+    = form.inputs do
+      li
+        h4 Trade-In
+      = form.input :gross_trade_in_allowance,
+        input_html: { 'data-calculator-input' => true, :class => "update_calculator", readonly: @preview_mode }
+      = form.input :trade_in_payoff,
+        input_html: { 'data-calculator-input' => true, :class => "update_calculator", readonly: @preview_mode }
+      = form.input :net_trade_in_allowance,
+        input_html: { readonly: true }
+      li
+        h4 Cash from Customer
+      = form.hidden_field :cash_down_minimum,
+        label: 'Cash Down Requirement',
+        input_html: { readonly: !override_mode }
+      = form.input :cash_down_payment,
+        label: "Down Payment (Minimum Required: $#{form.object.cash_down_minimum})",
+        input_html: { 'data-calculator-input' => true, :class => "update_calculator", readonly: @preview_mode }
+      = form.input :total_cash_at_signing,
+        label: "Total Due At Signing (includes 1st month's payment)",
+        input_html: { readonly: !override_mode, class: 'row-one-cash-at-signing cash_at_sign' }
+      - unless @setting&.deactivate_dealer_participation?
+        li.dealer-info
+          h4 Dealer Participation
+          
+          = form.input :dealer_participation_markup,
+            label: 'Rate Markup',
+            as: :select,
+            collection: (@credit_tier.to_i <= 5 ? (0..3).step(0.25).to_a.map { |perc| [number_to_percentage(perc, precision: 2), perc] } : [number_to_percentage(0, precision: 2)]),
+            include_blank: false,
+            input_html: { disabled: @preview_mode, 'data-calculator-input' => true, :class => "select2-input select2-hidden-accessible update_calculator" },
+            wrapper_html: { class: 'dealer-info' }
+        = form.input :dealer_reserve,
+          label: 'Total Dealer Participation',
+          input_html: { readonly: !override_mode },
+          wrapper_html: { class: 'dealer-info' }
+

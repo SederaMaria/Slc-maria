@@ -1,0 +1,2 @@
+class IncomeVerificationType < ApplicationRecord
+end

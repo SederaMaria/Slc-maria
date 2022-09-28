@@ -1,0 +1,200 @@
+- is_edit = !form.object.new_record?
+- require_primary_email_address = CommonApplicationSetting&.first&.require_primary_email_address ? "col-sm-6 required-to-submit" : "col-sm-6"
+- home_address = (resource == :colessee) ? @lease_application.colessee&.home_address : @lease_application.lessee&.home_address
+- mailing_address = (resource == :colessee) ? @lease_application.colessee&.mailing_address : @lease_application.lessee&.mailing_address
+= form.inputs "#{resource == :colessee ? 'Co-' : ''}Lessee Details", for: resource do |l|
+  - lessee = l
+  - if resource == :colessee
+    = l.input :lessee_and_colessee_relationship, as: :select, collection: ["Spouse", "Parent", "Employee", "Grand Parents", "Brother", "Sister", "Friend", "Partner", "Other"],
+      wrapper_html: { class: 'col-sm-2 required-to-submit' }, input_html:  { class: 'select2-input' }, label: "Relationship to Lessee"
+    .col-sm-12
+      span style="color:red;display:none;" class="relation-not-found" Relation is required.
+    br/
+  = l.input :first_name,
+    label: "First Name",
+    wrapper_html: { class: 'col-sm-3 required-to-submit' }
+ 
+  = l.input :middle_name,
+    label: 'Middle Name',
+    wrapper_html: { class: 'col-sm-3' }
+  
+  = l.input :last_name,
+    label: "Last Name",
+    wrapper_html: { class: 'col-sm-3 required-to-submit' }
+ 
+  = l.input :suffix,
+    label: 'Suffix (i.e. JR, SR, II, III, IV, etc.)',
+    wrapper_html: { class: 'col-sm-3' }
+  li.col-sm-12
+    h4 
+      | Home Address&nbsp;&nbsp; 
+      - unless resource == :lessee
+        = check_box_tag('same-as-lessee')
+        span#same-as-lessee-checkbox &nbsp Same as Lessee &nbsp
+
+  = l.inputs 'Home Address', for: :home_address, id: "#{resource}-home-address-form-container" do |a|
+    .col-sm-12.p-0
+      .col-sm-6.state-select.select2-w-100
+        = a.input :search_address,
+          as: :select2,
+          label: 'Search Address',
+          collection: [home_address&.search_address],
+          selected: home_address&.search_address,
+          input_html: { 'data': { placeholder: 'Please use Google Search Here' }, class: 'select2-input select2-address-autocomplete' },
+          wrapper_html: { class: 'col-sm-12' }
+    = a.input :street1,
+      label: 'Street Address (no P.O. Boxes)',
+      wrapper_html: {class: 'col-sm-6 required-to-submit override-address-input-container'},
+      input_html: {data: {copy_from_lessee: true}, class: 'override-address-input'}
+    = a.input :street2,
+      label: 'Apt. / Unit',
+      wrapper_html: {class: 'col-sm-3 override-address-input-container'},
+      input_html: {data: {copy_from_lessee: true}, class: 'override-address-input'}
+    = a.input :zipcode,
+      wrapper_html: {class: "col-sm-2 required-to-submit override-address-input-container"},
+      label: "Zip Code",
+      input_html: {data: {mask: '99999', copy_from_lessee: true, application: @lease_application}, class: 'override-address-input'}
+    .col-sm-3.state-select.override-address-input-container
+      = a.input :state,
+        as: :select2,
+        label: 'State',
+        collection: [home_address&.state],
+        input_html: {'data': {placeholder: 'Select a State', copy_from_lessee: true}, class: "select2-input override-address-input"},
+        wrapper_html: {class: 'required-to-submit'}
+    .col-sm-3.state-select.override-address-input-container
+      = a.input :county,
+        as: :select2,
+        label: 'County/Parish/Etc.',
+        collection: [home_address&.county],
+        input_html: {'data': {placeholder: 'Select a County', copy_from_lessee: true}, class: "select2-input override-address-input"},
+        wrapper_html: {class: 'required-to-submit'}
+    .col-sm-3.state-select.override-address-input-container
+      = a.input :city_id,
+        as: :select2,
+        label: 'City',
+        collection: home_address&.new_city_collection_value,
+        input_html: {'data': {placeholder: 'Select a City', copy_from_lessee: true}, class: "select2-input override-address-input"},
+        wrapper_html: {class: 'required-to-submit'}
+
+  li.col-sm-12
+    h4
+      | Mailing Address, if different from Home Address&nbsp;&nbsp;
+  = l.inputs 'Mailing Address', for: :mailing_address, id: "#{resource}-mail-address-form-container" do |a|
+    .col-sm-12.p-0
+      .col-sm-6.state-select.select2-w-100
+        = a.input :search_address,
+          as: :select2,
+          label: 'Search Address',
+          collection: [mailing_address&.search_address],
+          selected: mailing_address&.search_address,
+          input_html: { 'data': { placeholder: 'Please use Google Search Here' }, class: 'select2-input select2-address-autocomplete' },
+          wrapper_html: { class: 'col-sm-12' }
+    = a.input :street1,
+      label: 'Street Address or P.O. Box',
+      wrapper_html: { class: 'col-sm-6 override-address-input-container' },
+      input_html: { class: 'override-address-input' }
+    = a.input :street2,
+      label: 'Apt. / Unit',
+      wrapper_html: { class: 'col-sm-3 override-address-input-container' },
+      input_html: { class: 'override-address-input' }
+    = a.input :zipcode,
+      label: "Zip Code",
+      input_html: {data: {mask: '99999'}, class: 'override-address-input' },
+      wrapper_html: {class: 'col-sm-2 required-to-submit override-address-input-container'}
+
+    .col-sm-3.state-select.override-address-input-container
+      = a.input :state,
+        as: :select2,
+        label: 'State',
+        collection: [mailing_address&.state],
+        input_html: {'data-placeholder' => 'Select a State', class: "col-sm-3 select2-input required-to-submit override-address-input" }
+
+    .col-sm-3.state-select.override-address-input-container
+      = a.input :county,
+        as: :select2,
+        label: 'County/Parish/Etc.',
+        collection: [mailing_address&.county],
+        input_html: {'data': {placeholder: 'Select a County', copy_from_lessee: true}, class: "select2-input override-address-input" }
+
+    = a.input :city_id,
+      as: :select,
+      label: 'City',
+      collection: mailing_address&.new_city_collection_value,
+      input_html: {'data': {placeholder: 'Select a City', copy_from_lessee: true}, class: "select2-input override-address-input" },
+      wrapper_html: {class: 'required-to-submit col-sm-3 pt-0 override-address-input-container'}
+
+    li.col-sm-12
+  = l.input :home_phone_number, label: "Home Phone Number", input_html: { data: { mask: '(999) 999-9999' } },
+    wrapper_html: { class: 'col-sm-3 phone-numbers-to-submit' }
+  = l.input :mobile_phone_number, input_html: { data: { mask: '(999) 999-9999' } },
+    wrapper_html: { class: 'col-sm-3 phone-numbers-to-submit' }, label: "Mobile Phone Number"
+  = l.input :email_address,
+    wrapper_html: { class: require_primary_email_address }
+  = l.input :at_address_years,
+    label: 'Years at current Address',
+    as: :number,
+    wrapper_html: { class: 'col-sm-3 required-to-submit' }
+  = l.input :at_address_months,
+    as: :number,
+    label: 'Months at current Address',
+    wrapper_html: { class: 'col-sm-3' }
+  = l.input :monthly_mortgage,
+    label: 'Monthly Mortgage / Rent',
+    wrapper_html: { class: 'col-sm-3 required-to-submit' }
+  = l.input :home_ownership, as: :select,
+    label: 'Own or Rent?',
+    wrapper_html: { class: 'col-sm-3 required-to-submit' }
+  = l.input :date_of_birth,
+    as: :datepicker,
+    datepicker_options: { dateFormat: "mm/dd/yy" },
+    input_html: { data: { mask: '99/99/9999' } },
+    wrapper_html: { class: 'col-sm-3 required-to-submit' },
+    label: 'DOB (use MM/DD/YYYY format)'
+  = l.input :ssn,
+    label: 'Social Security Number (SSN)',
+    input_html: { data: { mask: '999-99-9999' } },
+    wrapper_html: { class: 'col-sm-2 required-to-submit' },
+    as: :string
+  = l.input :drivers_license_id_number,
+    wrapper_html: { class: 'col-sm-2' }, label: "Drivers License ID Number"
+  = l.input :drivers_license_state,
+    input_html: { data: { mask: 'aa' } },
+    wrapper_html: { class: 'col-sm-2' }, label: "Drivers License State"
+  = l.input :drivers_licence_expires_at, as: :datepicker, datepicker_options: { dateFormat: "mm/dd/yy" },
+    input_html: { data: { mask: '99/99/9999' }},
+    label: 'Drivers License Expiration Date',
+    wrapper_html: { class: 'col-sm-3' }
+
+= form.inputs "#{resource == :colessee ? 'Co-' : ''}Lessee Employment Details", for: resource do |l|
+  = l.input :employer_name,
+    wrapper_html: { class: 'col-sm-4 required-to-submit' }, label: "Employer Name"
+  = l.inputs 'Employment Address', for: :employment_address do |a|
+    = a.input :city,
+      wrapper_html: { class: 'col-sm-3 required-to-submit' }
+    .col-sm-6.state-select
+      = a.input :state,
+        as: :select,
+        label: 'State',
+        collection: States::SELECT2_ABBREVIATED_ALL,
+        input_html: { 'data': { placeholder: 'Select a State' }, class: "select2-input" },
+        wrapper_html: { class: 'required-to-submit' }
+  = l.input :time_at_employer_years,
+    wrapper_html: { class: 'col-sm-2 required-to-submit' }, label: "Time at Employer Years"
+  = l.input :time_at_employer_months,
+    wrapper_html: { class: 'col-sm-2' }, label: "Time at Employer Months"
+  = l.input :job_title,
+    wrapper_html: { class: 'col-sm-3 required-to-submit' }, label: "Job Title"
+  = l.input :employment_status, as: :select, collection: EmploymentStatus.all.map{ |e| [e.definition.humanize, e.employment_status_index] },
+    wrapper_html: { class: 'col-sm-3 required-to-submit' }, input_html:  { class: 'select2-input' }, label: "Employment Status"
+  = l.input :employer_phone_number,
+    input_html: { data: { mask: '(999) 999-9999' } },
+    label: 'Phone',
+    wrapper_html: { class: 'col-sm-2 required-to-submit' }
+  = l.input :gross_monthly_income,
+    wrapper_html: { class: 'col-sm-6 required-to-submit' }, label: "Gross Monthly Income"
+  = l.input :other_monthly_income,
+    wrapper_html: { class: 'col-sm-6' }, label: "Other Monthly Income"
+/ - unless (current_page?(new_dealers_lease_application_path) || (@lease_application&.id.nil? ? false : current_page?(edit_dealers_lease_application_path(@lease_application.id) )  ) ) 
+/   = form.inputs "#{resource == :colessee ? 'Co-' : ''}Lessee Verifications", for: resource do |l|
+/     = l.input :proven_monthly_income,
+/       wrapper_html: { class: 'col-sm-4' }, label: "Proven Monthly Income"

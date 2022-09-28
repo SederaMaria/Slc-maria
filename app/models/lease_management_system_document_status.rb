@@ -1,0 +1,2 @@
+class LeaseManagementSystemDocumentStatus < ApplicationRecord
+end

@@ -1,0 +1,83 @@
+.lease_calculator {
+  .calculator-value {
+    width: 50%;
+    display: table;
+    text-align: right;
+    padding: 0px 10px;
+  }
+
+  label {
+    width: 45%;
+    margin-left: 15px;
+    /* Warning: Needed for oldIE support, but words are broken up letter-by-letter */
+    -ms-word-break: break-all;
+
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+  }
+
+  h4 {
+    margin: 0;
+    font-weight: bold;
+  }
+
+  input {
+    text-align: right;
+  }
+
+  input[readonly] {
+    padding: 0 10px;
+    border: 0;
+    text-align: right;
+    background: 0;
+  }
+
+  .choices-group {
+    padding-left: 37%;
+  }
+
+  .flex-row {
+    display: flex;
+
+    & > [class*="col-"] {
+      display: flex;
+    }
+
+    fieldset.inputs {
+      width: 100%;
+    }
+  }
+
+  li.stringish {
+    padding: 5px 10px;
+  }
+
+  li.radio {
+    padding-top: 0;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+a.button.special {
+  background-color: #4285F4 !important;
+  background-image: none !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  transition: all .3s !important;
+}
+
+
+a.button.special:not(.disabled):hover, 
+a.button.special:not(.disabled):active {  
+  background-color: #1A73E8 !important;
+  background-image: none !important;
+}

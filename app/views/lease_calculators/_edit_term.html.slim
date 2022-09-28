@@ -1,0 +1,8 @@
+li
+  h4 Term
+  = form.input :term,
+    as: :radio,
+    label: '',
+    collection: terms_for_calculator_radio_buttons(maximum_term_length: form.object.maximum_term_length),
+    input_html: { "data-calculator-input": "term", class: "update_calculator" },
+    wrapper_html: { class: (preview_mode || override_mode) ? 'radio-disabled' : '', 'data-calculation-prerequisite': true }

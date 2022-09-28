@@ -1,0 +1,332 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.credcoconnect.com/cc/listener
+    body:
+      encoding: UTF-8
+      string: <REQUEST_GROUP MISMOVersionID="2.3.1"><REQUESTING_PARTY><PREFERRED_RESPONSE
+        _Format = "XML" _VersionIdentifier="2.3.1"/><PREFERRED_RESPONSE _Format="PDF"/></REQUESTING_PARTY><RECEIVING_PARTY
+        _Name="F3EA Servicing LLC dba Speed Leasing"/> <SUBMITTING_PARTY _Name="Lease
+        Origination System" /><SUBMITTING_PARTY _Identifier="SLLOS"/><REQUEST LoginAccountIdentifier="4480464"
+        LoginAccountPassword="wrongpassword"><REQUEST_DATA><CREDIT_REQUEST MISMOVersionID="2.3.1"
+        RequestingPartyRequestedByName="Brian Cramer"><CREDIT_REQUEST_DATA CreditReportType="Merge"
+        CreditReportRequestActionType="Submit" BorrowerID = "Borrower" CreditReportIdentifier
+        = "" CreditRequestType="Individual" ><CREDIT_REPOSITORY_INCLUDED _EquifaxIndicator="N"
+        _ExperianIndicator="Y" _TransUnionIndicator="Y" /></CREDIT_REQUEST_DATA><LOAN_APPLICATION><BORROWER
+        BorrowerID="Borrower" _FirstName="EDWIN" _MiddleName = ""  _LastName="INQUIRY"  _NameSuffix=""
+        _PrintPositionType="Borrower" _SSN="007277697" ><_RESIDENCE _StreetAddress="1025
+        GATEWAY BLVD" _City="BOYNTON BEACH" _State="FL" _PostalCode="33426" BorrowerResidencyType="Current"></_RESIDENCE></BORROWER></LOAN_APPLICATION></CREDIT_REQUEST></REQUEST_DATA></REQUEST></REQUEST_GROUP>
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache-Coyote/1.1
+      Strict-Transport-Security:
+      - max-age=0
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Type:
+      - text/html;charset=ISO-8859-1
+      Content-Length:
+      - '1288'
+      Date:
+      - Sun, 18 Feb 2018 18:21:35 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="iso-8859-1"?>
+        <RESPONSE_GROUP MISMOVersionID="2.3.1" _ID="RGRept000001">
+        <RESPONSE InternalAccountIdentifier="4480464" _ID="REQRept000001">
+        <RESPONSE_DATA>
+        <CREDIT_RESPONSE CreditResponseID="CRRept0001" MISMOVersionID="2.3.1" CreditReportTransactionIdentifier="11237091305" CreditReportType="Error">
+        <REQUESTING_PARTY _RequestedByName="Brian Cramer"/>
+        <CREDIT_REQUEST_DATA CreditReportType="Merge" CreditReportRequestActionType="Submit" BorrowerID="Borrower" CreditReportIdentifier="" CreditRequestType="Individual">
+        <CREDIT_REPOSITORY_INCLUDED _EquifaxIndicator="N" _ExperianIndicator="Y" _TransUnionIndicator="Y"/>
+        </CREDIT_REQUEST_DATA>
+        <CREDIT_ERROR_MESSAGE _Code="E038" _SourceType="CreditBureau">
+        <_Text>Invalid Login ID or Password</_Text>
+        <_Text>Login Account Identifier = 4480464</_Text>
+        </CREDIT_ERROR_MESSAGE>
+        <BORROWER BorrowerID="Borrower" _PrintPositionType="Borrower" _FirstName="EDWIN" _LastName="INQUIRY" _SSN="007277697">
+        <_RESIDENCE _StreetAddress="1025 GATEWAY BLVD" _City="BOYNTON BEACH" _State="FL" _PostalCode="33426" BorrowerResidencyType="Current">
+        <PARSED_STREET_ADDRESS/>
+        </_RESIDENCE>
+        </BORROWER>
+        </CREDIT_RESPONSE>
+        </RESPONSE_DATA>
+        <STATUS _Code="E038" _Description="Invalid Login ID or Password"/>
+        </RESPONSE>
+        </RESPONSE_GROUP>
+    http_version: 
+  recorded_at: Sun, 18 Feb 2018 18:21:35 GMT
+- request:
+    method: get
+    uri: https://www.credcoconnect.com/cc/listener
+    body:
+      encoding: UTF-8
+      string: <REQUEST_GROUP MISMOVersionID="2.3.1"><REQUESTING_PARTY><PREFERRED_RESPONSE
+        _Format = "XML" _VersionIdentifier="2.3.1"/><PREFERRED_RESPONSE _Format="PDF"/></REQUESTING_PARTY><RECEIVING_PARTY
+        _Name="F3EA Servicing LLC dba Speed Leasing"/> <SUBMITTING_PARTY _Name="Lease
+        Origination System" /><SUBMITTING_PARTY _Identifier="SLLOS"/><REQUEST LoginAccountIdentifier="4480464"
+        LoginAccountPassword="4KBJFPHZ"><REQUEST_DATA><CREDIT_REQUEST MISMOVersionID="2.3.1"
+        RequestingPartyRequestedByName="Brian Cramer"><CREDIT_REQUEST_DATA CreditReportType="Merge"
+        CreditReportRequestActionType="Submit" BorrowerID = "Borrower" CreditReportIdentifier
+        = "" CreditRequestType="Individual" ><CREDIT_REPOSITORY_INCLUDED _EquifaxIndicator="N"
+        _ExperianIndicator="Y" _TransUnionIndicator="Y" /></CREDIT_REQUEST_DATA><LOAN_APPLICATION><BORROWER
+        BorrowerID="Borrower" _FirstName="EDWIN" _MiddleName = ""  _LastName="INQUIRY"  _NameSuffix=""
+        _PrintPositionType="Borrower" _SSN="007277697" ><_RESIDENCE _StreetAddress="1025
+        GATEWAY BLVD" _City="BOYNTON BEACH" _State="FL" _PostalCode="33426" BorrowerResidencyType="Current"></_RESIDENCE></BORROWER></LOAN_APPLICATION></CREDIT_REQUEST></REQUEST_DATA></REQUEST></REQUEST_GROUP>
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache-Coyote/1.1
+      Strict-Transport-Security:
+      - max-age=31536000;includeSubDomains
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Content-Security-Policy:
+      - frame-ancestors 'none'
+      Content-Type:
+      - text/html;charset=ISO-8859-1
+      Content-Length:
+      - '37465'
+      Date:
+      - Sat, 15 Sep 2018 23:23:37 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="iso-8859-1"?>
+        <RESPONSE_GROUP MISMOVersionID="2.3.1" _ID="RGRept000001">
+        <RESPONDING_PARTY _Name="CoreLogic Credco" _StreetAddress="P.O. BOX 509124" _StreetAddress2="" _City="SAN DIEGO" _State="CA" _PostalCode="92150">
+        <CONTACT_DETAIL>
+        <CONTACT_POINT _Type="Phone" _Value="800 986 4343"/>
+        <CONTACT_POINT _Type="Fax" _Value="800 237 6526"/>
+        </CONTACT_DETAIL>
+        </RESPONDING_PARTY>
+        <RESPOND_TO_PARTY _Name="F3EA SERVICING LLC - TEST ACCT" _StreetAddress="10277 SCRIPPS RANCH BLVD" _City="SAN DIEGO" _State="CA" _PostalCode="92117">
+        <CONTACT_DETAIL _Name="BRIAN CRAMER">
+        <CONTACT_POINT _Type="Phone" _Value="4043764434" _PreferenceIndicator="Y"/>
+        <CONTACT_POINT _Type="Fax" _Value="0000000000" _PreferenceIndicator="Y"/>
+        <CONTACT_POINT _Type="Email" _Value="BRIANC@SPEEDLEASING.CO" _PreferenceIndicator="Y"/>
+        </CONTACT_DETAIL>
+        </RESPOND_TO_PARTY>
+        <RESPONSE _ID="REQRept000001" ResponseDateTime="2018-09-15T16:23:36.986-07:00" InternalAccountIdentifier="4480464">
+        <RESPONSE_DATA>
+        <CREDIT_RESPONSE MISMOVersionID="2.3.1" CreditReportMergeType="Blend" CreditRatingCodeType="Other" CreditRatingCodeTypeOtherDescription="CREDCO" CreditResponseID="CRRept2147483591001" CreditReportType="Merge" CreditReportIdentifier="112849111930000" CreditReportTransactionIdentifier="11284926945" CreditReportFirstIssuedDate="2018-09-15T14:15:24.937-07:00" CreditReportLastUpdatedDate="2018-09-15T16:23:36.986-07:00">
+        <CREDIT_BUREAU _Name="CoreLogic Credco" _StreetAddress="P.O. BOX 509124" _StreetAddress2="" _City="SAN DIEGO" _State="CA" _PostalCode="92150">
+        <CONTACT_DETAIL>
+        <CONTACT_POINT _Type="Phone" _RoleType="Work" _PreferenceIndicator="Y" _Value="800 986 4343"/>
+        <CONTACT_POINT _Type="Fax" _RoleType="Work" _PreferenceIndicator="N" _Value="800 237 6526"/>
+        </CONTACT_DETAIL>
+        </CREDIT_BUREAU>
+        <CREDIT_REPORT_PRICE _Type="Other" _TypeOtherDescription="Not Available"/>
+        <CREDIT_REPOSITORY_INCLUDED _EquifaxIndicator="N" _ExperianIndicator="Y" _TransUnionIndicator="Y" _OtherRepositoryName="Credco"/>
+        <REQUESTING_PARTY InternalAccountIdentifier="4480464" _RequestedByName="Brian Cramer"/>
+        <CREDIT_REQUEST_DATA BorrowerID="Borrower" CreditReportIdentifier="" CreditReportRequestActionType="Submit" CreditReportType="Merge" CreditRequestType="Individual">
+        <CREDIT_REPOSITORY_INCLUDED _EquifaxIndicator="N" _ExperianIndicator="Y" _TransUnionIndicator="Y"/>
+        </CREDIT_REQUEST_DATA>
+        <CREDIT_COMMENT _Type="BureauRemarks" _SourceType="Experian">
+        <_Text>************NO APPLICANT RECORD FOUND*******************</_Text>
+        </CREDIT_COMMENT>
+        <CREDIT_COMMENT _Type="BureauRemarks" _SourceType="TransUnion">
+        <_Text>NO HIT ON APPLICANT</_Text>
+        </CREDIT_COMMENT>
+        <BORROWER BorrowerID="Borrower" _PrintPositionType="Borrower" _FirstName="EDWIN" _LastName="INQUIRY" _SSN="00727XXXX">
+        <_RESIDENCE _StreetAddress="1025 GATEWAY BLVD" _City="BOYNTON BEACH" _State="FL" _PostalCode="33426" BorrowerResidencyType="Current">
+        <PARSED_STREET_ADDRESS _StreetName="1025 GATEWAY BLVD"/>
+        </_RESIDENCE>
+        </BORROWER>
+        <CREDIT_FILE CreditFileID="CRFilXPN000001" BorrowerID="Borrower" CreditRepositorySourceType="Experian" _ResultStatusType="NoFileReturnedNoHit">
+        <_BORROWER/>
+        <CREDIT_COMMENT _Type="BureauRemarks" _SourceType="Experian">
+        <_Text>************NO APPLICANT RECORD FOUND*******************</_Text>
+        </CREDIT_COMMENT>
+        </CREDIT_FILE>
+        <CREDIT_FILE CreditFileID="CRFilTUC000002" BorrowerID="Borrower" CreditRepositorySourceType="TransUnion" _ResultStatusType="NoFileReturnedNoHit">
+        <_BORROWER/>
+        <CREDIT_COMMENT _Type="BureauRemarks" _SourceType="TransUnion">
+        <_Text>NO HIT ON APPLICANT</_Text>
+        </CREDIT_COMMENT>
+        </CREDIT_FILE>
+        <CREDIT_FILE BorrowerID="Borrower" _ResultStatusType="FileReturned"/>
+        <CREDIT_FILE CreditFileID="CRFilIDA151001" BorrowerID="Borrower" CreditScoreID="CRScoIDA151002" _ResultStatusType="FileReturned"/>
+        <CREDIT_SCORE CreditScoreID="CRScoIDA151002" CreditReportIdentifier="112849111930000" BorrowerID="Borrower" CreditFileID="CRFilIDA151001" _Date="2018-09-15" _ModelNameType="Other" _ModelNameTypeOtherDescription="IDIndex" _Value="500">
+        <_FACTOR _Code="569" _Text="Unable to confirm home phone number in association with other identity elements"/>
+        <_FACTOR _Code="597" _Text="High number of historic applications with inconsistent identity elements"/>
+        <_FACTOR _Code="925" _Text="Address type is generally associated with low risk"/>
+        </CREDIT_SCORE>
+        <CREDIT_CONSUMER_REFERRAL _Name="EXPERIAN" _StreetAddress="P.O. BOX 2002" _City="ALLEN" _State="TX" _PostalCode="75013">
+        <CONTACT_DETAIL>
+        <CONTACT_POINT _Type="Phone" _Value="(888) 397-3742"/>
+        </CONTACT_DETAIL>
+        </CREDIT_CONSUMER_REFERRAL>
+        <CREDIT_CONSUMER_REFERRAL _Name="TRANS UNION" _StreetAddress="P.O. BOX 1000" _City="CHESTER" _State="PA" _PostalCode="19022">
+        <CONTACT_DETAIL>
+        <CONTACT_POINT _Type="Phone" _Value="(800) 888-4213"/>
+        </CONTACT_DETAIL>
+        </CREDIT_CONSUMER_REFERRAL>
+        <CREDIT_SUMMARY _Name="CREDCO_SUMMARY">
+        <_DATA_SET _Name="_Term" _Value="LIFE_OF_LOAN"/>
+        <_DATA_SET _Name="_AnyPublicRecordsInLast2Years" _Value="N"/>
+        <_DATA_SET _Name="_TotalPRCount" _Value="0"/>
+        <_DATA_SET _Name="_InquiryAgeDays" _Value="Days_180"/>
+        <_DATA_SET _Name="_TotalInquiriesCount" _Value="0"/>
+        <_DATA_SET _Name="_ElimSameDayInqCount" _Value="0"/>
+        <_DATA_SET _Name="_InquiryAdjustedTotal" _Value="0"/>
+        <_DATA_SET _Name="_NewTradesIn6Months" _Value="0"/>
+        <_DATA_SET _Name="_PaidAsAgreed" _Value="0"/>
+        <_DATA_SET _Name="_NowDelinquent" _Value="0"/>
+        <_DATA_SET _Name="_AllDelinquent" _Value="0"/>
+        <_DATA_SET _Name="_HighestHighCredit" _Value="0"/>
+        <_DATA_SET _Name="_LowestHighCredit" _Value="0"/>
+        <_DATA_SET _Name="_TotalCollections" _Value="0"/>
+        <_DATA_SET _Name="_HistoricalDelinquenciesCount" _Value="0"/>
+        <_DATA_SET _Name="_RevAndOtherAccountsCount" _Value="0"/>
+        <_DATA_SET _Name="_BalanceOnRevolvingAndOther" _Value="0"/>
+        <_DATA_SET _Name="_PaymentsOnRevolvingAndOther" _Value="0"/>
+        <_DATA_SET _Name="_RevAndOtherCreditAvailable" _Value="0"/>
+        <_DATA_SET _Name="_RevAndOtherCreditPercent" _Value="0"/>
+        <_DATA_SET _Name="_TotalTradelinesCount" _Value="0"/>
+        <_DATA_SET _Name="_TotalTrlBalanceAmount" _Value="0"/>
+        <_DATA_SET _Name="_TotalTrlMonthlyPaymentAmount" _Value="0"/>
+        <_DATA_SET _Name="_TotalCurrentTradelinesCount" _Value="0"/>
+        <_DATA_SET _Name="_TotalClosedTradelinesCount" _Value="0"/>
+        <_DATA_SET _Name="_TotalUnratedTradelinesCount" _Value="0"/>
+        <_DATA_SET _Name="_TotalLate30DaysCurrentDelinquencies" _Value="0"/>
+        <_DATA_SET _Name="_TotalLate60DaysCurrentDelinquencies" _Value="0"/>
+        <_DATA_SET _Name="_TotalLate90PlusDaysCurrentDelinquencies" _Value="0"/>
+        <_DATA_SET _Name="_TotalLate30DaysHistoricalDelinquencies" _Value="0"/>
+        <_DATA_SET _Name="_TotalLate60DaysHistoricalDelinquencies" _Value="0"/>
+        <_DATA_SET _Name="_TotalLate90PlusDaysHistoricalDelinquencies" _Value="0"/>
+        <_DATA_SET _Name="_RealEstate_TradelinesCount" _Value="0"/>
+        <_DATA_SET _Name="_RealEstateTrl_BalanceAmount" _Value="0"/>
+        <_DATA_SET _Name="_RealEstateTrl_MonthlyPaymentAmount" _Value="0"/>
+        <_DATA_SET _Name="_RealEstate_CurrentTradelinesCount" _Value="0"/>
+        <_DATA_SET _Name="_RealEstate_ClosedTradelinesCount" _Value="0"/>
+        <_DATA_SET _Name="_RealEstate_UnratedTradelinesCount" _Value="0"/>
+        <_DATA_SET _Name="_RealEstate_Late30DaysCurrentDelinquencies" _Value="0"/>
+        <_DATA_SET _Name="_RealEstate_Late60DaysCurrentDelinquencies" _Value="0"/>
+        <_DATA_SET _Name="_RealEstate_Late90PlusDaysCurrentDelinquencies" _Value="0"/>
+        <_DATA_SET _Name="_RealEstate_Late30DaysHistoricalDelinquencies" _Value="0"/>
+        <_DATA_SET _Name="_RealEstate_Late60DaysHistoricalDelinquencies" _Value="0"/>
+        <_DATA_SET _Name="_RealEstate_Late90PlusDaysHistoricalDelinquencies" _Value="0"/>
+        <_DATA_SET _Name="_Installment_TradelinesCount" _Value="0"/>
+        <_DATA_SET _Name="_InstallmentTrl_BalanceAmount" _Value="0"/>
+        <_DATA_SET _Name="_InstallmentTrl_MonthlyPaymentAmount" _Value="0"/>
+        <_DATA_SET _Name="_Installment_CurrentTradelinesCount" _Value="0"/>
+        <_DATA_SET _Name="_Installment_ClosedTradelinesCount" _Value="0"/>
+        <_DATA_SET _Name="_Installment_UnratedTradelinesCount" _Value="0"/>
+        <_DATA_SET _Name="_Installment_Late30DaysCurrentDelinquencies" _Value="0"/>
+        <_DATA_SET _Name="_Installment_Late60DaysCurrentDelinquencies" _Value="0"/>
+        <_DATA_SET _Name="_Installment_Late90PlusDaysCurrentDelinquencies" _Value="0"/>
+        <_DATA_SET _Name="_Installment_Late30DaysHistoricalDelinquencies" _Value="0"/>
+        <_DATA_SET _Name="_Installment_Late60DaysHistoricalDelinquencies" _Value="0"/>
+        <_DATA_SET _Name="_Installment_Late90PlusDaysHistoricalDelinquencies" _Value="0"/>
+        <_DATA_SET _Name="_RevolvingCreditAvailable" _Value="0"/>
+        <_DATA_SET _Name="_RevolvingCreditTotal" _Value="0"/>
+        <_DATA_SET _Name="_PrcntRevolvingCreditAvailable" _Value="0"/>
+        <_DATA_SET _Name="_Revolving_TradelinesCount" _Value="0"/>
+        <_DATA_SET _Name="_RevolvingTrl_BalanceAmount" _Value="0"/>
+        <_DATA_SET _Name="_RevolvingTrl_MonthlyPaymentAmount" _Value="0"/>
+        <_DATA_SET _Name="_Revolving_CurrentTradelinesCount" _Value="0"/>
+        <_DATA_SET _Name="_Revolving_ClosedTradelinesCount" _Value="0"/>
+        <_DATA_SET _Name="_Revolving_UnratedTradelinesCount" _Value="0"/>
+        <_DATA_SET _Name="_Revolving_Late30DaysCurrentDelinquencies" _Value="0"/>
+        <_DATA_SET _Name="_Revolving_Late60DaysCurrentDelinquencies" _Value="0"/>
+        <_DATA_SET _Name="_Revolving_Late90PlusDaysCurrentDelinquencies" _Value="0"/>
+        <_DATA_SET _Name="_Revolving_Late30DaysHistoricalDelinquencies" _Value="0"/>
+        <_DATA_SET _Name="_Revolving_Late60DaysHistoricalDelinquencies" _Value="0"/>
+        <_DATA_SET _Name="_Revolving_Late90PlusDaysHistoricalDelinquencies" _Value="0"/>
+        <_DATA_SET _Name="_OtherCreditAvailable" _Value="0"/>
+        <_DATA_SET _Name="_OtherCreditTotal" _Value="0"/>
+        <_DATA_SET _Name="_Other_TradelinesCount" _Value="0"/>
+        <_DATA_SET _Name="_OtherTrl_BalanceAmount" _Value="0"/>
+        <_DATA_SET _Name="_OtherTrl_MonthlyPaymentAmount" _Value="0"/>
+        <_DATA_SET _Name="_Other_CurrentTradelinesCount" _Value="0"/>
+        <_DATA_SET _Name="_Other_ClosedTradelinesCount" _Value="0"/>
+        <_DATA_SET _Name="_Other_UnratedTradelinesCount" _Value="0"/>
+        <_DATA_SET _Name="_Other_Late30DaysCurrentDelinquencies" _Value="0"/>
+        <_DATA_SET _Name="_Other_Late60DaysCurrentDelinquencies" _Value="0"/>
+        <_DATA_SET _Name="_Other_Late90PlusDaysCurrentDelinquencies" _Value="0"/>
+        <_DATA_SET _Name="_Other_Late30DaysHistoricalDelinquencies" _Value="0"/>
+        <_DATA_SET _Name="_Other_Late60DaysHistoricalDelinquencies" _Value="0"/>
+        <_DATA_SET _Name="_Other_Late90PlusDaysHistoricalDelinquencies" _Value="0"/>
+        <_Text>Credco Summary</_Text>
+        </CREDIT_SUMMARY>
+        <CREDIT_SUMMARY _Name="CREDCO_EXECUTIVE_SUMMARY" BorrowerID="Borrower">
+        <_DATA_SET _Name="Military Lending Act Search Result" _Value="XPN DATA UNAVAILABLE"/>
+        <_DATA_SET _Name="Auto Loan Information: _CountOfOpenAccounts" _Value="0"/>
+        <_DATA_SET _Name="Auto Loan Information: _TotalBalanceOfOpenAccounts" _Value="0"/>
+        <_DATA_SET _Name="Auto Loan Information: _TotalMonthlyPaymentOfOpenAccounts" _Value="0"/>
+        <_DATA_SET _Name="Auto Loan Information: _LastDelinquentDateOfOpenAccounts" _Value="0"/>
+        <_DATA_SET _Name="Auto Loan Information: _Total30DaysDelqOpenAccounts" _Value="0"/>
+        <_DATA_SET _Name="Auto Loan Information: _Total60DaysDelqOpenAccounts" _Value="0"/>
+        <_DATA_SET _Name="Auto Loan Information: _Total90DaysDelqOpenAccounts" _Value="0"/>
+        <_DATA_SET _Name="Auto Loan Information: _CountOfClosedAccounts" _Value="0"/>
+        <_DATA_SET _Name="Auto Loan Information: _PastRepossessionsOfClosedAccounts" _Value="0"/>
+        <_DATA_SET _Name="Auto Loan Information: _LastDelinquentDateOfClosedAccounts" _Value="0"/>
+        <_DATA_SET _Name="Auto Loan Information: _Total30DaysDelqClosedAccounts" _Value="0"/>
+        <_DATA_SET _Name="Auto Loan Information: _Total60DaysDelqClosedAccounts" _Value="0"/>
+        <_DATA_SET _Name="Auto Loan Information: _Total90DaysDelqClosedAccounts" _Value="0"/>
+        <_DATA_SET _Name="Real Estate Loan Information: _CountOfOpenAccounts" _Value="0"/>
+        <_DATA_SET _Name="Real Estate Loan Information: _TotalBalanceOfOpenAccounts" _Value="0"/>
+        <_DATA_SET _Name="Real Estate Loan Information: _TotalMonthlyPaymentOfOpenAccounts" _Value="0"/>
+        <_DATA_SET _Name="Real Estate Loan Information: _LastDelinquentDateOfOpenAccounts" _Value="0"/>
+        <_DATA_SET _Name="Real Estate Loan Information: _Total30DaysDelqOpenAccounts" _Value="0"/>
+        <_DATA_SET _Name="Real Estate Loan Information: _Total60DaysDelqOpenAccounts" _Value="0"/>
+        <_DATA_SET _Name="Real Estate Loan Information: _Total90DaysDelqOpenAccounts" _Value="0"/>
+        <_DATA_SET _Name="Revolving Loan Information: _RevolvingCreditAvailablePercentage" _Value="0"/>
+        <_DATA_SET _Name="Revolving Loan Information: _RevolvingCreditAvailable" _Value="0"/>
+        <_DATA_SET _Name="Red Flag Information : Identity Data Alert - Message Code RF11569" _Value="Unable to confirm home phone number in association with other identity elements"/>
+        <_DATA_SET _Name="Red Flag Information : Identity Data Alert - Message Code RF11597" _Value="High number of historic applications with inconsistent identity elements"/>
+        <_DATA_SET _Name="Red Flag Information : Identity Data Alert - Message Code RF11925" _Value="Address type is generally associated with low risk"/>
+        <_DATA_SET _Name="Red Flag Information : OFAC Information - Message Code RF10161" _Value="No OFAC match found."/>
+        <_Text>Score not available</_Text>
+        <_Text>Auto and Real Estate Loan Information: Data Not Available</_Text>
+        <_Text>Credit Advantage not activated. Call 1-800-694-1414 for more information.</_Text>
+        <_Text>Possible incomplete data. See Credit Report.</_Text>
+        <_Text>Warning : Possible Red Flags detected. Further verification recommended.</_Text>
+        <_Text>Borrower Executive Summary</_Text>
+        <_Text>The Executive Summary is not a credit report, but rather a summary of certain information contained in the various products delivered to you by CoreLogic Credco.</_Text>
+        </CREDIT_SUMMARY>
+        <REGULATORY_PRODUCT BorrowerID="Borrower" CreditRepositorySourceType="Other" CreditRepositorySourceTypeOtherDescription="CoreLogic Credco" _SourceType="OFAC" _ProviderDescription="ProScan" _ResultText="OFAC CHECK CLEAR" _ResultStatusType="Clear"/>
+        <EMBEDDED_FILE _Type="PDF"   _Name="PDF"  _EncodingType="base64"   >
+        <DOCUMENT><![CDATA[JVBERi0xLjAKMiAwIG9iago8PCAvTGVuZ3RoIDMgMCBSID4+CnN0cmVhbQpCVAovRjAgMTAgVGYKMzAgNzYyIFRkCjEwIFRMCigpJwooKScKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSknCihSRUY6MS0xMjg0OS0xMTE5My0wMDAwIDA5LzE1LzIwMTggICAgICAgIFRJRDoxLTEyODQ5LTI2OTQ1IDA5LzE1LzIwMTggMTY6MjM6MzYpJwooQ3JlZGNvIEV4ZWN1dGl2ZSBTdW1tYXJ5ICAgICAgICAgICAgICAgICAgICAgICAgIEFjY3Q6IDQ0ODA0NjQpJwooUHJlcGFyZWQgZm9yOiBGM0VBIFNFUlZJQ0lORyBMTEMgLSBURVNUIEFDQ1QgICAgTm90ZXM6IElNLCBPRkFDLCBCSUQgSW5kZXgpJwooLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKEFwcDogSU5RVUlSWSwgRURXSU4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgU3NuOiAwMDctMjctWFhYWCknCihDdXJyIEFkZHI6IDEwMjUgR0FURVdBWSBCTFZELCBCT1lOVE9OIEJFQUNILCBGTCAzMzQyNiknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwooKScKKEJVUkVBVSBTQ09SRSBJTkZPUk1BVElPTiknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwooUG9zc2libGUgaW5jb21wbGV0ZSBkYXRhLiBTZWUgQ3JlZGl0IFJlcG9ydC4pJwooU2NvcmUgbm90IGF2YWlsYWJsZS4pJwooKScKKEFVVE8gJiBSRUFMIEVTVEFURSBMT0FOIElORk9STUFUSU9OOiknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwooUG9zc2libGUgaW5jb21wbGV0ZSBkYXRhLiBTZWUgQ3JlZGl0IFJlcG9ydC4pJwooRGF0YSBub3QgYXZhaWxhYmxlLiknCigpJwooQ1JFRElUIEFEVkFOVEFHRTopJwooLS0tLS0tLS0tLS0tLS0tLS0pJwooQ3JlZGl0IEFkdmFudGFnZSBub3QgYWN0aXZhdGVkLiBDYWxsIDEtODAwLTY5NC0xNDE0IGZvciBtb3JlIGluZm9ybWF0aW9uLiknCigpJwooUkVEIEZMQUcgQ09NUExJQU5DRSBJTkZPUk1BVElPTjopJwooLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwooUG9zc2libGUgaW5jb21wbGV0ZSBkYXRhLiBTZWUgQ3JlZGl0IFJlcG9ydC4pJwooV2FybmluZyA6IFBvc3NpYmxlIFJlZCBGbGFncyBkZXRlY3RlZC4gRnVydGhlciB2ZXJpZmljYXRpb24gcmVjb21tZW5kZWQuKScKKCApJwooSURFTlRJVFkgREFUQSBBTEVSVFM6IFNlZSBCdXllcklEIEluZGV4IFJlcG9ydCknCigxLiBVbmFibGUgdG8gY29uZmlybSBob21lIHBob25lIG51bWJlciBpbiBhc3NvY2lhdGlvbiB3aXRoIG90aGVyIGlkZW50aXR5KScKKCAgIGVsZW1lbnRzKScKKDIuIEhpZ2ggbnVtYmVyIG9mIGhpc3RvcmljIGFwcGxpY2F0aW9ucyB3aXRoIGluY29uc2lzdGVudCBpZGVudGl0eSBlbGVtZW50cyknCigzLiBBZGRyZXNzIHR5cGUgaXMgZ2VuZXJhbGx5IGFzc29jaWF0ZWQgd2l0aCBsb3cgcmlzayknCiggKScKKE9GQUMgSU5GT1JNQVRJT046IFNlZSBPRkFDIFJlcG9ydCknCigxLiBObyBPRkFDIG1hdGNoIGZvdW5kLiknCigpJwooUHJlcGFyZWQgQnk6IENvcmVMb2dpYyBDcmVkY28pJwooICAgICAgICAgICAgIFAuTy4gQk9YIDUwOTEyNCknCiggICAgICAgICAgICAgU0FOIERJRUdPLCBDQSA5MjE1MCknCiggICAgICAgICAgICAgQ29udGFjdDogXCg4MDBcKTk4Ni00MzQzICBGYXg6IDgwMCAyMzcgNjUyNiknCigpJwooVGhlIEV4ZWN1dGl2ZSBTdW1tYXJ5IGlzIG5vdCBhIGNyZWRpdCByZXBvcnQsIGJ1dCByYXRoZXIgYSBzdW1tYXJ5IG9mIGNlcnRhaW4pJwooaW5mb3JtYXRpb24gY29udGFpbmVkIGluIHRoZSB2YXJpb3VzIHByb2R1Y3RzIGRlbGl2ZXJlZCB0byB5b3UgYnkgQ29yZUxvZ2ljKScKKENyZWRjby4pJwooKScKKCAgICAgICAgICAgICAgICAgKioqRW5kIG9mIENSRURDTyBFeGVjdXRpdmUgU3VtbWFyeSBSZXBvcnQqKiopJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFBhZ2UgMSBvZiAxKScKRVQKZW5kc3RyZWFtCmVuZG9iagozIDAgb2JqCjIxMTAKZW5kb2JqCjQgMCBvYmoKPDwvVHlwZS9QYWdlL1BhcmVudCAxIDAgUi9Db250ZW50cyAyIDAgUj4+CmVuZG9iago1IDAgb2JqCjw8IC9MZW5ndGggNiAwIFIgPj4Kc3RyZWFtCkJUCi9GMCAxMCBUZgozMCA3NjIgVGQKMTAgVEwKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSknCihSRUY6MS0xMjg0OS0xMTE5My0wMDAwIDA5LzE1LzIwMTggICAgICAgIFRJRDoxLTEyODQ5LTI2OTQ1IDA5LzE1LzIwMTggMTY6MjM6MzYpJwooQ3JlZGNvIEluc3RhbnQgTWVyZ2UgQ3JlZGl0IFJlcG9ydCAgICAgICAgICAgICAgICAgIEFjY3Q6IDQ0ODA0NjQpJwooUHJlcGFyZWQgZm9yOiBGM0VBIFNFUlZJQ0lORyBMTEMgLSBURVNUIEFDQ1QgICAgICAgTm90ZXM6KScKKFJlcXVlc3RlZDogWFBOLCBUVUMgLSBJICAgICAgICAgICAgICAgICAgICAgICAgRGVsaXZlcmVkOiBYUE4sIFRVQyknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwooQXBwOiBJTlFVSVJZLCBFRFdJTiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBTc246IDAwNy0yNy1YWFhYKScKKEN1cnIgQWRkcjogMTAyNSBHQVRFV0FZIEJMVkQsIEJPWU5UT04gQkVBQ0gsIEZMIDMzNDI2KScKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSknCigpJwooV0FSTklORzogUG9zc2libGUgSW5jb21wbGV0ZSBEYXRhLiknCigpJwooICAgICAgICAgICAgICAgICAgICAgICAgICAgIElOU1RBTlQgTUVSR0UgU1VNTUFSWSknCiggICAgICAgICAgICAgICAgICAgICAgICAgICAgLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKEFDQ09VTlQgRElTVFJJQlVUSU9OICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIENVUlJFTlQgU1RBVFVTXCh0cmFkZWxpbmVzXCkpJwooQWNjb3VudCBUeXBlICAgICAgQ291bnQgICAgICAgQmFsYW5jZSAgICAgIFBheW1lbnRzIEN1cnIgQ2xzZCBVbnJ0IDMwICA2MCAgOTArKScKKCAgUmVhbCBFc3RhdGUgICAgICAgIDAgICAgICAgICAgICAgJDAgICAgICAgICAgICAkMCAgLSAgICAtICAgICAtICAgLSAgIC0gICAtKScKKCAgSW5zdGFsbG1lbnQgICAgICAgIDAgICAgICAgICAgICAgJDAgICAgICAgICAgICAkMCAgLSAgICAtICAgICAtICAgLSAgIC0gICAtKScKKCAgUmV2b2x2aW5nICAgICAgICAgIDAgICAgICAgICAgICAgJDAgICAgICAgICAgICAkMCAgLSAgICAtICAgICAtICAgLSAgIC0gICAtKScKKCAgT3RoZXIgICAgICAgICAgICAgIDAgICAgICAgICAgICAgJDAgICAgICAgICAgICAkMCAgLSAgICAtICAgICAtICAgLSAgIC0gICAtKScKKCAgVG90YWwgICAgICAgICAgICAgIDAgICAgICAgICAgICAgJDAgICAgICAgICAgICAkMCAgLSAgICAtICAgICAtICAgLSAgIC0gICAtKScKKCApJwooSU5RVUlSSUVTICAgICAgICAgICAgICAgICAgUFVCTElDIFJFQ09SRFMgICBISVNUT1JJQ0FMIERFTElOUVVFTkNJRVNcKGNvdW50XCkpJwooICA2IE1vbnRoIFRvdGFsICAgICAgMCAgICAgICAgRUZYICAgICBOL0EgICBBY2NvdW50IFR5cGUgIExhc3REbHEgIDMwICA2MCAgOTArKScKKCAgRWxpbS4gc2FtZSBkYXkgIC0gIDAgICAgICAgIFhQTiAgICAgTi9BICAgICBSZWFsIEVzdGF0ZSAgICAgICAgICAgLSAgIC0gICAtKScKKCAgQWRqdXN0ZWQgVG90YWwgICAgIDAgICAgICAgIFRVQyAgICAgTi9BICAgICBJbnN0YWxsbWVudCAgICAgICAgICAgLSAgIC0gICAtKScKKCAgTmV3IFRyYWRlc1woNiBtb25cKSAgMCAgICAgICAgTGFzdCAyeXJzIE4gICAgIFJldm9sdmluZyAgICAgICAgICAgICAtICAgLSAgIC0pJwooICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIE90aGVyICAgICAgICAgICAgICAgICAtICAgLSAgIC0pJwooICBPbGRlc3QgVHJkOiAgICAgICAgIE9uIEZpbGU6IFVuYXZhaWxhYmxlICAgIFRvdGFsICAgICAgICAgICAgICAgICAtICAgLSAgIC0pJwooLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKE9ubHkgQXBwbGljYW50L0NvLWFwcGxpY2FudCBpbmZvcm1hdGlvbiBpbmNsdWRlZCBpbiB0aGUgU3VtbWFyeS4pJwooKScKKCAgICAgICAgICAgICAgICAgICAgICAgICoqKioqKiBERVJPR0FUT1JZIElURU1TICoqKioqKiknCigpJwooUHVibGljIFJlY29yZCBJbmZvcm1hdGlvbjopJwooLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwooTm8gUHVibGljIFJlY29yZCBJbmZvcm1hdGlvbiBmb3VuZCknCigpJwooICAgICAgICAgICAgICAgICAgICAqKioqKiogRU5EIE9GIERFUk9HQVRPUlkgSVRFTVMgKioqKioqKScKKCknCihJbnF1aXJpZXMgbWFkZSBpbiB0aGUgbGFzdCAxODAgZGF5czopJwooLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKE5vIElucXVpcmllcyBtYWRlIGluIHRoZSBsYXN0IDE4MCBkYXlzIGZvdW5kKScKKCknCihNaXNjZWxsYW5lb3VzIEluZm9ybWF0aW9uOiknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSknCiggIDEuIDAwMjcgQ0tQVDogSU5QVVQgU1NOIElTU1VFIERBVEUgVU5WRVJJRklFRCAgXChYUE5cKSBcKEFQUFwpKScKKCknCihFcnJvciBJbmZvcm1hdGlvbjopJwooLS0tLS0tLS0tLS0tLS0tLS0tKScKKCAgMS4gTk8gQVBQTElDQU5UIFJFQ09SRCBGT1VORCBBVCBYUE4uIFwoWFBOLUUwN0FcKSknCiggIDIuIE5PIEFQUExJQ0FOVCBSRUNPUkQgRk9VTkQgQVQgVFVDLiBcKFRVQy1FMDFOWlwpKScKKCknCihDb25zdW1lciBSZWZlcnJhbCBJbmZvcm1hdGlvbjopJwooLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKFhQTiAtIEVYUEVSSUFOLCBQSE9ORTogXCg4ODhcKSAzOTctMzc0MiknCiggICAgICBQLk8uIEJPWCAyMDAyLCBBTExFTiwgVFggNzUwMTMpJwooKScKKCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFBhZ2UgMSBvZiAyKScKRVQKZW5kc3RyZWFtCmVuZG9iago2IDAgb2JqCjMwMDUKZW5kb2JqCjcgMCBvYmoKPDwvVHlwZS9QYWdlL1BhcmVudCAxIDAgUi9Db250ZW50cyA1IDAgUj4+CmVuZG9iago4IDAgb2JqCjw8IC9MZW5ndGggOSAwIFIgPj4Kc3RyZWFtCkJUCi9GMCAxMCBUZgozMCA3NjIgVGQKMTAgVEwKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSknCihSRUY6MS0xMjg0OS0xMTE5My0wMDAwIDA5LzE1LzIwMTggICAgICAgIFRJRDoxLTEyODQ5LTI2OTQ1IDA5LzE1LzIwMTggMTY6MjM6MzYpJwooLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKCknCihDb25zdW1lciBSZWZlcnJhbCBJbmZvcm1hdGlvbiBcKGNvbnRpbnVlZFwpOiknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwooVFVDIC0gVFJBTlMgVU5JT04sIFBIT05FOiBcKDgwMFwpIDg4OC00MjEzKScKKCAgICAgIFAuTy4gQk9YIDEwMDAsIENIRVNURVIsIFBBIDE5MDIyKScKKCknCihQcmVwYXJlZCBCeTogQ29yZUxvZ2ljIENyZWRjbyknCiggICAgICAgICAgICAgUC5PLiBCT1ggNTA5MTI0KScKKCAgICAgICAgICAgICBTQU4gRElFR08sIENBIDkyMTUwKScKKCAgICAgICAgICAgICBDb250YWN0OiBcKDgwMFwpOTg2LTQzNDMgIEZheDogODAwIDIzNyA2NTI2KScKKCknCiggICAgICAgICAgICAgICAgICAqKioqKiogRU5EIE9GIElOU1RBTlQgTUVSR0UgUkVQT1JUICoqKioqKiknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooICAgICAgICAgICAgICAgICAgICAgICAgICAgICBFbmQgb2YgQ3JlZGl0IFJlcG9ydCknCkVUCmVuZHN0cmVhbQplbmRvYmoKOSAwIG9iago5MjEKZW5kb2JqCjEwIDAgb2JqCjw8L1R5cGUvUGFnZS9QYXJlbnQgMSAwIFIvQ29udGVudHMgOCAwIFI+PgplbmRvYmoKMTEgMCBvYmoKPDwgL0xlbmd0aCAxMiAwIFIgPj4Kc3RyZWFtCkJUCi9GMCAxMCBUZgozMCA3NjIgVGQKMTAgVEwKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSknCihSRUY6MS0xMjg0OS0xMTE5My0wMDAwIDA5LzE1LzIwMTggICAgICAgIFRJRDoxLTEyODQ5LTI2OTQ1IDA5LzE1LzIwMTggMTY6MjM6MzYpJwooUHJvU2NhbiBPRkFDIFJlcG9ydCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEFjY3Q6IDQ0ODA0NjQpJwooUHJlcGFyZWQgZm9yOiBGM0VBIFNFUlZJQ0lORyBMTEMgLSBURVNUIEFDQ1QgICAgICAgTm90ZXM6KScKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSknCihBcHA6IElOUVVJUlksIEVEV0lOICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFNzbjogMDA3LTI3LVhYWFgpJwooQ3VyciBBZGRyOiAxMDI1IEdBVEVXQVkgQkxWRCwgQk9ZTlRPTiBCRUFDSCwgRkwgMzM0MjYpJwooLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKCknCihTdW1tYXJ5OiknCigtLS0tLS0tLSknCihPRkFDIENIRUNLIENMRUFSKScKKCknCihBcHBsaWNhbnQgU2VhcmNoIFJlc3VsdHM6KScKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwooIFNlYXJjaCBDcml0ZXJpYTogTmFtZSAmIEFkZHJlc3MpJwooIE5vIE1hdGNoIEZvdW5kKScKKCknCihQcmVwYXJlZCBCeTogQ29yZUxvZ2ljIENyZWRjbyknCiggICAgICAgICAgICAgUC5PLiBCT1ggNTA5MTI0KScKKCAgICAgICAgICAgICBTQU4gRElFR08sIENBIDkyMTUwKScKKCAgICAgICAgICAgICBDb250YWN0OiBcKDgwMFwpOTg2LTQzNDMgIEZheDogODAwIDIzNyA2NTI2KScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCAgICAgICAgICAgICAgICAgICAgICAgICAgRW5kIG9mIFByb1NjYW4gT0ZBQyBSZXBvcnQpJwpFVAplbmRzdHJlYW0KZW5kb2JqCjEyIDAgb2JqCjExNTkKZW5kb2JqCjEzIDAgb2JqCjw8L1R5cGUvUGFnZS9QYXJlbnQgMSAwIFIvQ29udGVudHMgMTEgMCBSPj4KZW5kb2JqCjE0IDAgb2JqCjw8IC9MZW5ndGggMTUgMCBSID4+CnN0cmVhbQpCVAovRjAgMTAgVGYKMzAgNzYyIFRkCjEwIFRMCigpJwooLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKFJFRjoxLTEyODQ5LTExMTkzLTAwMDAgMDkvMTUvMjAxOCAgICAgICAgVElEOjEtMTI4NDktMjY5NDUgMDkvMTUvMjAxOCAxNjoyMzozNiknCihDcmVkaXQgU2NvcmUgRGlzY2xvc3VyZSknCihQcmVwYXJlZCBmb3I6IEYzRUEgU0VSVklDSU5HIExMQyAtIFRFU1QgQUNDVCknCihBZGRyZXNzICAgICA6IDEwMjc3IFNDUklQUFMgUkFOQ0ggQkxWRCwgU0FOIERJRUdPLCBDQSA5MjExNyknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwooQXBwbGljYW50OiBFRFdJTiwgSU5RVUlSWSknCihDdXJyZW50IEFkZHI6IDEwMjUgR0FURVdBWSBCTFZELCBCT1lOVE9OIEJFQUNILCBGTCAzMzQyNiknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwooICAgICAgICAgICAgICAgICBDUkVESVQgU0NPUkVTIEFORCBUSEUgUFJJQ0UgWU9VIFBBWSBGT1IgQ1JFRElUKScKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSknCih8IFlvdXIgQ3JlZGl0IFNjb3JlICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwpJwooLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKHwgWW91ciBDcmVkaXQgU2NvcmUgfCBZb3VyIGNyZWRpdCBzY29yZSBpcyBub3QgYXZhaWxhYmxlIGZyb20gRXhwZXJpYW4sICAgICAgfCknCih8ICAgICAgICAgICAgICAgICAgIHwgVHJhbnNVbmlvbiwgd2hpY2ggaXMgYSBjb25zdW1lciByZXBvcnRpbmcgYWdlbmN5LCAgICAgIHwpJwoofCAgICAgICAgICAgICAgICAgICB8IGJlY2F1c2UgdGhleSBtYXkgbm90IGhhdmUgZW5vdWdoIGluZm9ybWF0aW9uIGFib3V0ICAgICB8KScKKHwgICAgICAgICAgICAgICAgICAgfCB5b3VyIGNyZWRpdCBoaXN0b3J5IHRvIGNhbGN1bGF0ZSBhIHNjb3JlLiAgICAgICAgICAgICAgfCknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwoofCBXaGF0IHlvdSBzaG91bGQgICB8IEEgY3JlZGl0IHNjb3JlIGlzIGEgbnVtYmVyIHRoYXQgcmVmbGVjdHMgdGhlICAgICAgICAgICB8KScKKHwga25vdyBhYm91dCAgICAgICAgfCBpbmZvcm1hdGlvbiBpbiBhIGNyZWRpdCByZXBvcnQuICAgICAgICAgICAgICAgICAgICAgICAgfCknCih8IGNyZWRpdCBzY29yZXMgICAgIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwpJwoofCAgICAgICAgICAgICAgICAgICB8IEEgY3JlZGl0IHJlcG9ydCBpcyBhIHJlY29yZCBvZiB5b3VyIGNyZWRpdCBoaXN0b3J5LiAgICB8KScKKHwgICAgICAgICAgICAgICAgICAgfCBJdCBpbmNsdWRlcyBpbmZvcm1hdGlvbiBhYm91dCB3aGV0aGVyIHlvdSBwYXkgeW91ciAgICAgfCknCih8ICAgICAgICAgICAgICAgICAgIHwgYmlsbHMgb24gdGltZSBhbmQgaG93IG11Y2ggeW91IG93ZSB0byBjcmVkaXRvcnMuICAgICAgIHwpJwoofCAgICAgICAgICAgICAgICAgICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8KScKKHwgICAgICAgICAgICAgICAgICAgfCBBIGNyZWRpdCBzY29yZSBjYW4gY2hhbmdlLCBkZXBlbmRpbmcgb24gaG93IGEgICAgICAgICAgfCknCih8ICAgICAgICAgICAgICAgICAgIHwgY29uc3VtZXIncyBjcmVkaXQgaGlzdG9yeSBjaGFuZ2VzLiAgICAgICAgICAgICAgICAgICAgIHwpJwooLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKHwgV2h5IGNyZWRpdCBzY29yZXMgfCBDcmVkaXQgc2NvcmVzIGFyZSBpbXBvcnRhbnQgYmVjYXVzZSBjb25zdW1lcnMgd2hvICAgICAgfCknCih8IGFyZSBpbXBvcnRhbnQgICAgIHwgaGF2ZSBoaWdoZXIgY3JlZGl0IHNjb3JlcyBnZW5lcmFsbHkgd2lsbCBnZXQgbW9yZSAgICAgIHwpJwoofCAgICAgICAgICAgICAgICAgICB8IGZhdm9yYWJsZSBjcmVkaXQgdGVybXMgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8KScKKHwgICAgICAgICAgICAgICAgICAgfCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCknCih8ICAgICAgICAgICAgICAgICAgIHwgTm90IGhhdmluZyBhIGNyZWRpdCBzY29yZSBjYW4gYWZmZWN0IHdoZXRoZXIgeW91IGNhbiAgIHwpJwoofCAgICAgICAgICAgICAgICAgICB8IGdldCBhIGxvYW4gYW5kIGhvdyBtdWNoIHlvdSB3aWxsIGhhdmUgdG8gcGF5IGZvciAgICAgICB8KScKKHwgICAgICAgICAgICAgICAgICAgfCB0aGF0IGxvYW4uICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwooLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKHwgQ2hlY2tpbmcgWW91ciBDcmVkaXQgUmVwb3J0ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwoofCBXaGF0IGlmIHRoZXJlIGFyZSB8IFlvdSBoYXZlIGEgcmlnaHQgdG8gZGlzcHV0ZSBhbnkgaW5hY2N1cmF0ZSAgICAgICAgICAgICB8KScKKHwgbWlzdGFrZXMgaW4geW91ciAgfCBpbmZvcm1hdGlvbiBpbiB5b3VyIGNyZWRpdCByZXBvcnQuIElmIHlvdSBmaW5kICAgICAgICAgfCknCih8IGNyZWRpdCByZXBvcnQ/ICAgIHwgbWlzdGFrZXMgb24geW91ciBjcmVkaXQgcmVwb3J0LCBjb250YWN0IHRoZSBjb25zdW1lciAgIHwpJwoofCAgICAgICAgICAgICAgICAgICB8IHJlcG9ydGluZyBhZ2VuY3kuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8KScKKHwgICAgICAgICAgICAgICAgICAgfCBJdCBpcyBhIGdvb2QgaWRlYSB0byBjaGVjayB5b3VyIGNyZWRpdCByZXBvcnQgdG8gICAgICAgfCknCih8ICAgICAgICAgICAgICAgICAgIHwgbWFrZSBzdXJlIHRoZSBpbmZvcm1hdGlvbiBpdCBjb250YWlucyBpcyBhY2N1cmF0ZS4gICAgIHwpJwooLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSknCih8IEhvdyBjYW4geW91IG9idGFpbnwgVW5kZXIgZmVkZXJhbCBsYXcsIHlvdSBoYXZlIHRoZSByaWdodCB0byBvYnRhaW4gYSAgICAgIHwpJwoofCBhIGNvcHkgb2YgeW91ciAgICB8IGZyZWUgY29weSBvZiB5b3VyIGNyZWRpdCByZXBvcnQgZnJvbSBlYWNoIG9mIHRoZSAgICAgICB8KScKKHwgY3JlZGl0IHJlcG9ydD8gICAgfCBuYXRpb253aWRlIGNvbnN1bWVyIHJlcG9ydGluZyBhZ2VuY2llcyBvbmNlIGEgeWVhci4gICAgfCknCih8ICAgICAgICAgICAgICAgICAgIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwpJwoofCAgICAgICAgICAgICAgICAgICB8IFRvIG9yZGVyIHlvdXIgZnJlZSBhbm51YWwgY3JlZGl0IHJlcG9ydC0gICAgICAgICAgICAgICB8KScKKHwgICAgICAgICAgICAgICAgICAgfCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCknCih8ICAgICAgICAgICAgICAgICAgIHwgQnkgdGVsZXBob25lOiBDYWxsIHRvbGwtZnJlZTogMS04NzctMzIyLTgyMjggICAgICAgICAgIHwpJwoofCAgICAgICAgICAgICAgICAgICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8KScKKHwgICAgICAgICAgICAgICAgICAgfCBPbiB0aGUgd2ViOiBWaXNpdCB3d3cuYW5udWFsY3JlZGl0cmVwb3J0LmNvbSAgICAgICAgICAgfCknCigpJwooICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgUGFnZSAxIG9mIDIpJwpFVAplbmRzdHJlYW0KZW5kb2JqCjE1IDAgb2JqCjQ0ODIKZW5kb2JqCjE2IDAgb2JqCjw8L1R5cGUvUGFnZS9QYXJlbnQgMSAwIFIvQ29udGVudHMgMTQgMCBSPj4KZW5kb2JqCjE3IDAgb2JqCjw8IC9MZW5ndGggMTggMCBSID4+CnN0cmVhbQpCVAovRjAgMTAgVGYKMzAgNzYyIFRkCjEwIFRMCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwooUkVGOjEtMTI4NDktMTExOTMtMDAwMCAwOS8xNS8yMDE4ICAgICAgICBUSUQ6MS0xMjg0OS0yNjk0NSAwOS8xNS8yMDE4IDE2OjIzOjM2KScKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSknCigpJwoofCAgICAgICAgICAgICAgICAgICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8KScKKHwgICAgICAgICAgICAgICAgICAgfCBCeSBtYWlsOiBNYWlsIHlvdXIgY29tcGxldGVkIEFubnVhbCBDcmVkaXQgUmVwb3J0ICAgICAgfCknCih8ICAgICAgICAgICAgICAgICAgIHwgUmVxdWVzdCBGb3JtIFwod2hpY2ggeW91IGNhbiBvYnRhaW4gZnJvbSB0aGUgICAgICAgICAgICB8KScKKHwgICAgICAgICAgICAgICAgICAgfCBGZWRlcmFsIFRyYWRlIENvbW1pc3Npb24ncyB3ZWIgc2l0ZSBhdCBodHRwOi8vd3d3LiAgICAgfCknCih8ICAgICAgICAgICAgICAgICAgIHwgZnRjLmdvdi9iY3AvY29ubGluZS9pbmNsdWRlL3JlcXVlc3Rmb3JtZmluYWwucGRmXCl0bzogICB8KScKKHwgICAgICAgICAgICAgICAgICAgfCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCknCih8ICAgICAgICAgICAgICAgICAgIHwgQW5udWFsIENyZWRpdCBSZXBvcnQgUmVxdWVzdCBTZXJ2aWNlICAgICAgICAgICAgICAgICAgIHwpJwoofCAgICAgICAgICAgICAgICAgICB8IFAuTy4gQm94IDEwNTI4MSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8KScKKHwgICAgICAgICAgICAgICAgICAgfCBBdGxhbnRhLCBHQSAzMDM0OC01MjgxICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwoofCBIb3cgY2FuIHlvdSBnZXQgICB8IEZvciBtb3JlIGluZm9ybWF0aW9uIGFib3V0IGNyZWRpdCByZXBvcnRzIGFuZCB5b3VyICAgICB8KScKKHwgbW9yZSBpbmZvcm1hdGlvbj8gfCByaWdodHMgdW5kZXIgZmVkZXJhbCBsYXcsIHZpc2l0IHRoZSBDb25zdW1lciBGaW5hbmNpYWwgfCknCih8ICAgICAgICAgICAgICAgICAgIHwgUHJvdGVjdGlvbiBCdXJlYXUncyB3ZWJzaXRlIGF0ICAgICAgICAgICAgICAgICAgICAgICAgIHwpJwoofCAgICAgICAgICAgICAgICAgICB8IHd3dy5jb25zdW1lcmZpbmFuY2UuZ292L2xlYXJubW9yZSAgICAgICAgICAgICAgICAgICAgICB8KScKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSknCiggQ29yZUxvZ2ljIENyZWRjbyBpcyBhIHJlc2VsbGVyIG9mIGNyZWRpdCBzY29yZXMgcHJvdmlkZWQgYnkgdGhlIHRocmVlKScKKCBuYXRpb25hbCByZXBvc2l0b3JpZXMsIEVxdWlmYXggXChFRlhcKSwgRXhwZXJpYW4gXChYUE5cKSBhbmQgVHJhbnNVbmlvbiBcKFRVQ1wpLiknCiggVGhlIG5hbWUsIGFkZHJlc3MsIGFuZCB3ZWJzaXRlIGZvciBjb250YWN0aW5nIHRoZSBwZXJzb24gb3IgZW50aXR5IHdobyknCiggZGV2ZWxvcGVkIHRoZSBzY29yZSBcKHNcKSBvciBkZXZlbG9wZWQgdGhlIG1ldGhvZG9sb2d5IG9mIHRoZSBzY29yZSBcKHNcKSBhcmUpJwooIGFzIGZvbGxvd3M6KScKKCApJwooICknCiggKScKKEZvciBFeHBlcmlhbjopJwooICAgICBFeHBlcmlhbiknCiggICAgIFAuTy4gQm94IDIwMDIpJwooICAgICBBTExFTiwgVFggNzUwMTMpJwooICAgICBcKDg4OFwpIDM5Ny0zNzQyKScKKCAgICAgIHd3dy5leHBlcmlhbi5jb20pJwooICknCiggKScKKEZvciBUcmFuc1VuaW9uOiknCiggICAgIFRyYW5zIFVuaW9uKScKKCAgICAgUC5PLiBCb3ggMTAwMCknCiggICAgIENIRVNURVIsIFBBIDE5MDIyKScKKCAgICAgXCg4NjZcKSA4ODctMjY3MyknCiggICAgIHd3dy50cmFuc3VuaW9uLmNvbSknCiggKScKKFByZXBhcmVkIGJ5OiknCiggICAgQ29yZUxvZ2ljIENyZWRjbyknCiggICAgUC5PLiBCT1ggNTA5MTI0LCBTQU4gRElFR08sIENBIDkyMTUwKScKKCAgICA4MDAgOTg2IDQzNDMpJwooICAgIHd3dy5jcmVkY29jcmVkaXQuY29tKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooICAgICAgICAgICAgICAgICAgICBFbmQgb2YgQ3JlZGl0IFNjb3JlIERpc2Nsb3N1cmUgUmVwb3J0KScKRVQKZW5kc3RyZWFtCmVuZG9iagoxOCAwIG9iagoyMzgzCmVuZG9iagoxOSAwIG9iago8PC9UeXBlL1BhZ2UvUGFyZW50IDEgMCBSL0NvbnRlbnRzIDE3IDAgUj4+CmVuZG9iagoyMCAwIG9iago8PCAvTGVuZ3RoIDIxIDAgUiA+PgpzdHJlYW0KQlQKL0YwIDEwIFRmCjMwIDc2MiBUZAoxMCBUTAooKScKKC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSknCihSRUY6MS0xMjg0OS0xMTE5My0wMDAwIDA5LzE1LzIwMTggICAgICAgIFRJRDoxLTEyODQ5LTI2OTQ1IDA5LzE1LzIwMTggMTY6MjM6MzYpJwooQnV5ZXJJRCBJbmRleCBSZXBvcnQgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEFjY3Q6IDQ0ODA0NjQpJwooUHJlcGFyZWQgZm9yOiBGM0VBIFNFUlZJQ0lORyBMTEMgLSBURVNUIEFDQ1QgICAgICAgTm90ZXM6KScKKFJlcXVlc3RlZDogSURBIC0gSSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgRGVsaXZlcmVkOiBJREEpJwooLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKScKKEFwcDogSU5RVUlSWSwgRURXSU4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgU3NuOiAwMDctMjctWFhYWCknCihDdXJyIEFkZHI6IDEwMjUgR0FURVdBWSBCTFZELCBCT1lOVE9OIEJFQUNILCBGTCAzMzQyNiknCigtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwooKScKKCAgICAgICAgICAgICAgICAgICAgICAgICAgQnV5ZXJJRCBJbmRleCBJbmZvcm1hdGlvbiknCiggICAgICAgICAgICAgICAgICAgICAgICAgIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0pJwooQXBwbGljYW50KScKKC0tLS0tLS0tLSknCihBUFAgU2NvcmU6ICAgNTAwKScKKCAgICAgICAgICAgICBVbmFibGUgdG8gY29uZmlybSBob21lIHBob25lIG51bWJlciBpbiBhc3NvY2lhdGlvbiB3aXRoIG90aGVyKScKKCAgICAgICAgICAgaWRlbnRpdHkgZWxlbWVudHMpJwooICAgICAgICAgICAgIEhpZ2ggbnVtYmVyIG9mIGhpc3RvcmljIGFwcGxpY2F0aW9ucyB3aXRoIGluY29uc2lzdGVudCBpZGVudGl0eSknCiggICAgICAgICAgIGVsZW1lbnRzKScKKCAgICAgICAgICAgICBBZGRyZXNzIHR5cGUgaXMgZ2VuZXJhbGx5IGFzc29jaWF0ZWQgd2l0aCBsb3cgcmlzayknCigpJwooUHJlcGFyZWQgQnk6IENvcmVMb2dpYyBDcmVkY28pJwooICAgICAgICAgICAgIFAuTy4gQk9YIDUwOTEyNCknCiggICAgICAgICAgICAgU0FOIERJRUdPLCBDQSA5MjE1MCknCiggICAgICAgICAgICAgQ29udGFjdDogXCg4MDBcKTk4Ni00MzQzICBGYXg6IDgwMCAyMzcgNjUyNiknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCknCigpJwooKScKKCAgICAgICAgICAgICAgICAgICAqKioqKiBFTkQgT0YgQlVZRVJJRCBJTkRFWCBSRVBPUlQgKioqKiopJwpFVAplbmRzdHJlYW0KZW5kb2JqCjIxIDAgb2JqCjE0OTMKZW5kb2JqCjIyIDAgb2JqCjw8L1R5cGUvUGFnZS9QYXJlbnQgMSAwIFIvQ29udGVudHMgMjAgMCBSPj4KZW5kb2JqCjIzIDAgb2JqCjw8L1R5cGUvRm9udC9TdWJ0eXBlL1R5cGUxL0Jhc2VGb250L0NvdXJpZXIvRW5jb2RpbmcvV2luQW5zaUVuY29kaW5nPj4KZW5kb2JqCjI0IDAgb2JqCjw8L1R5cGUvRm9udC9TdWJ0eXBlL1R5cGUxL0Jhc2VGb250L0NvdXJpZXItQm9sZC9FbmNvZGluZy9XaW5BbnNpRW5jb2Rpbmc+PgplbmRvYmoKMSAwIG9iago8PC9UeXBlIC9QYWdlcyAvQ291bnQgNwovS2lkc1sKNCAwIFIKNyAwIFIKMTAgMCBSCjEzIDAgUgoxNiAwIFIKMTkgMCBSCjIyIDAgUgpdCi9SZXNvdXJjZXM8PC9Qcm9jU2V0Wy9QREYvVGV4dF0vRm9udDw8L0YwIDIzIDAgUiAvRjEgMjQgMCBSPj4gPj4KL01lZGlhQm94IFsgMCAwIDU5NCA3OTIgXQo+PgplbmRvYmoKMjUgMCBvYmoKPDwvVHlwZS9DYXRhbG9nL1BhZ2VzIDEgMCBSPj4KZW5kb2JqCnhyZWYKMCAyNgowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMTY2NzEgMDAwMDAgbiAKMDAwMDAwMDAwOSAwMDAwMCBuIAowMDAwMDAyMTcxIDAwMDAwIG4gCjAwMDAwMDIxOTEgMDAwMDAgbiAKMDAwMDAwMjI0OSAwMDAwMCBuIAowMDAwMDA1MzA2IDAwMDAwIG4gCjAwMDAwMDUzMjYgMDAwMDAgbiAKMDAwMDAwNTM4NCAwMDAwMCBuIAowMDAwMDA2MzU3IDAwMDAwIG4gCjAwMDAwMDYzNzYgMDAwMDAgbiAKMDAwMDAwNjQzNSAwMDAwMCBuIAowMDAwMDA3NjQ4IDAwMDAwIG4gCjAwMDAwMDc2NjkgMDAwMDAgbiAKMDAwMDAwNzcyOSAwMDAwMCBuIAowMDAwMDEyMjY1IDAwMDAwIG4gCjAwMDAwMTIyODYgMDAwMDAgbiAKMDAwMDAxMjM0NiAwMDAwMCBuIAowMDAwMDE0NzgzIDAwMDAwIG4gCjAwMDAwMTQ4MDQgMDAwMDAgbiAKMDAwMDAxNDg2NCAwMDAwMCBuIAowMDAwMDE2NDExIDAwMDAwIG4gCjAwMDAwMTY0MzIgMDAwMDAgbiAKMDAwMDAxNjQ5MiAwMDAwMCBuIAowMDAwMDE2NTc5IDAwMDAwIG4gCjAwMDAwMTY4NjAgMDAwMDAgbiAKdHJhaWxlcgo8PAovU2l6ZSAyNgovUm9vdCAyNSAwIFIKPj4Kc3RhcnR4cmVmCjE2OTA2CiUlRU9GCg==]]></DOCUMENT>
+         </EMBEDDED_FILE>
+        </CREDIT_RESPONSE>
+        </RESPONSE_DATA>
+        </RESPONSE>
+        </RESPONSE_GROUP>
+    http_version: 
+  recorded_at: Sat, 15 Sep 2018 23:23:37 GMT
+recorded_with: VCR 3.0.3

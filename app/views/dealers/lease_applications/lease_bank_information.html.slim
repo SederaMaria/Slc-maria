@@ -1,0 +1,25 @@
+.lease-application
+    = semantic_form_for [:dealers, @lease_application], builder: ActiveAdmin::FormBuilder, url: :lease_bank_information_dealers_lease_application, method: 'patch' do |f|
+        = f.inputs 'Lessee Banking Information'
+            = f.input :colessee_account_joint_to_lessee, label: 'Are co-applicant have joint account with the Lessee?', as: :radio, collection: ["Yes", "No"], input_html: { :class => "lpc-required colessee_account_joint_to_lessee_input"}, wrapper_html: {class: 'col-sm-9'}
+            li.col-sm-12
+                ol
+                = f.input :payment_bank_name, required: true, label: 'Bank Name', input_html: { :class => "lpc-required"}, wrapper_html: {class: 'col-sm-3'}
+                = f.input :payment_aba_routing_number, required: true, label: 'ABA Routing Number', wrapper_html: {class: 'col-sm-3'}, input_html: { data: { mask: '999999999' }, :class => "lpc-required" }
+                = f.input :payment_account_number, required: true, label: 'Account Number', input_html: { :class => "lpc-required"}, wrapper_html: {class: 'col-sm-3'}
+                = f.input :payment_account_type, required: true, label: 'Checking/Savings Account:', as: :select, input_html: { :class => "lpc-required select2-input"}, wrapper_html: {class: 'col-sm-3'}
+            li.col-sm-12
+                ol
+               
+
+        = f.inputs 'Co-Lessee Banking Information', { :id => "colessee_banking_information" }
+            li.col-sm-12
+                ol
+                = f.input :colessee_payment_bank_name, required: true, label: 'Bank Name', input_html: { :class => "lpc-required"}, wrapper_html: {class: 'col-sm-3'}
+                = f.input :colessee_payment_aba_routing_number, required: true, label: 'ABA Routing Number', wrapper_html: {class: 'col-sm-3'}, input_html: { data: { mask: '999999999' }, :class => "lpc-required" }
+                = f.input :colessee_payment_account_number, required: true, label: 'Account Number', input_html: { :class => "lpc-required"}, wrapper_html: {class: 'col-sm-3'}
+                = f.input :colessee_payment_account_type, required: true, label: 'Checking/Savings Account:', as: :select, input_html: { :class => "lpc-required select2-input"}, wrapper_html: {class: 'col-sm-3'}
+            li.col-sm-12
+                ol
+
+        = f.submit 'Submit Bank Information', { :id=>"save-lessee-banking-information"}

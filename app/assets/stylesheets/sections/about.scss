@@ -1,0 +1,25 @@
+#about {
+  .description {
+    font-size: 1.4rem;
+    font-weight: 200;
+    opacity: 0.6;
+  }
+}
+
+@media (min-width: 992px) {
+  #about {
+    .title {
+      min-height: 700px;
+      padding-top: 20%;
+      background-color: transparent;
+      background-image: url(asset-path('man.png'));
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+    .tinted {
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.3);
+    }
+  }
+}

@@ -1,0 +1,58 @@
+<h1><%= "Stipulation Attachment added to #{@application.application_identifier}" %></h1>
+<h3><%= link_to 'Click Here', [:admins, @application] %> to View This Application</h3>
+<p>
+  Bike Details:
+</p>
+<ol>
+  <li>Model: <%= @lease_details.asset_model&.upcase %></li>
+  <li>Year: <%= @lease_details.asset_year %></li>
+  <li>Dealer Sales Price: <%= @lease_details.dealer_sales_price %></li>
+</ol>
+<%if @dealer.present?%>
+  <p>
+    Dealer User details:
+  </p>
+  <ol>
+    <li>Name: <%= @dealer.first_name&.upcase %></li>
+    <li>Lastname: <%= @dealer.last_name&.upcase %></li>
+    <li>Email: <%= @dealer.email&.upcase %></li>
+    <li>Dealership Name: <%=@dealer.dealership_name %></li>
+  </ol>
+<%end%>
+<p>
+  Applicant details:
+</p>
+<ol>
+  <li>Name: <%= @lessee.name&.upcase %></li>
+  <li>Date of birth: <%= @lessee.date_of_birth %></li>
+  <li>Mobile phone number: <%= @lessee.mobile_phone_number %></li>
+  <li>Home phone number: <%= @lessee.home_phone_number %></li>
+  <li>Drivers license id number: <%= @lessee.drivers_license_id_number&.upcase %></li>
+  <li>Drivers license state: <%= @lessee.drivers_license_state&.upcase %></li>
+  <li>Email address: <%= @lessee.email_address&.upcase %></li>
+  <li>Employment details: <%= @lessee.employment_details&.upcase %></li>
+  <li>Home address: <%=  @lessee.home_address&.full_name&.upcase %></li>
+  <li>Mailing address: <%=  @lessee.mailing_address&.full_name&.upcase %></li>
+  <li>Employment address: <%=  @lessee.employment_address&.full_name&.upcase %></li>
+</ol>
+<% if @colessee.present? %>
+  <p>
+    Coapplicant details:
+  </p>
+  <ol>
+    <li>Name: <%= @colessee.name&.upcase %></li>
+    <li>Date of birth: <%= @colessee.date_of_birth %></li>
+    <li>Mobile phone number: <%= @colessee.mobile_phone_number %></li>
+    <li>Home phone number: <%= @colessee.home_phone_number %></li>
+    <li>Drivers license id number: <%= @colessee.drivers_license_id_number&.upcase %></li>
+    <li>Drivers license state: <%= @colessee.drivers_license_state&.upcase %></li>
+    <li>Email address: <%= @colessee.email_address&.upcase %></li>
+    <li>Employment details: <%= @colessee.employment_details&.upcase %></li>
+    <li>Home address: <%=  @colessee.home_address&.full_name&.upcase %></li>
+    <li>Mailing address: <%=  @colessee.mailing_address&.full_name&.upcase %></li>
+    <li>Employment address: <%=  @colessee.employment_address&.full_name&.upcase %></li>
+  </ol>
+<% end %>
+
+<p>Thank you,</p>
+<p>Speed Leasing Company</p>

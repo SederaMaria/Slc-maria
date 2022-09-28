@@ -1,0 +1,125 @@
+- l = lessee
+form.formtastic.lease_application
+  fieldset.inputs
+    legend
+      span #{resource_type} Details
+    ol
+      li.col-sm-4.input.string.stringish
+        label.label First Name
+        input value=l.first_name type="text" disabled=true
+      li.col-sm-2.input.string.stringish
+        label.label Middle Name
+        input value=l.middle_name type="text" disabled=true
+      li.col-sm-4.input.string.stringish
+        label.label Last Name
+        input value=l.last_name type="text" disabled=true
+      li.col-sm-2.input.string.stringish
+        label.label Suffix
+        input value=l.suffix type="text" disabled=true
+      li.col-sm-12
+        h4 Home address details
+        li.col-sm-6.input.string.stringish
+          label.label Physical Street Address
+          input value=l.home_address.street1 type="text" disabled=true
+        li.col-sm-6.input.string.stringish
+          label.label Apt. / Unit
+          input value=l.home_address.street2 type="text" disabled=true
+        li.col-sm-6.input.string.stringish
+          label.label City
+          input value=l.home_address.new_city_value type="text" disabled=true
+        li.col-sm-3.input.string.stringish
+          label.label State
+          input value=l.home_address.new_state_value type="text" disabled=true
+        li.col-sm-3.input.string.stringish
+          label.label Zipcode
+          input value=l.home_address.zipcode type="text" disabled=true
+      li.col-sm-12
+        h4 Mailing address details
+        li.col-sm-6.input.string.stringish
+          label.label Physical Street Address (no P.O. Boxes)
+          input value=l.mailing_address.street1 type="text" disabled=true
+        li.col-sm-6.input.string.stringish
+          label.label Apt. / Unit
+          input value=l.mailing_address.street2 type="text" disabled=true
+        li.col-sm-6.input.string.stringish
+          label.label City
+          input value=l.mailing_address.new_city_value type="text" disabled=true
+        li.col-sm-3.input.string.stringish
+          label.label State
+          input value=l.mailing_address.new_state_value type="text" disabled=true
+        li.col-sm-3.input.string.stringish
+          label.label Zipcode
+          input value=l.mailing_address.zipcode type="text" disabled=true
+      li.col-sm-12 &nbsp;
+      li.col-sm-3.input.string.stringish
+        label.label Home Phone Number
+        input value=l.home_phone_number type="tel" data-mask='(999) 999-9999' disabled=true
+      li.col-sm-3.input.string.stringish
+        label.label Mobile Phone Number
+        input value=l.mobile_phone_number type="tel" data-mask='(999) 999-9999' disabled=true
+      li.col-sm-3.input.string.stringish
+        label.label Email Address
+        input value=l.email_address type="text" disabled=true
+      li.col-sm-3.input.string.stringish
+        label.label Years at current Address
+        input value=l.at_address_years type="text" disabled=true
+      li.col-sm-3.input.string.stringish
+        label.label Months at current Address
+        input value=l.at_address_months type="text" disabled=true
+      li.col-sm-3.input.string.stringish
+        label.label Monthly Mortgage / Rent
+        input value=l.monthly_mortgage type="text" disabled=true
+      li.col-sm-3.input.string.stringish
+        label.label Own or Rent?
+        input value=l.home_ownership type="text" disabled=true
+      li.col-sm-3.input.string.stringish
+        label.label Date of Birth
+        input value=l.date_of_birth type="text" data-mask='99/99/9999' disabled=true
+      li.col-sm-2.input.string.stringish
+        label.label Social Security Number (SSN)
+        input value=l.ssn type="text" data-mask='999-99-9999' disabled=true
+      li.col-sm-2.input.string.stringish
+        label.label Drivers License ID Number
+        input value=l.drivers_license_id_number type="text" disabled=true
+      li.col-sm-2.input.string.stringish
+        label.label Drivers License State
+        input value=l.drivers_license_state type="text" data-mask='aa' disabled=true
+      li.col-sm-3.input.string.stringish
+        label.label Drivers License Expiration Date
+        input value=l.drivers_licence_expires_at type="text" data-mask='99/99/9999' disabled=true
+
+form.formtastic.lease_application
+  fieldset.inputs
+    legend
+      span #{resource_type} Employment Details
+    ol
+      li.col-sm-12.input.string.stringish
+        label.label Employer Name
+        input value=l.employer_name type="text" disabled=true
+      li.col-sm-6.input.string.stringish
+        label.label City
+        input value=l.employment_address.city type="text" disabled=true
+      li.col-sm-6.input.string.stringish
+        label.label State
+        input value=l.employment_address.state type="text" data-mask='aa' disabled=true
+      li.col-sm-2.input.string.stringish
+        label.label Time at Employer Years
+        input value=l.time_at_employer_years type="text" disabled=true
+      li.col-sm-2.input.string.stringish
+        label.label Time at Employer Months
+        input value=l.time_at_employer_months type="text" disabled=true
+      li.col-sm-3.input.string.stringish
+        label.label Job Title
+        input value=l.job_title type="text" disabled=true
+      li.col-sm-3.input.string.stringish
+        label.label Employment Status
+        input value=l&.employment_status_definition&.definition&.humanize type="text" disabled=true
+      li.col-sm-2.input.string.stringish
+        label.label Phone
+        input value=l.employer_phone_number type="text" data-mask='(999) 999-9999' disabled=true
+      li.col-sm-6.input.string.stringish
+        label.label Gross Monthly Income
+        input value=l.gross_monthly_income type="text" disabled=true
+      li.col-sm-6.input.string.stringish
+        label.label Other Monthly Income
+        input value=l.other_monthly_income type="text" disabled=true

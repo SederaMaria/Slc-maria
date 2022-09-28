@@ -1,0 +1,34 @@
+panel("Credit Reports") do
+    table_for(lease_application.credit_reports.includes(:lessee).limit(1000).order(created_at: :desc)) do
+      column "Description" do |report|
+        "Credit Report for #{report.lessee&.full_name}"
+      end
+      column :status
+      column "Download Link" do |report|
+        link_to 'Download', report.upload.url, target: '_blank'
+      end
+      column :created_at do |report|
+        I18n.localize(report.created_at.in_time_zone('Eastern Time (US & Canada)'), format: :default)
+      end
+      column :updated_at do |report|
+        I18n.localize(report.updated_at.in_time_zone('Eastern Time (US & Canada)'), format: :default)
+      end
+      column "Average Credit Score" do |report|
+        report&.credit_score_average.nil? ? "N/A" : report&.credit_score_average
+      end
+      column "Suggested Credit Tier" do |report|
+        CreditTier.find_by(id: LeaseApplication.credit_tier_range(report&.credit_score_average))&.description
+      end
+      column "Effective Date" do |report|
+        report&.effective_date&.strftime('%B %-d %Y at %r %Z') rescue ''
+      end          
+      column "End Date" do |report|
+        report&.end_date&.strftime('%B %-d %Y at %r %Z') rescue ''
+      end
+
+      column 'Actions' do |report|
+         link_to 'View', admins_credit_report_path(report.id)
+      end
+      
+    end
+end

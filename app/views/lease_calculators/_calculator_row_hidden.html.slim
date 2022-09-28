@@ -1,0 +1,33 @@
+= form.inputs :style => 'display:none;' do
+  = form.input :total_dealer_price,
+    label: 'Total Dealer Price',
+    input_html:   { 'data-calculator-input' => 'dealer_sales_price' }
+  = form.input :fi_maximum_total,
+    label: 'FI Maximum Total',
+    input_html:   { 'data-calculator-input' => 'fi_maximum_total' }
+  = form.input :adjusted_capitalized_cost,
+    label: 'adjusted capitalized cost',
+    input_html:   { 'data-calculator-input' => 'adjusted_capitalized_cost' }
+  = form.input :monthly_lease_charge,
+    label: 'monthly lease charge',
+    input_html:   { 'data-calculator-input' => 'monthly_lease_charge' }
+  = form.input :monthly_depreciation_charge,
+    label: 'monthly depreciation charge',
+    input_html:   { 'data-calculator-input' => 'monthly_depreciation_charge' }
+  = form.input :backend_total,
+    label: 'backend total',
+    input_html:   { 'data-calculator-input' => 'backend_total' }
+  = form.input :frontend_total,
+    label: 'frontend total',
+    input_html:   { 'data-calculator-input' => 'frontend_total' }
+  = form.input 'original_msrp',
+    label: 'original_msrp',
+    input_html:   { 'data-calculator-input' => 'original_msrp', 'value' => '0' }
+  = form.input 'acc_less_fi_less_af',
+    label: 'acc_less_fi_less_af',
+    input_html:   { 'data-calculator-input' => 'acc_less_fi_less_af' }
+  = form.input 'gross_capitalized_cost',
+    label: 'gross capitalized cost',
+    input_html:   { 'data-calculator-input' => 'gross_capitalized_cost' }
+- if @override_mode
+  = hidden_field_tag 'override_mode', 'true'

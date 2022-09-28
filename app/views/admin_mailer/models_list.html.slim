@@ -1,0 +1,122 @@
+doctype html
+html
+  head
+    meta[content="text/html; charset=UTF-8" http-equiv="Content-Type"]
+  body
+    - new_models = []
+    - unmapped_models = []
+    - @new_models.each do |model|
+      - unless @updated_models.where(name: model.name, year: model.year).last.present?
+        - new_models << model
+        - unmapped_models << model unless model.slc_model_group_mapping_flag
+
+    h2 Number of New Bikes with unmapped SLC Model Group : #{unmapped_models.count}
+    - unless unmapped_models.empty?
+        table
+          tr
+            td.nada_manufacturer = 'Manufacturer'
+            td.name = 'Name'
+            td.year = 'Year'
+            td.nada_group_name = 'Speed Leasing Model Group Name'
+            td.nada_model_group_name = 'Nada Model Group Name'
+            td.nada_rough = 'Nada Rough'
+            td.nada_avg_retail = 'Nada Avg Retail'
+            td.original_msrp = 'Original MSRP'
+            td.nada_model_number = 'Nada Model Number'
+            td.start_date = 'Start Date'
+            td.end_date = 'End Date'
+
+          - unmapped_models.each do |model|
+            tr
+              td.nada_manufacturer = model.model_group.make.name
+              td.name = model.name
+              td.year = model.year
+              - if model.slc_model_group_mapping_flag
+                  td.nada_group_name = model.model_group.name
+              - else
+                  td.nada_group_name = ''
+              td.nada_model_group_name = model.nada_model_group_name
+              td.nada_rough = model.nada_rough
+              td.nada_avg_retail = model.nada_avg_retail
+              td.original_msrp = model.original_msrp
+              td.nada_model_number = model.nada_model_number
+              td.start_date = model.start_date
+              td.end_date = model.end_date
+
+    h2 Number of new bikes added : #{new_models.count}
+    - unless new_models.empty?
+        table
+          tr
+            td.nada_manufacturer = 'Manufacturer'
+            td.name = 'Name'
+            td.year = 'Year'
+            td.nada_group_name = 'Speed Leasing Model Group Name'
+            td.nada_model_group_name = 'Nada Model Group Name'
+            td.nada_rough = 'Nada Rough'
+            td.nada_avg_retail = 'Nada Avg Retail'
+            td.original_msrp = 'Original MSRP'
+            td.nada_model_number = 'Nada Model Number'
+            td.start_date = 'Start Date'
+            td.end_date = 'End Date'            
+
+          - new_models.each do |model|
+            tr
+              td.nada_manufacturer = model.model_group.make.name
+              td.name = model.name
+              td.year = model.year
+              - if model.slc_model_group_mapping_flag
+                  td.nada_group_name = model.model_group.name
+              - else
+                  td.nada_group_name = ''
+              td.nada_model_group_name = model.nada_model_group_name
+              td.nada_rough = model.nada_rough
+              td.nada_avg_retail = model.nada_avg_retail
+              td.original_msrp = model.original_msrp
+              td.nada_model_number = model.nada_model_number
+              td.start_date = model.start_date
+              td.end_date = model.end_date
+                                          
+
+    h2 Number of bikes updated : #{@updated_models.count}
+    - unless @updated_models.empty?
+      - @updated_models.each do |model|
+        - new_model = @new_models.where(name: model.name, year: model.year).last
+        table
+
+          tr
+            th.model_name = 'Model'
+            th.old_value = 'Old Value'
+            th.new_value = 'New Value'
+          tr
+            td.model = 'Manufacturer'
+            td.old_value = model.model_group.make.name
+            td.new_value = new_model.model_group.make.name
+          tr
+            td.model = 'Model Name'
+            td.old_value = model.name
+            td.new_value = new_model.name
+          tr
+            td.model = 'Model Year'
+            td.old_value = model.year
+            td.new_value = new_model.year
+          tr
+            td.model = 'Nada Model Group'
+            td.old_value = model.model_group.name
+            td.new_value = new_model.model_group.name
+          tr
+            td.model = 'Nada Rough'
+            td.old_value = model.nada_rough
+            td.new_value = new_model.nada_rough
+          tr
+            td.model = 'Nada Avg Retail'
+            td.old_value = model.nada_avg_retail
+            td.new_value = new_model.nada_avg_retail
+          tr
+            td.model = 'Original MSRP'
+            td.old_value = model.original_msrp
+            td.new_value = new_model.original_msrp
+          tr
+            td.model = 'Nada Model Number'
+            td.old_value = model.nada_model_number
+            td.new_value = new_model.nada_model_number
+          

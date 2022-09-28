@@ -1,0 +1,81 @@
+<h1><%= @application.application_identifier %> Lease Document Requested.</h1>
+<h3><%= link_to 'Click Here', [:admins, @application] %> to View This Application</h3>
+<p>
+  Lease Document Request Details:
+</p>
+<ol>
+  <li>Model: <%= @lease_details.asset_model&.upcase %></li>
+  <li>Year: <%= @lease_details.asset_year %></li>
+  <li>Dealer Sales Price: <%= @lease_details.dealer_sales_price %></li>
+  <li>Make: <%= @lease_request.asset_make %></li>
+  <li>VIN: <%= @lease_request.asset_vin %> (<%= @lease_request.asset_vin.length rescue '0' %>)</li>
+  <li>Exact Odometer Mileage: <%= @lease_request.exact_odometer_mileage %></li>
+  <li>Verification: <%= @vin_validation.status %></li>
+  <li>Color: <%= @lease_request.asset_color %></li>
+  <li>Service Contract Term: <%= @lease_request.service_contract_term %></li>
+  <li>GAP Term: <%= @lease_request.gap_contract_term %></li>
+  <li>Tire &amp; Wheel Term: <%= @lease_request.tire_contract_term %></li>
+  <li>Pre-Paid Maintenance Term: <%= @lease_request.ppm_contract_term %></li>
+  <li>Delivery Date: <%= @lease_request.delivery_date.try(:strftime, "%m/%d/%Y") %></li>
+  <li>Trade-In Year: <%= @lease_request&.trade_in_year %></li>
+  <li>Trade-In Make: <%= @lease_request&.trade_in_make %></li>
+  <li>Trade-In Model: <%= @lease_request&.trade_in_model %></li>
+</ol>
+<% if @dealer.present? %>
+    <p>
+      Dealer User details:
+    </p>
+    <ol>
+      <li>Name: <%= @dealer.first_name&.upcase %></li>
+      <li>Lastname: <%= @dealer.last_name&.upcase %></li>
+    </ol>
+    <p>
+      Dealership Details
+    </p>
+    <ol>
+      <li>Dealership Name: <%= @dealership.name %></li>
+      <li>Dealership Address: <%= @dealership.address&.full_name %></li>
+      <li>Dealer Emails: <%= @dealership.active_dealers.pluck(:email).join(', ') %></li>
+      <li>Primary Phone <%= @dealership&.primary_contact_phone %></li>
+      <li>Website: <%= @dealership&.website %></li>
+      <li>Franchised: <%= @dealership&.franchised %></li>
+      <li>Dealer Group: <%= @dealership&.dealer_group %></li>
+    </ol>
+<% end %>
+<p>
+  Applicant details:
+</p>
+<ol>
+  <li>Name: <%= @lessee.name&.upcase %></li>
+  <li>Date of birth: <%= @lessee.date_of_birth %></li>
+  <li>Mobile phone number: <%= @lessee.mobile_phone_number %></li>
+  <li>Home phone number: <%= @lessee.home_phone_number %></li>
+  <li>Drivers license id number: <%= @lessee.drivers_license_id_number&.upcase %></li>
+  <li>Drivers license state: <%= @lessee.drivers_license_state&.upcase %></li>
+  <li>Email address: <%= @lessee.email_address&.upcase %></li>
+  <li>Employment details: <%= @lessee.employment_details&.upcase %></li>
+  <li>Home address: <%= @lessee.home_address&.full_name&.upcase %></li>
+  <li>Mailing address: <%= @lessee.mailing_address&.full_name&.upcase %></li>
+  <li>Employment address: <%= @lessee.employment_address&.full_name&.upcase %></li>
+</ol>
+<% if @colessee.present? %>
+    <p>
+      Coapplicant details:
+    </p>
+    <ol>
+      <li>Name: <%= @colessee.name&.upcase %></li>
+      <li>Date of birth: <%= @colessee.date_of_birth %></li>
+      <li>Mobile phone number: <%= @colessee.mobile_phone_number %></li>
+      <li>Home phone number: <%= @colessee.home_phone_number %></li>
+      <li>Drivers license id number: <%= @colessee.drivers_license_id_number&.upcase %></li>
+      <li>Drivers license state: <%= @colessee.drivers_license_state&.upcase %></li>
+      <li>Email address: <%= @colessee.email_address&.upcase %></li>
+      <li>Employment details: <%= @colessee.employment_details&.upcase %></li>
+      <li>Home address: <%= @colessee.home_address&.full_name&.upcase %></li>
+      <li>Mailing address: <%= @colessee.mailing_address&.full_name&.upcase %></li>
+      <li>Employment address: <%= @colessee.employment_address&.full_name&.upcase %></li>
+    </ol>
+<% end %>
+
+<p>Thank you,</p>
+<p>Speed Leasing Company</p>

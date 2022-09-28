@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    meta[content="text/html; charset=UTF-8" http-equiv="Content-Type"]
+  body
+    h2 Number of Dealerships whose license will be expired in 30 days : #{@dealerships.count}
+    h3 Dealerships whose licenses will be expired :
+    - unless @dealerships.empty?
+      table
+        tr
+          td.id = 'Id'
+          td.name = 'Name'
+          td.website = 'Website'
+          td.license_number = 'License Number'
+          td.license_expiration_date = 'License Expiration Date'
+
+        - @dealerships.each do |dealership|
+          tr
+            td.id = dealership.id
+            td.name = dealership.name
+            td.website = dealership.website
+            td.license_number = dealership.dealer_license_number.to_s
+            td.license_expiration_date = dealership.license_expiration_date
+
+    p Please follow up with these dealerships to get an updated license for them. Thank You.

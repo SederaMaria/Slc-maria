@@ -1,0 +1,6 @@
+= render partial: 'lease_calculators/calculator_row_hidden', locals: { form: form, namespace: namespace }
+= render partial: 'lease_calculators/calculator_row_one', locals: { form: form, namespace: namespace, override_mode: override_mode }
+= render partial: 'lease_calculators/calculator_row_two', locals: { form: form, namespace: namespace, override_mode: override_mode }
+.row
+  = form.actions do
+    = form.submit 'Save Lease Calculator'

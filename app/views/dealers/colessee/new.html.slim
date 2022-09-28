@@ -1,0 +1,10 @@
+script[async=true src="https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_API_JS_KEY']}&libraries=places"]
+
+.lease-application
+  = semantic_form_for [:dealers, @lease_application], builder: ActiveAdmin::FormBuilder, url: :add_colessee_dealers_lease_application, html: { class: "add-colessee-form", attr_is_form_new_record: true  }  do |f|
+    = f.semantic_errors(*f.object.errors.keys)
+    = render partial: 'lessee-form', locals: { form: f, resource: :colessee }
+    = render partial: 'possession_panel', locals: { form: f}
+    = f.submit 'Save Co-Applicant'
+
+

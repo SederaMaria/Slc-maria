@@ -1,0 +1,7 @@
+= semantic_form_for [:dealers, @lease_application_attachments], url: :add_attachments_dealers_lease_application, method: 'post', html: { multipart: true } do |f|
+  = f.inputs "Add Attachments" do
+    = f.input :description
+    = f.input :upload
+    = f.input :notes, input_html: { rows: 5 }
+  = f.actions do
+    = f.action :submit, :button_html => { :disable_with => 'Uploading...' }

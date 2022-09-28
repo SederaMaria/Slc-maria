@@ -1,0 +1,16 @@
+panel("Stipulations") do
+  table_for(Admins::LeaseApplicationStipulationDecorator.wrap(resource.lease_application_stipulations), class: 'lease_application_stipulations_list') do
+    column :stipulation
+    column :status do |lease_application_stipulation|
+        render partial: 'stipulation_status', locals: { lease_application_stipulation: lease_application_stipulation }
+    end
+    column :notes do |lease_application_stipulation|
+        render partial: 'stipulation_notes', locals: { lease_application_stipulation: lease_application_stipulation }
+    end
+    column :lease_application_attachment do |lease_application_stipulation|
+      link_to lease_application_stipulation.attachment_filename, lease_application_stipulation.attachment_url if lease_application_stipulation.attachment
+    end
+  end
+end
+
+render('stipulation_form')

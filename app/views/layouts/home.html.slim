@@ -1,0 +1,30 @@
+doctype html
+html
+  / [if lt IE 7] <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="">
+  / [if IE 7]    <html class="no-js lt-ie9 lt-ie8" lang="">
+  / [if IE 8]    <html class="no-js lt-ie9" lang="">
+  / [if gt IE 8] <html class="no-js" lang="">
+  head
+    meta charset="utf-8"
+    meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"
+    meta content="width=device-width, initial-scale=1" name="viewport"
+    meta name="p:domain_verify" content="3a13ee95171e40f9bd5ad6bb0b637452"
+    = favicon_link_tag('favicon.ico', sizes: "16x16 24x24 32x32 48x48 64x64")
+    link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700" rel="stylesheet"
+    link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700" rel="stylesheet"
+    title Speed Leasing - Get on the motorcycle of your dreams
+    = csrf_meta_tags
+
+    = stylesheet_link_tag    'styles', media: 'all'
+    = javascript_include_tag 'application'
+    = javascript_pack_tag 'application'
+
+  body
+    #page-wrapper
+      - unless flash.empty?
+        .flash_messages
+          .alert.alert-success.alert-dismissible role='alert' = notice
+      = yield
+  //Only load this on the production Heroku site.
+  - if ENV['HEROKU_APP_NAME'] == 'speed-leasing'
+    footer= render 'google_analytics'

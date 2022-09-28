@@ -1,0 +1,6 @@
+- if @request.session.has_key?(:admin_user_id)
+  | * Admin: #{AdminUser.find(@request.session[:admin_user_id]).inspect.html_safe}
+- elsif @request.session.has_key?(:dealer_id)
+  | * Dealer: #{Dealer.find(@request.session[:dealer_id]).inspect.html_safe}
+- else
+  | * User Information Not Available

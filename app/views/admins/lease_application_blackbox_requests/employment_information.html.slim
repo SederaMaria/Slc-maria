@@ -1,0 +1,114 @@
+.lease-application.verification
+
+  - if @employment_information
+    .panel
+      form
+        fieldset.inputs
+          legend
+            span Information
+          .row.information
+            .col-sm-6
+              ol
+                li.string.input.optional.stringish
+                  label.label Employer Name: #{@employment_information["EmployerName"]}
+                li.string.input.optional.stringish
+                  label.label Employee First Name: #{@employment_information["EmployeeFirstName"]}
+                li.string.input.optional.stringish
+                  label.label Employee Middle Name: #{@employment_information["EmployeeMiddleName"]}
+                li.string.input.optional.stringish
+                  label.label Employee Last Name: #{@employment_information["EmployeeLastName"]}
+                li.string.input.optional.stringish
+                  label.label Employee SSN: #{@employment_information["EmployeeSSN"]}
+                li.string.input.optional.stringish
+                  label.label Employment Status: #{@employment_information["EmploymentStatus"]}
+                li.string.input.optional.stringish
+                  label.label Employment Start Date: #{@employment_information["EmploymentStartDate"]}
+                li.string.input.optional.stringish
+                  label.label Total Months With Employer: #{@employment_information["TotalMonthsWithEmployer"]}
+                li.string.input.optional.stringish
+                  label.label Termination Date: #{@employment_information["TerminationDate"]}
+                li.string.input.optional.stringish
+                  label.label Position Title: #{@employment_information["PositionTitle"]}
+                li.string.input.optional.stringish
+                  label.label Rate Of Pay: #{@employment_information["RateOfPay"]}
+                li.string.input.optional.stringish
+                  label.label Annualized Income: #{@employment_information["AnnualizedIncome"]}
+                li.string.input.optional.stringish
+                  label.label Pay Frequency: #{@employment_information["PayFrequency"]}
+                li.string.input.optional.stringish
+                  label.label Pay Period Frequency: #{@employment_information["PayPeriodFrequency"]}
+                li.string.input.optional.stringish
+                  label.label Average Hours Worked Per Pay Period: #{@employment_information["AverageHoursWorkedPerPayPeriod"]}
+
+
+    .panel
+      h3 Compensation History
+      .panel_contents
+        - unless @employment_information["CompensationHistory"].empty? && @employment_information["CompensationHistory"].nil?
+            table
+              thead
+                tr
+                  th.col.col-year = 'Year'
+                  th.col.col-amount = 'Amount'
+              - @employment_information["CompensationHistory"]["Compensation"].each_with_index do |compensation, index|
+                tbody
+                  tr class=(index.odd? ? 'odd' : 'even')
+                    td.col.col-year = compensation["Year"]
+                    td.col.col-amount = compensation["Amount"]
+
+    - unless @employment_histories.compact.empty?
+      .panel
+        form
+          fieldset.inputs
+            legend
+              span Employment History
+            - @employment_histories.each do |employment_history|  
+              .row.information
+                .col-sm-6
+                  ol
+                    li.string.input.optional.stringish
+                      label.label Employer Name: #{employment_history["EmployerName"]}
+                    li.string.input.optional.stringish
+                      label.label Employee First Name: #{employment_history["EmployeeFirstName"]}
+                    li.string.input.optional.stringish
+                      label.label Employee Middle Name: #{employment_history["EmployeeMiddleName"]}
+                    li.string.input.optional.stringish
+                      label.label Employee Last Name: #{employment_history["EmployeeLastName"]}
+                    li.string.input.optional.stringish
+                      label.label Employee SSN: #{employment_history["EmployeeSSN"]}
+                    li.string.input.optional.stringish
+                      label.label Employment Status: #{employment_history["EmploymentStatus"]}
+                    li.string.input.optional.stringish
+                      label.label EmploymentStartDate: #{employment_history["EmploymentStartDate"]}
+                    li.string.input.optional.stringish
+                      label.label Total Months With Employer: #{employment_history["TotalMonthsWithEmployer"]}
+                    li.string.input.optional.stringish
+                      label.label Termination Date: #{employment_history["TerminationDate"]}
+                    li.string.input.optional.stringish
+                      label.label Position Title: #{employment_history["PositionTitle"]}
+                    li.string.input.optional.stringish
+                      label.label Rate Of Pay: #{employment_history["RateOfPay"]}
+                    li.string.input.optional.stringish
+                      label.label Annualized Income: #{employment_history["AnnualizedIncome"]}
+                    li.string.input.optional.stringish
+                      label.label Annua Pay Frequencylized Income: #{employment_history["PayFrequency"]}
+                    li.string.input.optional.stringish
+                      label.label Pay Period Frequency: #{employment_history["PayPeriodFrequency"]}
+                    li.string.input.optional.stringish
+                      label.label Average Hours Worked Per Pay Period: #{employment_history["AverageHoursWorkedPerPayPeriod"]}
+
+      .panel
+        h3 Employment Compensation History
+        .panel_contents
+          - @employment_histories.each do |employment_history|
+            - unless employment_history["CompensationHistory"].empty? && employment_history["CompensationHistory"].nil?
+                table
+                  thead
+                    tr
+                      th.col.col-year = 'Year'
+                      th.col.col-amount = 'Amount'
+                  - @datax.class.convert_to_array(employment_history["CompensationHistory"]["Compensation"]).each_with_index do |compensation, index|
+                    tbody
+                      tr class=(index.odd? ? 'odd' : 'even')
+                        td.col.col-year = compensation["Year"]
+                        td.col.col-amount = compensation["Amount"]

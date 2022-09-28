@@ -1,0 +1,115 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://lookups.twilio.com/v1/PhoneNumbers/+1234567890
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Charset:
+      - utf-8
+      User-Agent:
+      - twilio-ruby/4.13.0 (ruby/x86_64-darwin16 2.3.4-p301)
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Authorization:
+      - Basic QUM4NjFmN2ZiMWQ2MTZlMTY3MmNhYmM0MmMxYmRkYmI3ZToxZjBhNWI3NTRkNzQxOGVjZDI5NjJjYzgyMWIyMDVmOA==
+  response:
+    status:
+      code: 404
+      message: NOT FOUND
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match,
+        If-Unmodified-Since
+      Access-Control-Allow-Methods:
+      - GET, POST, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - ETag
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 14 Jul 2017 17:05:29 GMT
+      Twilio-Request-Duration:
+      - '0.033'
+      Twilio-Request-Id:
+      - RQ521301e20b50407ea325492a4ee1699a
+      X-Powered-By:
+      - AT-5000
+      X-Shenanigans:
+      - none
+      Content-Length:
+      - '164'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"code": 20404, "message": "The requested resource /PhoneNumbers/+1234567890
+        was not found", "more_info": "https://www.twilio.com/docs/errors/20404", "status":
+        404}'
+    http_version: 
+  recorded_at: Fri, 14 Jul 2017 17:05:30 GMT
+- request:
+    method: get
+    uri: https://lookups.twilio.com/v1/PhoneNumbers/4043764434
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Charset:
+      - utf-8
+      User-Agent:
+      - twilio-ruby/4.5.0 (ruby/x86_64-darwin17 2.4.2-p198)
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Authorization:
+      - Basic QUM2Njg3NmI0NTA1N2Y0YjE0NmU5OWEyY2IzNDMwMWU4YTo5M2I0ZTg3NDc1OGRiYjEyMmY5MDc2Yjg1MTJlOTQ4Zg==
+  response:
+    status:
+      code: 403
+      message: FORBIDDEN
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match,
+        If-Unmodified-Since
+      Access-Control-Allow-Methods:
+      - GET, POST, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - ETag
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 02 Oct 2018 04:18:10 GMT
+      Twilio-Request-Duration:
+      - '0.022'
+      Twilio-Request-Id:
+      - RQdc72fb99b0a7454cb8155b84c81f53b5
+      X-Powered-By:
+      - AT-5000
+      X-Shenanigans:
+      - none
+      Content-Length:
+      - '155'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"code": 20008, "message": "Resource not accessible with Test Account
+        Credentials", "more_info": "https://www.twilio.com/docs/errors/20008", "status":
+        403}'
+    http_version: 
+  recorded_at: Tue, 02 Oct 2018 04:18:10 GMT
+recorded_with: VCR 3.0.3

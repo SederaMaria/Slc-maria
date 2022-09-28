@@ -1,0 +1,6 @@
+// See https://www.pivotaltracker.com/story/show/149697745
+// And 
+// https://stackoverflow.com/questions/23372903/hide-spinner-in-input-number-firefox-29
+input[type=number] {
+  -moz-appearance: textfield;
+}

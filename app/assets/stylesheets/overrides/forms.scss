@@ -1,0 +1,80 @@
+//Align Label and Input heights.
+form {
+  fieldset {
+    > ol {
+      > li.select, li.stringish {
+        display: flex;
+        > select {
+          width: 80%;
+        }
+      }
+      > li.radio {
+        > fieldset.choices {
+          > ol {
+            > li {
+              display: inherit;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.select_disabled {
+  background: none;
+  pointer-events: none;
+}
+
+.radio-disabled {
+  label {
+    pointer-events: none;
+  }
+}
+
+.ui-datepicker .ui-datepicker-header {
+  height: auto;
+  width: 156px;
+}
+
+.select-style{
+  border: 1px solid #c9d0d6;
+  border-radius: 3px;
+  font-size: 0.95em;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  outline: none;
+  padding: 8px 10px 7px;
+  background: white;
+}
+
+.state-select { 
+  padding: 0px 15px !important;
+
+  label {
+    float: none;
+  }
+  input {
+    position: relative !important;
+    width: 100px;
+  }
+}
+.city-select {
+  padding: 0px 15px !important;
+
+  label {
+    float: none;
+  }
+  input {
+    position: relative !important;
+    width: 100px;
+  }
+}
+
+#same-as-lessee-checkbox, .override-address-span {
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.override-address-hidden {
+  display: none !important;
+}

@@ -1,0 +1,318 @@
+# HEROKU_APP_NAME_STAGING
+# HEROKU_API_KEY_STAGING
+# HEROKU_APP_NAME_PRODUCTION
+# HEROKU_API_KEY_PRODUCTION
+
+version: 2.1
+
+orbs:
+  slack: circleci/slack@4.0.1
+
+aliases:
+  - &apt_installs
+    name: APT Installs (QT, PDFtk, psql-client)
+    command: |
+      echo "deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main"
+      wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+      sudo apt-get update --allow-releaseinfo-change
+      sudo apt-get install -y software-properties-common
+      sudo apt install -y gcc g++ make qt5-default libqt5webkit5-dev ruby-dev zlib1g-dev
+      sudo apt-get install pdftk
+      sudo apt install postgresql-client
+
+  - &artifacts_path ~/test/artifacts
+
+  - &attach_workspace
+    attach_workspace:
+      at: ~/slcapp
+
+  - &bundle_gem_install
+    name: Install gems
+    command: bundle install --jobs=4 --retry=3 --path=vendor/bundle
+
+  - &database_setup
+    name: Set up database
+    command: |
+      bundle exec rake db:create
+      bundle exec rake db:schema:load
+      bundle exec rake db:test:prepare
+      bundle exec rake db:migrate
+
+  - &install_bundler
+    name: Install Bundler
+    command: gem install bundler
+
+  - &install_chrome
+    name: Install Chrome
+    command: |
+      wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+      sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+      sudo apt-get update --allow-releaseinfo-change
+      sudo apt-get -y install google-chrome-stable
+
+  - &persist_workspace
+    persist_to_workspace:
+      root: .
+      paths:
+        - .
+
+  - &restore_gem_cache
+    name: Restoring gem cache
+    keys:
+      - v3-dependencies-{{ checksum "Gemfile.lock" }}
+      - v3-dependencies- # Fallback to using the latest cache if no exact match is found
+
+  - &restore_yarn_cache
+    name: Restoring Yarn cache
+    keys:
+      - v1-yarn-packages-{{ checksum "yarn.lock" }}
+      - v1-yarn-packages- # Fallback to using the latest cache if no exact match is found
+
+  - &results_path ~/test/reports
+
+  - &save_gem_cache
+    name: Saving gem cache
+    key: v3-dependencies-{{ checksum "Gemfile.lock" }}
+    paths:
+      - ~/slcapp/vendor/bundle
+
+  - &save_yarn_cache
+    name: Saving Yarn cache
+    key: v1-yarn-packages-{{ checksum "yarn.lock" }}
+    paths:
+      - ~/.cache/yarn
+
+  - &slack_circleci_deploy
+    slack/notify:
+      custom: |
+        {
+          "blocks": [
+            {
+              "type": "section",
+              "text": {
+                "type": "mrkdwn",
+                "text": "Congratulations! The LOS-UI project has been successfully deployed!"
+              },
+              "accessory": {
+                "type": "image",
+                "image_url": "https://theexchange.fitness/wp-content/uploads/2016/04/youre-awesome-meme.jpg",
+                "alt_text": "Mr. T saying "You're awesome"
+              }
+            }
+          ]
+        }
+      event: pass
+
+executors:
+  ruby-postgres-redis:
+    docker:
+      - image: circleci/ruby:2.7.2-buster-node-browsers
+        environment:
+          PGHOST: 127.0.0.1
+          PGUSER: root
+          RAILS_ENV: test
+          RACK_ENV: test
+          REDIS_URL: redis://127.0.0.1:6379
+          REDISCLOUD_URL: redis://127.0.0.1:6379
+      - image: circleci/postgres:10-alpine-postgis
+        environment:
+          POSTGRES_USER: root
+          POSTGRES_DB: speed_leasing_test
+          POSTGRES_PASSWORD: ""
+      - image: redis
+    working_directory: ~/slcapp
+
+jobs:
+  install-and-build:
+    resource_class: medium
+    executor: ruby-postgres-redis
+    steps:
+      - checkout
+      - restore_cache: *restore_gem_cache
+      # - restore_cache: *restore_yarn_cache
+      - run: *apt_installs
+      - run: *install_bundler
+      - run: *bundle_gem_install
+      - run: *install_chrome
+      - save_cache: *save_gem_cache
+      # - save_cache: *save_yarn_cache
+      - run: *database_setup
+      - *persist_workspace
+      - slack/notify:
+          event: fail
+          template: basic_fail_1
+
+  cucumber-tests:
+    resource_class: small
+    executor: ruby-postgres-redis
+    parallelism: 2
+    steps:
+      - checkout
+      - *attach_workspace
+      - restore_cache: *restore_gem_cache
+      - run: *apt_installs
+      - run: *install_bundler
+      - run: *bundle_gem_install
+      - run: *install_chrome
+      - save_cache: *save_gem_cache
+
+      - run:
+          name: Fix annoying permissions error
+          command: chown -R $USER:$USER /home/circleci/slcapp
+
+      - run:
+          name: Cucumber tests
+          command: |
+            mkdir -p *results_path
+            bundle exec cucumber --format junit --out *results_path/junit.xml
+
+      - store_test_results:
+          path: *results_path
+
+      - store_artifacts:
+          path: *artifacts_path
+
+      - slack/notify:
+          event: fail
+          template: basic_fail_1
+
+  rspec-tests:
+    executor: ruby-postgres-redis
+    parallelism: 2
+    steps:
+      - checkout
+      - *attach_workspace
+      - restore_cache: *restore_gem_cache
+      - run: *apt_installs
+      - run: *install_bundler
+      - run: *bundle_gem_install
+      - run: *install_chrome
+      - save_cache: *save_gem_cache
+      - run: *database_setup
+
+      - run:
+          name: Fix annoying permissions error
+          command: chown -R $USER:$USER /home/circleci/slcapp
+
+      - run:
+          name: RSpec tests
+          command: |
+            mkdir -p *results_path
+            #TEST_FILES="$(circleci tests glob "/slcapp/spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
+            RAILS_ENV=test bundle exec rspec --failure-exit-code=0 \
+                              --format progress \
+                              --format RspecJunitFormatter \
+                              --out ~/test/reports/rspec.xml \
+                              $TEST_FILES
+      - store_test_results:
+          path: *results_path
+
+      - store_artifacts:
+          path: *artifacts_path
+
+  rspec-test-retry:
+    executor: ruby-postgres-redis
+    steps:
+      - checkout
+      - *attach_workspace
+      - restore_cache: *restore_gem_cache
+      - run: *apt_installs
+      - run: *install_bundler
+      - run: *bundle_gem_install
+      - run: *install_chrome
+      - save_cache: *save_gem_cache
+      - run: *database_setup
+
+      - run:
+          name: Fix annoying permissions error
+          command: chown -R $USER:$USER /home/circleci/slcapp
+
+      - run:
+          name: RSpec tests
+          command: |
+            mkdir -p *results_path             
+            RAILS_ENV=test bundle exec rspec --only-failures \
+                              --format progress \
+                              --format RspecJunitFormatter \
+                              --out *results_path/rspec.xml
+
+      - store_test_results:
+          path: *results_path
+
+      - store_artifacts:
+          path: *artifacts_path
+
+      # - slack/notify:
+      #     event: fail
+      #     template: basic_fail_1
+
+  staging-deploy:
+    executor: ruby-postgres-redis
+    steps:
+      - checkout
+      - run:
+          name: Deploy Staging to Heroku
+          command: |
+            git push https://heroku:$HEROKU_API_KEY_STAGING@git.heroku.com/$HEROKU_APP_NAME_STAGING.git staging
+      - slack/notify:
+          event: fail
+          template: basic_fail_1
+      - slack/notify:
+          event: pass
+          template: success_tagged_deploy_1
+
+  production-deploy:
+    executor: ruby-postgres-redis
+    steps:
+      - checkout
+      - run:
+          name: Deploy master to Heroku
+          command: |
+            git push https://heroku:$HEROKU_API_KEY_PRODUCTION@git.heroku.com/$HEROKU_APP_NAME_PRODUCTION.git master
+      - slack/notify:
+          event: fail
+          template: basic_fail_1
+      - slack/notify:
+          event: pass
+          template: success_tagged_deploy_1
+
+workflows:
+  version: 2
+  push:
+    jobs:
+      - install-and-build:
+          context:
+            - SLC-Global
+      - cucumber-tests:
+          context:
+            - SLC-Global
+          requires:
+            - install-and-build
+      - rspec-tests:
+          context:
+            - SLC-Global
+          requires:
+            - install-and-build
+      - rspec-test-retry:
+          context:
+            - SLC-Global
+          requires:
+            - rspec-tests
+      # - staging-deploy:
+      #     context:
+      #       - SLC-Global
+      #     requires:
+      #       - cucumber-tests
+      #       - rspec-test-retry
+      #     filters:
+      #       branches:
+      #         only: staging
+      # - production-deploy:
+      #     context:
+      #       - SLC-Global
+      #     requires:
+      #       - cucumber-tests
+      #       - rspec-test-retry
+      #     filters:
+      #       branches:
+      #         only: master

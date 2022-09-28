@@ -1,0 +1,14 @@
+= form_tag import_excel_admins_model_years_url, :method => :post, multipart: true, class: 'formtastic' do
+  fieldset.inputs
+    legend
+      span Upload Excel File
+    ol
+      li.file.input.required
+        label Upload
+        = file_field_tag :excel_file
+
+  fieldset.actions
+    ol
+      li.action.input_action
+        = submit_tag 'Submit', html: {:disable_with => 'Uploading...'}
+  

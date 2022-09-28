@@ -1,0 +1,34 @@
+div do
+    panel("Employment Verification") do
+      table_for(lease_application.datax_employment_details) do
+        column 'APPLICANT FIRST NAME' do |datax|
+          JSON.parse(datax.leadrouter_response.to_json)["extraAttributes"]["twn_raw_report"]["DataxResponse"]["TWNSelectSegment"]["EmployeeFirstName"] rescue ''
+        end
+        
+        column 'APPLICANT LAST NAME' do |datax|
+          JSON.parse(datax.leadrouter_response.to_json)["extraAttributes"]["twn_raw_report"]["DataxResponse"]["TWNSelectSegment"]["EmployeeLastName"] rescue ''
+        end
+        column 'EMPLOYER' do |datax|
+          JSON.parse(datax.leadrouter_response.to_json)["extraAttributes"]["twn_raw_report"]["DataxResponse"]["TWNSelectSegment"]["EmployerName"] rescue ''
+        end
+
+        column 'TITLE' do |datax|
+          JSON.parse(datax.leadrouter_response.to_json)["extraAttributes"]["twn_raw_report"]["DataxResponse"]["TWNSelectSegment"]["PositionTitle"] rescue ''
+        end
+
+        column 'EMPLOYMENT STATUS' do |datax|
+          JSON.parse(datax.leadrouter_response.to_json)["extraAttributes"]["twn_raw_report"]["DataxResponse"]["TWNSelectSegment"]["EmploymentStatus"] rescue ''
+        end
+
+        column 'DATE' do |datax|
+          JSON.parse(datax.leadrouter_response.to_json)["extraAttributes"]["twn_raw_report"]["DataxResponse"]["TWNSelectSegment"]["EmploymentStartDate"].to_date rescue ''
+        end
+
+        column 'ACTIONS' do |datax|
+          link_to 'View', employment_information_admins_lease_application_blackbox_request_path(datax)
+          
+        end
+
+      end
+    end
+  end

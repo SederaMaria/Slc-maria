@@ -1,0 +1,5 @@
+h2 Your account has been created.
+hr
+p Email: #{@recipient.email}
+p = link_to 'ACTION REQUIRED: Click here to set your password', edit_password_url(@recipient, reset_password_token: @reset_password_token)
+= render partial: 'shared/email_branded_footer'

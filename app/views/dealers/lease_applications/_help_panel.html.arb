@@ -1,0 +1,7 @@
+panel "Dealer User Instructions" do
+  ul do
+    li 'Elements Highlighted in Red are REQUIRED in order to Submit.  You may still save with incomplete information, however your application will not be accepted by Speed Leasing until every RED field is filled in for each Applicant.'
+    li 'Either a Home Phone Number or a Mobile Phone Number is required to submit.  These fields are colored ORANGE.'
+    li 'You may ignore the Co-Lessee Details if this application only has a single primary Lessee.'
+  end
+end

@@ -1,0 +1,12 @@
+panel("Funding Delays") do
+  table_for(lease_application.funding_delays.not_not_required.order(created_at: :asc)) do
+    column "Reason" do |funding_delay|
+      funding_delay.funding_delay_reason&.reason
+    end
+    column :status
+    column :notes
+    column "Applied On" do |funding_delay|
+      I18n.localize(funding_delay.created_at.in_time_zone('Eastern Time (US & Canada)'), format: :default)
+    end
+  end
+end

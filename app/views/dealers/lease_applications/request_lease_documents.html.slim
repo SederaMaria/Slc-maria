@@ -1,0 +1,131 @@
+- lease_calculator = @lease_application.lease_calculator
+- years = Make.all.map{|a| [a.id, a.application_setting.model_year_range_descending.to_a] if a.application_setting.present?}.compact
+- make = Make.where(id: @lease_application.make).first
+- make_value = Make.where(name: lease_calculator.asset_make).present? ? Make.where(name: lease_calculator.asset_make).first.name : Make.where(id: lease_calculator.asset_make).first.name  
+.lease-application
+  = semantic_form_for [:dealers, @request_lease_documents], builder: ActiveAdmin::FormBuilder, url: :request_lease_documents_dealers_lease_application, method: 'post' do |f|
+    = f.inputs "Asset information" do
+      = f.input :asset_make,
+        as: :string,
+        label: 'Make',
+        wrapper_html: { class: 'col-sm-4' },
+        input_html: {class: 'select-style',value: make_value, readonly: true}
+
+      = f.input :asset_model,
+        as: :string,
+        label: 'Model',
+        wrapper_html: { class: 'col-sm-4' },
+        input_html: {class: 'select-style',value: lease_calculator.asset_model, readonly: true}
+      = f.input :asset_year,
+        as: :string,
+        label: 'Year',
+        wrapper_html: { class: 'col-sm-4' },
+        input_html: {class: 'select-style',value: lease_calculator.asset_year, readonly: true}
+
+      = f.input :asset_vin,
+        label: 'VIN',
+        wrapper_html: { class: 'col-sm-4' },
+        input_html: { data: { mask: 'w' * 17 } }
+
+      = f.input :asset_color,
+        label:'Color/Markings',
+        wrapper_html: { class: 'col-sm-4' },
+        as: :string
+
+      = f.input :exact_odometer_mileage,
+        label: 'Exact Odometer Mileage',
+        wrapper_html: { class: 'col-sm-4'}
+
+      = f.input :trade_in_make,
+        label: 'Trade In Make',
+        wrapper_html: { class: 'col-sm-4' }
+
+      = f.input :trade_in_model,
+        label: 'Trade In Model',
+        wrapper_html: { class: 'col-sm-4' }
+
+      = f.input :trade_in_year,
+        label: 'Trade In Year',
+        wrapper_html: { class: 'col-sm-4' },
+        input_html: { data: { mask: '9999' } }
+
+    = f.inputs "Contract Information" do
+
+      = f.input :delivery_date,
+        as: :datepicker,
+        datepicker_options: { dateFormat: "mm/dd/yy" },
+        input_html: { data: { mask: '99/99/9999' } },
+        label: 'Delivery Date',
+        wrapper_html: { class: 'col-sm-4' }
+
+      = f.input :gap_contract_term,
+        as: :string,
+        label: 'GAP Contract Term',
+        wrapper_html: { class: 'col-sm-4' },
+        input_html: { value: (lease_calculator.has_guaranteed_auto_protection? ? lease_calculator.term : ""), \
+                      data: { mask: '99' }, \
+                      readonly: true }
+      = f.input :service_contract_term,
+        as: :string,
+        label: 'Service Contract Term',
+        include_blank: true,
+        wrapper_html: { class: 'col-sm-4' },
+        input_html: {value: "", data: { mask: '99' }}
+
+      = f.input :ppm_contract_term,
+        as: :string,
+        label: 'PPM Contract term',
+        include_blank: true,
+        wrapper_html: { class: 'col-sm-4' },
+        input_html: {value: "", data: { mask: '99' }}
+
+      = f.input :tire_contract_term,
+        as: :string,
+        label: 'Tire/Wheel Contract Term',
+        include_blank: true,
+        wrapper_html: { class: 'col-sm-4' },
+        input_html: {value: "", data: { mask: '99' }}
+
+      = f.input :equipped_with,
+        label: 'Equipped With',
+        wrapper_html: { class: 'col-sm-4' }
+
+    = f.inputs 'Banking / Payment Information', for: @lease_application do |lease_application|
+      li.col-sm-12
+        ol
+          = lease_application.input :payment_bank_name, label: 'Bank Name', input_html: { :class => "lpc-required"}, wrapper_html: {class: 'col-sm-3'}
+          = lease_application.input :payment_aba_routing_number, label: 'ABA Routing Number', wrapper_html: {class: 'col-sm-3'}, input_html: { data: { mask: '999999999' }, :class => "lpc-required" }
+          = lease_application.input :payment_account_number, label: 'Account Number', input_html: { :class => "lpc-required"}, wrapper_html: {class: 'col-sm-3'}
+          = lease_application.input :payment_account_type, label: 'Checking/Savings Account:', as: :select, input_html: { :class => "lpc-required select2-input"}, wrapper_html: {class: 'col-sm-3'}
+      li.col-sm-12
+        ol
+          = lease_application.input :payment_account_holder, label: 'Lessee or Co-Lessee?', as: :radio, collection: ["Lessee", "Co-Lessee", "Both"], input_html: { :class => "lpc-required payment-account-holder-input"}, wrapper_html: {class: 'col-sm-9'}
+   
+    = f.inputs "Additional Notes" do
+
+      = f.input :notes, label: 'Notes',
+        input_html: { rows: 5 },
+        wrapper_html: { class: 'col-sm-12' }
+
+    div.new_lease_document_request_acknowledgement
+      h3 All bank accounts must be verified before funding. Failure to submit this information now may cause a delay in funding.
+      = check_box_tag 'lease_document_request_acknowledgement'
+      = label_tag 'lease_document_request_acknowledgement', 'Acknowledge and proceed with document request.'
+    = f.submit :submit, value: 'Save Lease Document Request'
+
+
+javascript:
+  var make = $('#lease_document_request_asset_make')
+  make.on('change', function(){
+    var make_id = make.val()
+    $("#lease_document_request_asset_year option").remove()
+    var years = #{years}
+    var make_years =  years.filter(a => a[0].toString() == make_id.toString())[0][1]
+
+    $.each(make_years, function(key, value) {   
+     $('#lease_document_request_asset_year')
+         .append($("<option></option>")
+                    .attr("value",value)
+                    .text(value)); 
+    });
+  })

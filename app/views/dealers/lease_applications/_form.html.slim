@@ -1,0 +1,14 @@
+script[async=true src="https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_API_JS_KEY']}&libraries=places"]
+
+.lease-application
+  = render 'help_panel'
+  = semantic_form_for [:dealers, @lease_application], builder: ActiveAdmin::FormBuilder, html: { multipart: true, attr_is_form_new_record: resource.new_record?, autocomplete: "off"  } do |f|
+    = f.semantic_errors(*f.object.errors.keys)
+    = render partial: 'lessee-form', locals: { form: f, resource: :lessee }
+    = render partial: 'lessee-form', locals: { form: f, resource: :colessee }
+    = render partial: 'motorcycle_panel', locals: { form: f, resource: :colessee }
+    = render partial: 'possession_panel', locals: { form: f}
+    = f.actions do
+      = f.submit 'Save Lease Application', { :id=>"save-lease-application-btn-form" }
+      = link_to 'Submit Lease Application', 'javascript:void(0)', { :id=>"submit-lease-application-btn-from" } if current_dealer.dealership.can_submit
+      

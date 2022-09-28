@@ -1,0 +1,12 @@
+<%= semantic_form_for [:admins, @admin_user], builder: ActiveAdmin::FormBuilder do |f| %>
+<%= f.semantic_errors :state %>
+<%= f.inputs do %>
+<%= f.input :first_name, required: true %>
+<%= f.input :last_name, required: true %>
+<%= f.input :email %>
+<%= f.input :job_title %>
+<%#= f.input :security_role, as: :select, collection: SecurityRole.all.pluck(:description), include_blank: false, label: 'Old Security Role' %>
+<%= f.input :security_roles, as: :select, collection: SecurityRole.all.pluck(:description, :id), include_blank: false, label: 'Security Role' %>
+<% end %>
+<%= f.actions %>
+<% end %>

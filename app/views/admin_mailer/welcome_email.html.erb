@@ -1,0 +1,12 @@
+<p><%= @recipient.first_name %>,</p>
+
+<p>Welcome to Speed Leasing! You are receiving this email because an LOS Admin Portal account has been created for you.</p>
+
+<p>Your user name is	<%= @recipient.email %>.</p>
+
+<p>To set your password, visit the following address: <%= link_to 'Create Password', edit_password_url(@recipient, reset_password_token: @reset_password_token) %>.</p>
+
+<p>If you need assistance, please contact Support at support@speedleasing.com.</p>
+
+<p>Thank you!</p>
+

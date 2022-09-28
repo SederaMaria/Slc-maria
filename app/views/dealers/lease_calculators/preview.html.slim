@@ -1,0 +1,3 @@
+- @lease_calculator ||= lease_calculator
+= semantic_form_for [:dealers, @lease_calculator], builder: ActiveAdmin::FormBuilder do |f|
+  = render partial: 'lease_calculators/columns', locals: { form: f, namespace: :dealers, override_mode: false }

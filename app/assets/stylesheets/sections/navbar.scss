@@ -1,0 +1,89 @@
+.navbar {
+  height: 200%;
+  background-color: #282828;
+  border: none;
+}
+
+.navbar-brand {
+  height: 120px;
+  padding: 0px;
+}
+
+#logo-img {
+  height: 100%;
+  width: auto;
+}
+
+.nav >li { 
+  a {
+    font-family: Montserrat;
+    font-size: 1.2rem;
+    text-align: center;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+    opacity: 0.9;
+  }
+  a:hover {
+    color: #18FF96 !important;
+  }
+}
+
+.navbar-toggle {
+  padding: 15px;
+  margin: 55px 15px 25px 0;
+}
+
+.navbar-alignit .navbar-header {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  height: 50px;
+}
+
+.navbar-alignit .navbar-brand {
+  top: 50%;
+  display: block;
+  position: relative;
+  height: auto;
+  transform: translate(0,-50%);
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.navbar-nav>li>.dropdown-menu {
+  z-index: 9999;
+}
+
+@media (min-width: 768px) {
+  .nav >li { 
+    .btn {
+      margin-top: 35px !important;
+    }
+    a {
+      padding-top: 50px;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+}
+@media (min-width: 992px) { 
+  .nav >li { 
+    a {
+      padding-left: 9px;
+      padding-right: 9px;
+    }
+  }
+}
+
+/* Extra Large devices (desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+  .nav >li { 
+    a {
+      padding-left: 23px;
+      padding-right: 23px;
+    }
+  }
+}

@@ -1,0 +1,141 @@
+// 2021-08-04 Blackbox Production Response.json
+{
+    "decision": "ACCEPT",
+    "creditScore": null,
+    "creditLimit": null,
+    "adverseReasonCodes": null,
+    "suggestedCorrections": null,
+    "paySchedule": null,
+    "dlRequestCode": null,
+    "leadID": "1a11227b-1212-12aa-ab12-abc1a123456a",
+    "idmSessionID": null,
+    "redirectUrl": null,
+    "errorDetails": null,
+    "extraAttributes":
+    {
+        "twn_employer_name": "TGI Fridays",
+        "twn_employment_status": "NOT CURRENTLY ON ASSIGNMENT",
+        "twn_has_name_mismatch": false,
+        "twn_has_recent_termination": false,
+        "twn_has_payfreq_mismatch": true,
+        "twn_raw_report":
+        {
+            "DataxResponse":
+            {
+                "Transaction":
+                {
+                    "GenerationTime": "20210803191953",
+                    "CodeVersion": "default",
+                    "RequestVersion": "3.0",
+                    "TransactionId": "466508461",
+                    "TrackHash": "12a01b1c2ab1ab1234a12a123456b123",
+                    "TrackId": "a1234567890123a1a12a1a12a1ab1ab1"
+                },
+                "TWNSelectSegment":
+                {
+                    "EmployerName": "TGI Fridays",
+                    "EmployeeFirstName": "Martin",
+                    "EmployeeMiddleName": "A",
+                    "EmployeeLastName": "Credco",
+                    "EmployeeSSN": "000112222",
+                    "EmploymentStatus": "NOT CURRENTLY ON ASSIGNMENT",
+                    "EmploymentStartDate": "2020-01-02",
+                    "LastUpdatedDate": "2020-02-15",
+                    "TotalMonthsWithEmployer": "2",
+                    "TerminationDate": null,
+                    "PositionTitle": "BARTENDER",
+                    "RateOfPay": "7",
+                    "AnnualizedIncome": null,
+                    "PayFrequency": "WEEKLY",
+                    "PayPeriodFrequency": "WEEKLY",
+                    "AverageHoursWorkedPerPayPeriod": null,
+                    "CompensationHistory":
+                    {
+                        "Compensation": [
+                        {
+                            "Year": "2020",
+                            "Amount": "6000.12"
+                        },
+                        {
+                            "Year": "2019",
+                            "Amount": null
+                        },
+                        {
+                            "Year": "2018",
+                            "Amount": "0"
+                        }]
+                    },
+                    "EmploymentHistory":
+                    {
+                        "Employment": [
+                        {
+                            "EmployerName": "Perkins Cafe and Bakery",
+                            "EmployeeFirstName": "Martin",
+                            "EmployeeMiddleName": "A",
+                            "EmployeeLastName": "credco",
+                            "EmployeeSSN": "000112222",
+                            "EmploymentStatus": "INACTIVE",
+                            "EmploymentStartDate": "2015-03-12",
+                            "LastUpdatedDate": "2015-03-24",
+                            "TotalMonthsWithEmployer": "7",
+                            "TerminationDate": "2015-10-02",
+                            "PositionTitle": "BARTENDER",
+                            "RateOfPay": null,
+                            "AnnualizedIncome": null,
+                            "PayFrequency": null,
+                            "PayPeriodFrequency": "WEEKLY",
+                            "AverageHoursWorkedPerPayPeriod": null,
+                            "CompensationHistory":
+                            {
+                                "Compensation":
+                                {
+                                    "Year": "2015",
+                                    "Amount": null
+                                }
+                            }
+                        },
+                        {
+                            "EmployerName": "CULVERS",
+                            "EmployeeFirstName": "MARTIN",
+                            "EmployeeMiddleName": "A",
+                            "EmployeeLastName": "CREDCO",
+                            "EmployeeSSN": "000112222",
+                            "EmploymentStatus": "INACTIVE",
+                            "EmploymentStartDate": "2012-07-15",
+                            "LastUpdatedDate": "2012-12-15",
+                            "TotalMonthsWithEmployer": "0",
+                            "TerminationDate": "2012-12-15",
+                            "PositionTitle": "COOK",
+                            "RateOfPay": "0",
+                            "AnnualizedIncome": null,
+                            "PayFrequency": "HOURLY",
+                            "PayPeriodFrequency": "WEEKLY",
+                            "AverageHoursWorkedPerPayPeriod": null,
+                            "CompensationHistory":
+                            {
+                                "Compensation":
+                                {
+                                    "Year": "2012",
+                                    "Amount": "4480.51"
+                                }
+                            }
+                        }]
+                    },
+                    "CustomDecision":
+                    {
+                        "Result": "Y",
+                        "Bucket": "A1"
+                    }
+                },
+                "GlobalDecision":
+                {
+                    "Result": "Y",
+                    "TWNSelectBucket": "A1"
+                }
+            }
+        },
+        "twn_pay_frequency": "WEEKLY"
+    },
+    "rejectStage": null,
+    "campaignID": 122
+}

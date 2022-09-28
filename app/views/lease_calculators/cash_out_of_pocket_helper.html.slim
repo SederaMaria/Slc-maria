@@ -1,0 +1,71 @@
+#modal
+
+<div class="modal">
+	<div class="modal-heading">
+		  <h4><b>Cash Out of Pocket Helper</b></h4>
+	</div>	 	
+
+	<div class="modal-description">
+	<br/>
+	p How much cash does the customer have in addition to their trade-in, if any?
+	 	<p id="amtPara">Minimum of $<span class="mimimum_val"></span></p><br/>
+
+		<input type="number" id='cash' class="update_calculator" value="0.00" onKeyup="getCashValue()"><br/><br/>
+		<button type="cancel" class='fancybox cancel btn-cash btn-cancel' value="Cancel">Cancel</button>
+	</div>
+
+	<div class="inner-modal">
+	p An additional cash down payment of <span class="cash_down_payment"></span> would bring the lessee's total cash at signing to <span id="signing"></span>
+	p Enter <span class="cash_down_payment"></span> in calculator? <br/><br/>
+		<button type="submit" value="yes" class='btn btn-cash' style="text-decoration:none">Yes</button>
+		<button type="submit" value="no" class='btn btn-cash'>No</button>
+		<button type="cancel" value="Cancel"  class='btn btn-cash'>Cancel</button>
+	</div>
+</div>
+
+
+javascript:
+		var min = parseFloat($('#lease_calculator_cash_down_minimum').val())
+		$('.mimimum_val').text(min)
+		$('#amtPara').css('color', 'red')
+		$('.btn-cancel').show()
+		$('.btn-cash').click(function(e){
+			var value= e.target.value;
+			var cash = document.getElementById("cash").value
+			var security_deposit = parseFloat($('#lease_calculator_refundable_security_deposit').val())
+			var first_payment = parseFloat($('#lease_calculator_total_monthly_payment').val())
+			var p_total = security_deposit + first_payment
+			var additional_cash_down = cash - p_total
+			var additional_cash_down_payment = additional_cash_down.toFixed(2)
+			
+		  if(value === 'yes'){
+		  	$('#lease_calculator_cash_down_payment').val(additional_cash_down_payment)
+		  	$('.cash_at_sign').each(function(){
+		  		$(this).val(cash).trigger('change');
+		  	});
+
+		  }
+			$.fancybox.close()
+		})
+
+    function getCashValue(){
+			var data = document.getElementById("cash").value
+			var security_deposit = parseFloat($('#lease_calculator_refundable_security_deposit').val())
+			var first_payment = parseFloat($('#lease_calculator_total_monthly_payment').val())
+			var total = security_deposit + first_payment
+			var additional_cash_down = data - total
+			var additional_cash_down_payment = additional_cash_down.toFixed(2)
+			$('.cash_down_payment').text(additional_cash_down_payment)
+			$('#signing').text(data);
+			//$('#lease_calculator_total_cash_at_signing').attr('value', data)
+			if (data > min) {
+			  $('#amtPara').css('color', 'black')
+			  $('.btn-cancel').hide()
+			  $(".inner-modal").show();
+			} else {
+				$('#amtPara').css('color', 'red');
+				$('.btn-cancel').show()
+			  $(".inner-modal").hide();
+			}
+    }
+    

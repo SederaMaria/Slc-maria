@@ -1,0 +1,78 @@
+script[async=true src="https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_API_JS_KEY']}&libraries=places"]
+.lease-application
+  = semantic_form_for [:admins, @lease_application], builder: ActiveAdmin::FormBuilder, html: { multipart: true } do |f|
+    = f.semantic_errors(*f.object.errors.keys)
+    - new_page_allowed_roles = ['Administrator', 'Executive', 'Underwriting Manager', 'Underwriting User']
+    - request_review_allowed_roles = ['Administrator', 'Executive', 'Underwriting Manager', 'Underwriting User']
+    - approve_review_allowed_roles = ['Administrator', 'Underwriting Manager']
+    - user_security_roles = current_admin_user&.security_roles
+    .row.testing-row
+      .col-sm-12
+        a.button.special href="#{new_page_admins_lease_application_path(@lease_application)}" New Page
+    = f.inputs "Statuses" do
+      = f.input :credit_status, as: :select, collection: credit_status_options, include_blank: false, input_html: { 'data-is-disable-credit-status-approved' => @lease_application.reload&.is_disable_credit_status_approved&.to_s }
+      = f.input :document_status, as: :select, collection: LeaseApplication.aasm(:document_status).states_for_select, wrapper_html: { class: 'lease-application-document-status' }
+      = f.input :workflow_status_id, as: :select, collection: WorkflowStatus.pluck(:description, :id), selected: (@lease_application.workflow_status_id.nil? ? WorkflowStatus.find_by(description: 'Application').id : @lease_application.workflow_status_id), wrapper_html: { class: 'col-sm-6 workflow-status-input' }, input_html: { disabled: true, :class => "select2-input" }     
+      - if user_security_roles.any?{|role| request_review_allowed_roles.include?(role['description'])}
+        li.col-sm-2
+          .div 
+            a.button href="#{request_review_admins_lease_application_path(@lease_application)}" Request Review
+      - if user_security_roles.any?{|role| approve_review_allowed_roles.include?(role['description'])} && (@lease_application&.workflow_status&.description == "Underwriting Review")
+        li.col-sm-4
+          .div 
+            a.button href="#{approved_underwriting_admins_lease_application_path(@lease_application)}" Approve
+      = f.input :documents_issued_date, label: 'Documents Issued Date', as: :datepicker, datepicker_options: { dateFormat: "mm/dd/yy" }, input_html: { data: { mask: '99/99/9999' } }, wrapper_html: { class: 'col-sm-6' }
+      = f.input :lease_package_received_date, label: 'Documents Received Date', as: :datepicker, datepicker_options: { dateFormat: "mm/dd/yy" }, input_html: { data: { mask: '99/99/9999' } }, wrapper_html: { class: 'col-sm-6' }
+      = f.input :funding_delay_on, label: 'Funding Delay On', as: :datepicker, datepicker_options: { dateFormat: "mm/dd/yy" }, input_html: { data: { mask: '99/99/9999' } }, wrapper_html: { class: 'col-sm-4' }
+      = f.input :funding_approved_on, label: 'Funding Approved On', as: :datepicker, datepicker_options: { dateFormat: "mm/dd/yy" }, input_html: { data: { mask: '99/99/9999' } }, wrapper_html: { class: 'col-sm-4' }
+      = f.input :funded_on, label: 'Funded On', as: :datepicker, datepicker_options: { dateFormat: "mm/dd/yy" }, input_html: { data: { mask: '99/99/9999' } }, wrapper_html: { class: 'col-sm-4' }
+      = f.input :promotion_name, label: 'Promotion Name', wrapper_html: { class: 'col-sm-4' }
+      = f.input :promotion_value, label: 'Promotion Value', wrapper_html: { class: 'col-sm-4' }
+      = f.input :is_verification_call_completed, wrapper_html: { style: "display: none;" }
+    = render partial: 'dealers/lease_applications/lessee-form', locals: { form: f, resource: :lessee }
+    = render partial: 'dealers/lease_applications/lessee-form', locals: { form: f, resource: :colessee }
+    = f.inputs 'Vehicle Possession', for: :vehicle_possession do |l|
+      = f.input :vehicle_possession, 
+        as: :radio, 
+        collection: [ ["Primary Lessee", "primary_lessee"], ["Colessee", "colessee"] ], 
+        label: "Who will have possession of the vehicle?",
+        input_html: { class: "vehicle_possession_radio", attr_is_new_record: f.object.new_record? },
+        wrapper_html: { class: "required-to-submit" }
+    .row
+      .col-sm-12
+        = f.inputs "References"
+          - f.has_many :references, allow_destroy: true do |vc|
+            .col-sm-2
+              - vc.input :first_name
+            .col-sm-2
+              - vc.input :last_name
+            .col-sm-2
+              - vc.input :phone_number, input_html: { data: { mask: '(999) 999-9999' } }
+            .col-sm-2
+              - vc.input :city
+            .col-sm-2
+              - vc.input :state, input_html: { data: { mask: 'aa' } }
+    .row
+      .col-sm-12
+        h4 You can email documents satisfying these stipulations to #{@lease_application.application_identifier}#{ENV['ATTACHMENT_EMAIL_DOMAIN']}
+    div
+      .panel
+        h3 Stipulations
+        .panel_contents
+          table
+            thead
+              tr
+                th.col.col-stipulation Stipulation
+                th.col.col-status Status
+                th.col.col-attachment Attachment
+            tbody
+              / TODO Extract this code to a model. We should never be hitting the database from a view
+              - Admins::LeaseApplicationStipulationDecorator.wrap(@lease_application.lease_application_stipulations.includes(:stipulation).limit(1000)).each do |lease_application_stipulation|
+                tr class=cycle('even', 'odd')
+                  td.col.col-stipulation
+                    = link_to lease_application_stipulation.stipulation.description, [:admins, lease_application_stipulation.stipulation]
+                  td.col.col-status= lease_application_stipulation.status
+                  td.col.col-attachment
+                    = link_to lease_application_stipulation.attachment_filename, lease_application_stipulation.attachment_url if lease_application_stipulation.attachment
+
+    = f.actions

@@ -1,0 +1,176 @@
+.spinner
+  
+- years = Make.all.map{|a| [a.name, a.application_setting&.model_year_range_descending&.to_a || [] ]}
+- make = Make.where(name: form.object&.lease_calculator&.asset_make).first || Make.where(id: form.object&.lease_calculator&.asset_make).first
+- lease_calculator = @lease_application&.lease_calculator
+= form.inputs 'Motorcycle', for: :lease_calculator do |l|
+
+  = l.inputs 'VIN'
+    = l.input :asset_vin,
+      label: 'VIN',
+      wrapper_html: { class: 'col-sm-4 asset-vin-wrapper' },
+      input_html: {maxlength: 17, style: "width:80%;"}
+  .col-sm-12
+    span style="color:red;display:none;" class="vin-not-found" Trouble retrieving motorcycle details. Please enter the bike manually.
+
+  = l.input :new_used,
+      as: :select,
+      label: 'New/Used',
+      collection: ["New", "Used"],
+      wrapper_html: { class: 'col-sm-4 asset-vin-wrapper required-to-submit' },
+      input_html: {class: "vehicle-assets-input"}
+  .col-sm-12
+    span style="color:red;display:none;" class="vehicle new-used-not-found" New/Used is required.
+  br/
+
+  = l.input :asset_make,
+      as: :select,
+      label: 'Make',
+      include_blank: true,
+      collection: Make.active.pluck(:name, :name), selected: make&.name,
+      wrapper_html: { class: 'col-sm-4 asset-vin-wrapper required-to-submit' },
+      input_html: {class: "vehicle-assets-input"}
+  .col-sm-12
+    span style="color:red;display:none;" class="vehicle make-not-found" Make is required.
+  br/
+
+  = l.input :asset_year,
+    as: :select,
+    collection: make&.application_setting&.model_year_range_descending&.to_a || [],
+    selected: l.object.asset_year,
+    label: 'Year',
+    wrapper_html: { class: 'col-sm-4 asset-vin-wrapper required-to-submit' },
+    input_html: {class: "vehicle-assets-input"}
+  .col-sm-12
+    span style="color:red;display:none;" class="vehicle year-not-found" Year is required.
+  = l.input :asset_model,
+    label: 'Model',
+    as: :select,
+    collection: model_years_for_make_and_year_for_select(asset_make: l.object.asset_make, asset_year: l.object.asset_year) || [],
+    selected: l.object.asset_model,
+    wrapper_html: { class: 'col-sm-4 asset-vin-wrapper required-to-submit' },
+    input_html: {class: "vehicle-assets-input"}
+  .col-sm-12
+    span style="color:red;display:none;" class="vehicle model-not-found" Model is required.
+  = l.input :mileage_tier,
+    as: :select,
+    label: 'Mileage Range',
+    collection: mileage_tier_collection(with_tier: l.object.mileage_tier),
+    wrapper_html: { class: 'col-sm-4 select required-to-submit' }
+  .col-sm-12
+    span style="color:red;display:none;" class="vehicle mileage-not-found" Mileage Range is required.
+
+javascript:
+
+  $(function(){
+    
+    $('.spinner').hide();
+
+    var vehicleAssetWrapper = $(".vehicle-assets-wrapper");
+    var motorVin = $("#lease_application_lease_calculator_attributes_asset_vin");
+    var vinNotFoundMsg = $(".vin-not-found");
+    var vehicleNotFoundMsg = $(".vehicle");
+    var assetVinWrapper = $('.asset-vin-wrapper');
+
+    vehicleAssetWrapper.hide();
+    if (motorVin.val().length > 0){
+      vehicleAssetWrapper.show();
+    }
+
+    $(".manual-bike-pick").on("click", function(e){
+      motorVin.val('');
+      vehicleAssetWrapper.show();
+    })
+    
+
+    motorVin.on("keyup", function(e) {
+    
+      if (this.value.length == 17){
+        $(this).prop('disabled', true);
+        $('.spinner').show();
+        $(':input[type="submit"]').prop('disabled', true);
+        $('#submit-lease-application-btn-from').addClass("disable-click");
+        $('#wrapper').addClass("opacity_5");
+
+        $.ajax({
+          url: "/api/v1/vin_verification/verify-vin",
+          data: { vin: this.value},
+          error: function() {
+            clearVehicle();
+            vinNotFoundMsg.show();
+            hideSpinner();
+          }
+        }).done(function(response) {
+          if (response.message == "Vehicle Found"){
+            if (response.vehicleInfo.make && response.vehicleInfo.year && response.vehicleInfo.model){
+              vehicleAssetWrapper.show();
+              $("#lease_application_lease_calculator_attributes_asset_make").val(response.vehicleInfo.make).change();
+              setTimeout(function(){ $("#lease_application_lease_calculator_attributes_asset_year").val(response.vehicleInfo.year).change() }, 300);
+              setTimeout(function(){ 
+                $("#lease_application_lease_calculator_attributes_asset_model").val(response.vehicleInfo.model).change() 
+                $('.vehicle-assets-input option:not(:selected)').prop('disabled', true);
+              }, 500);
+              var current_year = new Date().getFullYear();
+              var new_used = (current_year - response.vehicleInfo.year) < 3 ? 'New' : 'Used';
+              $("#lease_application_lease_calculator_attributes_new_used").val(new_used).change()
+              vinNotFoundMsg.hide();
+              vehicleNotFoundMsg.hide();
+              hideSpinner();
+            }else{
+              clearVehicle();
+              vinNotFoundMsg.show();
+              hideSpinner();
+            }
+          }else{
+            clearVehicle();
+            vinNotFoundMsg.show();
+            hideSpinner();
+          }
+
+        });
+      }
+    })
+
+    function clearVehicle(){
+          $("#lease_application_lease_calculator_attributes_asset_make").val('').change();
+          $("#lease_application_lease_calculator_attributes_asset_year").val('').change();
+          $("#lease_application_lease_calculator_attributes_asset_model").val('').change();
+          $('.vehicle-assets-input option:not(:selected)').prop('disabled', false);
+    }
+
+    function hideSpinner(){
+          motorVin.prop('disabled', false);
+          $(':input[type="submit"]').prop('disabled', false);
+          $('#submit-lease-application-btn-from').removeClass("disable-click");
+          $('#wrapper').removeClass("opacity_5");
+          $('.spinner').hide();
+    }
+
+
+    var make = $('#lease_application_lease_calculator_attributes_asset_make')
+    make.on('change', function(){
+      preload_year()
+    })
+
+    var asset_year = $('#lease_application_lease_calculator_attributes_asset_year')
+    
+    function preload_year(){
+      var make_id = make.val()
+      
+      if(!make_id)
+        return;
+
+      $("#lease_application_lease_calculator_attributes_asset_year option").remove()
+      var years = #{raw years}
+
+
+      var make_years =  years.filter(a => a[0] == make_id.toString())[0][1]
+      $('#lease_application_lease_calculator_attributes_asset_year').append($("<option></option>").text("Select Year"));
+      $.each(make_years, function(key, value) {   
+       $('#lease_application_lease_calculator_attributes_asset_year')
+           .append($("<option></option>")
+                      .attr("value",value)
+                      .text(value)); 
+      });
+    }
+  })

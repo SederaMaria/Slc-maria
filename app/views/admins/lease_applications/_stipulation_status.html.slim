@@ -1,0 +1,11 @@
+= semantic_form_for [:admins, lease_application_stipulation], method: 'put', remote: true do |f|
+  li.radio.input.required
+    fieldset.choices
+      ol.choices-group
+        - LeaseApplicationStipulation::VALID_STATUSES.each do |status|
+          li.choice
+            - id = "lease_application_stipulation_#{lease_application_stipulation.id}_#{status}"
+            label for=id
+              = radio_button_tag 'lease_application_stipulation[status]', status, lease_application_stipulation.status.eql?(status), id: id, class: 'stipulation_status'
+              = status
+

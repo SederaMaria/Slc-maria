@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    meta[content="text/html; charset=UTF-8" http-equiv="Content-Type"]
+  body
+  	- if @type == 'second_status_transfer_call'
+    	h3 Leasepak second status transfer call failed for Application with id - #{@app_id}
+    - if @type == 'update_disbursement_date'
+      h3 Leasepak update disbursement date call failed for Application with id - #{@app_id}
+    - if @type == 'load_pap_schedule'
+      h3 Leasepak load pap schedule call failed for Application with id - #{@app_id}
+    - if @type == 'status_transfer'
+    	h3 Leasepak status transfer failed for Application with id - #{@app_id}
+    h3 Generated at #{Time.now}
+
+    h2 Errors : #{@errors}
+

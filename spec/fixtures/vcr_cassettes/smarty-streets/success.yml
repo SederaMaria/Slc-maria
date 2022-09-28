@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://us-street.api.smartystreets.com/street-address?auth-id=9659c733-71f5-eb2c-c1e2-7dd437beec97&auth-token=eQ7GolvBrXz4fv6JMbxx
+    body:
+      encoding: UTF-8
+      string: '[{"street":"123 Peachtree Street ","street2":null,"secondary":null,"city":"Atlanta","state":"GA","zipcode":"30303","lastline":null,"addressee":null,"urbanization":null,"match":null,"candidates":1},{"street":"PO
+        BOX 1234 ","street2":null,"secondary":null,"city":"Atlanta","state":"GA","zipcode":"30303","lastline":null,"addressee":null,"urbanization":null,"match":null,"candidates":1},{"street":"3525
+        Piedmont Road Suite 5-205","street2":null,"secondary":null,"city":"Atlanta","state":"GA","zipcode":"30305","lastline":null,"addressee":null,"urbanization":null,"match":null,"candidates":1}]'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - smartystreets (sdk:ruby@3.0.0)
+      Host:
+      - us-street.api.smartystreets.com
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 14 Jul 2017 17:05:26 GMT
+      Transfer-Encoding:
+      - chunked
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '[{"input_index":0,"candidate_index":0,"delivery_line_1":"123 Peachtree
+        St NE","last_line":"Atlanta GA 30303-1803","delivery_point_barcode":"303031803234","components":{"primary_number":"123","street_name":"Peachtree","street_postdirection":"NE","street_suffix":"St","city_name":"Atlanta","state_abbreviation":"GA","zipcode":"30303","plus4_code":"1803","delivery_point":"23","delivery_point_check_digit":"4"},"metadata":{"record_type":"S","zip_type":"Standard","county_fips":"13121","county_name":"Fulton","carrier_route":"C033","congressional_district":"05","rdi":"Commercial","elot_sequence":"0140","elot_sort":"D","latitude":33.75149,"longitude":-84.39306,"precision":"Zip9","time_zone":"Eastern","utc_offset":-5,"dst":true},"analysis":{"dpv_match_code":"Y","dpv_footnotes":"AABB","dpv_cmra":"N","dpv_vacant":"N","active":"Y","footnotes":"L#"}},{"input_index":1,"candidate_index":0,"delivery_line_1":"PO
+        Box 1234","last_line":"Atlanta GA 30301-1234","delivery_point_barcode":"303011234346","components":{"primary_number":"1234","street_name":"PO
+        Box","city_name":"Atlanta","state_abbreviation":"GA","zipcode":"30301","plus4_code":"1234","delivery_point":"34","delivery_point_check_digit":"6"},"metadata":{"record_type":"P","zip_type":"POBox","county_fips":"13121","county_name":"Fulton","carrier_route":"B013","congressional_district":"05","rdi":"Residential","elot_sequence":"0001","elot_sort":"A","latitude":33.75548,"longitude":-84.39058,"precision":"Zip5","time_zone":"Eastern","utc_offset":-5,"dst":true},"analysis":{"dpv_match_code":"Y","dpv_footnotes":"AABB","dpv_cmra":"N","dpv_vacant":"Y","active":"Y","footnotes":"A#"}},{"input_index":2,"candidate_index":0,"delivery_line_1":"3525
+        Piedmont Rd NE Bldg 5-205","last_line":"Atlanta GA 30305-1586","delivery_point_barcode":"303051586054","components":{"primary_number":"3525","street_name":"Piedmont","street_postdirection":"NE","street_suffix":"Rd","secondary_number":"5-205","secondary_designator":"Bldg","city_name":"Atlanta","state_abbreviation":"GA","zipcode":"30305","plus4_code":"1586","delivery_point":"05","delivery_point_check_digit":"4"},"metadata":{"record_type":"H","zip_type":"Standard","county_fips":"13121","county_name":"Fulton","carrier_route":"C070","congressional_district":"05","rdi":"Commercial","elot_sequence":"0201","elot_sort":"A","latitude":33.85105,"longitude":-84.37726,"precision":"Zip9","time_zone":"Eastern","utc_offset":-5,"dst":true},"analysis":{"dpv_match_code":"Y","dpv_footnotes":"AABB","dpv_cmra":"N","dpv_vacant":"N","active":"Y","footnotes":"L#"}}]
+
+'
+    http_version: 
+  recorded_at: Fri, 14 Jul 2017 17:05:26 GMT
+recorded_with: VCR 3.0.3

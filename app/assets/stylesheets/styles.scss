@@ -1,0 +1,18 @@
+/*
+ * This is the manifest file for the home site
+ *
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import 'base_overrides';
+@import 'sections/navbar';
+@import 'sections/root';
+@import 'sections/about';
+@import 'sections/for_dealers';
+@import 'sections/contact';
+@import 'sections/get_a_lease';
+@import 'sections/footer';
+@import 'sections/terms';
+@import 'sections/dealership_locator';

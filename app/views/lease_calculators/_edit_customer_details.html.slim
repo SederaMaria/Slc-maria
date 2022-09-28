@@ -1,0 +1,29 @@
+div#calculator_data_id*{ 'data-calculator-id'=> @lease_calculator.id, :style => 'display:none;' }
+li
+  h4#calculator_r1_h4 Customer
+  = form.input :us_state,
+    as: :select,
+    label: 'State',
+    collection: active_states_for_select,
+    input_html: { disabled: (preview_mode || override_mode), "data-calculator-us-state-input": "us_state", "data-calculation-prerequisite": true,"data-calculation-is-custom": @is_ga_custom, "data-calculation-tax_jurisdiction_label-with-dealership": @is_tax_jurisdiction_label_with_dealership, class: "select2-input select2-hidden-accessible update_calculator" }
+  = form.input :tax_jurisdiction,
+    label: 'Tax Jurisdiction',
+    as: :select,
+    collection: form.object.tax_jurisdiction_collection_options,
+    input_html: { disabled: (preview_mode || override_mode), "data-calculator-input": "tax_jurisdiction", "data-calculation-prerequisite": true, "data-calculation-california-county-town": @california_county_town, "data-calculation-arizona-new_mexico-zip-code": @arizona_new_mexico_zip_code, class: " select2-input select2-hidden-accessible update_calculator" }
+  = form.input :ga_tavt_value,
+    label: link_to(@label_text, @hyperlink, target: '_blank'),
+    input_html: { 'data-calculator-input' => true, :class => "update_calculator", readonly: @preview_mode, onkeyup: 'calculateUpfrontTax()'},
+    wrapper_html: { disabled: (preview_mode || override_mode), :style => 'display:none;', :id => 'ga-tavt-value' }
+  li#georgia-tax-guide style='display:none;'
+    div.right
+      a href="/georgia-tax-guides" target='_blank' Click here for help completing this field.
+  javascript:
+    function calculateUpfrontTax(){
+      var ga_tavt_val = $('#lease_calculator_ga_tavt_value').val();
+      $('#lease_calculator_upfront_tax').val(ga_tavt_val);
+    }
+    $(document).ready(function(){
+      var upfront_tax = $('#lease_calculator_upfront_tax').val();
+      $('#lease_calculator_ga_tavt_value').val(upfront_tax);
+    });

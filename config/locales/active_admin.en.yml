@@ -1,0 +1,6 @@
+en:
+  active_admin:
+    devise:
+      password_expired:
+        title: 'Expired Password'
+        submit: 'Save New Password'

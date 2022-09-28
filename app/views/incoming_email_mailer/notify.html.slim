@@ -1,0 +1,6 @@
+p The following attachments have been attached to this lease application:
+
+
+- @attachments.each do |attachment|
+    p #{attachment.upload.filename} #{admins_lease_application_url(@app)}
+

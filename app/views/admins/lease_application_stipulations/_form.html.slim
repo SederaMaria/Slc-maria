@@ -1,0 +1,7 @@
+= f.inputs "Add Stipulations" do
+  = f.input :stipulation, as: :select, collection: Stipulation.active.sorted_position.collect { |x| [x.description, x.id] }
+  = f.input :status, as: :radio, collection: LeaseApplicationStipulation::VALID_STATUSES
+  = f.input :lease_application_attachment, as: :select, collection: @lease_application.lease_application_attachments.collect { |x| [x.read_attribute(:upload), x.id] }
+  = f.input :notes, as: :text, input_html: { rows: 5 }
+= f.actions do
+  = f.action :submit, :button_html => { :disable_with => 'Saving...' }

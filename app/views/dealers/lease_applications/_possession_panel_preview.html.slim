@@ -1,0 +1,8 @@
+  = semantic_form_for [:dealers, @lease_application], builder: ActiveAdmin::FormBuilder do |f|
+    = f.inputs 'Vehicle Possession', for: :vehicle_possession do |l|
+      = f.input :vehicle_possession, 
+        as: :radio, 
+        collection: [ ["Primary Lessee", "primary_lessee"], ["Colessee", "colessee"] ], 
+        label: "Who will have possession of the vehicle?",
+        input_html: { class: "vehicle_possession_radio", disabled: "disabled" }
+      

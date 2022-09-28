@@ -1,0 +1,2 @@
+class StipulationCreditTierType < ApplicationRecord
+end

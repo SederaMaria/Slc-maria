@@ -1,0 +1,9 @@
+production:
+  adapter: redis
+  url: "<%= ENV.fetch('REDISCLOUD_URL') { ENV['REDIS_URL'] } %>"
+development:
+  adapter: redis
+  url: "<%= ENV['REDIS_URL'] %>"
+test:
+  adapter: redis
+  url: redis://127.0.0.1:6379/1

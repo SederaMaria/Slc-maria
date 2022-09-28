@@ -1,0 +1,34 @@
+#terms {
+  h1 {
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 25px;
+  }
+
+  h2 {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+
+  p, li {
+    opacity: 0.6;
+  }
+
+  td {
+    opacity: 0.6;
+    border-left: solid 1px #DDDDDD;
+  }
+
+  td:first-child {
+    border-left: none;
+  }
+
+  .red, th {
+    color: #E02722;
+    opacity: 1 !important;
+  }
+
+  th {
+    border-top: none;
+  }
+}

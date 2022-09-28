@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    meta[content="text/html; charset=UTF-8" http-equiv="Content-Type"]
+  body
+    p A prenote request was submitted on #{@prenote.created_at.strftime('%B %-d %Y at %r %Z')} with the following information:
+    
+    p Bank Name: #{@application&.payment_bank_name}
+      
+    p Account Number (last five digits): The last five digits of #{@application&.payment_bank_name&.last(5)}
+
+    p Routing Number:  #{@application&.payment_aba_routing_number&.last(5)}
+
+    p We receiving the following response: #{@prenote&.prenote_status&.humanize} #{@prenote&.prenote_message&.humanize}

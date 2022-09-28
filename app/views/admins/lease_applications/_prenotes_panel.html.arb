@@ -1,0 +1,15 @@
+panel("Prenote History") do
+  table_for(lease_application.prenotes) do
+    column 'Status' do |prenote|
+      prenote&.prenote_status&.humanize
+    end
+    
+    column 'Message' do |prenote|
+      prenote&.prenote_message
+    end
+
+    column 'Date' do |prenote|
+      prenote.created_at.strftime('%e %b %Y %H:%M:%S%p')
+    end 
+  end
+end

@@ -1,0 +1,2 @@
+class DeclineReasonType < ApplicationRecord
+end

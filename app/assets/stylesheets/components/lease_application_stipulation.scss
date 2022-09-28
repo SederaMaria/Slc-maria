@@ -1,0 +1,24 @@
+.add_stipulations, .add_funding_delays{
+  form{
+    li.radio, li.text{
+      list-style: none;
+    }
+
+    li.radio{
+      .choices-group{
+        .choice > label{
+          width: 100%;
+          input {
+            margin-right: 0.2em;
+          }
+        }
+      }
+    }
+  }
+}
+
+.lease_application_stipulations_list{
+  td{
+    width: 25%;
+  }
+}

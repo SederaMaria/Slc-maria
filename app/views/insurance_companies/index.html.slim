@@ -1,0 +1,25 @@
+h1 Listing insurance_companies
+
+table
+  thead
+    tr
+      th Company name
+      th Company code
+      th Lease application
+      th
+      th
+      th
+
+  tbody
+    - @insurance_companies.each do |insurance_company|
+      tr
+        td = insurance_company.company_name
+        td = insurance_company.company_code
+        td = insurance_company.lease_application
+        td = link_to 'Show', insurance_company
+        td = link_to 'Edit', edit_insurance_company_path(insurance_company)
+        td = link_to 'Destroy', insurance_company, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Insurance company', new_insurance_company_path

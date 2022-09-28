@@ -1,0 +1,83 @@
+#contact {
+  .radio-label {
+    font-weight: 200;
+    padding-right: 20px;
+  }
+
+  label .radio-inline {
+    display: block;
+    float: left;
+    padding-right: 40px !important;
+  }
+
+  .checkbox-input {
+    position: absolute;
+    display: inline-block !important;
+    vertical-align: middle;
+  }
+}
+
+#contact-form {
+  min-height: 300px;
+  margin-bottom: 9rem; 
+}
+
+#contact-form button {
+  margin-top: 40px;
+  border-radius: 0;
+  background-color: transparent;
+  border: 1px solid #18FF96 !important;
+}
+
+#contact-form input[type='text']{
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
+  font-weight: 200;
+  display: block;
+  margin: 2.7rem 0;
+  width: 100%;
+  height: 4rem;
+  padding: 0 0 .6rem 0; 
+}
+
+#contact-form input:focus {
+  outline: none;
+  border-bottom: 1px solid #e42313 !important; 
+}
+
+#contact-form input:last-of-type {
+  margin-bottom: 4rem; 
+}
+
+#address-box {
+  h2 {
+    font-weight: 400;
+  }
+  p {
+    font-family: 'Work Sans';
+    opacity: 0.8;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #address-box {
+    padding-top: 155px;
+    padding-bottom: 10px;
+    min-height: 300px;
+    margin-top: 50px;
+    background-color: transparent;
+    background-image: url(asset-path('contact-bg2.jpg'));
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    p {
+      margin-bottom: 0px;
+      width: 50%;
+    }
+  }
+  .tinted {
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.6);
+  }
+}

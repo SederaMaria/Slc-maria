@@ -1,0 +1,125 @@
+// 2021-08-13 Blackbox Staging Response.json
+{
+    "decision": "ACCEPT",
+    "creditScore": 507.0,
+    "creditLimit": null,
+    "adverseReasonCodes": null,
+    "suggestedCorrections": null,
+    "paySchedule": null,
+    "dlRequestCode": null,
+    "leadID": "865e45b6-52df-4dee-9e26-6f92f3d3865e",
+    "idmSessionID": null,
+    "redirectUrl": null,
+    "errorDetails": null,
+    "extraAttributes":
+    {
+        "twn_annual_income": 38983,
+        "twn_employer_name": "COSTCO",
+        "twn_error_message": "",
+        "twn_employment_status": "ACTIVE",
+        "twn_has_name_mismatch": false,
+        "twn_has_recent_termination": false,
+        "twn_has_pay_freq_mismatch": false,
+        "twn_months_at_current_employer": 70,
+        "twn_raw_report":
+        {
+            "DataxResponse":
+            {
+                "Transaction":
+                {
+                    "GenerationTime": "20200208131614",
+                    "CodeVersion": "default",
+                    "RequestVersion": "3.0",
+                    "TransactionId": "419770957",
+                    "TrackHash": "582d1492d8652e2a3e93d8da38ddeaf4",
+                    "TrackId": "f0b12cc0e19e42a4b6220cbe8edf44e3"
+                },
+                "TWNSelectSegment":
+                {
+                    "EmployerName": "COSTCO",
+                    "EmployeeFirstName": "Sarah",
+                    "EmployeeMiddleName": null,
+                    "EmployeeLastName": "Milford",
+                    "EmployeeSSN": "676894321",
+                    "EmploymentStatus": "ACTIVE",
+                    "EmploymentStartDate": "2014-04-13",
+                    "TotalMonthsWithEmployer": "70",
+                    "TerminationDate": null,
+                    "PositionTitle": "Associate III",
+                    "RateOfPay": "16.068",
+                    "AnnualizedIncome": "38982.97",
+                    "PayFrequency": "HOURLY",
+                    "PayPeriodFrequency": "BIWEEKLY",
+                    "AverageHoursWorkedPerPayPeriod": "100",
+                    "CompensationHistory":
+                    {
+                        "Compensation": [
+                        {
+                            "Year": "2020",
+                            "Amount": "5752.34"
+                        },
+                        {
+                            "Year": "2019",
+                            "Amount": "36314.91"
+                        },
+                        {
+                            "Year": "2018",
+                            "Amount": "38654.05"
+                        }]
+                    },
+                    "EmploymentHistory":
+                    {
+                        "Employment": [
+                        {
+                            "EmployerName": "COSTCO",
+                            "EmployeeFirstName": "SARAH",
+                            "EmployeeMiddleName": null,
+                            "EmployeeLastName": "MILFORD",
+                            "EmployeeSSN": "676894321",
+                            "EmploymentStatus": "NOT CURRENTLY ON ASSIGNMENT",
+                            "EmploymentStartDate": "2007-12-02",
+                            "TotalMonthsWithEmployer": "86",
+                            "TerminationDate": null,
+                            "PositionTitle": "NEW HIRE JOB TITLE",
+                            "RateOfPay": "0",
+                            "AnnualizedIncome": null,
+                            "PayFrequency": "HOURLY",
+                            "PayPeriodFrequency": null,
+                            "AverageHoursWorkedPerPayPeriod": null,
+                            "CompensationHistory":
+                            {
+                                "Compensation": [
+                                {
+                                    "Year": "2015",
+                                    "Amount": null
+                                },
+                                {
+                                    "Year": "2009",
+                                    "Amount": null
+                                },
+                                {
+                                    "Year": "2007",
+                                    "Amount": "125.6"
+                                }]
+                            }
+                        }]
+                    },
+                    "CustomDecision":
+                    {
+                        "Result": "Y",
+                        "Bucket": "A1"
+                    }
+                },
+                "GlobalDecision":
+                {
+                    "Result": "Y",
+                    "TWNSelectBucket": "A1"
+                }
+            }
+        },
+        "twn_last_pay_date": "2021-07-30",
+        "twn_pay_frequency": "BIWEEKLY"
+    },
+    "rejectStage": null,
+    "campaignID": 130
+}

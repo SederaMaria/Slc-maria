@@ -1,0 +1,12 @@
+# TODO: @vpibano Documentation of implementation
+
+en:
+  rack_attack:
+    errors:
+      default: "Error: Attempted to perform an action after it was already submitted. Please refresh page and confirm if your changes persisted. Call if questions, Thanks"
+      dealers:
+        lease_applications:
+          submit_application: "Error: Attempted to click \"Submit Application\" after it was already submitted. Please refresh page and confirm application is in \"Awaiting Credit Decision\" status. Call if questions, Thanks"
+      admins:
+        lease_applications:
+          submit_application: "Error: Attempted to click \"Submit Application\" after it was already submitted. Please refresh page and confirm application is in \"Awaiting Credit Decision\" status. Call if questions, Thanks"

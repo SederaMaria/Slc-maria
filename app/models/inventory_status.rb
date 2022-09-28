@@ -1,0 +1,2 @@
+class InventoryStatus < ApplicationRecord
+end

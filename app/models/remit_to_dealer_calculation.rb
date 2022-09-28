@@ -1,0 +1,2 @@
+class RemitToDealerCalculation < ApplicationRecord
+end

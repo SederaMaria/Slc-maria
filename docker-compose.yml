@@ -1,0 +1,113 @@
+version: "3.7"
+
+services:
+  los-db:
+    image: postgres
+    restart: on-failure
+    environment:
+      DB_VENDOR: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: local123!
+    ports:
+      - "5433:5433"
+    healthcheck:
+      test: pg_isready -U postgres -h 127.0.0.1
+      interval: 5s
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  los-redis:
+    image: "redis:4.0-alpine"
+    command: redis-server --requirepass CSLvEc3s
+    ports:
+      - 6379
+    healthcheck:
+      test: redis-cli ping
+      interval: 1s
+      timeout: 3s
+      retries: 30
+    volumes:
+      - redis_data:/data
+  los-sidekiq:
+    depends_on:
+      - "los-db"
+      - "los-redis"
+      - "los-rails"
+    build: .
+    command: bundle exec sidekiq -C ./config/sidekiq.yml
+    volumes:
+      - .:/app
+      - bundler_gems:/usr/local/bundle/
+      - node_modules:/app/node_modules
+    environment:
+      DATABASE_URL: postgresql://postgres:local123!@los-db/speed_leasing_development
+      REDIS_URL: redis://:CSLvEc3s@los-redis:6379/1
+      RAILS_ENV: development
+      GEM_HOME: /usr/local/bundle/gems
+      BUNDLE_BIN: /usr/local/bundle/gems/bin
+      BUNDLE_PATH: /usr/local/bundle/gems
+  los-rails:
+    build: .
+    user: root
+    restart: always
+    tty: true
+    environment:
+      DATABASE_URL: postgresql://postgres:local123!@los-db/speed_leasing_development
+      BUNDLE_BIN: /usr/local/bundle/gems/bin
+      BUNDLE_PATH: /usr/local/bundle/gems
+      DATABASE_CLEANER_ALLOW_REMOTE_DATABASE_URL: "true"
+      GEM_HOME: /usr/local/bundle/gems
+      #REDISCLOUD_URL: redis://:CSLvEc3s@los-redis:6379/1
+      REDIS_URL: redis://:CSLvEc3s@los-redis:6379/1
+      SPROCKETS_CACHE: /cache
+      MALLOC_ARENA_MAX: 2
+      WEB_CONCURRENCY: 1
+      RAILS_ENV: development
+      RAILS_SERVE_STATIC_FILES: "true"
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails server -b 0.0.0.0"
+    image: rails-app:1.0.0
+    tmpfs:
+      - /tmp
+    depends_on:
+      los-db:
+        condition: service_healthy
+      los-redis:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app:cached
+      - bundler_gems:/usr/local/bundle/
+      - rails_cache:/app/tmp/cache
+      - node_modules:/app/node_modules
+      - packs:/app/public/packs
+      - cache:/cache
+    links:
+      - los-db
+      - los-redis
+  los-pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: user@localhost.com
+      PGADMIN_DEFAULT_PASSWORD: secret
+      PGADMIN_LIST_PORT: 80
+    depends_on:
+      los-db:
+        condition: service_healthy
+    ports:
+      - "18080:80"
+    volumes:
+      - ./pgadmin_data:/var/lib/pgadmin
+    links:
+      - los-db:pgsql-server
+volumes:
+  postgres_data:
+  redis_data:
+  bundler_gems:
+  rails_cache:
+  node_modules:
+  packs:
+  cache:
+  pgadmin_data:
+  gem_cache:

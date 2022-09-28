@@ -1,0 +1,6 @@
+address_form.input :street1
+address_form.input :street2
+address_form.input :zipcode
+address_form.input :state, as: :select, value: resource&.state, collection: [resource.state]
+address_form.input :county, as: :select, value: resource&.county, collection: [resource.county]
+address_form.input :city, as: :select, value: resource&.city, collection: [resource.city]

@@ -1,0 +1,28 @@
+// @import "variables/_colors";
+
+$primary_color: #5f0;
+
+.btn {
+  border-radius: 3px;
+  padding: 5px 9px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.btn__wrap-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn__lessee-create {
+  -webkit-appearance: none;
+  background-color: $primary-color;
+  color: white;
+  border-radius: 3px;
+  -webkit-transition: border .2s linear,color .2s linear,width .2s linear,background-color .2s linear;
+  -o-transition: border .2s linear,color .2s linear,width .2s linear,background-color .2s linear;
+  transition: border .2s linear,color .2s linear,width .2s linear,background-color .2s linear;
+}

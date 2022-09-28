@@ -1,0 +1,11 @@
+doctype html
+html
+  head
+    meta[content="text/html; charset=UTF-8" http-equiv="Content-Type"]
+  body
+    h1 Application Credit Status Changed for: #{@application.application_identifier}
+    h3 New status is: #{@application.credit_status.titleize}
+    hr
+    h3 = link_to 'Click Here to View Application', dealers_lease_application_url(@application)
+    p Thank you,
+    p Speed Leasing Company

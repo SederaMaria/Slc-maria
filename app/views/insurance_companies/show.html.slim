@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Company name:
+  = @insurance_company.company_name
+p
+  strong Company code:
+  = @insurance_company.company_code
+p
+  strong Lease application:
+  = @insurance_company.lease_application
+
+=> link_to 'Edit', edit_insurance_company_path(@insurance_company)
+'|
+=< link_to 'Back', insurance_companies_path

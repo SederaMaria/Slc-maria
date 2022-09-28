@@ -1,0 +1,12 @@
+.alert-success {
+  background-color: #D1E2D2;
+  text-align: center;
+  border: 1px black dotted;
+  color: #476248;
+  font-weight: 500;
+  font-size: 13px;
+  padding: 10px;
+}
+.alert-success > button {
+  display: none;
+}

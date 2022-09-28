@@ -1,0 +1,32 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  <<: *default
+  database: <%= "speed_leasing_development" %>
+
+test: &test
+  <<: *default
+  database: <%= "speed_leasing_test" %>
+
+cucumber:
+  <<: *test
+
+#https://devcenter.heroku.com/articles/concurrency-and-database-connections#threaded-servers
+production:
+  adapter: postgresql
+  url:  <%= ENV["DATABASE_URL"] %>
+  pool: <%= ENV["DB_POOL"] || ENV['RAILS_MAX_THREADS'] || 5 %>
+
+aws_rds:
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV["DB_POOL"] || ENV['RAILS_MAX_THREADS'] || 5 %>
+  database: <%= ENV['VERTEX_RDS_DB_NAME'] %>
+  username: <%= ENV['VERTEX_RDS_USERNAME'] %>
+  password: <%= ENV['VERTEX_RDS_PASSWORD'] %>
+  host: <%= ENV['VERTEX_RDS_HOSTNAME'] %>
+  port: <%= ENV['VERTEX_RDS_PORT'] %>

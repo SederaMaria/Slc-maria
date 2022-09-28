@@ -1,0 +1,427 @@
+@import 'activeadmin_addons/all';
+// SASS variable overrides must be declared before loading up Active Admin's styles.
+//
+// To view the variables that Active Admin provides, take a look at
+// `app/assets/stylesheets/active_admin/mixins/_variables.scss` in the
+// Active Admin source.
+//
+// For example, to change the sidebar width:
+// $sidebar-width: 242px;
+
+// Active Admin's got SASS!
+@import "bootstrap-sprockets";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/type";
+@import "bootstrap/dropdowns";
+@import "bootstrap/glyphicons";
+@import "bootstrap/grid";
+
+@import "active_admin/mixins";
+@import "active_admin/base";
+@import "active_admin/select2/base";
+@import "overrides/*";
+
+@import "components/lease_calculator";
+@import "components/lease_application_stipulation";
+@import "components/audits";
+@import "components/lease_application";
+@import "components/notification_icon";
+@import "components/all_notifications";
+@import "components/notify_alert";
+@import "components/dealer_menu";
+@import "components/lease_document_request";
+
+// Overriding any non-variable SASS must be done after the fact.
+// For example, to change the default status-tag color:
+//
+//   .status_tag { background: #6090DB; }
+
+#main_content_wrapper {
+
+  .workflow-status-input {
+    .select2-container{
+      width: 100% !important;
+    }
+  }
+
+  .select2-container {
+    width: 80% !important;
+  }
+
+  .select2-w-100 {
+    .select2-container {
+      width: 100% !important;
+    }
+  }
+}
+
+form fieldset > ol > li.select2, form fieldset > ol li.stringish {
+  display: flex;
+}
+
+form.filter_form {
+  li {
+    list-style: none;
+  }
+}
+
+#dealer_notify_credit_decision_input, #dealer_notify_funding_decision_input {
+  label {
+    padding-left: 0px !important;
+  }
+}
+
+.modal-description {
+  background-color: Lightgray;
+  width: 100%;
+  height: 100%;
+  display:inline;
+  p{
+   margin: 0;
+   padding: 0;
+  }
+}
+
+
+.btn-cash:not(:hover) {
+  color: DimGray;
+  background: white;
+  border-color: black;
+  border: 2px solid black;
+}
+
+.btn-cash {
+  background: gray;
+  color: white;
+}
+
+.cash_out_of_pocket{
+    border-radius: 200px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.0em;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 12px;
+    margin-right: 3px;
+    padding: 7px 16px 6px;
+    text-decoration: none !important;
+    background-color: #FFFFFF;
+    background-image: linear-gradient(180deg, #FFFFFF, #E7E7E7);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 0 0 rgba(255, 255, 255, 0.8) inset;
+    border: solid 1px #c7c7c7;
+    border-color: #c7c7c7;
+    border-top-color: #d3d3d3;
+    border-right-color: #c7c7c7;
+    border-bottom-color: #c2c2c2;
+    border-left-color: #c7c7c7;
+    text-shadow: #fff 0 1px 0;
+    color: #5E6469 !important;
+    padding: 12px 17px 10px;
+    margin: 0px;
+}
+
+.modal-heading {
+  background-color: Lightgray;
+  width: 100%;
+  height: 25px;
+  color: black;
+  padding-left: 23px;
+  padding-top: 4px;
+}
+
+p {
+  padding-left: 10px;
+}
+
+.inner-modal {
+  display:none;
+}
+
+.lessee_credit_score_text_red {
+  color: red;
+}
+
+.btn_save{
+  background: blue;
+  float: right;
+}
+.btn_cancel{
+  background: grey;
+  float: right;
+}
+.btn_save:hover{
+  background: blue !important;
+  float: right;
+}
+.btn_cancel:hover{
+  background: grey !important;
+  float: right;
+}
+
+.btn-edit{
+  border-radius:4px !important;
+  text-align: center;
+  color: #fff;
+  padding: 15px 25px;
+  font-size: 12px;
+  outline:none !important;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.btn_reset{
+  background: orange;
+  text-align: center;
+  color: #002147 !important;
+  padding: 10px 15px;
+  font-size: 12px;
+  border-radius: 4px;
+  display: inline-block;
+  border: 2px solid #fdc800;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+form fieldset > ol > li.boolean label .usr-actv{
+  padding-left: 0 !important;
+}
+
+#admin_user_is_active {
+  margin-left: 15px;
+  margin-right: 5px;
+}
+
+a.btn_reset{
+  text-decoration:none !important;
+}
+
+.security_deposit_disable{
+  opacity: 0.45;
+}
+
+
+#lease_application_payment_account_holder_input, 
+#lease_document_request_lease_application_payment_account_holder_input,
+#lease_application_colessee_account_joint_to_lessee_input{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+#lease_application_payment_account_holder_input > .choices > .label,
+#lease_application_colessee_account_joint_to_lessee_input > .choices > .label,
+#lease_document_request_lease_application_payment_account_holder_input > .choices > .label{
+  position: relative;
+  display: block;
+  margin-bottom: 5px;
+}
+#lease_application_payment_account_holder_input > .choices > .label > label, 
+#lease_document_request_lease_application_payment_account_holder_input > .choices > .label > label{
+  display: block;
+  position: relative;
+}
+#lease_application_payment_account_holder_input > .choices > .choices-group,
+#lease_application_colessee_account_joint_to_lessee_input > .choices > .choices-group,
+#lease_document_request_lease_application_payment_account_holder_input > .choices > .choices-group{
+  float: none;
+  padding: 0px;
+}
+
+#lease_application_payment_account_holder_input > ol > .choices-group,
+#lease_application_colessee_account_joint_to_lessee_input > ol > .choices-group, 
+#lease_document_request_lease_application_payment_account_holder_input > ol > .choices-group{
+  float: none;
+  padding: 0px;
+}
+.payment-account-holder-input,
+.colessee_account_joint_to_lessee_input {
+  margin-right: 8px;
+}
+
+#lease_document_request_lease_application_payment_account_holder_input > .choices > .choices-group > li{
+  float: left;
+  padding-right: 40px;
+}
+
+#lease_document_request_lease_application_payment_account_holder_input > .choices > .choices-group > li > label > input {
+  width: auto !important;
+  min-width: 0 !important;
+}
+
+#lease_application_vehicle_possession_input{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+#lease_application_vehicle_possession_input > .choices > .label{
+  position: relative;
+  display: block;
+  margin-bottom: 5px;
+}
+#lease_application_vehicle_possession_input > .choices > .label > label {
+  display: block;
+  position: relative;
+}
+#lease_application_vehicle_possession_input > .choices > .choices-group{
+  float: none;
+  padding: 0px;
+}
+
+#lease_application_vehicle_possession_input > ol > .choices-group {
+  float: none;
+  padding: 0px;
+}
+
+#lease_application_vehicle_possession_input > .choices > .choices-group > li,
+#lease_application_payment_account_holder_input > .choices > .choices-group > li,
+#lease_application_colessee_account_joint_to_lessee_input > .choices > .choices-group > li {
+  float: left;
+  padding-right: 50px;
+}
+
+#lease_application_colessee_account_joint_to_lessee_input {
+  width: 100%;
+}
+
+.dealership_filter{
+  margin-bottom: 15px;
+  padding-left: 10px;
+  font-size: medium;
+}
+
+
+.new_lease_document_request_acknowledgement{
+  display: none;
+  margin-bottom: 30px;
+  color: red;
+  h3 {
+    color: red;
+  }
+  label{
+    padding-left: 5px;
+  }
+}
+
+.my-panel {
+  background: transparent;
+    border: none;
+    border-radius: 4px;
+  box-shadow: none !important;
+    margin-bottom: 20px;
+        margin-left: 70px;
+    margin-top: 20px;
+    margin-bottom: 0px !important;
+    h3 {
+      display : none;
+    }
+}
+
+.password-expired-form > fieldset > ol > li > p.inline-errors{
+  display: none !important;
+}
+
+.password-expired-form > fieldset > ol > li > .field_with_errors:nth-child(2){
+  width: 100% !important;
+}
+
+.password-expired-form > fieldset > ol > li > .field_with_errors:nth-child(2) > input{
+  width: 100% !important;
+}
+
+
+.clear-vin-icon {
+  background: #d4d4d4;
+  padding: 3px 6px;
+  border-radius: 100%;
+  font-weight: 700;
+  color: #ffffff;
+  cursor: pointer;
+  line-height: 1;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: 6px;
+  right: 25%;
+  vertical-align: middle;
+  text-align: center;
+}
+
+
+.spinner {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  height:60px;
+  width:60px;
+  margin:0px auto;
+  -webkit-animation: rotation .6s infinite linear;
+  -moz-animation: rotation .6s infinite linear;
+  -o-animation: rotation .6s infinite linear;
+  animation: rotation .6s infinite linear;
+  border-left:6px solid rgba(0,174,239,.15);
+  border-right:6px solid rgba(0,174,239,.15);
+  border-bottom:6px solid rgba(0,174,239,.15);
+  border-top:6px solid rgba(0,174,239,.8);
+  border-radius:100%;
+  z-index: 99999;
+}
+
+@-webkit-keyframes rotation {
+  from {-webkit-transform: rotate(0deg);}
+  to {-webkit-transform: rotate(359deg);}
+}
+@-moz-keyframes rotation {
+  from {-moz-transform: rotate(0deg);}
+  to {-moz-transform: rotate(359deg);}
+}
+@-o-keyframes rotation {
+  from {-o-transform: rotate(0deg);}
+  to {-o-transform: rotate(359deg);}
+}
+@keyframes rotation {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(359deg);}
+}
+
+
+
+.disable-click{
+  pointer-events: none;
+}
+
+.opacity_5{
+  opacity: 0.5;
+}
+
+#us_state_secretary_of_state_website_input.error {
+  .field_with_errors:first-child {
+    width: 20%;
+
+    label {
+      width: 100%;
+    }
+  }
+
+  .field_with_errors:nth-child(2) {
+    width: 60%;
+
+    input {
+      width: calc(100% - 1em);
+    }
+  }
+
+  p.inline-errors {
+    margin: 0;
+    width: auto;
+  }
+}
+
+.p-0 {
+  padding: 0 !important;
+}
+
+.pt-0 {
+  padding-top: 0 !important;
+}

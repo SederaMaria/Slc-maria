@@ -1,0 +1,13 @@
+#notifications.dropdown
+  button#dropdownMenu1.dropdown-toggle aria-expanded="true" aria-haspopup="true" data-toggle="dropdown" type="button" 
+    span#icon.glyphicon.glyphicon-bell
+    span#count data-behavior="unread-count" style="display:none;"
+  .dropdown-menu.keep-open-on-click.pull-right[aria-labelledby="dropdownMenu1"]
+    #header Notifications
+    #items data-spy='scroll'
+      ul.dropdown-list[data-behavior="notification-items"]
+    #footer
+      #mark-all-read.col-xs-6.hoverlight
+        a Mark All as Read
+      #view-all.col-xs-6.hoverlight
+        = link_to 'View All', admins_all_notifications_path

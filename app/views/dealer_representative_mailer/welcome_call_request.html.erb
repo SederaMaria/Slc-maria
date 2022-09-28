@@ -1,0 +1,14 @@
+<p>Dear <%= @recipient.first_name %>,</p>
+
+<p>A Verification Call has been requested for a new lessee. Here are the details:</p>
+
+<ul>
+  <li> <strong> Lease Number: </strong> <%= @application.application_identifier %> </li>
+  <li> <strong> Lessee: </strong> <%= @application&.lessee&.full_name %> </li>
+  <li> <strong> Dealership: </strong> <%= @application&.dealership&.name %> </li>
+  <li> <strong> Funding Approved Date: </strong> <%= @application&.funding_approved_on&.strftime('%B %d, %Y') %> </li>
+  <li> <strong> First Payment Date: </strong> <%= @application&.first_payment_date&.strftime('%B %d, %Y') %> </li>
+  <li> <strong> Verification Call Due Date: </strong> <%=  (@application&.welcome_call_due_date)&.strftime('%B %d, %Y') %> </li>
+</ul>
+
+<p> Please <a href="<%= "#{ENV['LOS_UI_URL']}/lease-applications/#{@application.id}" %>">click here </a>for additional information </p>

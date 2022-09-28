@@ -1,0 +1,222 @@
+
+.lease-application.verification
+  .panel
+    form
+      fieldset.inputs
+        legend
+          span Information
+        .row.information
+          .col-sm-6
+            ol
+              li.string.input.optional.stringish
+                label.label Lessee Name: #{@lessee.name}
+              li.string.input.optional.stringish
+                label.label Lessee Date of Birth: #{@lessee&.date_of_birth&.strftime('%B %d, %Y')}
+              li.string.input.optional.stringish
+                label.label Lessee Last Four of SSN: #{@lessee&.ssn&.last(4)}
+              li.string.input.optional.stringish
+                label.label Lessee Address: #{@lessee&.home_address&.full_name}
+              li.string.input.optional.stringish
+                label.label Lessee Home Phone: #{@lessee&.home_phone_number}
+              li.string.input.optional.stringish
+                label.label Lessee Mobile Phone: #{@lessee&.mobile_phone_number}
+              li.string.input.optional.stringish
+                label.label Co-Lessee Name: #{@colessee.name}
+              li.string.input.optional.stringish
+                label.label Co-Lessee Date of Birth: #{@colessee&.date_of_birth&.strftime('%B %d, %Y')}
+              li.string.input.optional.stringish
+                label.label Co-Lessee Last Four of SSN: #{@colessee&.ssn&.last(4)}
+              li.string.input.optional.stringish
+                label.label Co-Lessee Address: #{@colessee&.home_address&.full_name}
+              li.string.input.optional.stringish
+                label.label Co-Lessee Home Phone: #{@colessee&.home_phone_number}
+              li.string.input.optional.stringish
+                label.label Co-Lessee Mobile Phone: #{@lessee&.mobile_phone_number}
+              li.string.input.optional.stringish
+                label.label Dealership: #{resource.dealership.name}
+              li.string.input.optional.stringish
+                label.label Credit Status: #{resource.credit_status}
+              li.string.input.optional.stringish
+                label.label Payment: #{ActionController::Base.helpers.number_to_currency(@total_monthly_payment)} #{@monthly_payment_label}
+
+          .col-sm-6
+            ol
+              li.string.input.optional.stringish
+                label.label Tier: #{@calculator.credit_tier_v2&.description}
+              // li.string.input.optional.stringish
+                // label.label Score: #{resource.lessee.highest_fico_score || ''}
+              // li.string.input.optional.stringish
+                // label.label Co-Score: #{resource.colessee.highest_fico_score || ''}
+              li.string.input.optional.stringish
+                label.label Make: #{@last_document_request&.asset_make}
+              li.string.input.optional.stringish
+                label.label Model: #{@last_document_request&.asset_model}
+              li.string.input.optional.stringish
+                label.label Year: #{@last_document_request&.asset_year}
+              li.string.input.optional.stringish
+                label.label VIN: #{@last_document_request&.asset_vin}
+              li.string.input.optional.stringish
+                label.label Color: #{@last_document_request&.asset_color&.titleize}
+              li.string.input.optional.stringish
+                label.label Odometer: #{number_with_delimiter(@last_document_request&.exact_odometer_mileage)}
+              li.string.input.optional.stringish
+                label.label Doc Date: #{resource.documents_issued_date}
+  .panel
+    = semantic_form_for [:admins, @welcome_call], url: :create_lease_application_welcome_call_admins_lease_application, method: 'post', builder: ActiveAdmin::FormBuilder, html: { class: "lease-welcome-call-form"}  do |f|
+      fieldset.inputs
+        legend
+          span Welcome Call
+        .row.welcome-call
+          li.col-sm-3
+            ol
+              = f.input :welcome_call_status, label: 'Status', as: :radio, collection: welcome_call_status_options, input_html: { class: 'welcome-call-radio' } 
+          li.col-sm-2
+            ol
+              = f.input :department, label: 'Assigned Department', as: :select, collection: Department.order(:id).pluck(:description, :id) , selected: @lease_application.department_id, include_blank: false, wrapper_html: { class: 'col-sm-12' }     
+          li.col-sm-2
+            ol
+              = f.input :welcome_call_type, label: 'Type', as: :select, collection: welcome_call_type_options, include_blank: false, wrapper_html: { class: 'col-sm-12' } 
+          li.col-sm-2
+            ol
+              = f.input :welcome_call_result, label: 'Result', as: :select, collection: welcome_call_result_options, include_blank: true, wrapper_html: { class: 'col-sm-12' }
+          li.col-sm-2
+            ol
+              = f.input :lease_application_due_date, 
+                label: 'Welcome Call Due Date', 
+                as: :datepicker, 
+                datepicker_options: { dateFormat: "mm/dd/yy" }, 
+                input_html: { data: { mask: '99/99/9999' } }
+        .row.welcome-call
+          li.col-sm-12
+            ol
+              = f.input :notes, label: 'Notes', as: :text, input_html: { class: 'col-sm-12', rows: "4" }
+        .row.welcome-call
+          .save-welecom-call-container
+            = f.actions do
+              = f.submit 'Save'
+  = render partial: 'welcome_calls_panel'  
+  = render partial: 'negative_pay_panel'  
+  = render partial: 'funding_delay_panel'
+  = semantic_form_for [:admins, @lease_application], url: :verification_admins_lease_application, method: 'post', builder: ActiveAdmin::FormBuilder, html: { class: "lease-verification-form"}  do |f|
+    = f.semantic_errors(*f.object.errors.keys)
+    = f.inputs 'Application Details' do
+      li.col-sm-12
+        ol
+          = f.input :is_verification_call_completed, label: 'Verification Call Completed?'
+      li.col-sm-12
+        ol
+          = f.input :document_status, label: 'Document Status', as: :select, collection: document_status_options, selected: f.object.object.document_status, include_blank: false, wrapper_html: { class: 'col-sm-4', :onChange=>'toggleLeasePakFields();' }
+
+          // Hack for this because email is the only field outside of the resource
+          li.col-sm-4.email.input.optional.stringish
+            label.label for='lease_application_lessee_email' Email Address
+            input name='lease_application[lessee_attributes][email_address]' id='lease_application_lessee_email' type='email' value="#{@lessee.email_address}"
+            input name='lease_application[lessee_attributes][id]' id='lease_application_lessee_id' type='hidden' value="#{@lessee.id}"
+            input id='initial_document_status' type='hidden' value="#{f.object.object.document_status}"
+          = f.input :lease_package_received_date, as: :masked_datepicker, label: 'Documents Received Date', wrapper_html: { class: 'col-sm-4' }
+
+      li.col-sm-12
+        ol
+          = f.input :funded_on, label: 'Funded On', as: :masked_datepicker, wrapper_html: { class: 'col-sm-4' }
+          = f.input :funding_delay_on, label: 'Funding Delay On', as: :masked_datepicker, wrapper_html: { class: 'col-sm-4' }
+          = f.input :funding_approved_on, 
+              label: 'Funding Approved On', 
+              as: :datepicker, 
+              datepicker_options: { dateFormat: "mm/dd/yy" },
+              input_html: { :class => "lpc-required", data: { mask: '99/99/9999' } }, 
+              wrapper_html: { class: 'col-sm-4' }
+
+      li.col-sm-12
+        ol
+          = f.input :mail_carrier, label: 'Mail Carriers', as: :select, collection: mail_carrier_options, selected: f.object.object.mail_carrier_id, input_html: { :class => "select2-input"}, wrapper_html: { class: 'col-sm-4' }
+          = f.input :the_approver, label: 'Approved By', wrapper_html: { class: 'col-sm-4' }, input_html: { "data-cache" => @lease_application.the_approver }
+          = f.input :the_reviewer, label: 'Reviewed By', wrapper_html: { class: 'col-sm-4' }, input_html: { "data-cache" => @lease_application.the_reviewer }
+
+    = f.inputs 'Banking / Payment Information' do
+      li.col-sm-12
+        ol
+          = f.input :payment_bank_name, label: 'Bank Name', input_html: { :class => "lpc-required payment-required"}, wrapper_html: {class: 'col-sm-3'}
+          = f.input :payment_aba_routing_number, label: 'ABA Routing Number', wrapper_html: {class: 'col-sm-3'}, input_html: { data: { mask: '999999999' }, :class => "lpc-required payment-required" }
+          = f.input :payment_account_number, label: 'Account Number', input_html: { :class => "lpc-required payment-required"}, wrapper_html: {class: 'col-sm-3'}
+          = f.input :payment_account_type, label: 'Checking/Savings Account:', as: :select, input_html: { :class => "lpc-required select2-input payment-required"}, wrapper_html: {class: 'col-sm-3'}
+      li.col-sm-12
+        ol
+          = f.input :payment_account_holder, label: 'Lessee or Co-Lessee?', as: :radio, collection: ["Lessee", "Co-Lessee", "Both"], input_html: { :class => "lpc-required payment-required payment-account-holder-input"}, wrapper_html: {class: 'col-sm-7'}
+          li.col-sm-2
+            - if @lease_application.payment_info_exists
+              / a.button href="#{request_new_prenote_admins_lease_application_path(@lease_application)}" style="float: right" New Prenote
+          = f.input :prenote_status, label: 'Prenote Status:', as: :select, input_html: { disabled: true, :class => "select2-input" }, wrapper_html: {class: 'col-sm-3'}, selected: @lease_application&.prenotes&.last&.prenote_status&.humanize, collection: [@lease_application&.prenotes&.last&.prenote_status&.humanize]
+      li.col-sm-12
+        ol
+          = f.input :first_payment_date, label: 'First Payment Date', as: :datepicker, datepicker_options: { dateFormat: "mm/dd/yy" }, input_html: { data: { mask: '99/99/9999' } }, input_html: { :class => "lpc-required payment-required"}, wrapper_html: {class: 'col-sm-3'}
+          = f.input :payment_first_day, label: 'First Payment Day', input_html: { :class => "lpc-required payment-required"}, wrapper_html: {class: 'col-sm-3'}
+          = f.input :second_payment_date, label: 'Second Payment Date', as: :datepicker, datepicker_options: { dateFormat: "mm/dd/yy" }, input_html: { data: { mask: '99/99/9999' } }, wrapper_html: {class: 'col-sm-3'}
+          = f.input :payment_second_day, label: 'Second Payment Day', wrapper_html: {class: 'col-sm-3'}
+      li.col-sm-12
+        ol
+          = f.input :payment_frequency, label: 'Payment Frequency:', as: :select, input_html: { :class => "lpc-required payment-required select2-input"}, wrapper_html: {class: 'col-sm-3', :onChange=>'updateSecondPaymentFields();'}
+
+    = render partial: 'prenotes_panel'
+    = f.inputs 'Insurance Information', for: :insurance do | insurance |
+      li.col-sm-12
+        ol
+          .row            
+            = insurance.input :company_name, label: 'Company Name', input_html: { :class => "lpc-required"}, wrapper_html: { class: 'col-sm-6' }            
+            = insurance.input :property_damage, label: 'Property Damange', input_html: { :class => "lpc-required"}, wrapper_html: {class: 'col-sm-6'}
+          .row
+            = insurance.input :bodily_injury_per_person, label: 'Bodily Injury Per Person', input_html: { :class => "lpc-required" }, wrapper_html: {class: 'col-sm-6'}
+            = insurance.input :bodily_injury_per_occurrence, label: 'Bodily Injury Per Occurrence', input_html: { :class => "lpc-required" }, wrapper_html: {class: 'col-sm-6'}
+          .row
+            = insurance.input :comprehensive, input_html: { :class => "lpc-required"}, wrapper_html: { class: 'col-sm-6' }
+            = insurance.input :collision, input_html: { :class => "lpc-required"}, wrapper_html: { class: 'col-sm-6' }
+          .row
+            = insurance.input :effective_date, 
+                label: 'Effective Date', 
+                as: :datepicker, 
+                datepicker_options: { dateFormat: "mm/dd/yy" }, 
+                input_html: { :class => "lpc-required", data: { mask: '99/99/9999' } }, 
+                wrapper_html: {class: 'col-sm-6' }      
+            = insurance.input :expiration_date, 
+                label: 'Expiration Date', 
+                as: :datepicker, 
+                datepicker_options: { dateFormat: "mm/dd/yy" }, 
+                input_html: { :class => "lpc-required", data: { mask: '99/99/9999' } }, 
+                wrapper_html: {class: 'col-sm-6'}
+            = insurance.input :policy_number, label: 'Policy Number', input_html: { :class => "lpc-required"}, wrapper_html: {class: 'col-sm-6'}
+          .row
+            = insurance.input :loss_payee, label: "Loss Payee?", as: :boolean, wrapper_html: { class: 'col-sm-12' }
+          .row
+            = insurance.input :additional_insured, label: "Additional Insured?", as: :boolean, wrapper_html: { class: 'col-sm-12' }
+
+    = f.inputs 'Dealership Shortfund' do
+      li.col-sm-12
+        ol
+          .row
+            = f.input :is_dealership_subject_to_clawback,
+                    label: 'Dealership is Subject to Shortfund',
+                    wrapper_html: {class: 'col-sm-12', id: 'clawback-option'}
+          .row
+            = f.input :this_deal_dealership_clawback_amount,
+                    label: 'Dealership Shortfund This Lease',
+                    wrapper_html: {class: 'col-sm-6'},
+                    input_html: { value: number_with_precision(f.object.this_deal_dealership_clawback_amount, precision: 2) }
+    .row
+      .col-sm-12
+        = f.inputs "References"
+          - f.has_many :references, allow_destroy: true do |vc|
+            .col-sm-2
+              - vc.input :first_name
+            .col-sm-2
+              - vc.input :last_name
+            .col-sm-2
+              - vc.input :phone_number, input_html: { data: { mask: '(999) 999-9999' } }
+            .col-sm-2
+              - vc.input :city
+            .col-sm-2
+              - vc.input :state, input_html: { data: { mask: 'aa' } }
+    = f.actions do
+      = f.submit 'Save Verification Information'
+
+  .panel.hidden
+    <p class="firstName">#{current_admin_user.first_name}</p>
+    <p class="lastName">#{current_admin_user.last_name}</p>

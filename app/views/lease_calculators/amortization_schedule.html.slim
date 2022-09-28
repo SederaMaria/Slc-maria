@@ -1,0 +1,35 @@
+.container#lease-info
+  h3.text-center= "#{resource.asset_make} #{resource.asset_year} #{resource.asset_model}"
+  - if resource.lessee.present?
+    h3.text-center
+      ' Lessee:
+      => resource.lessee.name
+  - if resource.colessee.present?
+    h3.text-center
+      ' Co-Lessee:
+      => resource.colessee.name
+.container
+  table.index_table
+    thead
+      th Payment #
+      th Month
+      th Rent
+      th Depreciation
+      th Pre-Tax Payment
+      th Estimated Payoff**
+    tbody
+    - @data.schedule.each_with_index do |row, index|
+      - next if row.nil? || row.blank?
+      tr
+        td = index+1
+        - if resource.lease_application.documents_issued_date.present?
+          td = I18n.localize((resource.lease_application.documents_issued_date + index.month), format: :amortization)
+        - else
+          td = I18n.localize(index.months.from_now.to_date, format: :amortization)
+        td = humanized_money_with_symbol(row.rent_charge)
+        td = humanized_money_with_symbol(row.depreciation)
+        td = humanized_money_with_symbol(@data.pretax_payment)
+        td = humanized_money_with_symbol(row.ending_balance)
+    tr
+      td colspan="6"
+        | ** Estimated payoff amount. Actual payoff may include Disposition Fee, Vehicle Purchase/Return Fee, Late Fees, and certain other costs.

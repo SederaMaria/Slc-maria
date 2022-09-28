@@ -1,0 +1,4 @@
+li.dropdown-item data-unread="#{!notification.read_at?}" data-notification-id="#{notification.id}"
+  a[href="#{notification.redirect_url}"]
+    = yield
+  span.time #{time_ago_in_words(notification.created_at)} ago

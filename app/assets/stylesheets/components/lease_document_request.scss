@@ -1,0 +1,39 @@
+form.lease_document_request{
+
+  ol {
+    li {
+      display: block !important;
+
+      label {
+        width: 100% !important;
+        padding-left: 0px !important;
+        float: none !important;
+      }
+
+      input {
+        width: 100%;
+      }
+    }
+    #lease_document_request_manual_vin_verification_input{
+      input {
+        width: auto !important;
+      }
+      label {
+        font-weight: bold;
+      }
+    }
+    
+    #lease_document_request_delivery_date_input{
+      .label{
+        position: relative;
+        label {
+          position: relative;
+        }
+      }
+      .fragments-group{
+        padding: 0px;
+      }
+    }
+  }
+
+}

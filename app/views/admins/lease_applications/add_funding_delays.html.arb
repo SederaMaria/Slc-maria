@@ -1,0 +1,15 @@
+panel("Manage Funding Delays") do
+  table_for(resource.funding_delays, class: 'funding_delay_list') do
+    column :funding_delay do |funding_delay|
+      funding_delay.funding_delay_reason&.reason
+    end
+    column :status do |funding_delay|
+      render partial: 'funding_delay_status', locals: { funding_delay: funding_delay }
+    end
+    column :notes do |funding_delay|
+      render partial: 'funding_delay_notes', locals: { funding_delay: funding_delay }
+    end
+  end
+end
+
+render('funding_delay_form')

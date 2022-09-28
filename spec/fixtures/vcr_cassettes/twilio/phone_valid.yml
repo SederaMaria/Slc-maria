@@ -1,0 +1,182 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://lookups.twilio.com/v1/PhoneNumbers/+14159341234
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Charset:
+      - utf-8
+      User-Agent:
+      - twilio-ruby/4.13.0 (ruby/x86_64-darwin16 2.3.4-p301)
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Authorization:
+      - Basic QUM4NjFmN2ZiMWQ2MTZlMTY3MmNhYmM0MmMxYmRkYmI3ZToxZjBhNWI3NTRkNzQxOGVjZDI5NjJjYzgyMWIyMDVmOA==
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match,
+        If-Unmodified-Since
+      Access-Control-Allow-Methods:
+      - GET, POST, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - ETag
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 14 Jul 2017 17:05:29 GMT
+      Strict-Transport-Security:
+      - max-age=15768000
+      Twilio-Request-Duration:
+      - '0.059'
+      Twilio-Request-Id:
+      - RQaa4ccd2c5ddb40c796c5a218a8ffe08a
+      X-Powered-By:
+      - AT-5000
+      X-Shenanigans:
+      - none
+      Content-Length:
+      - '212'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"caller_name": null, "country_code": "US", "phone_number": "+14159341234",
+        "national_format": "(415) 934-1234", "carrier": null, "add_ons": null, "url":
+        "https://lookups.twilio.com/v1/PhoneNumbers/+14159341234"}'
+    http_version: 
+  recorded_at: Fri, 14 Jul 2017 17:05:29 GMT
+- request:
+    method: get
+    uri: https://lookups.twilio.com/v1/PhoneNumbers/4043764434
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Charset:
+      - utf-8
+      User-Agent:
+      - twilio-ruby/4.5.0 (ruby/x86_64-darwin16 2.4.2-p198)
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Authorization:
+      - Basic QUM4YTExYTQ4OTJhZGU3ZWY4OWU5NjliZDhmYTkyZDMyZjo0M2Y5MDMwYmRlMWMxNTZkY2YyOGNlMzZiNjFiNDAxYQ==
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match,
+        If-Unmodified-Since
+      Access-Control-Allow-Methods:
+      - GET, POST, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - ETag
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 30 Nov 2017 11:24:53 GMT
+      Strict-Transport-Security:
+      - max-age=15768000
+      Twilio-Concurrent-Requests:
+      - '1'
+      Twilio-Request-Duration:
+      - '0.038'
+      Twilio-Request-Id:
+      - RQcc2ccb0f9d1c46e3bb14977c9c600fb7
+      X-Powered-By:
+      - AT-5000
+      X-Shenanigans:
+      - none
+      Content-Length:
+      - '212'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"caller_name": null, "country_code": "US", "phone_number": "+14043764434",
+        "national_format": "(404) 376-4434", "carrier": null, "add_ons": null, "url":
+        "https://lookups.twilio.com/v1/PhoneNumbers/+14043764434"}'
+    http_version: 
+  recorded_at: Thu, 30 Nov 2017 11:24:53 GMT
+- request:
+    method: get
+    uri: https://lookups.twilio.com/v1/PhoneNumbers/4043764434?Type=carrier
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Charset:
+      - utf-8
+      User-Agent:
+      - twilio-ruby/4.5.0 (ruby/x86_64-darwin16 2.4.2-p198)
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Authorization:
+      - Basic QUM4YTExYTQ4OTJhZGU3ZWY4OWU5NjliZDhmYTkyZDMyZjo0M2Y5MDMwYmRlMWMxNTZkY2YyOGNlMzZiNjFiNDAxYQ==
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match,
+        If-Unmodified-Since
+      Access-Control-Allow-Methods:
+      - GET, POST, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - ETag
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 30 Nov 2017 11:25:05 GMT
+      Strict-Transport-Security:
+      - max-age=15768000
+      Twilio-Concurrent-Requests:
+      - '1'
+      Twilio-Request-Duration:
+      - '0.211'
+      Twilio-Request-Id:
+      - RQ63cfe286869246c2942063d0836ba48a
+      X-Powered-By:
+      - AT-5000
+      X-Shenanigans:
+      - none
+      Content-Length:
+      - '347'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"caller_name": null, "country_code": "US", "phone_number": "+14043764434",
+        "national_format": "(404) 376-4434", "carrier": {"mobile_country_code": "310",
+        "mobile_network_code": "012", "name": "Verizon Wireless", "type": "mobile",
+        "error_code": null}, "add_ons": null, "url": "https://lookups.twilio.com/v1/PhoneNumbers/+14043764434?Type=carrier"}'
+    http_version: 
+  recorded_at: Thu, 30 Nov 2017 11:25:06 GMT
+recorded_with: VCR 3.0.3

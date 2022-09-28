@@ -1,0 +1,110 @@
+.row.flex-row
+  .col-sm-4
+    fieldset.inputs
+      ol
+        li
+          h4 Customer
+        li
+          label State
+          span.calculator-value#lease_calculator_us_state = calculator&.us_state&.humanize
+        li
+          label Tax Jurisdiction
+          span.calculator-value = calculator&.tax_jurisdiction
+        li
+          label Credit Tier
+          span.calculator-value = calculator&.credit_tier_v2&.description
+        li
+          h4 Motorcycle
+        li
+          label Asset Make
+          span.calculator-value#lease_calculator_asset_make = calculator&.asset_make
+        li
+          label Asset Year
+          span.calculator-value = calculator&.asset_year
+        li
+          label Asset Model
+          span.calculator-value = calculator&.asset_model
+        li
+          label Mileage Tier
+          span.calculator-value = calculator&.mileage_tier
+        li
+          label Term
+          span.calculator-value = calculator.term.blank? ? 'Not yet set' : "#{calculator.term} Months"
+  .col-sm-4
+    fieldset.inputs
+      ol
+        li
+          h4 Front End Components
+        li
+          label Bike Sales Price
+          span.calculator-value#lease_calculator_dealer_sales_price = calculator&.dealer_sales_price
+        li
+          label Freight / Prep Fee
+          span.calculator-value = calculator&.dealer_freight_and_setup
+        li
+          label Documentation Fee
+          span.calculator-value = calculator&.dealer_documentation_fee
+        li
+          label Title Reg and Lien Fee
+          span.calculator-value = calculator&.title_license_and_lien_fee
+        li
+          label Upfront Sales Tax
+          span.calculator-value = calculator&.upfront_tax
+        li
+          h4 Back End Components
+        li
+          label Guaranteed Auto Protection Cost
+          span.calculator-value = calculator&.guaranteed_auto_protection_cost
+        li
+          label Prepaid Maintenance Cost
+          span.calculator-value = calculator&.prepaid_maintenance_cost
+        li
+          label Extended Service Contract
+          span.calculator-value = calculator&.extended_service_contract_cost
+        li
+          label Tire and Wheel Contract Cost
+          span.calculator-value = calculator&.tire_and_wheel_contract_cost
+        li
+          label GPS Cost
+          span.calculator-value = calculator&.gps_cost          
+        - if display_stipulations?(calculator)
+          li
+            h4 = calculator.lease_application.credit_status.humanize
+            ol
+              - calculator.lease_application_stipulations.required.each do |stip|
+                li = stip.decorate.with_notes
+  .col-sm-4
+    fieldset.inputs
+      ol
+        li
+          h4 Trade-In
+        li
+          label Gross Trade In Allowance
+          span.calculator-value = calculator&.gross_trade_in_allowance
+        li
+          label Trade in Payoff
+          span.calculator-value = calculator&.trade_in_payoff
+        li
+          label Net Trade in Allowance
+          span.calculator-value = calculator&.net_trade_in_allowance
+        li
+          h4 Cash from Customer
+        li
+          label
+            div Down Payment
+            div = "(Minimum Required: $#{calculator&.cash_down_minimum})"
+          span.calculator-value = calculator&.cash_down_payment
+        li
+          label
+            div Total Due At Signing
+            div = "(includes 1st month's payment)"
+          span.calculator-value = calculator&.total_cash_at_signing
+        - unless @setting&.deactivate_dealer_participation?
+          li
+            h4 Dealer Participation
+          li
+            label Rate Markup
+            span.calculator-value#lease_calculator_dealer_participation_markup = calculator&.dealer_participation_markup
+          li
+            label Total Dealer Participation
+            span.calculator-value = calculator&.dealer_reserve

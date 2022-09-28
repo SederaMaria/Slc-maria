@@ -1,0 +1,13 @@
+#index_table_audits{
+  .column-date, .column-audited, .column-user{
+    min-width: 175px;
+  }
+
+  .column-changes{
+    max-width: 50%;
+  }
+
+  .col-actions{
+    min-width: 115px;
+  }
+}

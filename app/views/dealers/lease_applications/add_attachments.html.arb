@@ -1,0 +1,15 @@
+panel("Attachments") do
+  table_for(resource.lease_application_attachments.visible_to_dealers_only) do
+    column :filename do |lease_application_attachment|
+      lease_application_attachment.upload.file&.filename
+    end
+    column :notes do |lease_application_attachment|
+      simple_format(lease_application_attachment.notes)
+    end
+    column :download_link do |lease_application_attachment|
+      link_to 'Download', lease_application_attachment.upload.url, target: '_blank'
+    end
+  end
+end
+
+render('attachment_form')

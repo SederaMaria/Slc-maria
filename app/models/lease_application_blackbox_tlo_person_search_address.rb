@@ -1,0 +1,3 @@
+class LeaseApplicationBlackboxTloPersonSearchAddress < ApplicationRecord
+    belongs_to :lease_application_blackbox_requests
+end

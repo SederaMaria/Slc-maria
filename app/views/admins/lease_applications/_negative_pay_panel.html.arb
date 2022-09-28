@@ -1,0 +1,17 @@
+panel("Negative Pay") do
+    table_for(lease_application.negative_pays) do
+
+      column 'Result' do |negative_pay|
+        "#{negative_pay.response["decision"]}" rescue ''
+      end
+      
+      column 'Response' do |negative_pay|
+        negative_pay.rejected_response
+      end
+
+      column 'Date' do |negative_pay|
+        negative_pay&.created_at.strftime('%B %-d %Y at %r %Z') rescue ''
+      end
+
+    end
+  end
